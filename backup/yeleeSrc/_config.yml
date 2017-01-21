@@ -20,7 +20,7 @@ menu:
 avatar: /img/avatar.png
 
 # Small icon of Your site | 站点小图标地址
-favicon: /favicon.png
+favicon: http://moxfive.coding.me/yelee/gitbook/images/favicon.ico
 
 # Internationalization | 主题语言
 ## Change Language in SITE's _config.yml | 在站点配置中切换语言
@@ -31,7 +31,7 @@ favicon: /favicon.png
 ## If your site' url is 'http://yoursite.com/blog', set root_url as '/blog/'
 ## 网站若存放在子目录，请按上面格式填写
 ## https://hexo.io/docs/configuration.html#URL
-root_url: /Blog/
+root_url:
 
 # Year of Site Creation | 网站成立年份
 since: 2017
@@ -188,7 +188,7 @@ tagcloud: true
 ## 编辑友链
 friends:
   Hexo: https://hexo.io
-  GitHub: https://pages.github.com/
+  GitHub: https://www.github.com/
   MOxFIVE: http://moxfive.xyz/
 
 ## 关闭友链

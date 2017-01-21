@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>LySnake个人博客</title>
   
-  <link href="/blog/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="http://LySnake.github.io/blog/"/>
+  <link href="http://LySnake.github.io/"/>
   <updated>2017-01-21T20:34:22.891Z</updated>
-  <id>http://LySnake.github.io/blog/</id>
+  <id>http://LySnake.github.io/</id>
   
   <author>
     <name>LySnake</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Github Pages与Hexo框架博客的搭建</title>
-    <link href="http://LySnake.github.io/blog/technology/index/"/>
-    <id>http://LySnake.github.io/blog/technology/index/</id>
+    <link href="http://LySnake.github.io/technology/index/"/>
+    <id>http://LySnake.github.io/technology/index/</id>
     <published>2017-01-21T02:05:00.000Z</published>
     <updated>2017-01-21T20:34:22.891Z</updated>
     
