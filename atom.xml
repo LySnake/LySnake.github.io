@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>LySnake个人博客</title>
   
-  <link href="/Blog/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
   <link href="http://LySnake.github.io/"/>
   <updated>2017-01-21T20:34:22.891Z</updated>

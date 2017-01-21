@@ -15,7 +15,7 @@ timezone: Asia/Shanghai
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://LySnake.github.io
-root: /Blog/
+root: /
 permalink: :category/:title/
 permalink_defaults:
     category: technology
