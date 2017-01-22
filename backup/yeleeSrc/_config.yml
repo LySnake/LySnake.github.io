@@ -105,7 +105,7 @@ duoshuo:
   # http://<要填的部分>.duoshuo.com (domain只填上<>里的内容，不要填整个网址)
 
 youyan:
-  #on: true
+  on: true
   id: 2124325
   # 是否开启友言评论，http://www.uyan.cc/index.php
   # id 中填写你的友言用户数字ID，注册后进入后台管理即可查看
