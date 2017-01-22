@@ -671,7 +671,7 @@ a {
   text-transform: uppercase;
   float: none;
   min-height: 5.25rem;
-  max-height: 14rem;
+  max-height: 8.75rem;
   overflow: visible;
   text-align: center;
   display: -webkit-box;
@@ -687,17 +687,18 @@ a {
   min-width: 300px;
 }
 #header .switch-area {
+  position: relative;
   width: 100%;
   overflow: hidden;
   min-height: 260px;
   font-size: 0.875rem;
 }
 #header .switch-area .switch-wrap {
-  position: relative;
   -webkit-transition: -webkit-transform 0.3s ease-in;
   -moz-transition: -moz-transform 0.3s ease-in;
   -ms-transition: -ms-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
+  position: relative;
 }
 #header .turn-left {
   -webkit-transform: translate(-100%, 0);
@@ -707,6 +708,7 @@ a {
 }
 #header .header-nav {
   width: 100%;
+  position: absolute;
   -webkit-transition: -webkit-transform 0.3s ease-in;
   -moz-transition: -moz-transform 0.3s ease-in;
   -ms-transition: -ms-transform 0.3s ease-in;
@@ -714,13 +716,19 @@ a {
 }
 #header .switch-part {
   width: 100%;
+  position: absolute;
+}
+#header .switch-part1 {
+  left: 0;
 }
 #header .switch-part2 {
+  left: 100%;
   overflow-y: auto;
   max-height: 260px;
   font-size: 0.75rem;
 }
 #header .switch-part3 {
+  left: 200%;
   line-height: 1.6;
   overflow-y: auto;
   max-height: 260px;
@@ -736,7 +744,8 @@ a {
   color: #fff;
 }
 #header .switch-part4 {
-  text-align: center;
+  left: 300%;
+  text-align: left;
   line-height: 30px;
 }
 #header .header-nav .social {

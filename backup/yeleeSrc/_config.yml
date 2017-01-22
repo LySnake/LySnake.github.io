@@ -9,12 +9,8 @@ Yelee: "3.5"
 menu:
   主页: /
   所有文章: /archives/
-  技术:  /tags/技术/
-  生活:  /tags/生活/
-  树洞:  /tags/树洞/
-  随笔:  /tags/随笔/
   标签云: /tags/
-  关于我: /about/
+  关于我: /dest/other/aboutme/
 
 # Link to your avatar | 填写头像地址
 avatar: /img/avatar.png
@@ -102,7 +98,7 @@ disqus:
   # you have set "disqus_shortname" in your site's "_config.yml"
 
 duoshuo:
-  on: true
+  #on: true
   domain: lysnake
   # 是否开启多说评论，http://duoshuo.com/create-site/
   # 使用上面网址登陆你的多说，然后创建站点，在 domain 中填入你设定的域名前半部分
@@ -110,7 +106,7 @@ duoshuo:
 
 youyan:
   #on: true
-  id:
+  id: 2124325
   # 是否开启友言评论，http://www.uyan.cc/index.php
   # id 中填写你的友言用户数字ID，注册后进入后台管理即可查看
   # 友言服务在 Web 环境下运行，普通本地环境无法查看，请部署后在线上测试。
