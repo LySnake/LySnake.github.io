@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://LySnake.github.io/"/>
-  <updated>2017-01-22T17:34:40.792Z</updated>
+  <updated>2017-01-22T20:28:51.180Z</updated>
   <id>http://LySnake.github.io/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>Github Pages与Hexo框架博客的搭建</title>
-    <link href="http://LySnake.github.io/dest/technology/Github%20Pages%E4%B8%8EHexo%E6%A1%86%E6%9E%B6%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA.html"/>
-    <id>http://LySnake.github.io/dest/technology/Github Pages与Hexo框架博客的搭建.html</id>
+    <link href="http://LySnake.github.io/archives/technology/Github%20Pages%E4%B8%8EHexo%E6%A1%86%E6%9E%B6%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA.html"/>
+    <id>http://LySnake.github.io/archives/technology/Github Pages与Hexo框架博客的搭建.html</id>
     <published>2017-01-22T18:45:57.418Z</published>
-    <updated>2017-01-22T17:34:40.792Z</updated>
+    <updated>2017-01-22T20:28:51.180Z</updated>
     
     <content type="html"><![CDATA[<p>  个人基于<a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>与<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo框架</a>搭建的博客基本完成,使用了<a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="external">yelee主题</a>。</p>
 ]]></content>
@@ -31,9 +31,9 @@
     
     </summary>
     
-      <category term="dest" scheme="http://LySnake.github.io/categories/dest/"/>
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
     
-      <category term="technology" scheme="http://LySnake.github.io/categories/dest/technology/"/>
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
     
     
       <category term="Hexo" scheme="http://LySnake.github.io/tags/hexo/"/>

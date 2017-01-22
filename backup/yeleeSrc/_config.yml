@@ -10,7 +10,7 @@ menu:
   主页: /
   所有文章: /archives/
   标签云: /tags/
-  关于我: /dest/other/aboutme/
+  关于我: /archives/other/aboutme/
 
 # Link to your avatar | 填写头像地址
 avatar: /img/avatar.png
@@ -41,9 +41,9 @@ since: 2017
 subnav:
   Email: "mailto:litaobo619@gmail.com"
   #新浪微博: "sina weibo"
-  GitHub: "www.github.com/lysnake"
+  GitHub: "https://www.github.com/lysnake"
   #V2EX: "#"
-  RSS: "/atom.xml"
+  RSS: "http://atom.xml"
   #知乎: "zhihu"
   知乎: "http://zhihu.com/people/lysnake"
   #豆瓣: "douban"

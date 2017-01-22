@@ -4,7 +4,7 @@ date: {{ date }}
 update: {{ updated }}
 comments: true
 categories:
-  - dest
+  - archives
   - technology
 tags:
   - Hexo
