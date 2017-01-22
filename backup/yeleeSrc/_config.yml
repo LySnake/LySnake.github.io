@@ -187,16 +187,17 @@ tagcloud: true
 # Blogroll, Link exchange | 友情链接
 ## 编辑友链
 friends:
-  Hexo: https://hexo.io
-  GitHub: https://www.github.com/
-  MOxFIVE: http://moxfive.xyz/
+  GitHub: https://www.github.com
+  LeetCode: https://leetcode.com
+  segmentfault: https://segmentfault.com
+
 
 ## 关闭友链
 #friends: false
 
 #是否开启“关于我”。
+#aboutme: true
 aboutme: 但行好事，莫问前程
-#aboutme: false
 
 # Open link in a new tab | 是否在新窗口打开链接
 ## `global` 0: Set separately, 1: Open all in new 2: Open all in current
