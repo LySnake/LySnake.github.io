@@ -9,6 +9,7 @@ Yelee: "3.5"
 menu:
   主页: /
   所有文章: /archives/
+  收藏: /archives/collect/
   标签云: /tags/
   关于我: /archives/other/aboutme/
 
@@ -92,20 +93,20 @@ show_count: true
 
 disqus:
   #on: true
-  shortname:
+  shortname: lysnake
   # https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
   # It is unnecessary to enable disqus here if
   # you have set "disqus_shortname" in your site's "_config.yml"
 
 duoshuo:
-  #on: true
+  on: true
   domain: lysnake
   # 是否开启多说评论，http://duoshuo.com/create-site/
   # 使用上面网址登陆你的多说，然后创建站点，在 domain 中填入你设定的域名前半部分
   # http://<要填的部分>.duoshuo.com (domain只填上<>里的内容，不要填整个网址)
 
 youyan:
-  on: true
+  #on: true
   id: 2124325
   # 是否开启友言评论，http://www.uyan.cc/index.php
   # id 中填写你的友言用户数字ID，注册后进入后台管理即可查看

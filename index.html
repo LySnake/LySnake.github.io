@@ -172,6 +172,8 @@
                         
                             <li><a href="/archives/">所有文章</a></li>
                         
+                            <li><a href="/archives/collect/">收藏</a></li>
+                        
                             <li><a href="/tags/">标签云</a></li>
                         
                             <li><a href="/archives/other/aboutme/">关于我</a></li>
@@ -251,6 +253,8 @@
                 
                     <li><a href="/archives/">所有文章</a></li>
                 
+                    <li><a href="/archives/collect/">收藏</a></li>
+                
                     <li><a href="/tags/">标签云</a></li>
                 
                     <li><a href="/archives/other/aboutme/">关于我</a></li>
@@ -286,6 +290,15 @@
       <time datetime="2017-01-22T18:45:57.418Z" itemprop="datePublished">2017-01-23</time>
 </a>
 
+ 
+    <a href="archives/technology/Github Pages与Hexo框架博客的搭建.html#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="archives/technology/Github Pages与Hexo框架博客的搭建.html" ></span>
+        
+        
+    </a>
 
     </div>
   
@@ -398,6 +411,27 @@
     </script>
 
 
+    
+        <script>
+            if ($(".left-col").is(":visible")) {
+                var duoshuoQuery = {short_name:"lysnake"};
+                (function() {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'http://static.duoshuo.com/embed.js';
+                    s.async = true; s.charset = 'UTF-8';
+                    (d.head || d.body).appendChild(s);
+                })();
+
+                $(document).ready(function(){
+                    var $duoshuoCount = $(".ds-thread-count");
+                    $duoshuoCount.bind("DOMNodeInserted", function(e) {
+                        var num = $(this).text().replace(/[^0-9]/ig,"");
+                        $(this).siblings(".count-comment").text(num);
+                        $(this).remove();
+                    })
+                })
+            }
+        </script>
     
 
      
