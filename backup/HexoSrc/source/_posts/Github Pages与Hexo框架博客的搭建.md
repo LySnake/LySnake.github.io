@@ -17,7 +17,7 @@ __待续__
 这篇博文的目的不是[Github Pages](https://pages.github.com/)与[Hexo框架](https://hexo.io/zh-cn/docs/index.html)框架搭建个人博客的教学，毕竟官网教学更详细更全面，而是记录本人搭建过程中了解、学习并汇总的一些东西，附带链接陈列出来，主要供第一次搭建的朋友参考学习。
 
 - [git与github](#git与github)
-- [Github Pages](#Github%20Pages)
+- [Github Pages](#Github-Pages)
 - [Hexo](#Hexo)
 - [静态网站](#静态网站)
 - [Markdown](#Markdown)
