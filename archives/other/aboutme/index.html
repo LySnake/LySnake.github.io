@@ -381,14 +381,14 @@
         var duoshuoQuery = {short_name:"lysnake"};
         var loadComment = function(){
             var d = document, s = d.createElement('script');
-            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//' + document.location'embed.js';
             s.async = true; s.charset = 'UTF-8';
             (d.head || d.body).appendChild(s);
         }
 
         
             // Add comment count
-            $(function(){ 
+            $(function(){
                 var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=lysnake&threads=/archives/other/aboutme/index.html&callback=?";
                 $.getJSON(jsonUrl, function(result){
                     $.each(result.response, function(i, field){
@@ -429,6 +429,7 @@
     </script>
 
 </div>
+
     
 
 

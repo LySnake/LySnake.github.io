@@ -18,9 +18,9 @@ function sskadmin(e) {
     var ssk = '';
     if (e.user_id == 6377877041827545858) {
         if (checkMobile()) {
-            ssk = '<span class="ua"><span class="sskadmin">博主</span></span><br><br>';
+            ssk = '<span class="ua"><span class="sskadmin">博主 =͟͟͞͞( •̀д•́)</span></span><br><br>';
         } else {
-            ssk = '<span class="ua"><span class="sskadmin">博主</span></span>';
+            ssk = '<span class="ua"><span class="sskadmin">博主 =͟͟͞͞( •̀д•́)</span></span>';
         }
     } else {
         if (checkMobile()) {
