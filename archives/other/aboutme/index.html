@@ -89,10 +89,8 @@
 
 
 
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
 </head>
-
 <body>
   <div id="container">
     <div class="left-col">
@@ -170,7 +168,7 @@
                         
                             <li><a href="../../../archives/">所有文章</a></li>
                         
-                            <li><a href="../../../archives/other/collect/">收藏</a></li>
+                            <li><a href="../../../archives/collect/">收藏</a></li>
                         
                             <li><a href="../../../tags/">标签云</a></li>
                         
@@ -198,7 +196,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../../tags/github-pages/">Github Pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../tags/hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../tags/yelee/">yelee</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../../tags/github-pages/">Github Pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../../tags/hexo/">Hexo</a></li></ul>
                     </div>
                 </section>
                 
@@ -265,7 +263,7 @@
                 
                     <li><a href="../../../archives/">所有文章</a></li>
                 
-                    <li><a href="../../../archives/other/collect/">收藏</a></li>
+                    <li><a href="../../../archives/collect/">收藏</a></li>
                 
                     <li><a href="../../../tags/">标签云</a></li>
                 
@@ -383,14 +381,14 @@
         var duoshuoQuery = {short_name:"lysnake"};
         var loadComment = function(){
             var d = document, s = d.createElement('script');
-            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + "//" + document.location.host + "/js/embed.js";
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
             s.async = true; s.charset = 'UTF-8';
             (d.head || d.body).appendChild(s);
         }
 
         
             // Add comment count
-            $(function(){
+            $(function(){ 
                 var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=lysnake&threads=/archives/other/aboutme/index.html&callback=?";
                 $.getJSON(jsonUrl, function(result){
                     $.each(result.response, function(i, field){
@@ -431,7 +429,6 @@
     </script>
 
 </div>
-
     
 
 

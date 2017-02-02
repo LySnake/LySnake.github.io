@@ -694,11 +694,11 @@ a {
   font-size: 0.875rem;
 }
 #header .switch-area .switch-wrap {
+  position: relative;
   -webkit-transition: -webkit-transform 0.3s ease-in;
   -moz-transition: -moz-transform 0.3s ease-in;
   -ms-transition: -ms-transform 0.3s ease-in;
   transition: transform 0.3s ease-in;
-  position: relative;
 }
 #header .turn-left {
   -webkit-transform: translate(-100%, 0);
@@ -745,7 +745,7 @@ a {
 }
 #header .switch-part4 {
   left: 300%;
-  text-align: left;
+  text-align: center;
   line-height: 30px;
 }
 #header .header-nav .social {
