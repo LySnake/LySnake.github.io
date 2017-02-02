@@ -17,25 +17,25 @@ tags:
 ## 知识点 ##
 
 ### git与github ###
-**git**:查看廖雪峰的[git简介](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001373962845513aefd77a99f4145f0a2c7a7ca057e7570000)。
+git:查看廖雪峰的[git简介](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001373962845513aefd77a99f4145f0a2c7a7ca057e7570000)。
 git工具是Linus继linux开源操作系统之后又一影响世界的项目，因与linux的关系，所以本身是命令行模式，对大多数人来说是不够友好的，在实际使用中可以使用windows或iOS平台上的桌面软件，虽然这样并不能使用git的全部功能。[Github](https://www.github.com/)就是使用git的通信协议，得力于开源精神而创建的一个平台，并且linux项目也在[Github](https://www.github.com/)上托管，我们可以使用桌面软件[Source Tree](https://www.sourcetreeapp.com/)管理我们在[Github Pages](https://pages.github.com/)上的博客项目。
 
-**学习成本**：初期算半天吧，git重操作，前期学习[廖雪峰的git教学](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)了解基本理念，之后以多用多学为主，不会咱可以google。
+学习成本：初期算半天吧，git重操作，前期学习[廖雪峰的git教学](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)了解基本理念，之后以多用多学为主，不会咱可以google。
 
 ### Github Pages ###
 
 [Github Pages](https://pages.github.com/)具体信息查看官网是最权威的，这里提出为何使用Github Pages搭建博客的原因：
-* **版本管理**：[github](www.github.com)是目前程序员最火的一个免费的版本管理平台，所谓版本管理，主要是针对文本文档的管理，解决多人、异地、长时间维护共同项目文档所带来的问题，并因为开源精神，所以Free(免费且自由)。
+* 版本管理：[github](www.github.com)是目前程序员最火的一个免费的版本管理平台，所谓版本管理，主要是针对文本文档的管理，解决多人、异地、长时间维护共同项目文档所带来的问题，并因为开源精神，所以Free(免费且自由)。
 
-* **展示**：[Github Pages](https://pages.github.com/)是给[github](www.github.com)中用户或项目的一个展示项目，并免费提供300M空间，就项目而言，提供项目介绍与使用相关，对于个人而言可以作为博客，分享知识，也有利于他人了解自己。
+* 展示：[Github Pages](https://pages.github.com/)是给[github](www.github.com)中用户或项目的一个展示项目，并免费提供300M空间，就项目而言，提供项目介绍与使用相关，对于个人而言可以作为博客，分享知识，也有利于他人了解自己。
 
-* **全球优良的网络**：这个平台是程序员为主的平台，有google、微软等众多一线科技公司在这发布开源项目，也有现今互联网基石linux在其平台进行管理，而且也是技术界大佬建立的公司，在全球都拥有很好的网络连接。
+* 全球优良的网络：这个平台是程序员为主的平台，有google、微软等众多一线科技公司在这发布开源项目，也有现今互联网基石linux在其平台进行管理，而且也是技术界大佬建立的公司，在全球都拥有很好的网络连接。
 
-* **学习**：[github](www.github.com)上有很多开源的项目，因此也提供了很多开源的软件，比如[wox](https://github.com/Wox-launcher/Wox)方便windows更好的打开应用。同样，[github](www.github.com)也是程序员学习，创建开源项目的地方，可以与他人一同开发、维护开源项目，这其中必不可少的使用git版本管理工具。
+* 学习：[github](www.github.com)上有很多开源的项目，因此也提供了很多开源的软件，比如[wox](https://github.com/Wox-launcher/Wox)方便windows更好的打开应用。同样，[github](www.github.com)也是程序员学习，创建开源项目的地方，可以与他人一同开发、维护开源项目，这其中必不可少的使用git版本管理工具。
 
-* **其他领域**：[github](www.github.com)同样开始影响其他领域，可以一起创建项目翻译国外文档、写小说、写项目说明。学习并使用github或许能学习到不一样的知识。参考[gitbook](https://www.gitbook.com/)
+* 其他领域：[github](www.github.com)同样开始影响其他领域，可以一起创建项目翻译国外文档、写小说、写项目说明。学习并使用github或许能学习到不一样的知识。参考[gitbook](https://www.gitbook.com/)
 
-* **搭建学习成本**：根据[Github Pages](https://pages.github.com/)创建[github](www.github.com)帐号，Github Pages项目，不到一小时。
+* 搭建学习成本：根据[Github Pages](https://pages.github.com/)创建[github](www.github.com)帐号，Github Pages项目，不到一小时。
 
 ### Hexo ###
 
