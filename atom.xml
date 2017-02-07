@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://LySnake.github.io/"/>
-  <updated>2017-02-02T05:10:19.747Z</updated>
+  <updated>2017-02-06T07:43:03.008Z</updated>
   <id>http://LySnake.github.io/</id>
   
   <author>
@@ -14,6 +14,79 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常用软件推荐</title>
+    <link href="http://LySnake.github.io/archives/technology/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html"/>
+    <id>http://LySnake.github.io/archives/technology/常用软件推荐.html</id>
+    <published>2017-02-06T07:09:00.190Z</published>
+    <updated>2017-02-06T07:43:03.008Z</updated>
+    
+    <content type="html"><![CDATA[<p>分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。<br><a id="more"></a></p>
+<h2 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h2><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p><a href="https://www.zhihu.com/question/28013848" target="_blank" rel="external">如何高效地使用搜索引擎？</a>：来自zhihu的问答。</p>
+<p><a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif" target="_blank" rel="external">Proxy SwitchyOmega</a>:来自<a href="https://github.com/XX-net/XX-Net" target="_blank" rel="external">XX-Net</a>,插件单独使chrome使用XX-Net搭建梯子，也可以不使用插件，使PC全局智能上梯子。</p>
+<p><a href="https://chrome.google.com/webstore/detail/clickclean/ghgabhipcejejjmhhchfonmamedcbeod" target="_blank" rel="external">Click&amp;Clean</a>:管理工具，可管理chrome，也可以管理PC设备。</p>
+<p><a href="https://chrome.google.com/webstore/detail/json-handle/iahnhfdhidomcpggpaimmmahffihkfnj" target="_blank" rel="external">JSON-handle</a>:对JSON数据进行浏览、编辑。</p>
+<p><a href="https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj" target="_blank" rel="external">Save to Pocket</a>:pocket，可存网页到网上，支持iOS、安卓平台，支持zhihu等APP或网页分享到pocket APP。</p>
+<p><a href="https://chrome.google.com/webstore/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8A%A9%E6%89%8B%EF%BC%9Abilibilicom-%E7%BB%BC%E5%90%88%E8%BE%85%E5%8A%A9%E6%89%A9%E5%B1%95/kpbnombpnpcffllnianjibmpadjolanh" target="_blank" rel="external">嗶哩嗶哩助手</a>:B站，看直播可自动化领取瓜子等。</p>
+<p><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" target="_blank" rel="external">擴充功能uBlock Origin</a>:一款高效率的廣告攔截工具。</p>
+<p><a href="https://chrome.google.com/webstore/detail/dream-afar-new-tab/henmfoppjjkcencpbjaigfahdjlgpegn" target="_blank" rel="external">遠方 New Tab</a>:打开一个新页面，背景图都是实时更新的美图。</p>
+<p><a href="https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc" target="_blank" rel="external">Octotree</a>:在<a href="www.github.com">github</a>上，打开一个项目，能在左侧以windows资源管理器一样以树状图显示项目文件结构。</p>
+<p><a href="https://chrome.google.com/webstore/detail/web%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8Bfehelper/pkgccpejnmalmdinmhkkfafefagiiiad?hl=zh-CN" target="_blank" rel="external">WEB前端助手(FeHelper)</a>:前端会用到的小工具。</p>
+<p><a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="external">Tampermonkey</a>:很强大的插件，允许运行JS充当功能，相关JS文件可以去<a href="https://greasyfork.org/zh-CN" target="_blank" rel="external">Greasy Fork</a>下载，比如一些特殊网站的JS，免登录使用zhihu，购物党比价工具、下载youtube视频等。</p>
+<p><a href="https://chrome.google.com/webstore/detail/bootstrap-twitter-offline/gihkgljdimgfffabkemicpaeljmoobil?utm_source=chrome-ntp-icon" target="_blank" rel="external">Bootstrap</a>:Bootstrap库。</p>
+<p><a href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=zh-CN" target="_blank" rel="external">Vimium</a>:游览网站像操作vim一样操作。</p>
+<p><a href="https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb" target="_blank" rel="external">google翻译</a>:翻译网页或选中字词或短语时翻译。</p>
+<p><a href="https://www.zhihu.com/question/23228162" target="_blank" rel="external">chrome有哪些好用的插件</a></p>
+<hr>
+<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p><a href="https://www.zhihu.com/question/32129337" target="_blank" rel="external">如何优雅使用windows 10</a>:来自zhihu的问答。</p>
+<p><a href="https://atom.io/" target="_blank" rel="external">Atom</a>：Atom 是 Github 专门为程序员推出的一个跨平台文本编辑器。具有简洁和直观的图形用户界面，并有很多有趣的特点：支持CSS，HTML，JavaScript等网页编程语言。它支持宏，自动完成分屏功能，集成了文件管理器。</p>
+<p><a href="http://www.scootersoftware.com/download.php" target="_blank" rel="external">BCompare</a>：跨平台的文件比较工具。</p>
+<p><a href="http://download.pchome.net/system/treak/detail-4359.html" target="_blank" rel="external">EasyBCD</a>:修改PC上多个系统引导程序，选择默认系统引导。</p>
+<p><a href="https://www.voidtools.com/downloads/" target="_blank" rel="external">Everything</a>:windows下文件搜索工具，比系统默认的文件检索快得多且支持正则表达式，但不支持文件内容检索，windows自带的检索工具可以设置成检索文件内容。</p>
+<p><a href="http://pan.baidu.com/s/1eSJZ9cu" target="_blank" rel="external">SourceInsight</a>:多语言代码编辑工具，支持代码高亮，定义跳转，全局搜索，但对中文支持不太好。</p>
+<p><a href="http://pan.baidu.com/s/1hsHnIb6" target="_blank" rel="external">UltraISO</a>:打开ISO文件工具。</p>
+<p><a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=2&amp;ch=&amp;tn=baiduhome_pg&amp;bar=&amp;wd=VMware+%E4%B8%8B%E8%BD%BD&amp;rsv_spt=1&amp;oq=fireworks+%E4%B8%8B%E8%BD%BD&amp;rsv_pq=fe1db2c5000198ef&amp;rsv_t=0101HNZP1hokgvnDfCG5xUelLKmDrgNQ31p4elzWh%2FMLyL2eWO6YmVnLIVHSDnA1sy9O&amp;rqlang=cn&amp;rsv_enter=0&amp;inputT=3987" target="_blank" rel="external">VMware</a>:虚拟机软件，在win下的该软件里再安装其它操作系统，但现在windows 10已经有linux子系统了，现在一般可以不用选择这个方案。</p>
+<p><a href="http://download.flvcd.com/" target="_blank" rel="external">硕鼠</a>:支持多个网站的在线视频下载。</p>
+<p><a href="http://music.163.com/" target="_blank" rel="external">网易云音乐</a>:美观、友好、歌曲推荐算法强。</p>
+<p><a href="http://foxmail.com.cn/" target="_blank" rel="external">FoxMail</a>:本地mail客户端。</p>
+<p><a href="https://github.com/Wox-launcher/Wox/releases" target="_blank" rel="external">Wox</a>:功能如Mac下的Alfred，使用alt+space可以启用该程序，可以快速检索本地文件、程序并启用，不再频繁操作鼠标和查找文件(检索使用了Everything)。并有大量插件、自定义一些操作，也有默认常用操作，如：g github即为google检索github。</p>
+<p><a href="http://www.listary.com/" target="_blank" rel="external">Listary</a>:如功能和Wox一样，但是匹配没有Wox好。来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
+<p><a href="http://www.xitongcheng.com/jiaocheng/win10_article_27723.html" target="_blank" rel="external">Ubuntu on Windows</a>:在windows 10下安装ubuntu子系统，即可不用虚拟机，也能有linux环境，可用于开发。但目前该系统还有很多坑要填，而且下载也是要win搭个梯子。</p>
+<p><a href="http://www.vim.org/download.php" target="_blank" rel="external">Gvim</a>:win下的GUI VIM，如果不是一定要vim才能快速编辑或能熟练使用，还是不要在win下使用vim，相对不是那么友好。(比如常算之后多少个char，使用vim还是很快的)</p>
+<p><a href="http://cn.ejie.me/" target="_blank" rel="external">Clover</a>:让windows系统的文件管理器像chrome一样，支持多标签页功能，目前还有不少BUG，但对于常打开多个窗口查找文件来说，还是十分方便。</p>
+<p><a href="http://www.huyanbao.com" target="_blank" rel="external">护眼宝</a>：修改屏幕色彩，相传更护眼。有Android、iOS、MAC、windows版。</p>
+<p><a href="http://www.zdfans.com/789.html" target="_blank" rel="external">TeamViewer</a>:远程控制，内网穿透，VPN共享，跨平台.对个人免费。目前没有使用过，来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
+<p><a href="https://anydesk.com/remote-desktop" target="_blank" rel="external">AnyDesk</a>:远程控制效果或许会超出你的想象，作为TeamViewer备用方案,来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
+<p><a href="http://sunlogin.oray.com/zh_CN/" target="_blank" rel="external">向日葵</a>:官网信息(远程手机操作PC开机，控制)，来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。<br><em>Powertool</em>:系统清理工具。</p>
+<p><em>licecap</em>:Gif文件录制工具。</p>
+<hr>
+<h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><p><a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">zsh</a>:更友好的shell(漂亮的themes，更多的输入匹配)。</p>
+<p><a href="https://github.com/DemonCloud/Aix-Vim" target="_blank" rel="external">vim</a>:linux下最常用的编辑器，代码高亮，跳转，IDE界面等，只是要配置成自己更适合的还要多去踩坑。</p>
+<hr>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><h3 id="云梯"><a href="#云梯" class="headerlink" title="云梯"></a>云梯</h3><p><a href="https://github.com/XX-net/XX-Net" target="_blank" rel="external">XX-Net</a>：免费使用google的AppID,每个ID有1G，每个google帐号最多12个AppID，网络速度不错，youtube也能看视频，优点是每天早上可更新流量，且支持chrome、firefox。</p>
+<p><a href="https://github.com/getlantern/forum#%E8%93%9D%E7%81%AFlantern%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD" target="_blank" rel="external">蓝灯(Lantern)</a>:免费情况下每月800M，速度不错，优点搭建快速。</p>
+<p><a href="https://github.com/softwaredownload/openwrt-fanqiang" target="_blank" rel="external">openwrt</a>:实现路由器自动云梯，且因内置linux系统，可定制化功能，比如外接硬盘当网盘、自动下载BT等。但路由器成本不低，适合居家使用，未曾试用过。</p>
+<p><a href="https://wsgzao.github.io/post/fq/" target="_blank" rel="external">更多梯子</a>:这里罗列的方案，大都末使用过。</p>
+<h3 id="数据备份恢复"><a href="#数据备份恢复" class="headerlink" title="数据备份恢复"></a>数据备份恢复</h3><p>数据备份软件来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>,没有使用过。</p>
+<p><a href="http://www.onekeyrestore.cn/" target="_blank" rel="external">易数一键还原</a>:以DiskGenius为内核开发，安全易用靠谱,同时推荐ORM一键还原系统。</p>
+<p><a href="https://pan.baidu.com/s/1kTj3b75" target="_blank" rel="external">DiskGenius </a>:国内磁盘分区和数据恢复的佼佼者,Mod By MyCrack.</p>
+<p><a href="http://www.0daydown.com/?s=EaseUS+Data+Recovery" target="_blank" rel="external">EaseUS Data Recovery Wizard</a>:原先是国产易我数据恢复，现在依旧犀利啊</p>
+<h3 id="其它网友环境"><a href="#其它网友环境" class="headerlink" title="其它网友环境"></a>其它网友环境</h3><p><a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao推荐的软件</a>。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Github Pages与Hexo框架博客的搭建</title>
