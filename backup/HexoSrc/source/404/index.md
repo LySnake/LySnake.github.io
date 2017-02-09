@@ -1,6 +1,6 @@
 title: (*・ω・)✄╰ひ╯，访问的地址并不存在
 comments: false
-permalink: /404
+permalink: /404.html
 fancybox: false
 ---
 
