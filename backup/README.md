@@ -5,3 +5,5 @@
 >`HexoSrc目录`保存是Hexo博客相关的markdown源文件，用于生网页，以及Hexo相关的配置文件。
 
 >`yeleeSrc相关`备份到[个人yelee库](https://github.com/LySnake/hexo-theme-yelee)
+
+>`show目录`保存其它个人静态页面，用于展示

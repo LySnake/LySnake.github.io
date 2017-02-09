@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>谢尔平斯基三角形canvas</title>
+    <style type="text/css">
+        :root{width:1000px;margin:0 auto;}
+        canvas{margin-top: 100px;}
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="800">
+        浏览器不支持canvas画图
+    </canvas>
+    <script type="text/javascript">
+    //使用递归方式画  谢尔平斯基三角形
+/*    (function (){
+         var cnt = document.getElementById("canvas").getContext("2d");
+
+
+
+        function drawTriangle(p1, p2, p3){
+            cnt.moveTo(p1.x, p1.y);
+            cnt.lineTo(p2.x, p2.y);
+            cnt.lineTo(p3.x, p3.y);
+            cnt.lineTo(p1.x, p1.y);
+        }
+
+        function drawSierpinskiTrian(p1, p2, p3){
+            var p12 = {x:(p1.x+p2.x)/2,y:(p1.y+p2.y)/2},
+                p13 = {x:(p1.x+p3.x)/2,y:(p1.y+p3.y)/2},
+                p23 = {x:(p2.x+p3.x)/2,y:(p2.y+p3.y)/2};
+            //不可严格判断p12 === p1这种方式，因为（x,y）是小数，会无限递归到堆炸而不是栈炸
+            if((p12.x - p13.x)*(p12.x - p13.x) + (p12.y - p13.y)*(p12.y - p13.y) < 20)
+            {
+                return ;
+            }
+            drawTriangle(p13, p23, p12);
+            drawSierpinskiTrian(p1, p13, p12);
+            drawSierpinskiTrian(p2, p12, p23);
+            drawSierpinskiTrian(p3, p13, p23);
+        };
+
+        drawTriangle({x:0, y:0},{x:0,y:800},{x:800,y:0});//最外三角形
+        drawSierpinskiTrian({x:0, y:0},{x:0,y:800},{x:800,y:0});
+
+        cnt.lineWidth = 1;
+        cnt.strokeStyle = "red";
+        cnt.stroke();
+    })();*/
+
+    //折线逼近法
+    (function (){
+        var cnt = document.getElementById("canvas").getContext("2d"),
+            defLineStyle = "red";
+            cnt.strokeStyle = defLineStyle;
+            cnt.strokeWidth = 0.5;
+
+        function SierpinskiTriangle(p1, p2, p3){
+            var p13 = null, p23 = null, p12 = null;
+            if((p1.x - p2.x)*(p1.x - p2.x) + (p1.y - p2.y)*(p1.y - p2.y) > 10)
+            {
+                p13 = {x:(p1.x + p3.x)/2, y:(p1.y + p3.y)/2};
+                p12 = {x:(p1.x + p2.x)/2, y:(p1.y + p2.y)/2};
+                p23 = {x:(p2.x + p3.x)/2, y:(p2.y + p3.y)/2};
+
+                cnt.moveTo(p2.x, p2.y);
+                cnt.lineTo(p23.x, p23.y);
+                cnt.lineTo(p13.x, p13.y);
+                cnt.lineTo(p1.x,  p1.y);
+
+                SierpinskiTriangle(p1, p13, p12);
+                SierpinskiTriangle(p13, p23, p3);
+                SierpinskiTriangle(p2, p23, p12);
+            }
+
+        }
+        SierpinskiTriangle({x:0,y:0},{x:0,y:800},{x:800,y:0});
+        cnt.stroke();
+    })();
+    </script>
+</body>
+
+</html>
