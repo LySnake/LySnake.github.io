@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://LySnake.github.io/"/>
-  <updated>2017-02-06T07:43:03.008Z</updated>
+  <updated>2017-02-10T16:23:50.552Z</updated>
   <id>http://LySnake.github.io/</id>
   
   <author>
@@ -16,11 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>电脑小白系列之电脑日常管理</title>
+    <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E7%94%B5%E8%84%91%E6%97%A5%E5%B8%B8%E7%AE%A1%E7%90%86.html"/>
+    <id>http://LySnake.github.io/archives/technology/电脑小白系列之电脑日常管理.html</id>
+    <published>2017-02-09T13:03:48.000Z</published>
+    <updated>2017-02-10T16:23:50.552Z</updated>
+    
+    <content type="html"><![CDATA[<p>在生活中经常会碰到电脑乱成一团，软件都是百度系，各种小广告软件，重复软件，一台电脑同时存在360、百度、腾讯、金山多家杀软，有这些特点的人大多是文科生为主，次之还有老一代人。对此，本文主要说些电脑文件管理、软件管理等常见的小白问题。<br><a id="more"></a></p>
+<h2 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h2><p>打开<code>我的电脑</code>，可以看到C盘D盘等。一般的桌面上的所有文件也是存储于C盘用户目录下。</p>
+<h3 id="文件资源管理"><a href="#文件资源管理" class="headerlink" title="文件资源管理"></a>文件资源管理</h3><p>计算机对于文件管理，是以树型结构进行管理的，每个盘符可以看做一个树根，其下的每个文件夹都可以看做是子树或形象点说是树枝，对于经常查看文件管理器的人来说，这已经是老生常谈，但我要说的是针对常用软件安装目录与个人文件保存问题。</p>
+<blockquote>
+<p><code>C盘</code>是系统盘，基本都是大多数软件的默认安装盘，一般常见的安装系统C盘空间大小是50G，只要C盘还留有足够空间，系统并不提示C盘空间不足，那都是没关系的。操作系统windows大多数软件、文件、配置都保存在C盘中，比如office软件，系统自带的工具软件。但是现在的网络环境，很多软件都安装在C盘，个人下载也是默认在C盘，长时间使用C盘的软件，也会给C盘带来缓存文件，这样就会给C盘带来很多文件，当然，只要C盘有空间，这都是没关系的，只是个人下载文件、桌面文件都在C盘，如果电脑出现问题，需要重装系统解决，那么C盘将会清空并重新写盘，日常下载的文件、桌面文件都会清空且永久找不回。<br><code>其它盘</code>对widows来说，基本相同，除非是系统隐藏分区。安装windows系统，正常情况下都是只对C盘操作，其它盘文件都不作更改。因此，在日常管理上，个人重要文件尽量放在其它盘;其它软件，如视频软件、迅雷下载软件等，对其下载目录也最好是其它盘，且目录名可分辨。这样，自己下载的文件，</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      首页显示摘要
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+      <category term="电脑小白" scheme="http://LySnake.github.io/tags/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>常用软件推荐</title>
     <link href="http://LySnake.github.io/archives/technology/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html"/>
     <id>http://LySnake.github.io/archives/technology/常用软件推荐.html</id>
     <published>2017-02-06T07:09:00.190Z</published>
-    <updated>2017-02-06T07:43:03.008Z</updated>
+    <updated>2017-02-08T15:13:42.574Z</updated>
     
     <content type="html"><![CDATA[<p>分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。<br><a id="more"></a></p>
 <h2 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h2><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p><a href="https://www.zhihu.com/question/28013848" target="_blank" rel="external">如何高效地使用搜索引擎？</a>：来自zhihu的问答。</p>
@@ -58,8 +88,9 @@
 <p><a href="http://www.huyanbao.com" target="_blank" rel="external">护眼宝</a>：修改屏幕色彩，相传更护眼。有Android、iOS、MAC、windows版。</p>
 <p><a href="http://www.zdfans.com/789.html" target="_blank" rel="external">TeamViewer</a>:远程控制，内网穿透，VPN共享，跨平台.对个人免费。目前没有使用过，来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
 <p><a href="https://anydesk.com/remote-desktop" target="_blank" rel="external">AnyDesk</a>:远程控制效果或许会超出你的想象，作为TeamViewer备用方案,来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
-<p><a href="http://sunlogin.oray.com/zh_CN/" target="_blank" rel="external">向日葵</a>:官网信息(远程手机操作PC开机，控制)，来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。<br><em>Powertool</em>:系统清理工具。</p>
-<p><em>licecap</em>:Gif文件录制工具。</p>
+<p><a href="http://sunlogin.oray.com/zh_CN/" target="_blank" rel="external">向日葵</a>:官网信息(远程手机操作PC开机，控制)，来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
+<p><a href="http://www.cockos.com/licecap/" target="_blank" rel="external">licecap</a>:Gif文件录制工具。</p>
+<p><em>Powertool</em>:系统清理工具。</p>
 <hr>
 <h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><p><a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">zsh</a>:更友好的shell(漂亮的themes，更多的输入匹配)。</p>
 <p><a href="https://github.com/DemonCloud/Aix-Vim" target="_blank" rel="external">vim</a>:linux下最常用的编辑器，代码高亮，跳转，IDE界面等，只是要配置成自己更适合的还要多去踩坑。</p>
