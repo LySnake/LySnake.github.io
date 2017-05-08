@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://LySnake.github.io/archives/technology/常用软件推荐.html">
 <meta property="og:site_name" content="LySnake个人博客">
 <meta property="og:description" content="分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。">
-<meta property="og:updated_time" content="2017-03-22T23:28:10.762Z">
+<meta property="og:updated_time" content="2017-05-05T14:06:00.469Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用软件推荐">
 <meta name="twitter:description" content="分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。">
@@ -72,7 +72,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: false
+        search: true
     }
 </script>
 
@@ -106,6 +106,13 @@
 
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -157,9 +164,11 @@
                     <nav class="header-menu">
                         <ul>
                         
+                            <li><a href="../../index.html">主页</a></li>
+                        
                             <li><a href="../../archives/">所有文章</a></li>
                         
-                            <li><a href="../../archives/other/collect/">收藏</a></li>
+                            <li><a href="../../archives/collect/">收藏</a></li>
                         
                             <li><a href="../../tags/">标签云</a></li>
                         
@@ -216,12 +225,6 @@
                     
                       <a class="main-nav-link switch-friends-link" href="http://www.jquery123.com/">jQuery</a>
                     
-                      <a class="main-nav-link switch-friends-link" href="http://www.zhangxinxu.com/wordpress/">张鑫旭博客</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://www.ruanyifeng.com/blog/">阮一峰博客</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://barretlee.com/entry/">小胡子哥</a>
-                    
                     </div>
                 </section>
                 
@@ -256,9 +259,11 @@
             <nav class="header-menu">
                 <ul>
                 
+                    <li><a href="../../index.html">主页</a></li>
+                
                     <li><a href="../../archives/">所有文章</a></li>
                 
-                    <li><a href="../../archives/other/collect/">收藏</a></li>
+                    <li><a href="../../archives/collect/">收藏</a></li>
                 
                     <li><a href="../../tags/">标签云</a></li>
                 
@@ -367,11 +372,12 @@
 <p><a href="http://foxmail.com.cn/" target="_blank" rel="external">FoxMail</a>:本地mail客户端。</p>
 <p><a href="https://github.com/Wox-launcher/Wox/releases" target="_blank" rel="external">Wox</a>:功能如Mac下的Alfred，使用alt+space可以启用该程序，可以快速检索本地文件、程序并启用，不再频繁操作鼠标和查找文件(检索使用了Everything)。并有大量插件、自定义一些操作，也有默认常用操作，如：g github即为google检索github。</p>
 <p><a href="http://www.listary.com/" target="_blank" rel="external">Listary</a>:如功能和Wox一样，但是匹配没有Wox好。来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
+<p><a href="https://www.sourcetreeapp.com/" target="_blank" rel="external">SourceTree</a>:git应用Gui程序，支持windows、iOS平台。</p>
 <p><a href="http://www.xitongcheng.com/jiaocheng/win10_article_27723.html" target="_blank" rel="external">Ubuntu on Windows</a>:在windows 10下安装ubuntu子系统，即可不用虚拟机，也能有linux环境，可用于开发。但目前该系统还有很多坑要填，而且下载也是要win搭个梯子。</p>
 <p><a href="http://www.vim.org/download.php" target="_blank" rel="external">Gvim</a>:win下的GUI VIM，如果不是一定要vim才能快速编辑或能熟练使用，还是不要在win下使用vim，相对不是那么友好。(比如常算之后多少个char，使用vim还是很快的)</p>
 <p><a href="http://cn.ejie.me/" target="_blank" rel="external">Clover</a>:让windows系统的文件管理器像chrome一样，支持多标签页功能，目前还有不少BUG，但对于常打开多个窗口查找文件来说，还是十分方便。</p>
 <p><a href="http://www.huyanbao.com" target="_blank" rel="external">护眼宝</a>：修改屏幕色彩，相传更护眼。有Android、iOS、MAC、windows版。</p>
-<p><a href="http://www.zdfans.com/789.html" target="_blank" rel="external">TeamViewer</a>:远程控制，内网穿透，VPN共享，跨平台.对个人免费。目前没有使用过，来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
+<p><a href="https://www.teamviewer.com/zhcn/" target="_blank" rel="external">TeamViewer</a>:远程控制，内网穿透，VPN共享，跨平台.对个人免费。目前没有使用过，来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
 <p><a href="https://anydesk.com/remote-desktop" target="_blank" rel="external">AnyDesk</a>:远程控制效果或许会超出你的想象，作为TeamViewer备用方案,来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
 <p><a href="http://sunlogin.oray.com/zh_CN/" target="_blank" rel="external">向日葵</a>:官网信息(远程手机操作PC开机，控制)，来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
 <p><a href="http://www.cockos.com/licecap/" target="_blank" rel="external">licecap</a>:Gif文件录制工具。</p>
@@ -386,7 +392,7 @@
 <p><a href="https://wsgzao.github.io/post/fq/" target="_blank" rel="external">更多梯子</a>:这里罗列的方案，大都末使用过。</p>
 <h3 id="数据备份恢复"><a href="#数据备份恢复" class="headerlink" title="数据备份恢复"></a>数据备份恢复</h3><p>数据备份软件来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>,没有使用过。</p>
 <p><a href="http://www.onekeyrestore.cn/" target="_blank" rel="external">易数一键还原</a>:以DiskGenius为内核开发，安全易用靠谱,同时推荐ORM一键还原系统。</p>
-<p><a href="https://pan.baidu.com/s/1kTj3b75" target="_blank" rel="external">DiskGenius </a>:国内磁盘分区和数据恢复的佼佼者,Mod By MyCrack.</p>
+<p><a href="http://www.diskgenius.cn/" target="_blank" rel="external">DiskGenius</a>:国内磁盘分区和数据恢复的佼佼者,Mod By MyCrack.</p>
 <p><a href="http://www.0daydown.com/?s=EaseUS+Data+Recovery" target="_blank" rel="external">EaseUS Data Recovery Wizard</a>:原先是国产易我数据恢复，现在依旧犀利啊</p>
 <h3 id="其它网友环境"><a href="#其它网友环境" class="headerlink" title="其它网友环境"></a>其它网友环境</h3><p><a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao推荐的软件</a>。</p>
 
@@ -400,7 +406,7 @@
         <p><span>本文标题:</span><a href="">常用软件推荐</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LySnake</a></p>
         <p><span>发布时间:</span>2017-02-06, 15:09:00</p>
-        <p><span>最后更新:</span>2017-03-23, 07:28:10</p>
+        <p><span>最后更新:</span>2017-05-05, 22:06:00</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="" title="常用软件推荐">http://LySnake.github.io/archives/technology/常用软件推荐.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/常用软件推荐.html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
