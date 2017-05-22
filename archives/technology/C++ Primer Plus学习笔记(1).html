@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(1).html">
 <meta property="og:site_name" content="LySnake个人博客">
 <meta property="og:description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
-<meta property="og:updated_time" content="2017-05-21T14:50:22.674Z">
+<meta property="og:updated_time" content="2017-05-22T14:14:16.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ Primer Plus学习笔记(1)">
 <meta name="twitter:description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
@@ -346,10 +346,11 @@
           
         <h3 id="0-预备知识"><a href="#0-预备知识" class="headerlink" title="0.预备知识"></a>0.预备知识</h3><p>C++是C语言的超集，这意味着任何有效的C程序都是有效的C++程序。</p>
 <p>最初，Stroustrup实现C++时，使用了一个C++到C的编译器程序，而不是开发直接的C++到目标代码的编译器。前者叫做cfront（表示C前端，C fron end），它将C++源代码翻译成C源代码，然后使用一个标准C编译器对其进行编译。这种方法简化了向C的领域引入C++的过程，其它实现 也采用这种方法将C++引入到其它平台。随着C++的日渐普及，越来越多的实现转向创建C++编译器，直接将C++源代码生成目标代码。</p>
-<h3 id="8-函数控幽"><a href="#8-函数控幽" class="headerlink" title="8.函数控幽"></a>8.函数控幽</h3><p><strong>名称修饰</strong>：对原始名称进行的表面看来无意义的修饰（或矫正，因人而异）将对参数数目和类型进行编码。添加的一组符号随函数特征标而异，而修饰时使用的约定随编译器而异。比如，正常的c函数void fn(int);在*.o文件中，链接器查看到的符号表差不多就是_fn，并没有带有参数类型标识，但C++因为有重载，继承，同一个函数名可能存在于多个类中或一个类中存在相同函数名但参数表不一样，此时目标文件*.obj中连接器查看到的符号表是带参数类型和顺序的，如_fn_i。</p>
+<h3 id="8-函数控幽"><a href="#8-函数控幽" class="headerlink" title="8.函数控幽"></a>8.函数控幽</h3><p><strong>名称修饰</strong>：对原始名称进行的表面看来无意义的修饰（或矫正，因人而异）将对参数数目和类型进行编码。添加的一组符号随函数特征标而异，而修饰时使用的约定随编译器而异。比如，正常的c函数声明void fn(int);在*.o文件中，链接器查看到的符号表差不多就是_fn，并没有带有参数类型标识，但C++因为有重载，重写，同一个函数名可能存在于多个类中或一个类中存在相同函数名但参数表不一样，此时目标文件*.obj中连接器查看到的符号表是带参数类型和顺序的，如_fn_i。</p>
+<p>TIP：<strong>C++标准允许每个编译器设计人员以他认为合适 的方式实现名称修饰，因此由不同编译器创建的二进制模块（对名胜代码文件）很可能无法正确地链接。也就是说，这二个编译器将为同一个当函数生成不同的修饰名称。名称的不同将使链接器无法将一个编译器生的函数调用与另一个编译器生成的函数定义匹配。在链接编译模块时，请确保所有文件或库都是由同一个编译器生成的。</strong></p>
 <p><strong>函数模板</strong>：是通用的函数描述，也就是说，它们使用通用类型来定义函数，其中的通用类型可用具体的类型（如int或float）替换，通过将类型作为参数传递给模板，可使编译器生成对应类型的函数。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;   <span class="comment">//也可使用 template &lt;typename T&gt;</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Swap</span><span class="params">(T&amp;, T)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//todo.</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>关键字template和class是必需的，除非可以使用关键字typename代替class，typename关键字使得参数T表示类型这一点更换为明显；不过，有大量的代码库是使用关键字class开发的。在这种上下文中这二个关键字是行人的。另外使用尖括号。模板并不创建任何函数，而只是告诉编译器如何定义函数。</p>
+<p>关键字template和class是必需的，除非可以使用关键字typename代替class，typename关键字使得参数T表示类型这一点更换为明显；不过，有大量的代码库是使用关键字class开发的。在这种上下文中这二个关键字是等同的。另外使用尖括号。模板并不创建任何函数，而只是告诉编译器如何定义函数。</p>
 <p>并非所有的模板参数都是必须是模板参数类型。使用模板的好处是，它使生成多个函数定义更简单、更可靠。</p>
 <p>如果有多个原型，则编译器在选择原型时，非模板版本将优先于显式具体化和模板版本，而具体化将优先于使用模板生成的版本。</p>
 <p>在代码中包含函数模板本身并不会生成函数定义，它只是一个用于生成函数定义的方案。编译器使用模板为特定类型生成函数定义时，得到的是模板实例。</p>
@@ -357,39 +358,38 @@
 <ol>
 <li>创建候选函数列表。其中包含与被调用函数的名称相同的函数和模板函数。</li>
 <li>使用候选函数列表创建可行函数列表。这些都是参数数目正确的函数，为此有一个隐匿转换序列，其中包括实参类型与相应的形参类型完全匹配的情况。例如，使用float参数的函数调用 可以将访参数转换为double类型，从而是与double形参匹配，而模板可以为float生成一个实例。</li>
-<li>确定是否有最佳 的可行函数。如果有，则使用它，否则访函数调用出错。</li>
+<li>确定是否有最佳的可行函数。如果有，则使用它，否则访函数调用出错。</li>
 </ol>
-<h3 id="9-内存模型和名称空间"><a href="#9-内存模型和名称空间" class="headerlink" title="9.内存模型和名称空间"></a>9.内存模型和名称空间</h3><p>如果文件名包含在尖括号中，则C++编译 器将在存储标准头文件的主机系统的文件系统中查找;但如果文件名包含在双引号中，则编译器将首先查找当前的工作目录或源代码目录（或其它目录，这取决于编译器）。如果没有在那里找到头文件，则将在标准位置查找。因此在包含自己的头文件时，应使用引号而不是尖括号。</p>
-<p>TIP：<strong>C++标准允许每次个编译器设计人员以他认为合适 的方式实现名称修饰（参见第8章），因此由不同编译器创建的二进抽模块（对名胜代码文件）很可能无法正确地链接。也就是说，这二个编译器将为同一个当函数生成不同的修饰名称。名称的不同将使链接器无法将一个编译器生的函数调用与另一个编译器生成的函数定义匹配。在链接编译模块时，请确保所有文件或库都是由同一个编译器生成的。</strong></p>
-<p><strong>作用域</strong>：描述了名称在文件（翻译单元）的多大范围内可见。例如，孙数中定义的变量可在访函数中使用，但不能在其它函数中使用;而在文件中的函数定义之前定义的变量则可在所有函数中使用。</p>
-<p><strong>链接性</strong>：描述了名称如何在不同单元间共享。链接性为外部的名称可在文件间共享，链接性为内部的名称只能由一个文件中的函数共享。自动变量没有链接性，因为它们不能共享。</p>
+<h3 id="9-内存模型和名称空间"><a href="#9-内存模型和名称空间" class="headerlink" title="9.内存模型和名称空间"></a>9.内存模型和名称空间</h3><p>如果文件名包含在尖括号中，则C++编译器将在存储标准头文件的主机系统的文件系统中查找;但如果文件名包含在双引号中，则编译器将首先查找当前的工作目录或源代码目录（或其它目录，这取决于编译器）。如果没有在那里找到头文件，则将在标准位置查找。因此在包含自己的头文件时，应使用引号而不是尖括号。</p>
+<p><strong>作用域</strong>：描述了名称在文件（翻译单元）的多大范围内可见。例如，函数中定义的变量可在该函数中使用，但不能在其它函数中使用;而在文件中的函数定义之前定义的变量则可在所有函数中使用。</p>
+<p><strong>链接性</strong>：描述了名称如何在不同单元（源文件）间共享。链接性为外部的名称可在文件间共享，链接性为内部的名称只能由一个文件中的函数共享。自动变量没有链接性，因为它们不能共享。</p>
 <p>堆栈的默认长度取决于实现，但编译器通常提供改变堆栈长度的选项。</p>
 <p>如果变量被关键字register修饰而存储在寄存器中，则没有内存地址，因此不能将地址操作符用于寄存器变量。</p>
-<p>如果没有地初始化静态变量，编译器就将反它设置为0.在默认情况下，静态数组和结构将每个元素或成员的所有位都设置为0.</p>
-<p><strong>关键字valatile</strong>：表明即使程序代码没有对内在单元进行修改，其值也可能发生改变。例如，可以将一个指针指向某个硬件位置，春中包含了来串行端 口的时间或信息，在这种情况下，硬件可能修改其中的内容。该关键字的作用是为了改善编译器的优化能力。例如，假设编译器发现，程序在几条语句中两次使用了某个变量的值，则编译器可能不是让程序查找这个值二次，面是将这个值缓存到寄存器中。这种优化假设变量的值在这二次使用之间不会变化，如果不将变量声明为volatile，则编译器将进行这种优化uqf变量声明为volatile，相当于告诉编译器，不要进行这种优化。</p>
-<p><strong>关键字mutable</strong>：指出即使结构（或类）变量为const，其某个成员也可以被修改。</p>
-<p><strong>const</strong>:在C++中(但不是在C中)，const限定符对默认存储类型稍有影响。在默认情况下全局变量的链接性为外部的，但const全局变量的链接性为内部的。也就是说，C++看来，全局const就像使用了static说明符一样.<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> state = <span class="number">50</span>;</div></pre></td></tr></table></figure></p>
+<p>如果没有初始化静态变量，编译器就将反它设置为0.在默认情况下，静态数组和结构将每个元素或成员的所有位都设置为0.</p>
+<p><strong>关键字valatile</strong>：表明即使程序代码没有对内在单元进行修改，其值也可能发生改变。例如，可以将一个指针指向某个硬件位置，其中包含了来串行端口的时间或信息，在这种情况下，硬件可能修改其中的内容。该关键字的作用是为了改善编译器的优化能力。例如，假设编译器发现，程序在几条语句中两次使用了某个变量的值，则编译器可能不是让程序查找这个值二次，面是将这个值缓存到寄存器中。这种优化假设变量的值在这二次使用之间不会变化，如果不将变量声明为volatile，则编译器将进行这种优化，将变量声明为volatile，相当于告诉编译器，不要进行这种优化。</p>
+<p><strong>关键字mutable</strong>：指出即使结构（或类）变量为const，其某个成员也可以被修改(修饰某个成员)。</p>
+<p><strong>const</strong>:在C++中(但不是在C中)，const限定符对默认存储类型稍有影响。在默认情况下全局变量的链接性为外部的，但const全局变量的链接性为内部的。也就是说，C++看来，全局const就像使用了static说明符一样.<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> state = <span class="number">50</span>;   <span class="comment">//内部链接性，常数变量</span></div></pre></td></tr></table></figure></p>
 <p><strong>extern</strong>：程序员希望某个常量的链接性为外部的，则可以使用extern关键字来覆盖默认的内部链接性.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">extern</span> <span class="keyword">const</span> <span class="keyword">int</span> state = <span class="number">50</span>;  <span class="comment">//external linkge</span></div></pre></td></tr></table></figure>
 <p><strong>布局new操作符</strong>：指定要使用的位置地址，程序员可能使用这种特性来设置其内在管理规程或处理需要通过特定地址进行访问的硬件。但不可delete(delete只能用于这样的指针：指向常规new操作符分配的堆内存。)。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">auto</span> p1 = <span class="keyword">new</span> (pointName) typeName;<span class="comment">//向地址为pointName申请一个类型为typeName的空间地址给p1;</span></div></pre></td></tr></table></figure>
-<h4 id="名称空间"><a href="#名称空间" class="headerlink" title="名称空间"></a>名称空间</h4><p><strong>声明区域</strong>：是可以在其中进行声明的区域。例如，要吧在函数外面声明全局变量，对于这种变量，其声明区域为其声明所在的文件，对于在函数中声明的变量，其声明区域为其声明所在的代码块。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">auto</span> p1 = <span class="keyword">new</span> (pointName) typeName;   <span class="comment">//向地址为pointName申请一个类型为typeName的空间地址给p1;</span></div></pre></td></tr></table></figure>
+<h4 id="名称空间"><a href="#名称空间" class="headerlink" title="名称空间"></a>名称空间</h4><p><strong>声明区域</strong>：是可以在其中进行声明的区域。例如，可以在函数外面声明全局变量，对于这种变量，其声明区域为其声明所在的文件，对于在函数中声明的变量，其声明区域为其声明所在的代码块。</p>
 <p><strong>潜在作用域</strong>：变量的潜在作用域从声明开始，到其声明作用域的结尾。因此潜在作用域比声明区域小，这是由于变量必须定义后才能使用。</p>
 <p><strong>作用域</strong>：变量对程序而言可见的区域。变量并不是在潜在作用域内都可见，比如子代码块定义的变量隐藏现象。</p>
-<p><strong>名称空间</strong>：通过定义一种新的声明芪来创建命名的名称空间。这样做的目的之一是提供一个声明名称的区域。一个名称空间中的名称不会与另外一个名称空间的相同名称发生冲突，同时允许程序的其它部分使用该名称空间中的声明的东西。</p>
+<p><strong>名称空间</strong>：通过定义一种新的声明来创建命名的名称空间。这样做的目的之一是提供一个声明名称的区域。一个名称空间中的名称不会与另外一个名称空间中相同名称发生冲突，同时允许程序的其它部分使用该名称空间中的声明的东西。</p>
 <p>名称空间可以是全局的，也可以位于另一个名称空间中，但不能位于代码块中。因此在默认情况下，在名称空间中声明的名称的链接性为外部的（除非它引用了常量）。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">//名称空间中的声明和定义规则同全局声明和定义规则相同。</span></div><div class="line"></div><div class="line"><span class="comment">//在*.h中的声明</span></div><div class="line"><span class="keyword">namespace</span> Jace</div><div class="line">&#123;</div><div class="line"><span class="keyword">int</span> i;</div><div class="line"><span class="keyword">float</span> f;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">fn</span><span class="params">()</span></span>;</div><div class="line">struck Well&#123;&#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//在*.cpp中的定义</span></div><div class="line"><span class="keyword">namespace</span> Jace</div><div class="line">&#123;</div><div class="line">  <span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span> ;</div><div class="line">  <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line">  <span class="function"><span class="keyword">void</span> <span class="title">fn</span><span class="params">()</span></span></div><div class="line">  &#123;</div><div class="line">      <span class="comment">//todo.</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>全局名称空间</strong>：它对应于文件级声明区域，因此前面所说的全局变量现在被描述为位于于全局名称空间中。</p>
+<p><strong>全局名称空间</strong>：它对应于文件级声明区域，因此前面所说的全局变量现在被描述为位于于全局名称空间中，引用全局变量可以为::valueName。</p>
 <p><strong>using声明</strong>：使特定的标识符在当前作用域可用。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>; <span class="comment">//则仅使用std::cout时可直接使用cout而不带作用域解析操作符，但std中的其它名称不可以。</span></div></pre></td></tr></table></figure>
-<p><strong>using指令</strong>：使整个名称空间在当前作用域可用。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>; <span class="comment">//仅使用std::cout时可直接使用cout而不带作用域解析操作符，但std中的其它名称不可以。</span></div></pre></td></tr></table></figure>
+<p><strong>using编译指令</strong>：使整个名称空间中的名称在当前作用域可用。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>; <span class="comment">//则std名称空间中所有名称可在当前作用域中直接使用而不用带有作用域解析操作符。</span></div></pre></td></tr></table></figure>
-<p>使用using声明时，就好像声明了相应的名称一样。如果某个名称已经在函数中声明了，则不能用using声明导入相同的名称。然而，使用using编译指令时，将进行名称解析，就像在qnwyusing声明和名称空间本身的最小声明区域中声明了名称一样。如果使用using编译指令导入一个已经在函数中声明的名称，则局部名称将隐藏名称空间名，就像隐藏同名的全局变量一样。</p>
+<p>使用using声明时，就好像声明了相应的名称一样。如果某个名称已经在函数中声明了，则不能用using声明导入相同的名称。然而，使用using编译指令时，将进行名称解析，就像在包含using声明和名称空间本身的最小声明区域中声明了名称一样。如果使用using编译指令导入一个已经在函数中声明的名称，则局部名称将隐藏名称空间名，就像隐藏同名的全局变量一样。</p>
 <p>假设名称空间和声明区域定义了相同的名称。如果试图使用using声明将名称空间的名称导入该声明区域，则这二个名称会发生冲突，从而出错。如果使用using编译指令将该名称空间的名称导入该声明区域，则局部版本将隐藏名称空间版本。</p>
-<p>在名称空间中要吧嵌套使用using声明和using指令来生成新的名称空间。如：</p>
+<p>在名称空间中可以嵌套使用using声明和using编译指令来生成新的名称空间。如：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">namespace</span> elements</div><div class="line">&#123;</div><div class="line"> <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"> <span class="comment">//或</span></div><div class="line"> <span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>名称空间别名</strong>：using myNewName = myth::elements::fire;</p>
-<p><strong>未命名的名称空间</strong>：就像后面跟着using编译指令一样，也就是说，在该名称空间中声明的名称的潜在作用域为：从声明点到该点明区域末尾，从这个方面看，它们与全局一相似。不过由于这种名称空间没有名称，因此不能显式地使用using声明或using编译指令来使它在其它位置都可用。具体地说，不能在未佝的名称空间所属文件之外的其它文件中，使用该名称空间中的名称，因此这种方法要吧替代链接性为内部的静态变量。实际上，C++标准不乱在名称空间和全局作用域中使用关键字static。</p>
+<p><strong>未命名的名称空间</strong>：就像后面跟着using编译指令一样，也就是说，在该名称空间中声明的名称的潜在作用域为：从声明点到该点声明区域末尾，从这个方面看，它们与全局变量相似。不过由于这种名称空间没有名称，因此不能显式地使用using声明或using编译指令来使它在其它位置都可用。具体地说，不能在当前的名称空间所属文件之外的其它文件中，使用该名称空间中的名称，因此这种方法可以替代链接性为内部的静态变量。实际上，C++标准不乱在名称空间和全局作用域中使用关键字static。</p>
 <p><strong>名称空间指导原则</strong>：</p>
 <ul>
 <li>使用在已命名的名称空间中的变量，而不是使用外部全局变量。</li>
@@ -398,24 +398,24 @@
 <li>仅将编译指令using作为一种将旧代码转换为使用名称空间的权宜之计。</li>
 <li>不要在头文件中使用using编译指令。首先这样做掩盖了要让哪些名称可用；另外，包含头文件的顺序可能影响程序的行为。如果非要使用编译指令using，应将其放在所有预处理器编译指令#include之后。</li>
 <li>导入名称时，首选使用作用域解析操作符或using声明的方法。</li>
-<li>对于using声明，首选将其域设置为局部而不是全局。</li>
+<li><strong>对于using声明，首选将其域设置为局部而不是全局</strong>。</li>
 </ul>
-<p>老式头文件（如iostream.h)没有使用名称空间，但新头文件iostream使用了std名称空间。</p>
+<p><strong>老式头文件（如iostream.h)没有使用名称空间，但新头文件iostream使用了std名称空间。</strong></p>
 <h3 id="10-对象和类"><a href="#10-对象和类" class="headerlink" title="10.对象和类"></a>10.对象和类</h3><p><strong>构造函数</strong>：专门用于构造新对象、将值赋给它们的数据成员。</p>
 <ol>
-<li>没有返回值，但没有被声明为void 类型。实际上，构造函数没有声明类型。</li>
-<li>接受一个参数的赋值句法来将对象初始化为一个值。如：ClassName obj = value;</li>
+<li>没有返回值，但没有被声明为void类型。实际上，构造函数没有声明类型。</li>
+<li>当构造函数可使用一个参数时，接受一个参数的赋值句法来将对象初始化为一个值。如：ClassName obj = value;</li>
 <li>如果没有定义任何构造函数，那编译器会生成一个啥也不作的默认构造函数。为类定义了构造函数后，程序员就必须为它提供默认构造函数。</li>
 <li>使用构造函数初始化对象。 </li>
 </ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ClassName a = ClassName(value1, value2);   <span class="comment">//使用带参构造函数初始化对象a或临时对象(对于临时对象，再赋值给a对象，临时对象释放调用析构函数)，C++标准允许编译器使用两种方式来执行，第一种是直接初始化对象a,无临时对象，另一种是初始化临时对象，再赋值给对象a，然后临时变量调用析构函数。</span></div><div class="line"></div><div class="line"><span class="function">ClassName <span class="title">a</span><span class="params">()</span></span>;               <span class="comment">//使用无参构造函数初始化对象a，没有临时对象产生。</span></div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ClassName a = ClassName(value1, value2);   <span class="comment">//使用带参构造函数初始化对象a或临时对象(对于初始化临时对象，再赋值给a对象，临时对象释放调用析构函数)，C++标准允许编译器使用两种方式来执行，第一种是直接初始化对象a,无临时对象，另一种是初始化临时对象，再赋值给对象a，然后临时变量调用析构函数释放。</span></div><div class="line"></div><div class="line"><span class="function">ClassName <span class="title">a</span><span class="params">()</span></span>;               <span class="comment">//使用无参构造函数初始化对象a，没有临时对象产生。</span></div></pre></td></tr></table></figure>
 <p><strong>析构函数</strong>：对象过期时，程序将自动调用一个特殊的成员函数，完成清理工作。</p>
 <ol>
 <li>析构函数没有返回值类型，没有参数，其名称为类名称前加上~，且每个类只能有一个析构函数。</li>
-<li>如果创建的是静态存储对象，则其析构函数将在程序结束时自动被调用。如果创建的是自动存储类对象，则其析构函数将在程序执行完代码块时自动被调用。如果对象是通过new创建的，则它将驻留在堆栈内存或自由存储区中，当使用delete来释放内存时，其析构函数将自动补调用。</li>
-<li>自动变量补放在堆栈中，优先清理后定义的变量，因此最后创建的对象将最先被删除，最先创建的对象将最后被删除。</li>
+<li>如果创建的是静态存储对象，则其析构函数将在程序结束时自动被调用。如果创建的是自动存储类对象，则其析构函数将在程序执行完代码块时自动被调用。如果对象是通过new创建的，则它将驻留在堆栈内存或自由存储区中，当使用delete来释放内存时，其析构函数将自动调用。</li>
+<li>自动变量放在堆栈中，优先清理后定义的变量，因此最后创建的对象将最先被删除，最先创建的对象将最后被删除。</li>
 </ol>
-<p><strong>const成员函数</strong>：如果定义了一个ClassName类型的对象a,且修饰成const，那么对象a的成员变量不能改变，但如果调用其成员方法，不能确保方法不修改其成员变量。<br>因些对于这些方法，使用const关键字，保证函数不会修改调用对象。声明和定义如下：</p>
+<p><strong>const成员函数</strong>：如果定义了一个ClassName类型的对象a,且修饰成const，那么对象a的成员变量不能改变，但如果调用其成员方法，不能确保方法不修改其成员变量。因些对于这些方法，使用const关键字，保证函数不会修改调用对象。声明和定义如下：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">fn</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">float</span>)</span><span class="keyword">const</span></span>;                <span class="comment">//类中声明</span></div><div class="line"></div><div class="line"><span class="keyword">void</span> ClassName::fn(<span class="keyword">int</span>, <span class="keyword">float</span>)<span class="keyword">const</span>&#123;&#125;;   <span class="comment">//定义</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">const</span> Stock &amp; <span class="title">top</span><span class="params">(<span class="keyword">const</span> Stock &amp;s)</span><span class="keyword">const</span></span>;  <span class="comment">//括号中的const表明，该函数不会修改被显式地访问的对象，而括号后的const表明，该函数不会修改被隐式地访问的对象。由于该函数返回了二个const对象之一的引用，因些返回值类型也应为const引用。</span></div></pre></td></tr></table></figure>
 <p><strong>this</strong>:this指针指向用来调用成员函数的对象（this被作为隐藏参数传递给方法）。</p>
 <p>毕竟类的目标之一是使用户定义的类型与内置类型尽可能的相似，类的构造函数负责确保调用对象成员的构造函数。名为成员初始化列表的特性可提高构造函数设计的效率。</p>
@@ -436,7 +436,7 @@
         <p><span>本文标题:</span><a href="">C++ Primer Plus学习笔记(1)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LySnake</a></p>
         <p><span>发布时间:</span>2017-05-21, 18:47:33</p>
-        <p><span>最后更新:</span>2017-05-21, 22:50:22</p>
+        <p><span>最后更新:</span>2017-05-22, 22:14:16</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="" title="C++ Primer Plus学习笔记(1)">http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(1).html</a>
             <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(1).html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
