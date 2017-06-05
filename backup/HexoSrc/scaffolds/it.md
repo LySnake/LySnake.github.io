@@ -7,9 +7,8 @@ categories:
   - archives
   - technology
 tags:
-  - HTML
-  - CSS
-  - JavaScript
+  - C++
+  - cocos2d-x
 
 description: "首页显示摘要"
 

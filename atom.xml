@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://LySnake.github.io/"/>
-  <updated>2017-05-22T14:14:16.077Z</updated>
+  <updated>2017-06-04T15:40:05.074Z</updated>
   <id>http://LySnake.github.io/</id>
   
   <author>
@@ -16,11 +16,67 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>C++ Primer Plus学习笔记(2)</title>
+    <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(2).html"/>
+    <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(2).html</id>
+    <published>2017-06-04T15:16:05.036Z</published>
+    <updated>2017-06-04T15:40:05.074Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="11-使用类"><a href="#11-使用类" class="headerlink" title="11.使用类"></a>11.使用类</h3><p><strong>操作符重载</strong>是一种形式的C++多态，操作符重载将重载的概念扩展到操作符上，允许赋予C++操作符多种含义。要重载操作符，需使用被称为操作符函数的特殊函数形式。操作符函数的格式如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">operator</span> <span class="title">op</span><span class="params">(argument-<span class="built_in">list</span>)</span></span></div><div class="line"></div><div class="line"><span class="comment">//可以像使用成员方法一样使用操作符重载</span></div><div class="line">total = coding.<span class="keyword">operator</span>+(fixing);</div><div class="line"><span class="comment">//以可以使用操作符表示法：</span></div><div class="line">total = coding + fixing;</div><div class="line"></div><div class="line">注意，在操作符表示法中，操作符左侧的对象（这里为coding）是调用对象，操作符右边（这里是fixing)是作为参数被传递的对象。</div></pre></td></tr></table></figure>
+<p>其中，op是将要重载的操作符。例如，operator +()重载+操作符，operator <em>()重载</em>操作符。op必须是有效的C++操作符，不能虚构一个新的符号。</p>
+<h4 id="11-2-2操作符重载的限制"><a href="#11-2-2操作符重载的限制" class="headerlink" title="11.2.2操作符重载的限制"></a>11.2.2操作符重载的限制</h4><ul>
+<li>重载后的操作符必须至少有一个操作数是用户定义，这将防止用户为标准类型重载操作符。因此不能将减法操作符重载为计算两个double值的和，而不是它们的差。</li>
+<li>使用操作符时不能违反操作符原来的句法规则。例如，不能将求模操作符(%)重载成使用一个操作数（ –&gt; %x;），同样也不能修改操作符的优先级。因此，如果将加号操作符重载成将两个类相加，则新的操作符与原来的加号具有相同的优先级。</li>
+<li>不能定义新的操作符。</li>
+<li>不能重载下面的操作符<blockquote>
+<ul>
+<li>sizeof—-sizeof操作符。</li>
+<li>.—-成员操作符。</li>
+<li>.*—-成员指针操作符。</li>
+<li>::—-作用域解析操作符。</li>
+<li>?:—-条件操作符。</li>
+<li>typeid—-一个RTTI操作符。</li>
+<li>const_cast—-强制类型转换操作符。</li>
+<li>dynamic_cast—-强制类型转换操作符。</li>
+<li>reinterpret_cast—-强制类型转换操作符。</li>
+<li>static_cast—-强制类型转换操作符。</li>
+</ul>
+</blockquote>
+</li>
+<li>大多操作符都可以通过成员或非成员函数进行重载，但下面的操作符只能通过成员函数进行重载：<blockquote>
+<ul>
+<li>=—-赋值操作符。</li>
+<li>()—-函数调用操作符。</li>
+<li>[]—-下标操作符。</li>
+<li>-&gt;—-通过指针访问的类成员的操作符。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="11-3友元简介"><a href="#11-3友元简介" class="headerlink" title="11.3友元简介"></a>11.3友元简介</h4>]]></content>
+    
+    <summary type="html">
+    
+      个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+      <category term="C++" scheme="http://LySnake.github.io/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C++ Primer Plus学习笔记(1)</title>
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(1).html</id>
     <published>2017-05-21T10:47:33.000Z</published>
-    <updated>2017-05-22T14:14:16.077Z</updated>
+    <updated>2017-06-04T15:17:46.948Z</updated>
     
     <content type="html"><![CDATA[<h3 id="0-预备知识"><a href="#0-预备知识" class="headerlink" title="0.预备知识"></a>0.预备知识</h3><p>C++是C语言的超集，这意味着任何有效的C程序都是有效的C++程序。</p>
 <p>最初，Stroustrup实现C++时，使用了一个C++到C的编译器程序，而不是开发直接的C++到目标代码的编译器。前者叫做cfront（表示C前端，C fron end），它将C++源代码翻译成C源代码，然后使用一个标准C编译器对其进行编译。这种方法简化了向C的领域引入C++的过程，其它实现 也采用这种方法将C++引入到其它平台。随着C++的日渐普及，越来越多的实现转向创建C++编译器，直接将C++源代码生成目标代码。</p>
@@ -116,11 +172,7 @@
       <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
     
     
-      <category term="HTML" scheme="http://LySnake.github.io/tags/html/"/>
-    
-      <category term="CSS" scheme="http://LySnake.github.io/tags/css/"/>
-    
-      <category term="JavaScript" scheme="http://LySnake.github.io/tags/javascript/"/>
+      <category term="C++" scheme="http://LySnake.github.io/tags/c/"/>
     
   </entry>
   
