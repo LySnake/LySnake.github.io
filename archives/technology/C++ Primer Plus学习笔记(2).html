@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(2).html">
 <meta property="og:site_name" content="LySnake个人博客">
 <meta property="og:description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
-<meta property="og:updated_time" content="2017-06-07T15:33:13.415Z">
+<meta property="og:updated_time" content="2017-06-13T13:26:10.589Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ Primer Plus学习笔记(2)">
 <meta name="twitter:description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
@@ -469,7 +469,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line">	<span class="keyword">private</span>:</div><div class="line">		<span class="keyword">struct</span> Node</div><div class="line">		&#123;</div><div class="line">			<span class="comment">//tode</span></div><div class="line">		&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>C++新特性：在类声明中嵌套结构或类声明，通过将Node声明放在Queue类中，可以使其作用域为整个类。也就是说，Node是这样一种类型：可以使用它来声明类成员，也可以将它作为类方法中的类型名称，但只能在类中使用。如果声明在类的私有部分进行的，则只能在这个类使用被声明的类型，如果声明是在公有部分进行的，则可以从类的外部通过作用域解析操作符使用被声明的类型。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line">	Queue();</div><div class="line">&#125;</div><div class="line">Queue::Queue():refValue(value1),constValue(refValue)</div><div class="line">&#123;</div><div class="line">	<span class="comment">//tode</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>对需要在分配内存时就要初始化的成员(const成员，引用变量成员)，则必须使用成员初始化列表初始化。</p>
+<p>对需要在分配内存时就要初始化的成员(const成员，引用变量成员,基类构造)，则必须使用成员初始化列表初始化。</p>
 <p>从概念上说，调用构造函数时，对象将在括号中的代码执行之前被创建。因此调用Queue()构造函数将导致程序首先给成员变量分配内存。然后，程序流程进入到括号中，使用常规的赋值方式将值存储到内存中。因此，对于const成员变量和引用成员变量，必须在执行到构造函数体之前，即创建对象时进行初始化。C++提供了一种特殊的句法来完成上述工作，它叫作成员初始化列表。成员初始化列表由逗号分隔的初始化列表组成(前面带冒号)。它位于参数列表的右括号之后，函数体左括号之前。</p>
 <p>初值可以是常量或构造函数的参数列表中的参数。只有构造函数可以使用这种初始化列表句法。使用成员初始化列表的效率更高。</p>
 <p>数据成员被初始化的顺序与它们出现在类声明中的顺序相同，与初始化器中的排列顺序无关。</p>
@@ -486,7 +486,7 @@
         <p><span>本文标题:</span><a href="">C++ Primer Plus学习笔记(2)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LySnake</a></p>
         <p><span>发布时间:</span>2017-06-04, 23:16:05</p>
-        <p><span>最后更新:</span>2017-06-07, 23:33:13</p>
+        <p><span>最后更新:</span>2017-06-13, 21:26:10</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="" title="C++ Primer Plus学习笔记(2)">http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(2).html</a>
             <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(2).html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

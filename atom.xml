@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://LySnake.github.io/"/>
-  <updated>2017-06-12T15:13:17.650Z</updated>
+  <updated>2017-06-13T15:21:14.153Z</updated>
   <id>http://LySnake.github.io/</id>
   
   <author>
@@ -20,16 +20,16 @@
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(3).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(3).html</id>
     <published>2017-06-11T09:15:03.000Z</published>
-    <updated>2017-06-12T15:13:17.650Z</updated>
+    <updated>2017-06-13T15:21:14.153Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="13-类继承"><a href="#13-类继承" class="headerlink" title="13. 类继承"></a>13. 类继承</h2><h3 id="13-1派生一个类"><a href="#13-1派生一个类" class="headerlink" title="13.1派生一个类"></a>13.1派生一个类</h3><p>从一个类派生出另一个类时，原始类称为基类，继承类称为派生类。使用公有派生，其类的公有成员将成为派生类的公有成员；基类的私有部分也将成为派生类的一部分，但只能通过基类的公有和保护方法访问。</p>
+    <content type="html"><![CDATA[<h2 id="13-类继承"><a href="#13-类继承" class="headerlink" title="13. 类继承"></a>13. 类继承</h2><h3 id="13-1派生一个类"><a href="#13-1派生一个类" class="headerlink" title="13.1派生一个类"></a>13.1派生一个类</h3><p>从一个类派生出另一个类时，原始类称为基类，继承类称为派生类。使用公有派生，基类的公有成员将成为派生类的公有成员；基类的私有部分也将成为派生类的一部分，但只能通过基类的公有和保护方法访问。</p>
 <ul>
 <li>派生类对象存储了基类的数据成员（派生类继承了基类的实现）。</li>
 <li>派生类对象可以使用基类的方法（派生类继承了基类的接口）。</li>
 <li>派生类需要自己的构造函数，构造函数必须给新成员和继承的成员提供数据。</li>
 <li>派生类可以根据需要添加额外的数据成员和成员函数。</li>
 </ul>
-<h3 id="13-1-2-构造函数：访问权限的考虑"><a href="#13-1-2-构造函数：访问权限的考虑" class="headerlink" title="13.1.2 构造函数：访问权限的考虑"></a>13.1.2 构造函数：访问权限的考虑</h3><p>派生类不能直接访问基类的私有成员，而必须通过基类方法进行访问。例如，派生类的构造函数不能直接设置继承的成员数据，而必须使用基类的公有方法来访问私有的基类成员。具体地说，派生类构造函数必须使用基类的构造函数。</p>
+<h3 id="13-1-2-构造函数：访问权限的考虑"><a href="#13-1-2-构造函数：访问权限的考虑" class="headerlink" title="13.1.2 构造函数：访问权限的考虑"></a>13.1.2 构造函数：访问权限的考虑</h3><p>派生类不能直接访问基类的私有成员，而必须通过基类方法进行访问。例如，派生类的构造函数不能直接设置继承的成员数据，而必须使用基类的公有方法或保护方法来访问私有的基类成员。具体地说，派生类构造函数必须使用基类的构造函数。</p>
 <p>创建派生类对象时，程序首先创建基类对象。从概念上说，这意味着基类对象应当在程序进入派生类构造函数之前被创建。C++使用成员初始化列表句法来完成这种工作。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ClassName::ClassName(<span class="keyword">int</span> a, <span class="keyword">int</span> b):BaseClass(a, b)</div><div class="line">&#123;</div><div class="line">    <span class="comment">//todo</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>其中BaseClass是成员初始化列表。它是可执行的代码，它调用BaseClass构造函数。</p>
@@ -40,16 +40,16 @@
 <li>派生类构造函数应通过成员初始化列表将基类信息传递给基类构造函数。</li>
 <li>派生类构造函数应初始化派生类新增的数据成员。释放对象的顺序与创建对象的顺序相反，即首先执行派生类的析构函数，然后自动调用基类的析构函数。（TIP:创建派生类对象时，程序首先调用基类构造函数，然后再调用派生类构造函数。基类构造函数负责初始化继承数据成员派生类构造函数主要用于初始化新增的数据成员。派生类的构造函数总是调用一个基类构造函数。可以使用初始化器列表句法指明要使用的基类构造函数，否则将使用默认的基类构造函数。派生类对象过期时，程序将首先调用派生类析构函数，然后再调用基类析构函数。）</li>
 </ul>
-<h3 id="13-2-派生类和基类之间的特殊关系"><a href="#13-2-派生类和基类之间的特殊关系" class="headerlink" title="13.2 派生类和基类之间的特殊关系"></a>13.2 派生类和基类之间的特殊关系</h3><p>基类指针和引用可以在不进行显式类型转换的情况下指向或引用派生类对象</p>
-<p>C++要求引用和指针类型与赋给的类型匹配，但这一规则对继承来说是例外。不过这种例外是只单向的，不可以将基类对象和地址赋给派生类引用和指针。如果允许基类引用隐匿地引用派生类对象，则可以使用基类引用为派生类对象调用基类的方法。因为派生类继承了基类的方法，所以这样做不会出现问题。如果可以将基类对象 赋给派生类对象，派生类引用能够为基对象调用派生类方法，这样做将出现问题。</p>
-<h3 id="13-3-继承–is-a关系"><a href="#13-3-继承–is-a关系" class="headerlink" title="13.3 继承–is-a关系"></a>13.3 继承–is-a关系</h3><p>C++有3种继承方式：公有继承、保护继承和私有继承。公有继承是最常用的方式，它建立一种is-a关系，即派生类对象也是一个基类元旦，可以对其类对象执行的任何操作，也可以对派生类对象执行。</p>
+<h3 id="13-2-派生类和基类之间的特殊关系"><a href="#13-2-派生类和基类之间的特殊关系" class="headerlink" title="13.2 派生类和基类之间的特殊关系"></a>13.2 派生类和基类之间的特殊关系</h3><p>基类指针和引用可以在不进行显式类型转换的情况下指向或引用派生类对象.</p>
+<p>C++要求引用和指针类型与赋给的类型匹配，但这一规则对继承来说是例外。不过这种例外是只单向的，不可以将基类对象和地址赋给派生类引用和指针。如果允许基类引用隐式地引用派生类对象，则可以使用基类引用为派生类对象调用基类的方法。因为派生类继承了基类的方法，所以这样做不会出现问题。如果可以将基类对象赋给派生类对象，派生类引用能够为基对象调用派生类方法，这样做将出现问题。</p>
+<h3 id="13-3-继承–is-a关系"><a href="#13-3-继承–is-a关系" class="headerlink" title="13.3 继承–is-a关系"></a>13.3 继承–is-a关系</h3><p>C++有3种继承方式：公有继承、保护继承和私有继承。公有继承是最常用的方式，它建立一种is-a关系，即派生类对象也是一个基类对象，可以对基类对象执行的任何操作，也可以对派生类对象执行。</p>
 <ul>
-<li>公有继承不建立has-a关系。has-a关系最容易的建模方式是，将一个对象作为别一个类的数据成员。</li>
+<li>公有继承不建立has-a关系。has-a关系最容易的建模方式是，将一个对象作为另一个类的数据成员。</li>
 <li>公有继承不建立is-like-a关系，也就是说，它不采用明喻。继承可以在基类的基础上添加属性，但不能删除基类的属性。</li>
 <li>公有继承不建立is-implemented-as-a关系。</li>
 <li>公有继承不建立uses-a关系。如PC对象派生出Printer对象是没有意义的，不过可以使用友元函数或友元类处理Printer与PC类之间的关系。</li>
 </ul>
-<h3 id="13-4-多态公有继承"><a href="#13-4-多态公有继承" class="headerlink" title="13.4 多态公有继承"></a>13.4 多态公有继承</h3><p>同一个方法在派生类和基类中的行为是不同的，换句话说，方法的行为应取决于调用访方法的对象，这种较复杂的行为称为多态–具有多种形态，就是指同一个方法的行为将随上下文而异。有二种重要的机制可用于实现多态公有继承：</p>
+<h3 id="13-4-多态公有继承"><a href="#13-4-多态公有继承" class="headerlink" title="13.4 多态公有继承"></a>13.4 多态公有继承</h3><p>同一个方法在派生类和基类中的行为是不同的，换句话说，方法的行为应取决于调用该方法的对象，这种较复杂的行为称为多态–具有多种形态，就是指同一个方法的行为将随上下文而异。有二种重要的机制可用于实现多态公有继承：</p>
 <ul>
 <li>在派生类中重新定义基类的方法。</li>
 <li>使用虚方法(推荐作法)。</li>
@@ -57,14 +57,13 @@
 <p>如果方法是通过引用或指针而不是对象调用的，它将确定使用哪一种方法。如果没有使用关键字virtual，程序将根据引用类型或指针类型选择方法；如果使用了virtual，程序将根据引用或指针指向的对象类型来选择方法。</p>
 <p>经常在基类中将派生类会重新定义的方法声明为虚方法。方法在基类中被声明为虚拟的后，它在派生类中将自动成为虚方法。不过，在派生类声明中使用关键字virtual来指出哪些函数是虚函数也不失为一个好办法。（如果要在派生类中重新定义基类的方法，通常应将基类方法声明为虚拟的。这样，程序将根据对象类型而不是引用或指针类型来选择方法版本。关键字virtual只用于类声明的方法原型中，而没有用于实现中。）</p>
 <p>派生类并不能直接访问基类的私有数据，而必须使用基类的公有方法才能访问这些数据。</p>
-<p>非构造函数不能使用成员初始化值班表句法，但派生类方法可以调用公有的基类方法。在派生类方法中，标准的技术是使用作用域解析操作符来调用基类方法，如BaseClass::func()。(同样包含隐式参数this)</p>
-<p>使用delete释放由new分配的对象的代码说明了为何基类应包含一个虚拟析构函数，虽然有时好像并不需要析构函数。如果析构函数不是虚拟的，则将只调用对应于指针类型的析构函数。如果析构函数是虚拟的，将调用相应的对象类型的析构函数。因此，如果指针指向的是派生类对象，将调用派生类的析构函数，然后自动调用基类的析构函数。因此，使用虚拟析构函数可以确保正确的析构函数序列被调用。(然而析构函数不同名也可以？)</p>
-<h3 id="13-4-2-静态联编和动态联编"><a href="#13-4-2-静态联编和动态联编" class="headerlink" title="13.4.2 静态联编和动态联编"></a>13.4.2 静态联编和动态联编</h3><p>将源代码中的函数调用解释为执行特定的函数代码块被称为函数名联编。在C语言中，这非常简单，因为每次一个函数名都对应一个不同的 函数。在C++中，由于函数重载的缘故，这项任务更复杂。编译器必须查看函数参数以及函数名才能确定使用哪个函数。然而，C/C++编译器可以在编译过程完成这种联编。在编译过程中进行联编被称为静态联编，又称为早期联编。不过，虚函数使这项工作变得更困难，使用哪一个函数是不能在编译时确定的，因为编译器不知道用户将选择哪种类型的对象。所以编译器必须生成能够在程序运行时选择正确的虚方法的代码，这被称为动态联编，又称为晚期联编，编译器对非虚方法使用静态联编，对虚方法使用动态联编。</p>
-<h3 id="13-4-3指针和引用类型兼容性"><a href="#13-4-3指针和引用类型兼容性" class="headerlink" title="13.4.3指针和引用类型兼容性"></a>13.4.3指针和引用类型兼容性</h3><p>在C++中，动态联编与指针和引用调用的方法相关，从基本种程度上说，这是由继承控制的，公有继承建立is-a关系的一种方法是如何处理指向对象的指针和引用。通常，C++不允许将一种类型的地址赋给另一种类型的指针，也不允许一种类型的引用指向另一种类型，不过指向基类的引用或指针可以引用派生类对象，而不必进行显式类型转换。将派生类引用或指针转换为基类引用或指针被称为向上强制转换，这使公有继承不需要进行显式类型转换。该规则是is-a关系的一部分。将基类指针或引用转换为派生类指针或引用–称为向下强制转换。如果不使用显式类型转换，则向下强制转换是不允许的。原因是is-a关系通常是不可逆的。派生类可以新增数据成员，因此使用这些数据成员的类函数不能应用于基类。</p>
-<p>动态联编和静态联编对比：</p>
-<p><strong>效率</strong>：为使程序能够在运行阶段进行决策，必须采取一些方法来跟踪基类指针或引用指向的对象类型，这增加了额外的处理开销。</p>
-<p><strong>概念模型</strong>：在设计类时，可能包含一些不在派生类重新定义的成员函数。对于这些函数调制为虚函数有二方面的好处：首先效率更高，基次指出不要重新定义该函数。这表明，仅将那些预期将被重新定义的方法声明为虚拟的。</p>
-<p><strong>虚函数的工作原理</strong>：C++规定了虚函数的行为，但将实现方法留给了编译器作者。通常，编译器处理虚函数的方法是，给每个对象添加一个隐藏成员。隐藏成员中保存了一个指向函数地址数组的指针。这种数组称为虚函数表(virtual function table,vtbl)。虚函数表中存储了为类对象进行声明的虚函数的地址。例如，基类对象包含了一个指针，该指针指向基类中所有虚函数的地址表。派生类对象将包含一个指向独立地址表的指针。如果派生类提供了虚函数的新定义，该虚函数表将保存新函数的地址；如果派生类没有重新定义虚函数，该vtbl将保存函数原始版本的地址。如果派生类定义了新的虚函数，则该函数的地址也将被添加到vtbl中，注意，无论类中包含的虚函数是1个还是10个，都只需要在对象中添加1个地址成员，只是表的大小不同而已。（虚函数表记录的函数并不记录参数特征标（非重载））</p>
+<p>非构造函数不能使用成员初始化列表句法，但派生类方法可以调用公有的基类方法。在派生类方法中，标准的技术是使用作用域解析操作符来调用基类方法，如BaseClass::func()。(同样包含隐式参数this)</p>
+<p>使用delete释放由new分配的对象说明了为何基类应包含一个虚拟析构函数，虽然有时好像并不需要析构函数。如果析构函数不是虚拟的，则将只调用对应于指针类型的析构函数。如果析构函数是虚拟的，将调用相应的对象类型的析构函数。因此，如果指针指向的是派生类对象，将调用派生类的析构函数，然后自动调用基类的析构函数。因此，使用虚拟析构函数可以确保正确的析构函数序列被调用。</p>
+<h3 id="13-4-2-静态联编和动态联编"><a href="#13-4-2-静态联编和动态联编" class="headerlink" title="13.4.2 静态联编和动态联编"></a>13.4.2 静态联编和动态联编</h3><p>将源代码中的函数调用解释为执行特定的函数代码块被称为函数名联编。在C语言中，这非常简单，因为每一个函数名都对应一个不同的函数。在C++中，由于函数重载的缘故，这项任务更复杂。编译器必须查看函数参数以及函数名才能确定使用哪个函数。然而，C/C++编译器可以在编译过程完成这种联编。在编译过程中进行联编被称为静态联编，又称为早期联编。不过，虚函数使这项工作变得更困难，使用哪一个函数是不能在编译时确定的，因为编译器不知道用户将选择哪种类型的对象。所以编译器必须生成能够在程序运行时选择正确的虚方法的代码，这被称为动态联编，又称为晚期联编，编译器对非虚方法使用静态联编，对虚方法使用动态联编。</p>
+<h3 id="13-4-3指针和引用类型兼容性"><a href="#13-4-3指针和引用类型兼容性" class="headerlink" title="13.4.3指针和引用类型兼容性"></a>13.4.3指针和引用类型兼容性</h3><p>在C++中，动态联编与指针和引用调用的方法相关，从某种程度上说，这是由继承控制的，公有继承建立is-a关系的一种方法是如何处理指向对象的指针和引用。通常，C++不允许将一种类型的地址赋给另一种类型的指针，也不允许一种类型的引用指向另一种类型，不过指向基类的引用或指针可以引用派生类对象，而不必进行显式类型转换。将派生类引用或指针转换为基类引用或指针被称为向上强制转换，这使公有继承不需要进行显式类型转换。该规则是is-a关系的一部分。将基类指针或引用转换为派生类指针或引用–称为向下强制转换。如果不使用显式类型转换，则向下强制转换是不允许的。原因是is-a关系通常是不可逆的。派生类可以新增数据成员，因此使用这些数据成员的类函数不能应用于基类。</p>
+<h4 id="动态联编和静态联编对比"><a href="#动态联编和静态联编对比" class="headerlink" title="动态联编和静态联编对比"></a>动态联编和静态联编对比</h4><p><strong>效率</strong>：为使程序能够在运行阶段进行决策，必须采取一些方法来跟踪基类指针或引用指向的对象类型，这增加了额外的处理开销。</p>
+<p><strong>概念模型</strong>：在设计类时，可能包含一些不在派生类重新定义的成员函数。对于这些函数不设置为虚函数有二方面的好处：首先效率更高，基次指出不要重新定义该函数。这表明，仅将那些预期将被重新定义的方法声明为虚拟的。</p>
+<p><strong>虚函数的工作原理</strong>：C++规定了虚函数的行为，但将实现方法留给了编译器作者。通常，编译器处理虚函数的方法是，给每个对象添加一个隐藏成员。隐藏成员中保存了一个指向函数地址数组的指针。这种数组称为虚函数表(virtual function table,vtbl)。虚函数表中存储了为类对象进行声明的虚函数的地址。例如，基类对象包含了一个指针，该指针指向基类中所有虚函数的地址表。派生类对象将包含一个指向独立地址表的指针。如果派生类提供了虚函数的新定义，该虚函数表将保存新函数的地址；如果派生类没有重新定义虚函数，该vtbl将保存函数原始版本的地址。如果派生类定义了新的虚函数，则该函数的地址也将被添加到vtbl中，注意，无论类中包含的虚函数是1个还是10个，都只需要在对象中添加1个地址成员，只是表的大小不同而已。（虚函数表记录的函数并不记录参数特征标（非重载而是重写））</p>
 <p>使用虚函数时，在内存和执行速度方面有一定的成本，包括：</p>
 <ul>
 <li>每个对象都将增大，增大量为存储地址的空间。</li>
@@ -73,7 +72,7 @@
 </ul>
 <h3 id="13-4-5-有关虚函数注意事项"><a href="#13-4-5-有关虚函数注意事项" class="headerlink" title="13.4.5 有关虚函数注意事项"></a>13.4.5 有关虚函数注意事项</h3><p>虚函数要点：</p>
 <ul>
-<li>在基类谅的声明中使用关键字virtual可使该方法在基类以及所有的派生类中是虚拟的。</li>
+<li>在基类的声明中使用关键字virtual可使该方法在基类以及所有的派生类中是虚拟的。</li>
 <li>如果使用指向对象的引用或指针来调用虚方法，程序将使用为对象类型定义的方法，而不使用为引用或指针类型定义的方法。这称为动态联编或晚期联编。这种行为非常重要，因为这样的基类指针或引用可以指向派生类</li>
 <li>如果定义的类将被用作基类，则应将那些要在派生类中重新定义的类方法声明为虚拟的。</li>
 </ul>
@@ -92,7 +91,7 @@
 </li>
 <li><p>友元</p>
 <blockquote>
-<p>友元不能是虚函数，因为友元不是类成员，而只有成员才能是虚函数。如果由于这个原因引起了设计问题，可以通过让码元函数使用虚拟成员函数说解决。</p>
+<p>友元不能是虚函数，因为友元不是类成员，而只有成员才能是虚函数。如果由于这个原因引起了设计问题，可以通过让友元函数使用虚拟成员函数来解决。</p>
 </blockquote>
 </li>
 <li><p>没有重新定义</p>
@@ -107,49 +106,44 @@
 <li>如果重新定义继承的虚方法，应确保与原来的原型完全相同，但如果返回类型是基类引用或指针，则可以修改为指向派生类的引用或指针。</li>
 </ol>
 <p>2.如果基类声明被重载了，则应在派生类中重新定义所有基类版本。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&gt;<span class="keyword">class</span> BaseClass</div><div class="line">&gt;&#123;</div><div class="line">&gt; <span class="keyword">public</span>:</div><div class="line">&gt;     <span class="comment">//三个被重载的虚函数声明</span></div><div class="line">&gt;     <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span>)</span></span>;</div><div class="line">&gt;     <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">float</span>)</span></span>;</div><div class="line">&gt;     <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">double</span>)</span></span>;</div><div class="line">&gt;&#125;</div><div class="line">&gt;<span class="keyword">class</span> ClassName:<span class="keyword">public</span> BaseClass</div><div class="line">&gt;&#123;</div><div class="line">&gt;   <span class="keyword">public</span>:</div><div class="line">&gt;     <span class="comment">//三个基类同名的虚函数都要重新定义，避免覆盖基类其它同名的虚函数 </span></div><div class="line">&gt;     <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span>)</span></span>;</div><div class="line">&gt;     <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">float</span>)</span></span>;</div><div class="line">&gt;     <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">double</span>)</span></span>;</div><div class="line">&gt;&#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> BaseClass</div><div class="line">&#123;</div><div class="line"> <span class="keyword">public</span>:</div><div class="line">     <span class="comment">//三个被重载的虚函数声明</span></div><div class="line">     <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span>)</span></span>;</div><div class="line">     <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">float</span>)</span></span>;</div><div class="line">     <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">double</span>)</span></span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">class</span> ClassName:<span class="keyword">public</span> BaseClass</div><div class="line">&#123;</div><div class="line">   <span class="keyword">public</span>:</div><div class="line">     <span class="comment">//三个基类同名的虚函数都要重新定义，避免覆盖基类其它同名的虚函数 </span></div><div class="line">     <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span>)</span></span>;</div><div class="line">     <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">float</span>)</span></span>;</div><div class="line">     <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">double</span>)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </blockquote>
-<h3 id="13-5-访问控制：protected"><a href="#13-5-访问控制：protected" class="headerlink" title="13.5 访问控制：protected"></a>13.5 访问控制：protected</h3><p>关键字protected与private相似，在类外只能用公有类成员来访问protected部分中的类成员。private和protected之间的区别只有在基类派生的类中才会表现出来。派生类的成员可以直接访问基类的保护成员，但不能直接访问基类的私有成员。而对于成员函数来说，保护访问控制很有用，它让派生类能够访问公众不能使用的内部函数。（最好对类数据成员采用私有访问控制，不要使用保护访问控制；同时通过基类方法使派生类能够访问基类数据）</p>
-<p><strong>单设计模式</strong>：希望有且只有一个类的实例返回给调用程序时，就可以使用单元素模式。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> TheOnlyInstance</div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span>:</div><div class="line">        <span class="function"><span class="keyword">static</span> TheOnlyInstance *<span class="title">GetTheOnlyInstance</span><span class="params">()</span></span>;</div><div class="line">    <span class="keyword">protected</span>:</div><div class="line">        <span class="comment">//无公有构造函数，可以防止实例被创建。只能通过公有静态方法来访问。</span></div><div class="line">        TheOnlyInstance()&#123;&#125;;</div><div class="line">    <span class="keyword">private</span>:</div><div class="line">        <span class="comment">//other data</span></div><div class="line">&#125;</div><div class="line">TheOnlyInstance &amp;TheOnlyInstance::GetTheOnlyInstance()</div><div class="line">&#123;</div><div class="line">    <span class="comment">//静态局部变量只在第一次执行时初始化，生命期为整个函数，作用域为定义到该函数结尾</span></div><div class="line">    <span class="keyword">static</span> TheOnlyInstance objTheOnlyInstance;</div><div class="line">    <span class="keyword">return</span> objTheOnlyInstance;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="13-5-访问控制：protected"><a href="#13-5-访问控制：protected" class="headerlink" title="13.5 访问控制：protected"></a>13.5 访问控制：protected</h3><p>关键字protected与private相似，在类外只能用公有类成员函数来访问protected部分中的类成员。private和protected之间的区别只有在基类派生的类中才会表现出来。派生类的成员可以直接访问基类的保护成员，但不能直接访问基类的私有成员。而对于成员函数来说，保护访问控制很有用，它让派生类能够访问公众不能使用的内部函数。（最好对类数据成员采用私有访问控制，不要使用保护访问控制；同时通过基类方法使派生类能够访问基类数据）</p>
+<p><strong>单设计模式</strong>：希望有且只有一个类的实例返回给调用程序时，就可以使用单设计模式。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> TheOnlyInstance</div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span>:</div><div class="line">        <span class="function"><span class="keyword">static</span> TheOnlyInstance *<span class="title">GetTheOnlyInstance</span><span class="params">()</span></span>;</div><div class="line">    <span class="keyword">protected</span>:</div><div class="line">        <span class="comment">//无公有构造函数，可以防止实例被创建。只能通过公有静态方法来访问。</span></div><div class="line">        TheOnlyInstance()&#123;&#125;;</div><div class="line">    <span class="keyword">private</span>:</div><div class="line">        <span class="comment">//other data</span></div><div class="line">&#125;</div><div class="line">TheOnlyInstance &amp;TheOnlyInstance::GetTheOnlyInstance()</div><div class="line">&#123;</div><div class="line">    <span class="comment">//静态局部变量只在第一次执行时初始化，生命期为整个函数，作用域为定义到该函数结尾</span></div><div class="line">    <span class="keyword">static</span> TheOnlyInstance objTheOnlyInstance;</div><div class="line">    <span class="keyword">return</span> objTheOnlyInstance;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="13-6-抽象基类"><a href="#13-6-抽象基类" class="headerlink" title="13.6 抽象基类　"></a>13.6 抽象基类　</h3><p>C++通过使用纯虚函数提供未实现的函数。纯虚函数声明的结尾处为=0。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> BaseClass</div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span>:</div><div class="line">        <span class="keyword">double</span> x,y;</div><div class="line">    <span class="keyword">public</span>:</div><div class="line">        <span class="keyword">virtual</span> ~BaseClass();</div><div class="line">        <span class="comment">//纯虚函数</span></div><div class="line">        <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Move</span><span class="params">()</span><span class="keyword">const</span></span>=<span class="number">0</span>;   </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>当类声明中包含纯虚函数时，则不能创建该类的对象。这里的理念是，包含纯虚函数的类只能作基类。要成为真正的抽象基类(abstract base class,ABC),必须至少包含一个纯虚函数。原型中的=0使虚函数成为纯虚函数。总之，在原型中使用=0指出类是一个抽象基类，在类中可以不定义该函数。ABC描述的是至少使用一个纯虚函数的接口，从ABC派生出的类将根据派生类的具体特征，使用常规虚函数来实现这种接口。</p>
 <p>设计ABC之前，首先应开发一个模型–指出编程问题所需的类以及它们之间相互关系。一种学院派思想认为，如果要设计类继承层次，则只能将那些不会被用作基类的类设计为具体的类。</p>
-<p><strong>ABC要求具体派生类覆盖其纯虚函数–迫使派生类遵循ABC所设置的接口规则。这种模型在基于组件的编程模式中很常见，在这种情况下，使用ABC使用组件设计人员能够制定“接口约定”，这样确保了从ABC派生的所有组件都至少支持ABC指定的功能。</strong></p>
+<p><strong>ABC要求具体派生类覆盖其纯虚函数–迫使派生类遵循ABC所设置的接口规则。这种模型在基于组件的编程模式中很常见，在这种情况下，使用ABC使组件设计人员能够制定“接口约定”，这样确保了从ABC派生的所有组件都至少支持ABC指定的功能。</strong></p>
 <h3 id="13-7-继承和动态内存分配"><a href="#13-7-继承和动态内存分配" class="headerlink" title="13.7 继承和动态内存分配"></a>13.7 继承和动态内存分配</h3><p>当声明中的构造函数使用new操作符时，需要使用特殊方法：析构函数、复制构造函数和重载赋值操作符。</p>
 <p>当派生类构造函数不使用new操作符或静态成员变量时：</p>
 <ul>
-<li><p>如果没有定义析构函数，编译器将定义一个不执行任何操作的默认构造函数。实际上，派生类的默认构造函数总是要进行一些操作：执行自身的代码后调用基类析构函数。</p>
-</li>
-<li><p>成员复制将根据数据类型采用相应的复制方式，但复制类成员或继承的类组件哩，则是使用该类的复制构造函数完成的。所以派生类的默认复制构造函数使用显示的基类复制构造函数来复制派生类对象的基类数据部分。</p>
-</li>
-<li><p>类的默认同仁操作符将自动使用基类的同仁操作符来对基类组件进行赋值。</p>
-</li>
+<li>如果没有定义析构函数，编译器将定义一个不执行任何操作的默认构造函数。实际上，派生类的默认构造函数总是要进行一些操作：执行自身的代码后调用基类析构函数。</li>
+<li>成员复制将根据数据类型采用相应的复制方式，但复制类成员或继承的类组件时，则是使用该类的复制构造函数完成的。所以派生类的默认复制构造函数使用显示的基类复制构造函数来复制派生类对象的基类数据部分。</li>
+<li>类的默认赋值操作符将自动使用基类的赋值操作符来对基类组件进行赋值。</li>
 </ul>
 <p>当派生类构造函数使用new操作符或静态成员变量时，必须为派生类定义显式析构函数、复制构造函数和赋值操作符：</p>
 <ul>
-<li>派生类析构函数自动调用基类的析构函数，帮基自身的职责是对派生类构造函数执行工作的进行清理。</li>
+<li>派生类析构函数自动调用基类的析构函数，因此其自身的职责是对派生类构造函数执行工作的进行清理。</li>
 <li>派生类的复制构造函数只能访问派生类新增的成员，因此它必须调用基类的复制构造函数来处理共享的基类数据部分。</li>
 </ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ClassName::ClassName(<span class="keyword">const</span> ClassName &amp;rs):BaseClass(rs)</div><div class="line">&#123;</div><div class="line">     <span class="comment">//todo</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;ClassName::ClassName(<span class="keyword">const</span> ClassName &amp;rs):BaseClass(rs)</div><div class="line">&gt;&#123;</div><div class="line">&gt;     <span class="comment">//todo</span></div><div class="line">&gt;&#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 <p>成员初始化列表将一个派生类引用传递给基类构造函数。没有参数类型为派生类的引用的基类构造函数，也不需要这样的构造函数。因为复制构造函数派生类有一个以派生类为引用的参数，而基类引用可以指向派生类型。因此基类复制构造函数将使用参数为派生类的基类数据部分来构造新对象的基类部分。</p>
 </blockquote>
 <ul>
-<li>由于派生类使用了动态内存分配，所以它也需要一个显式赋值操作符。作为派生类的方法，它只能直接访问派生类的数据。然而派生类的显式赋值操作符必须负责所有继承的派生类对象的赋值，可以通过显式调用基类赋值操作符来完成。<blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt;ClassName&amp; ClassName::<span class="keyword">operator</span>=(<span class="keyword">const</span> ClassName &amp;rs):BaseClass(rs)</div><div class="line">&gt;&#123;</div><div class="line">&gt;     <span class="keyword">if</span>(<span class="keyword">this</span> == rs)</div><div class="line">&gt;         <span class="keyword">return</span> rs;</div><div class="line">&gt;     <span class="comment">//显式调用基类的赋值操作符 </span></div><div class="line">&gt;     BaseClass::<span class="keyword">operator</span>=(rs);</div><div class="line">&gt;     <span class="comment">//todo</span></div><div class="line">&gt;&#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-</blockquote>
+<li>由于派生类使用了动态内存分配，所以它也需要一个显式赋值操作符。作为派生类的方法，它只能直接访问派生类的数据。然而派生类的显式赋值操作符必须负责所有继承的派生类对象的赋值，可以通过显式调用基类赋值操作符来完成。<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ClassName&amp; ClassName::<span class="keyword">operator</span>=(<span class="keyword">const</span> ClassName &amp;rs):BaseClass(rs)</div><div class="line">&#123;</div><div class="line">     <span class="keyword">if</span>(<span class="keyword">this</span> == rs)</div><div class="line">         <span class="keyword">return</span> rs;</div><div class="line">     <span class="comment">//显式调用基类的赋值操作符 </span></div><div class="line">     BaseClass::<span class="keyword">operator</span>=(rs);</div><div class="line">     <span class="comment">//todo</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>总之，当基类和派生类都采用动态内存分配时，派生类的析构函数、复制构造函数以及同仁操作符都必须使用相应的基类方法来处理基类的元素。这种要求是通过三种不同的方式来满足的。对于析构函数，这是自动完成的；对于构造函数，这是通过在初始化成员列表中调用基类的复制构造函数来完成的；如果不这样做将自动调用基类的默认构造函数。对于赋值操作符，这是通过使用作用域解析操作符显式地调用基类的赋值操作符来完成。</p>
+<p>总之，当基类和派生类都采用动态内存分配时，派生类的析构函数、复制构造函数以及赋值操作符都必须使用相应的基类方法来处理基类的元素。这种要求是通过三种不同的方式来满足的。对于析构函数，这是自动完成的；对于构造函数，这是通过在初始化成员列表中调用基类的复制构造函数来完成的；如果不这样做将自动调用基类的默认构造函数。对于赋值操作符，这是通过使用作用域解析操作符显式地调用基类的赋值操作符来完成。</p>
 <p>因为友元不是成员函数，所以不能使用作用域解析操作符来指出要使用哪个函数。这个问题解决方法是使用强制类型转换，以便匹配原型时能够选择正确的函数。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">std</span>::ostream &amp; <span class="keyword">operator</span>&lt;&lt;(<span class="built_in">std</span>::ostream &amp;os, <span class="keyword">const</span> ClassName &amp; hs)</div><div class="line">&#123;</div><div class="line">    os&lt;&lt;(<span class="keyword">const</span> ClassName &amp;)hs;</div><div class="line">    <span class="comment">//todo;</span></div><div class="line">    <span class="keyword">return</span> hs;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="13-8-类设计回顾"><a href="#13-8-类设计回顾" class="headerlink" title="13.8 类设计回顾"></a>13.8 类设计回顾</h3><ul>
 <li>默认构造函数 </li>
 </ul>
-<p>默认构造函数要么没有参数，要么所有参数都有默认值，如果没有定义任何构造函数，编译器将定义默认构造函数，让您能够创建对象。自动生成的默认构造函数的另一个功能是，调用基类的默认构造函数以及调用本身是对象的成员所属类的默认构造函数。另外，如果派生类构造函数的成员初始化列表中没有显式地调用基类构造函数，则编译器将使用基类的默认构造函数来构造派生类对象的基类部分。如果定义了某种构造函数，编译器将不会定义默认构造函数。在这种情况下，如果需要默认构造函数，则必须自己提供。提供构造函数的动机之王是确保对象总能被正确地初始化。另外，如果类包含指针成员，则必须初始化这些成员。因此，最好提供一个显式默认构造函数，将所有的类数据成员都初始化为合理的值。</p>
+<p>默认构造函数要么没有参数，要么所有参数都有默认值，如果没有定义任何构造函数，编译器将定义默认构造函数，让您能够创建对象。自动生成的默认构造函数的另一个功能是，调用基类的默认构造函数以及调用本身是对象的成员所属类的默认构造函数。另外，如果派生类构造函数的成员初始化列表中没有显式地调用基类构造函数，则编译器将使用基类的默认构造函数来构造派生类对象的基类部分。如果定义了某种构造函数，编译器将不会定义默认构造函数。在这种情况下，如果需要默认构造函数，则必须自己提供。提供构造函数的动机之一是确保对象总能被正确地初始化。另外，如果类包含指针成员，则必须初始化这些成员。因此，最好提供一个显式默认构造函数，将所有的类数据成员都初始化为合理的值。</p>
 <ul>
 <li>复制构造函数</li>
 </ul>
-<p>复制构造函数接受基所属类的对象作为参数。在以下情况，将使用复制构造函数：</p>
+<p>复制构造函数接受其所属类的对象作为参数。在以下情况，将使用复制构造函数：</p>
 <ol>
 <li>将新的对象初始化为一个同类对象。</li>
 <li>按值将对象传递给函数。</li>
@@ -161,7 +155,7 @@
 <ul>
 <li>赋值操作符</li>
 </ul>
-<p>默认的赋值操作符用于处理同类对象之间的赋值。不要将赋值与初始化混淆了。如果语句创建新的对象，则使用初始化；如果语句修改已有对象的值。则是赋值。编译器不会生成将一种赋值给另一种 类型的赋值操作符。如果希望能够将一种对象赋值给另一个对象，则方法之一是显式定义相应的赋值操作符。</p>
+<p>默认的赋值操作符用于处理同类对象之间的赋值。不要将赋值与初始化混淆了。如果语句创建新的对象，则使用复制构造函数；如果语句修改已有对象的值，则是赋值。编译器不会生成将一种赋值给另一种类型的赋值操作符。如果希望能够将一种对象赋值给另一个对象，则方法之一是显式定义相应的赋值操作符。</p>
 <ul>
 <li>构造函数</li>
 </ul>
@@ -186,10 +180,10 @@
 <ul>
 <li>使用const </li>
 </ul>
-<p>可能用const来确保方法不修改参数（修饰参数），确保方法不修改调用它的对象（修饰方法代码块）。确保引用或指针返回的值不能用于修改对象的数据，使之成为左值。</p>
+<p>可用const来确保方法不修改参数（修饰参数），确保方法不修改调用它的对象（修饰方法代码块）。确保引用或指针返回的值不能用于修改对象的数据，使之成为左值。</p>
 <p>如果函数将参数声明为指向const的引用或指针，则不能将该参数传递给另一个函数，除非后者也确保了参数不会被修改。</p>
-<h4 id="13-8-3-公有继承的考虑因素"><a href="#13-8-3-公有继承的考虑因素" class="headerlink" title="13.8.3 公有继承的考虑因素"></a>13.8.3 公有继承的考虑因素</h4><p><strong>is-a</strong>关系**：在某些情况下，最好的方法可能是创建包含纯虚函数的抽象数据类，并从它派生出其它类。</p>
-<p><strong>为什么不能被继承</strong>：构造函数是不能被继承的，也就是说，创建派生类对象时，必须调用派生类的构造函数。不过，派生类构造函数通常使用成员初始化列表句法来调用基类构造函数，以合建派生对象的基类部分。如果派生类构造函数没有使用成员初始化列表句法显式调用基类构造函数，将使用基类的默认构造函数。在继承链中，每个类都要可以使用初始化列表将信息传递回相信的基类。析构函数也是不能继承的。不过，在释放对象时，程序将首先调用派生类的析构函数，然后调用基类的析构函数。如果基类有默认析构函数，编译器将为派生类生成默认析构函数。通常，对于基类，其析构函数应设置为虚拟的。</p>
+<h4 id="13-8-3-公有继承的考虑因素"><a href="#13-8-3-公有继承的考虑因素" class="headerlink" title="13.8.3 公有继承的考虑因素"></a>13.8.3 公有继承的考虑因素</h4><p><strong>is-a关系</strong>：在某些情况下，最好的方法可能是创建包含纯虚函数的抽象数据类，并从它派生出其它类。</p>
+<p><strong>为什么不能被继承</strong>：构造函数是不能被继承的，也就是说，创建派生类对象时，必须调用派生类的构造函数。不过，派生类构造函数通常使用成员初始化列表句法来调用基类构造函数，以创建派生对象的基类部分。如果派生类构造函数没有使用成员初始化列表句法显式调用基类构造函数，将使用基类的默认构造函数。在继承链中，每个类都要可以使用初始化列表将信息传递回相近的基类。析构函数也是不能继承的。不过，在释放对象时，程序将首先调用派生类的析构函数，然后调用基类的析构函数。如果基类有默认析构函数，编译器将为派生类生成默认析构函数。通常，对于基类，其析构函数应设置为虚拟的。</p>
 <p><strong>赋值操作符</strong>：派生类继承的方法的特征标与基类完全相同，但赋值操作符的特征标随类而异，这是因为它包含一个类型为其所属类的的参数。如果编译器发现程序将一个对象赋给同一个类的另一个对象，它将自动为这个类提供一个赋值操作符。这个操作符的默认或隐式版本将采用成员赋值，即将原对象的相应成员赋给目标对象的每个成员。不过，如果对象属于基类，编译器将使用基类同仁操作符来处理派生对象中基类部分的同仁。如果显式地为基类提供赋值操作符，将使用该操作符。与此相似，如果成员是另一个类的对象，则对于该成员，将使用基所属类的赋值操作符。如果类构造函数使用new来初始化指针，则需要提供一个显式赋值操作符。如果派生类使用了new，则必须提供显式赋值操作符。</p>
 <p>如果派生类包含了这样的构造函数，即对将基类对象转换为派生类对象进行了定义，则可以将基类对象赋给派生对象。如果派生类定义了用于将基类对象赋给派生对象的同仁操作符，则也可以这样做。如果上述二个条件都不满足，则不能这样做，除非使用显式强制类型转换。</p>
 <p><strong>私有成员与保护成员</strong>：对派生类而言，保护成员类似于公有成员；但对于外部而言，保护成员与私有成员类似。派生类可以直接访问基类的保护成员，但只能通过基类的成员函数来访问私有成员。因此，将基类成员设置为私有的可以提高安全性，而将它们设置为保护成员则可简化代码的编写工作，并提高访问速度。</p>
@@ -232,7 +226,7 @@
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(2).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(2).html</id>
     <published>2017-06-04T15:16:05.036Z</published>
-    <updated>2017-06-07T15:33:13.415Z</updated>
+    <updated>2017-06-13T13:26:10.589Z</updated>
     
     <content type="html"><![CDATA[<h2 id="11-使用类"><a href="#11-使用类" class="headerlink" title="11.使用类"></a>11.使用类</h2><p><strong>操作符重载</strong>是一种形式的C++多态，操作符重载将重载的概念扩展到操作符上，允许赋予C++操作符多种含义。要重载操作符，需使用被称为操作符函数的特殊函数形式。操作符函数的格式如下：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ClassName total, coding, fixing;</div><div class="line"><span class="comment">//可以像使用成员方法一样使用操作符重载</span></div><div class="line">total = coding.<span class="keyword">operator</span>+(fixing);</div><div class="line"><span class="comment">//以可以使用操作符表示法：</span></div><div class="line">total = coding + fixing;</div><div class="line"></div><div class="line"><span class="comment">//注意，在操作符表示法中，操作符左侧的对象（这里为coding）是调用对象，操作符右边（这里是fixing)是作为参数被传递的对象。</span></div></pre></td></tr></table></figure>
@@ -367,7 +361,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line">	<span class="keyword">private</span>:</div><div class="line">		<span class="keyword">struct</span> Node</div><div class="line">		&#123;</div><div class="line">			<span class="comment">//tode</span></div><div class="line">		&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>C++新特性：在类声明中嵌套结构或类声明，通过将Node声明放在Queue类中，可以使其作用域为整个类。也就是说，Node是这样一种类型：可以使用它来声明类成员，也可以将它作为类方法中的类型名称，但只能在类中使用。如果声明在类的私有部分进行的，则只能在这个类使用被声明的类型，如果声明是在公有部分进行的，则可以从类的外部通过作用域解析操作符使用被声明的类型。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line">	Queue();</div><div class="line">&#125;</div><div class="line">Queue::Queue():refValue(value1),constValue(refValue)</div><div class="line">&#123;</div><div class="line">	<span class="comment">//tode</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>对需要在分配内存时就要初始化的成员(const成员，引用变量成员)，则必须使用成员初始化列表初始化。</p>
+<p>对需要在分配内存时就要初始化的成员(const成员，引用变量成员,基类构造)，则必须使用成员初始化列表初始化。</p>
 <p>从概念上说，调用构造函数时，对象将在括号中的代码执行之前被创建。因此调用Queue()构造函数将导致程序首先给成员变量分配内存。然后，程序流程进入到括号中，使用常规的赋值方式将值存储到内存中。因此，对于const成员变量和引用成员变量，必须在执行到构造函数体之前，即创建对象时进行初始化。C++提供了一种特殊的句法来完成上述工作，它叫作成员初始化列表。成员初始化列表由逗号分隔的初始化列表组成(前面带冒号)。它位于参数列表的右括号之后，函数体左括号之前。</p>
 <p>初值可以是常量或构造函数的参数列表中的参数。只有构造函数可以使用这种初始化列表句法。使用成员初始化列表的效率更高。</p>
 <p>数据成员被初始化的顺序与它们出现在类声明中的顺序相同，与初始化器中的排列顺序无关。</p>
