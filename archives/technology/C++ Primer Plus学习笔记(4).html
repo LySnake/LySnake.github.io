@@ -15,15 +15,16 @@
 
 
 
-<meta name="description" content="LySnake个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LySnake个人博客">
-<meta property="og:url" content="http://LySnake.github.io/archives/2017/index.html">
+<meta name="description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="it">
+<meta property="og:url" content="http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(4).html">
 <meta property="og:site_name" content="LySnake个人博客">
-<meta property="og:description" content="LySnake个人博客">
+<meta property="og:description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
+<meta property="og:updated_time" content="2017-06-19T15:00:37.081Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LySnake个人博客">
-<meta name="twitter:description" content="LySnake个人博客">
+<meta name="twitter:title" content="it">
+<meta name="twitter:description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -55,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives: 2017 | LySnake个人博客</title>
+<title>it | LySnake个人博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -65,8 +66,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -274,385 +275,231 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-C++ Primer Plus学习笔记(4)" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="../technology/C++ Primer Plus学习笔记(4).html" class="archive-article-date">
-      <time datetime="2017-06-19T14:28:39.997Z" itemprop="datePublished">06-19</time>
+    <div class="article-meta">
+      <a href="" class="article-date">
+      <time datetime="2017-06-19T14:28:39.997Z" itemprop="datePublished">2017-06-19</time>
 </a>
 
+ 
+    <a href="#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count" ></span>
+        
+        
+    </a>
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../technology/C++ Primer Plus学习笔记(4).html">it</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      it
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
     <a class="article-category-link" href="../../categories/archives/">archives</a><a class="article-category-link" href="../../categories/archives/technology/">technology</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/c/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/c-primer-plus/">C++ Primer Plus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/cocos2d-x/">cocos2d-x</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="14-C-中的代码重用"><a href="#14-C-中的代码重用" class="headerlink" title="14 C++中的代码重用"></a>14 C++中的代码重用</h2><h3 id="14-1-包含对象成员的类"><a href="#14-1-包含对象成员的类" class="headerlink" title="14.1 包含对象成员的类"></a>14.1 包含对象成员的类</h3><p><strong>has-a</strong>:本身是另一个类的对象作为对象成员。这种方法称为包含、组合或层次化。另一种方法是人敷衍私有或保护继承。获得接口是is-a关系的组成部分。而使用组合，类可以获得实现，但不能获得接口。不继承接口是has-a关系的组成部分。</p>
+<p><strong>多重继承</strong>：使得能够使用两个或更多的基类派生出来新的类，将基类的功能组合在一起。</p>
+<p>模板特性意味着声明对象时，必须指定具体的数据类型。</p>
+<p>对于继承的基类对象部分，构造函数在成员初始化列表中使用类名来调用特定的基类构造函数。对于成员对象，构造函数则使用成员名。C++要求在构建对象的其它部分之前，先构建继承对象的所有成员对象。因此，如果初始化列表，C++将使用成员对象类的默认构造函数。</p>
+<h3 id="14-2-私有继承"><a href="#14-2-私有继承" class="headerlink" title="14.2 私有继承"></a>14.2 私有继承</h3><p>C++还有另一种实现has-a关系的途径–私有继承，基类的公有成员和保护成员都将成为派生类的私有成员。这意味着基类方法将不会成为派生对象公有接口的一部分，但可以在派生类的成员函数中使用它们。</p>
+<p>使用公有继承，基类的公有方法将成为派生类的公有方法。简而言之，派生类将继承基类的接口：这是is-a关系的一部分。使用私有继承，基类的公有方法将成为派生类的私有方法，简而言之，派生类不继承基类的接口。正如从被包含对象中看到的，这种不完全继承是has-a关系的一部分。</p>
+<p>包含将对象作为一个命名的成员对象添加到类中，而私有继承将对象作为一个未被命名的继承对象添加到类中。</p>
+<p>当在头文件使用class声明派生类时，如果没有使用public等关键字声明如何继承基类，则以默认方式private方式继承。</p>
+<p>使用多个基类的继承被称为多重继承（multiple inheritance,MI）.</p>
+<p>对于继承基类的对象部分，使用初始化列表方法，使用基类的构造函数初始化基类的对象部分。</p>
+<p>私有继承时，通过强制类型转换访问基类对象部分。</p>
+<p>用类名显式地限定函数名不适合于码元函数，这是因为码元不属于类。不过，可以通过显式地转换为基类来调用正确的函数。在私有继承中，在不进行显式类型转换的情况下，不能将指向派生类的引用或指针赋给基类引用或指针(基类公有方法通过私有继承成为派生类的私有方法)。另外，由于派生类使用的是多继承，编译器将无法确定应转换成哪个基类，如果两个基类都提供了相同的函数。</p>
+
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="">it</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">LySnake</a></p>
+        <p><span>发布时间:</span>2017-06-19, 22:28:39</p>
+        <p><span>最后更新:</span>2017-06-19, 23:00:37</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="" title="it">http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(4).html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(4).html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="C++ Primer Plus学习笔记(3).html">
+                    C++ Primer Plus学习笔记(3)
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#14-C-中的代码重用"><span class="toc-number">1.</span> <span class="toc-text">14 C++中的代码重用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#14-1-包含对象成员的类"><span class="toc-number">1.1.</span> <span class="toc-text">14.1 包含对象成员的类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-2-私有继承"><span class="toc-number">1.2.</span> <span class="toc-text">14.2 私有继承</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"true"];
+    </script>
+
+
+
     
+<div class="share">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="../technology/C++ Primer Plus学习笔记(3).html" class="archive-article-date">
-      <time datetime="2017-06-11T09:15:03.000Z" itemprop="datePublished">06-11</time>
-</a>
+
+    
+</div>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../technology/C++ Primer Plus学习笔记(3).html">C++ Primer Plus学习笔记(3)</a>
-    </h1>
-  
 
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="../../categories/archives/">archives</a><a class="article-category-link" href="../../categories/archives/technology/">technology</a>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="archives/technology/C++ Primer Plus学习笔记(4).html" data-title="it" data-url="http://LySnake.github.io"></div>
+    <script>
+        var duoshuoQuery = {short_name:"lysnake"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + "//" + document.location.host + "/js/embed.js";
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+            // Add comment count
+            $(function(){
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=lysnake&threads=archives/technology/C++ Primer Plus学习笔记(4).html&callback=?";
+                $.getJSON(jsonUrl, function(result){
+                    $.each(result.response, function(i, field){
+                        var value = field.comments;
+                        if (value > 0) {
+                            $(".count-comment").text(value);
+                            return;
+                        }
+                    })
+                })
+            })
+        
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="C++ Primer Plus学习笔记(3).html" title="下一篇: C++ Primer Plus学习笔记(3)">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/c/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/c-primer-plus/">C++ Primer Plus</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="../technology/C++ Primer Plus学习笔记(2).html" class="archive-article-date">
-      <time datetime="2017-06-04T15:16:05.036Z" itemprop="datePublished">06-04</time>
-</a>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="">it</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(3).html">C++ Primer Plus学习笔记(3)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(2).html">C++ Primer Plus学习笔记(2)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(1).html">C++ Primer Plus学习笔记(1)</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑常见错误诊断.html">电脑小白系列之电脑常见错误诊断</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑硬件了解.html">电脑小白系列之电脑硬件了解</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑日常管理.html">电脑小白系列之电脑日常管理</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="Github Pages与Hexo框架博客的搭建.html">Github Pages与Hexo框架博客的搭建</a></li></ul>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../technology/C++ Primer Plus学习笔记(2).html">C++ Primer Plus学习笔记(2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="../../categories/archives/">archives</a><a class="article-category-link" href="../../categories/archives/technology/">technology</a>
-    </div>
 
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/c/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/c-primer-plus/">C++ Primer Plus</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="../technology/C++ Primer Plus学习笔记(1).html" class="archive-article-date">
-      <time datetime="2017-05-21T10:47:33.000Z" itemprop="datePublished">05-21</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../technology/C++ Primer Plus学习笔记(1).html">C++ Primer Plus学习笔记(1)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="../../categories/archives/">archives</a><a class="article-category-link" href="../../categories/archives/technology/">technology</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/c/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/c-primer-plus/">C++ Primer Plus</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="../technology/电脑小白系列之电脑常见错误诊断.html" class="archive-article-date">
-      <time datetime="2017-05-21T10:45:03.000Z" itemprop="datePublished">05-21</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../technology/电脑小白系列之电脑常见错误诊断.html">电脑小白系列之电脑常见错误诊断</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="../../categories/archives/">archives</a><a class="article-category-link" href="../../categories/archives/technology/">technology</a>
-    </div>
-
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="../technology/电脑小白系列之操作系统安装.html" class="archive-article-date">
-      <time datetime="2017-05-05T17:34:38.000Z" itemprop="datePublished">05-06</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../technology/电脑小白系列之操作系统安装.html">电脑小白之操作系统安装</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="../../categories/archives/">archives</a><a class="article-category-link" href="../../categories/archives/technology/">technology</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/电脑小白/">电脑小白</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="../technology/电脑小白系列之电脑硬件了解.html" class="archive-article-date">
-      <time datetime="2017-02-19T09:46:46.000Z" itemprop="datePublished">02-19</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../technology/电脑小白系列之电脑硬件了解.html">电脑小白系列之电脑硬件了解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="../../categories/archives/">archives</a><a class="article-category-link" href="../../categories/archives/technology/">technology</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/电脑小白/">电脑小白</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="../technology/电脑小白系列之电脑日常管理.html" class="archive-article-date">
-      <time datetime="2017-02-09T13:03:48.000Z" itemprop="datePublished">02-09</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../technology/电脑小白系列之电脑日常管理.html">电脑小白系列之电脑日常管理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="../../categories/archives/">archives</a><a class="article-category-link" href="../../categories/archives/technology/">technology</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/电脑小白/">电脑小白</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="../technology/电脑小白系列之常用软件推荐.html" class="archive-article-date">
-      <time datetime="2017-02-06T07:09:00.190Z" itemprop="datePublished">02-06</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../technology/电脑小白系列之常用软件推荐.html">常用软件推荐</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="../../categories/archives/">archives</a><a class="article-category-link" href="../../categories/archives/technology/">technology</a>
-    </div>
-
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="../technology/Github Pages与Hexo框架博客的搭建.html" class="archive-article-date">
-      <time datetime="2017-01-22T18:45:57.418Z" itemprop="datePublished">01-23</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../technology/Github Pages与Hexo框架博客的搭建.html">Github Pages与Hexo框架博客的搭建</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="../../categories/archives/">archives</a><a class="article-category-link" href="../../categories/archives/technology/">technology</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/github-pages/">Github Pages</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/hexo/">Hexo</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
