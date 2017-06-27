@@ -257,5 +257,109 @@ public:
 ```
 Hold模板类是在私有部分声明的，因此只能在Beta类中访问它。
 
+### 14.4.8 将模板用作参数 ###
 
+```C++
+#include<iostream>
+#include　"stacktp.h"
+//模板参数
+template<template <typename T> class Thing>
+class Crab
+{
+private:
+    Thing<int> s1;
+    Thing<double> s2;
+public:
+    Crab();
+    bool push(int a, double x);
+}
 
+int main()
+{
+  Crab<Stack> nebula;
+  //todo
+}
+```
+Crab模板的成员s1、s2，使用模板参数声明的Thing模板去实例化成员，当使用时模板参数为Stack，则使用Stack去实例化s1、s2。
+
+### 14.4.9 模板类和友元 ###
+模板类声明也可以有码元，模板的友元分3类：
+
+- 非模板友元
+- 约束模板友元，即友元的类型取决于类被实例化时的类型。
+- 非约束模板码元，即友元的所有具体化都是类的每一个具体化的友元。
+
+**非模板友元**：为具体模板实例化编写不同的友元。如果友元不带模板类型参数，则所有模板实例化共用一个友元函数，如果友元带模板类型参数，则为不同类型的模板实例化编写相应的友元。
+
+**模板类的约束模板友元函数**：约束模板友元函数是在类外面声明的模板的具体化。
+
+```C++
+template <typename TT>
+CLASS HasFriendT
+{
+private: 
+    TT item;
+    static int ct;
+public:
+    HasFriendT(const TT &i):item(i){ct++;}
+    ~HasFriendT(){ct--;}
+
+    //声明中的<>指出这是模板具体化。
+    friend void counts<TT>();
+    //对于report，<>可以为空，这是因为可以从函数参数推断出模板类型参数。
+    friend void report<> (HasFriendT<TT> &);
+}
+
+//模板类外声明的模板函数友元
+template <typename T>
+int HasFriendT<T>::ct = 0;
+
+template <typename T>
+void counts()
+{
+  cout << hf.item << endl;
+}
+
+void main()
+{
+    //声明中的<>指出这是模板具体化。
+    counts<int>();
+    
+}
+```
+**模板类的非约束模板友元函数**：通过在类内部声明模板，可以创建非约束码元函数，即每个函数具体化都是每个类具体化的码元。对于非约束友元，友元模板类型参数与模板类型参数是不同的。
+
+```C++
+template <typename T>
+class ManyFriend
+{
+private:
+    T item;
+public:
+    ManyFriend (const T &i):item(i) {}
+     
+    //模板类内声明的模板函数友元，定义与类成员模板函数一起定义
+    template<typename C, typename D> 
+    friend void show2(C & c, D & d);
+}
+
+template < typename C, typename D> 
+void show2(C & c, D & d)
+{
+    cout << c.item << "," << d.item << endl;
+}
+
+int main()
+{
+    //todo
+    show2(hfdb, hfi2);
+    //todo
+}
+```
+
+### 14.5 总结 ###
+使用私有继承时，基类的公有成员和保护成员将成为派生类的私有成员；使用保护继承时，基类的公有成员和保护成员将成为派生类的保护成员。无论使用哪种继承，基类的公有接口都将成为派生类的内部接口。这有时候被称为继承实现，但不继承接口，因为派生类对象不能显式地使用基类的接口。因此，不能将派生对象看作是一种基类的对象。由于这个原因，在不进行显式类型转换的情况下，基类指针或引用将不能指向派生类对象。
+
+还可以通过开发包含对象成员的类来重用类代码。这种方法被称为包含、 层次化或组合，它建立的也是has-a关系。与私有继承和保护继承相比，包含更容易实现和使用，所以通常优先采用这种方式。不过，私有继承和保护继承与包含有一些不同的功能。例如，继承允许派生类访问基类的保护成员；还允许派生类重新定义从基类那里继承的虚函数。因为包含不是继承，所以通过包含来重用类代码时， 不能使用这些功能。 另一方面，如果需要使用某个类的几个对象，则用包含更适合。
+
+可以提供显式具体化---覆盖模板定义的具体类声明。方法是以template<>打头，然后是模板类名称，再加上尖括号（其中包含要具体化的类型）。
