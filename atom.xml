@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://LySnake.github.io/"/>
-  <updated>2017-07-03T14:40:47.183Z</updated>
+  <updated>2017-07-04T15:40:25.928Z</updated>
   <id>http://LySnake.github.io/</id>
   
   <author>
@@ -20,47 +20,75 @@
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(5).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(5).html</id>
     <published>2017-07-01T14:28:08.127Z</published>
-    <updated>2017-07-03T14:40:47.183Z</updated>
+    <updated>2017-07-04T15:40:25.928Z</updated>
     
     <content type="html"><![CDATA[<h2 id="15-友元、异常和其他"><a href="#15-友元、异常和其他" class="headerlink" title="15. 友元、异常和其他"></a>15. 友元、异常和其他</h2><h3 id="15-1-友元类"><a href="#15-1-友元类" class="headerlink" title="15.1 友元类"></a>15.1 友元类</h3><p>将类作为友元，友元类的所有方法都可以访问原始类的私有成员和保护成员。另外，也可以做更严格的限制，只将特定的成员函数指定为另一个类的友元。</p>
-<p>友元声明可以位于公胡、私有或保护部分，其所在的位置无关紧要。由于友元类中的方法使用了包含类相关信息，所以编译器必须了解包含类后才能处理友元类。</p>
+<p>友元声明可以位于公有、私有或保护部分，其所在的位置无关紧要。由于友元类中的方法使用了包含类相关信息，所以编译器必须了解包含类后才能处理友元类。</p>
 <p>类友元是一种自然用语，用于表示一些关系。如果不使用某些形式的友元关系，则必须将包含类的私有部分设置为公有，或者创建一个笨拙的、大型类来包含这二个类。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Tv</div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="keyword">friend</span> <span class="keyword">class</span> Remote; </div><div class="line">    <span class="comment">//todo</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Remote</div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">set_chan</span><span class="params">(Tv &amp;t, <span class="keyword">int</span> c)</span></span>&#123;t.channel = c&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="15-2-友元成员函数"><a href="#15-2-友元成员函数" class="headerlink" title="15.2 友元成员函数"></a>15.2 友元成员函数</h3><p>确实可以选择仅让特定的类成员成为加一个类的友元，而不必让整个类成为友元，不过这样做稍微有点麻烦，必须小心排列各种声明和定义的顺序。为此，将使用前向声明来处理。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Tv;     		<span class="comment">//前向声明</span></div><div class="line"><span class="keyword">class</span> Remote&#123;...&#125;;  <span class="comment">//友元类</span></div><div class="line"><span class="keyword">class</span> Tv&#123;...&#125;;      <span class="comment">//包含类</span></div></pre></td></tr></table></figure>
+<h3 id="15-2-友元成员函数"><a href="#15-2-友元成员函数" class="headerlink" title="15.2 友元成员函数"></a>15.2 友元成员函数</h3><p>确实可以选择仅让特定的类成员成为另一个类的友元，而不必让整个类成为友元，不过这样做稍微有点麻烦，必须小心排列各种声明和定义的顺序。为此，将使用前向声明来处理。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Tv;           <span class="comment">//前向声明</span></div><div class="line"><span class="keyword">class</span> Remote&#123;...&#125;;  <span class="comment">//友元类</span></div><div class="line"><span class="keyword">class</span> Tv&#123;...&#125;;      <span class="comment">//包含类</span></div></pre></td></tr></table></figure>
 <p>另外，可以把友元类的成员函数，实现写在Tv类的后边（头文件中），加inline关键字实现成员方法为内联方法，这样，可以让编译器不在类声明中就要知道包含类的过多信息，避免因编译器不知道包含类的成员信息而无法编译。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> TVFM_H_</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> TVFM_H_</span></div><div class="line"></div><div class="line"><span class="keyword">class</span> Tv;   <span class="comment">//前向声明</span></div><div class="line"><span class="keyword">class</span> Remote </div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">   <span class="keyword">enum</span> &#123;TV&#125;;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">   <span class="keyword">int</span> mode;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">   Remote(<span class="keyword">int</span> m =TV):mode(TV)&#123;&#125;</div><div class="line">   <span class="function"><span class="keyword">bool</span> <span class="title">set_mode</span><span class="params">(Tv &amp;t)</span></span>;</div><div class="line">   <span class="keyword">void</span> Remote::set_chan(Tv &amp;t, <span class="keyword">int</span> c);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Tv</div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="keyword">friend</span> <span class="keyword">void</span> Remote::set_chan(Tv &amp;t, <span class="keyword">int</span> c);</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="keyword">int</span> channel;</div><div class="line"><span class="comment">//todo</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">inline</span> <span class="keyword">void</span> Remote::set_chan(Tv &amp;t, <span class="keyword">int</span> c)&#123;t.channel = c;&#125;</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
 <p>内联函数的链接性是内部的，这意味着函数定义必须在使用函数的文件中，在这个例子中，内联定义位于头文件中，因此在使用函数的文件中包含头文件可确保将定义放在正确的地方。也可以将定义放在实现文件中，但必须删除关键字inline，这样函数的链接性将是外部的。</p>
-<h3 id="15-1-3-其他友好关系"><a href="#15-1-3-其他友好关系" class="headerlink" title="15.1.3 其他友好关系"></a>15.1.3 其他友好关系</h3><p><strong>二个类相互成为友元</strong>：当二个类都要修改另一个类的成员信息时。</p>
+<h3 id="15-1-3-其他友好关系"><a href="#15-1-3-其他友好关系" class="headerlink" title="15.1.3 其他友好关系"></a>15.1.3 其他友好关系</h3><p><strong>二个类相互成为友元</strong>：当二个类都要相互修改另一个类的成员信息时。</p>
 <p><strong>共同的友元</strong>：函数需要访问二个类的私有数据。从逻辑上看，这样的函数应是每个类的成员函数，但这是不可能的，它可以是一个类的成员，同时是另一个类的友元，不过有时将函数作为二个类的友元更合理。</p>
 <h3 id="15-2-嵌套类"><a href="#15-2-嵌套类" class="headerlink" title="15.2 嵌套类"></a>15.2 嵌套类</h3><p>在C++中，可以将类声明放在另一个类中。在另一个类中声明的类被称为嵌套类，它通过提供新的类型类作用域来避免名称混乱。包含类的成员函数可以创建和使用被嵌套类的对象；而声明位于公有部分，才能在包含类的外面使用嵌套类，而且必须使用作用域解析操作符。</p>
 <p>对类进行嵌套与包含并不同。包含意味着将类对象作为另一个类的成员，而对类进行嵌套不创建类成员，而是定义了一种类型，该类型仅在包含嵌套类声明的类中有效。</p>
 <p>由于结构体是一种其成员在默认情况下为公有的类，所以Node结构体实际上是一个嵌套类，但该定义并没有充分利用类的功能。具体地说，它没有显式构造函数。可以如下添加：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line">	<span class="keyword">class</span> Node</div><div class="line">	&#123;</div><div class="line">	 <span class="keyword">public</span>:</div><div class="line">     	Item item;</div><div class="line">		Node* next;</div><div class="line">		Node(<span class="keyword">const</span> Item &amp;i):item(i),next(<span class="number">0</span>)&#123;&#125;</div><div class="line">	&#125;;</div><div class="line"><span class="comment">//todo</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="15-2-1-嵌套类和访问权限"><a href="#15-2-1-嵌套类和访问权限" class="headerlink" title="15.2.1 嵌套类和访问权限"></a>15.2.1 嵌套类和访问权限</h3><p>嵌套类的声明位置决定了嵌套类的作用域，即它决定了程序的哪些部分可以创建这种类的对象。其次，和其他类一样，嵌套类的公有部分、保护部分和私有部分控制了对类成员的访问。</p>
 <p>如果嵌套类是在另一个类的私有部分声明的，则只有后者知道它。另外，类的成员的默认访问权限是私有的。</p>
-<p>如果嵌套类是在另一个类的保护部分声明的，则它对于后者来说是可见的，但是对于外部世界则是不可见的。不过，在这种情况中，派生类将知道嵌套类，并可以直接创建这种类型的对象。如果嵌套类是在另一个类的仅有部分声明的，则允许后者、后者的派生类以及外部世界使用它，轩为它是公有的。不过，由于嵌套类的作用域为包含它的类，因此外部世界使用它时，使用类限定符。</p>
-<p>嵌套结构和枚举的作用域与些相同。其实，很多程序员都使用公有枚举来提供可供客户程序员使用的类常数。</p>
-<p>|声明位置|包含它的类是否可以使用它|从包含它的类派生而来的类是否可以使用它|外部世界是否可以使用|<br>|&lt;—-&gt;|&lt;—-&gt;|&lt;—-&gt;|&lt;—-&gt;|<br>|私有部分|是|否|否|<br>|保护部分|是|是|否|<br>|公有部分|是|是|是，通过类限定符来使用|</p>
+<p>如果嵌套类是在另一个类的保护部分声明的，则它对于后者来说是可见的，但是对于外部世界则是不可见的。不过，在这种情况中，派生类将知道嵌套类，并可以直接创建这种类型的对象。如果嵌套类是在另一个类的公有部分声明的，则允许后者、后者的派生类以及外部世界使用它，因为它是公有的。不过，由于嵌套类的作用域为包含它的类，因此外部世界使用它时，使用类限定符。</p>
+<p>嵌套结构和枚举的作用域有些相同。其实，很多程序员都使用公有枚举来提供可供客户程序员使用的类常数。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">声明位置</th>
+<th style="text-align:center">包含它的类是否可以使用它</th>
+<th style="text-align:center">从包含它的类派生而来的类是否可以使用它</th>
+<th style="text-align:center">外部世界是否可以使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">私有部分</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">保护部分</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">公有部分</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是，通过类限定符来使用</td>
+</tr>
+</tbody>
+</table>
 <h3 id="15-2-2-模板中的嵌套"><a href="#15-2-2-模板中的嵌套" class="headerlink" title="15.2.2 模板中的嵌套"></a>15.2.2 模板中的嵌套</h3><p>STL中的迭代器就是通过模板中嵌套类定义实现的，并且可以与包含模板使用同样的类型作为参数而不用再使用template声明。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> QUEUETP_H_</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> QUEUETP_H_</span></div><div class="line"></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Item&gt;</div><div class="line"><span class="keyword">class</span> QueueTP</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="keyword">enum</span>&#123;Q_SIZE = <span class="number">10</span>&#125;;</div><div class="line"></div><div class="line">	<span class="keyword">class</span> Node</div><div class="line">	&#123;</div><div class="line">	<span class="keyword">public</span>:</div><div class="line">	    Item item;</div><div class="line">	    Node *next;</div><div class="line">	    Node(<span class="keyword">const</span> Item &amp;i):item(i),next(<span class="number">0</span>)&#123;&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"><span class="comment">//todo</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
-<h3 id="15-3-异常"><a href="#15-3-异常" class="headerlink" title="15.3 异常"></a>15.3 异常</h3><p>程序有时会遇到运行阶段的错误，导致程序无法正常地运行下去。例如，程序可能试图打开一个不可用的文件，请求过多的内在，或者遭遇不能容忍的值。通常，程序员都会试图这种意外的情况。C++异常为处理这种情况提供了一种功能强大而灵活的工具。有些编译器默认关闭这种特性，可能需要使用编译器选项来启用它。</p>
+<h3 id="15-3-异常"><a href="#15-3-异常" class="headerlink" title="15.3 异常"></a>15.3 异常</h3><p>程序有时会遇到运行阶段的错误，导致程序无法正常地运行下去。例如，程序可能试图打开一个不可用的文件，请求过多的内存，或者遭遇不能容忍的值。通常，程序员都会试图避免这种意外的情况。C++异常为处理这种情况提供了一种功能强大而灵活的工具。有些编译器默认关闭这种特性，可能需要使用编译器选项来启用它。</p>
 <p>abort()函数的原型位于头文件cstdlib（或stdlib.h)中，其典型实现是向标准错误流(即cerr使用的错误流)发送消息abnormal program termination (程序异常终止)，然后终止程序。它还返回一个随实现而异的值，告诉操作系统（如果程序是由另一个程序调用的，则告诉父进程），处理失败。abort()是否刷新文件缓冲区（用于存储读写到文件中的数据的内存区域）取决于实现。</p>
 <h3 id="15-3-3-异常机制"><a href="#15-3-3-异常机制" class="headerlink" title="15.3.3 异常机制"></a>15.3.3 异常机制</h3><p>C++异常是对程序运行过程中发生的异常情况（例如被0除）的一种响应。异常提供了将控制权从程序的一个部分传递到另一部分的途径。对异常的处理有3个组成部分：</p>
 <ul>
 <li>引发异常</li>
 <li>捕获有处理程序的异常</li>
-<li><p>使用try块</p>
-<p>throw语句实际上是跳转，即命令程序跳到另一条语句。throw关键字表示引发异常，紧随其后的值（例如字符串或对象）指出了异常的特征。</p>
-</li>
+<li>使用try块</li>
 </ul>
+<p>throw语句实际上是跳转，即命令程序跳到另一条语句。throw关键字表示引发异常，紧随其后的值（例如字符串或对象）指出了异常的特征。</p>
 <p>程序使用异常处理程序来捕获异常，异常处理程序位于要处理问题的程序中。catch关键字表示捕获异常。处理程序以关键字catch开头，随后是位于括号中的类型声明，它指出了异常处理程序要响应的异常类型。然后是一个用花括号括起的代码块，指出要采取的措施。catch关键字和异常类型用作标签，指出当异常被引发时，程序应跳到这个位置执行。异常处理程序也被称为catch块。</p>
 <p>try块标识其中特定的异常可能被激活的代码块，它后面跟一个或多个catch块。try块是由关键字try指示的，关键字try的后面是一个由花括号括起的代码块，表明需要注意这些代码引发的异常。</p>
 <p>如果try块中某条语句导致异常被引发，则后面的catch块将对异常进行处理。如果程序在try块的外面产生异常，将无法被catch捕获。</p>
-<p>异常类型可以是字符串（就像这个例子中那样）或其它C++类型，通常为类类型。执行throw语句类似执行返回语句，因为它也将终止函数的执行，但throw不是将控制权返回给调用程序，而是导致程序沿函数调用序列后妈，直到找到包含try块的函数。</p>
-<p>关键字catch表明这是一个处理程序，而chatch(type &amp;value)中的type则表明该处理程序与字符串异常匹配，value与函数参数定义极其相似，因为匹配的细皮引发将被赋给value。另外，当异常与该处理程序匹配时，程序将执行括号中的代码。</p>
+<p>异常类型可以是字符串或其它C++类型，通常为类类型。执行throw语句类似执行返回语句，因为它也将终止函数的执行，但throw不是将控制权返回给调用程序，而是导致程序沿函数调用序列后退，直到找到包含try块的函数。</p>
+<p>关键字catch表明这是一个处理程序，而chatch(type &amp;value)中的type则表明该处理程序与type类型异常匹配，value与函数参数定义极其相似，因为匹配的类型对象将被赋给value。另外，当异常与该处理程序匹配时，程序将执行括号中的代码。</p>
 <p>执行完try块中的语句后，如果没有引发任何异常，则程序跳过try块后面的catch块，直接执行处理程序后面的第一条语句。</p>
 <p>如果函数引发了异常，而没有try块或没有匹配的处理程序时，在默认情况下，程序最终将调用abort()函数，但可以修改这种行为。</p>
-<p>通常，引发异常的函数将传递一个对象，这样做的主要优点之王是，可以使用不同的这类型来区分不同的函数在不同情况下引发的异常。另外，对象可以拾信息，程序员可以根据这些信息来确定引发异常的原因，同是，catch块可以根据这些信息来决定采取什么样的措施。</p>
+<p>通常，引发异常的函数将传递一个对象，这样做的主要优点之是，可以使用不同的类型来区分不同的函数在不同情况下引发的异常。另外，对象可以提供信息，程序员可以根据这些信息来确定引发异常的原因，同是，catch块可以根据这些信息来决定采取什么样的措施。</p>
 <p>可使用异常规范对函数定义进行限定，指出它将引发哪些类型的异常。为此，可在函数定义的后面加上异常规范，它由关键字throw和异常类型列表组成，异常类型列表被括在括号中，并用逗号分隔。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//异常规范</span></div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">hmean</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span> <span class="title">throw</span><span class="params">(bad_hmean)</span></span>;</div></pre></td></tr></table></figure>
 <p>这完成了二项工作，首先，它告诉编译器，该函数引发哪些类型的异常。如果以后该函数引发了其他类型的异常，程序(最终)将调用abort()函数，对这种越权做出反应。其次，使用异常规范将提醒阅读该原型的人，该函数引发异常，应提供try块和处理程序。对于引发多种异常的函数，可提供一个由逗号分隔的异常类型列表。这种句法与函数原型参数列表句法类似。如果异常规范中的括号内为空，则表明该函数不会引发异常。</p>
@@ -69,24 +97,24 @@
 <p>程序进行堆栈解退以回到能够捕获异常的地方时，将释放堆栈中的自动存储型变量。如果变量是类对象，将为该对象调用析构函数。</p>
 <p>普通函数中，返回语句将控制权返回到调用函数，但throw语句将控制权向上返回到第一个这样的函数：包含能够捕获相应异常的try-catch组合。</p>
 <p>catch中的类型变量，使用的是throw的类型变量的一个副本，因为自动变量将会释放。</p>
-<p>throw语句将生拷贝，为何代码中使用引用呢？毕竟将引用作为返回值的通常原因是避免创建拷贝以提高效率。答案是，引用还有另一个重要牲：基类引用可以执行派生类对象，假设有一组通过继承关联起来的异常类型，则在异常规范中只需列出一个类型引用，它将与任何派生类对象匹配。</p>
+<p>throw语句将生成拷贝，为何代码中使用引用呢？毕竟将引用作为返回值的通常原因是避免创建拷贝以提高效率。答案是，引用还有另一个重要牲：基类引用可以执行派生类对象，假设有一组通过继承关联起来的异常类型，则在异常规范中只需列出一个类型引用，它将与任何派生类对象匹配。</p>
 <p>如果有一个异常类继承层次结构，应这样排列catch块：将捕获位于层次结构最下面的异常类的catch语句放在最前面，将捕获基类异常的catch语句放在最后面。</p>
-<h4 id="15-3-7-exception"><a href="#15-3-7-exception" class="headerlink" title="15.3.7 exception"></a>15.3.7 exception</h4><p>C++异常的主要目的是为设计容错程序发提供语言级支持，即异常使得在程序设计中包含错误处理功能更容易，以免事后采取一些严格的错误处理方式。异常的灵活性和相对方便性激励着程序员在条件允许的情况下在程序设计中加入错误处理功能。简而言之，异常是这样的一种特性：类似于类，可以改变您的编程方式。</p>
-<p>为支持该语言，exception头文件(以前为exception.h或except.h)定义了exception显存，C++可以把它用作其他异常类的基类。代码可以引发exception异常，也可以将exception类用作基类。有一个名为what()的虚拟成员函数，它返回一个字符串，该字符串的特征随实现而异，然而，由于这是一个虚方法，因此可以从exception派生而来的类中重新定义它。</p>
+<h3 id="15-3-7-exception"><a href="#15-3-7-exception" class="headerlink" title="15.3.7 exception"></a>15.3.7 exception</h3><p>C++异常的主要目的是为设计容错程序提供语言级支持，即异常使得在程序设计中包含错误处理功能更容易，以免事后采取一些严格的错误处理方式。异常的灵活性和相对方便性激励着程序员在条件允许的情况下在程序设计中加入错误处理功能。简而言之，异常是这样的一种特性：类似于类，可以改变您的编程方式。</p>
+<p>为支持该语言，exception头文件(以前为exception.h或except.h)定义了exception类，C++可以把它用作其他异常类的基类。代码可以引发exception异常，也可以将exception类用作基类。有一个名为what()的虚拟成员函数，它返回一个字符串，该字符串的特征随实现而异，然而，由于这是一个虚方法，因此可以从exception派生而来的类中重新定义它。</p>
 <p>C++库定义了很多基于exception的异常类型。头文件exception提供了bad_exception，供函数unexpected()使用。</p>
 <p>头文件stdexcept定义了其他几个异常类，首先，该文件定义了logic_error和runtime_error类，它们都是以公有方式从exception派生而来的。</p>
 <p><strong>下溢错误</strong>：下溢错误在浮点数计算中，一般而言，存在浮点类型可以表示的最小非零值，计算结果比这个值还小时将导致下溢错误。整形和浮点型都可能发生上溢错误，当计算结果超过了某种类型能够表示的最大数量级时，将发生上溢错误。计算结果可能不在函数允许范围之内，但没有发生上溢或下溢错误，在这种情况下，可以使用range_error异常。</p>
-<p>对于处理使用new时可能出现的内在分配问题，C++提供了二种可供选择的方式。第一种方式（一度是惟一的方式）是，让new在无法满足内存请求时返回一个空指针；第二种方式是，让new引发bad_alloc异常。装潢文件(以前为new.h)中包含了bad_alloc类的声明，它是从exception类公有派生而来的。实现只能提供一种方式，但也可以 使用编译器开关或其它一些方法，让编程都能够选择喜欢的方式。</p>
-<p>异常、类和继承以三种方式相互关联。首先，可以 像标准C++库所做的那样，从一个异常类派生出另一个；其交，可以在类定义中嵌套异常类声明来组合异常；第三，这种嵌套声明本身可被继承，还可用作基类。</p>
+<p>对于处理使用new时可能出现的内存分配问题，C++提供了二种可供选择的方式。第一种方式（一度是惟一的方式）是，让new在无法满足内存请求时返回一个空指针；第二种方式是，让new引发bad_alloc异常。new文件(以前为new.h)中包含了bad_alloc类的声明，它是从exception类公有派生而来的。实现只能提供一种方式，但也可以使用编译器开关或其它一些方法，让编程都能够选择喜欢的方式。</p>
+<p>异常、类和继承以三种方式相互关联。首先，可以像标准C++库所做的那样，从一个异常类派生出另一个；其次，可以在类定义中嵌套异常类声明来组合异常；第三，这种嵌套声明本身可被继承，还可用作基类。</p>
 <p>C++规定， 在派生类中重新定义基类的方法时，函数特征标必须相同，但返回类型可以不同，条件是派生类方法的返回类型是直接或间接地从基类方法的返回类型派生而来的。这种规则也适用于异常规范。派生类方法的异常规范必须与基类方法相同，或者使用的类型是直接或间接从基类方法的异常规范中使用的类型派生而来的。</p>
-<h4 id="15-3-9-异常何时会迷失方向"><a href="#15-3-9-异常何时会迷失方向" class="headerlink" title="15.3.9 异常何时会迷失方向"></a>15.3.9 异常何时会迷失方向</h4><p>异常被引发后，在二种情况下，会导致问题。首先，如果它是在带异常规范的函数中引发的，则必须与规范列表中的某种异常匹配(在继承层次结构中，类类型与这个类及其派生类的对象匹配)，否则称为意外异常。在默认情况下，这将导致程序异常终止。如果异常不是在函数中引发的(或者函数没有异常规范)，则它必须被捕获。如果没有被捕获(在没有try块或没有匹配的catch块时，将出现这种情况)，则异常被称为未捕获异常。在默认情况下，这将导致程序异常终止。不过，可以修改程序对意外 异常和未捕获异常的反应。</p>
+<h3 id="15-3-9-异常何时会迷失方向"><a href="#15-3-9-异常何时会迷失方向" class="headerlink" title="15.3.9 异常何时会迷失方向"></a>15.3.9 异常何时会迷失方向</h3><p>异常被引发后，在二种情况下，会导致问题。首先，如果它是在带异常规范的函数中引发的，则必须与规范列表中的某种异常匹配(在继承层次结构中，类类型与这个类及其派生类的对象匹配)，否则称为意外异常。在默认情况下，这将导致程序异常终止。如果异常不是在函数中引发的(或者函数没有异常规范)，则它必须被捕获。如果没有被捕获(在没有try块或没有匹配的catch块时，将出现这种情况)，则异常被称为未捕获异常。在默认情况下，这将导致程序异常终止。不过，可以修改程序对意外异常和未捕获异常的反应。</p>
 <p>未捕获异常不会导致程序立刻终止。相反，程序将首先调用函数terminate()。在默认情况下，terminate()调用abort()函数。可以指定terminate()应调用的函数(而不是abort())来修改terminate()的这种行为。 为此，可调用set_terminate()函数。set_terminate()函数和terminate()都是在头文件exception中声明的。</p>
 <p>原则上，异常规范应包含函数调用的其他函数引发的异常。</p>
-<p>使用异常会增加代码，降低程序的运行速度。异常规范不适用于模板，因为模板函数引发的异常可能随特定的具休化而异。异常和动态内在分配不能总是协同工作。</p>
-<p>简而言之，虽然异常处理对于某些项目极为重要，但它也会增加编程的工作量、增大程序、降低程序的速度。另外，编译器对异常的支持以及用户的经验还没有达到盛衰的程度，所以应有节制地使用这种特性。</p>
-<h3 id="15-4-RTTI"><a href="#15-4-RTTI" class="headerlink" title="15.4 RTTI"></a>15.4 RTTI</h3><p>RTTI是运行阶段类型识别(Runtime Type Identification)的简称。这是新添加到C++中的特性之一，很多老工序实现不支持。另一些实现可能包含开关RTTI的编译器设置。RTTI旨在为程序在运行阶段确定对象的类型提供一种标准方式。</p>
+<p>使用异常会增加代码，降低程序的运行速度。异常规范不适用于模板，因为模板函数引发的异常可能随特定的具体化而异。异常和动态内在分配不能总是协同工作。</p>
+<p>简而言之，虽然异常处理对于某些项目极为重要，但它也会增加编程的工作量、增大程序、降低程序的速度。另外，编译器对异常的支持以及用户的经验还没有达到成熟的程度，所以应有节制地使用这种特性。</p>
+<h3 id="15-4-RTTI"><a href="#15-4-RTTI" class="headerlink" title="15.4 RTTI"></a>15.4 RTTI</h3><p>RTTI是运行阶段类型识别(Runtime Type Identification)的简称。这是新添加到C++中的特性之一，很多老式实现并不支持。另一些实现可能包含开关RTTI的编译器设置。RTTI旨在为程序在运行阶段确定对象的类型提供一种标准方式。</p>
 <p>为何要知道类型？可能希望调用类方法的正确版本，在这种情况下，只要该函数是类层次结构中所有成员都拥有的虚函数，则并不真正需要知道对象的类型。但派生对象可能包含不是继承而来的方法，在这种情况下，只有某些类型的对象可以使用该方法。也可能是出于调用目的，想跟踪生成的对象的类型。</p>
-<h4 id="15-4-2-RTTI的工作原理"><a href="#15-4-2-RTTI的工作原理" class="headerlink" title="15.4.2 RTTI的工作原理"></a>15.4.2 RTTI的工作原理</h4><p>C++有3个支持RTTI的元素：</p>
+<h3 id="15-4-2-RTTI的工作原理"><a href="#15-4-2-RTTI的工作原理" class="headerlink" title="15.4.2 RTTI的工作原理"></a>15.4.2 RTTI的工作原理</h3><p>C++有3个支持RTTI的元素：</p>
 <ul>
 <li>如果可能的话，dynamic_cast操作符将使用一个指向基类的指针来生成一个指向派生类的指针；否则，该操作符返回0–空指针。</li>
 <li>typeid操作符返回一个指出对象的类型的值。</li>
@@ -98,14 +126,14 @@
 <p>通常想知道类型的原因在于：知道类型后，就可以知道调用特定的方法是否安全。要调用方法，类型并不一定要完全匹配，而可以是定义了方法的虚拟版本的基类类型。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//指针pg的类型是否可被安全地转换为Superb *?如果可以，操作符将返回对象的地址，否则返回一个空指针。</span></div><div class="line">Superb *pm = dynamic_case&lt;Superb *&gt; (pg);</div></pre></td></tr></table></figure>
 <p>编译器支持RTTI，在默认情况下，它也可能关闭该特性。如果该特性被关闭，程序可能仍能够通过编译，但将出现运行阶段错误。在这种情况下，读者应查看文档或菜单选项。</p>
-<p>也可以将dynamic_cast用于引用，其用法稍微有点不同：没有与空指针对应的引用值，因此无法使用特殊的引用值来指示失败。 当请求不正确时，dynamic_cast将引发类型为bad_cast的异常，这种异常是从exception类派生而来的。它是在头文件typeinfo中定义。</p>
+<p>也可以将dynamic_cast用于引用，其用法稍微有点不同：没有与空指针对应的引用值，因此无法使用特殊的引用值来指示失败。当请求不正确时，dynamic_cast将引发类型为bad_cast的异常，这种异常是从exception类派生而来的。它是在头文件typeinfo中定义。</p>
 <p><strong>typeid操作符和type_info类</strong>：</p>
-<p>typeid捷足先登使得能够确定二个对象是否为同种类型。它与sizeof有些想像，可以接受二种参数：</p>
+<p>typeid关键字使得能够确定二个对象是否为同种类型。它与sizeof有些想像，可以接受二种参数：</p>
 <ul>
 <li>类名。</li>
 <li>结果为对象的表达式。</li>
 </ul>
-<p>typeid操作符返回一个对type_info对象的引用，其中，type_info是在头文件typeinfo(以前为typeinfo.h)中定义的一个类。type_info类重载了==和!=操作符，以便可以 使用这些操作符来对类型进行比较。</p>
+<p>typeid操作符返回一个对type_info对象的引用，其中，type_info是在头文件typeinfo(以前为typeinfo.h)中定义的一个类。type_info类重载了==和!=操作符，以便可以使用这些操作符来对类型进行比较。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeid</span>(ClassName) == <span class="keyword">typeid</span>(Obj)</div></pre></td></tr></table></figure>
 <h3 id="15-5-类型转换操作符"><a href="#15-5-类型转换操作符" class="headerlink" title="15.5 类型转换操作符"></a>15.5 类型转换操作符</h3><ul>
 <li>dynamic_cast </li>
@@ -113,13 +141,13 @@
 <li>static_cast</li>
 <li>reinterpret_cast</li>
 </ul>
-<p><strong>dynamic_cast</strong>操作符的是，使得能够在类层次结构中进行向上转换(由于is-a关系，这样的类型转换是安全的），而不允许其它转换。</p>
+<p><strong>dynamic_cast</strong>操作符使得能够在类层次结构中进行向上转换(由于is-a关系，这样的类型转换是安全的），而不允许其它转换。</p>
 <p><strong>const_cast</strong>操作符用于执行只有一种用途的类型转换，即改变值为const或volatile。</p>
 <p><strong>static_cast</strong>:<code>static_cast&lt; type-name&gt; (expression)</code>仅当type_name可被隐匿转换为expression所属的类型或expression可被隐匿转换为type_name所属的类型时，上述转换才是合法的，否则将出错。</p>
 <p><strong>reinterpret_cast</strong>操作符用于天生危险的类型转换。它不允许删除const，但会执行其他令人生厌的操作。有时程序员必须做一些依赖于实现的、令人生厌的操作，使用reinterpret_cast操作符可以简化对这种行为的跟踪工作。然而，reinterprete_cast操作符并不支持所有的类型转换。例如，可以将指针类型转换为足以存储指针表示的整形，但不能将指针转换为更小的整形或浮点型，另一个限制是，不能将函数指针转换为数据指针，反之亦然。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>类可以将其他函数，其他类和其他类的成员函数作为友元。在某些情况下，可能需要使用前身声明，需要特别注意类和方法声明的顺序，以正确地组合友元。</p>
-<p>嵌套类是在其他类中声明的类，它有助于设计这样的助手类，即实现其他类，但不必是仅有接口的组成部分。</p>
-<p>C++异常机制为处理拙劣的编程事件，如不适当的值、I/O失败等，提供了一种灵活的方式。引发异常将终止当前执行的函数，将控制权付给匹配的catch块。catch块紧跟在try块后面，为捕获异常，直接或间接导致的函数调用必须位于try块中。这样的程序将执行ca tch块中的代码。这些代码试图解决问题或终止程序。类可以包含嵌套的异常类，嵌套异常类在相应的问题被发现时将被引发。函数可以包含异常规范，指出在该函数中可能引发的异常。未被捕获的异常(没有匹配的c atch块的异常)在默认情况下将终止程序，意外异常也是如些。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>类可以将其他函数，其他类和其他类的成员函数作为友元。在某些情况下，可能需要使用前向声明，需要特别注意类和方法声明的顺序，以正确地组合友元。</p>
+<p>嵌套类是在其他类中声明的类，它有助于设计这样的助手类，即实现其他类，但不必是公有接口的组成部分。</p>
+<p>C++异常机制为处理拙劣的编程事件，如不适当的值、I/O失败等，提供了一种灵活的方式。引发异常将终止当前执行的函数，将控制权付给匹配的catch块。catch块紧跟在try块后面，为捕获异常，直接或间接导致的函数调用必须位于try块中。这样的程序将执行catch块中的代码。这些代码试图解决问题或终止程序。类可以包含嵌套的异常类，嵌套异常类在相应的问题被发现时将被引发。函数可以包含异常规范，指出在该函数中可能引发的异常。未被捕获的异常(没有匹配的catch块的异常)在默认情况下将终止程序，意外异常也是如些。</p>
 <p>RTTI特性让程序能够检测对象的类型。dynamic_cast操作符用于将派生类指针转换为基类指针，其主要是确保可以安全地调用虚函数。typeid操作符返回一个type_info对象。可以对二个typeid的返回值进行比较，以确定对象是否为特定的类型，而返回的type_info对象可用于获得关于对象的信息。</p>
 ]]></content>
     
