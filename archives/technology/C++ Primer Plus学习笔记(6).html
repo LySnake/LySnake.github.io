@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="本方主要讲下常用电脑中的硬件与相关功能，旨在了帮助小白了解计算机硬件。">
+<meta name="description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="电脑小白系列之电脑硬件了解">
-<meta property="og:url" content="http://LySnake.github.io/archives/technology/电脑小白系列之电脑硬件了解.html">
+<meta property="og:title" content="C++ Primer Plus学习笔记(6)">
+<meta property="og:url" content="http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(6).html">
 <meta property="og:site_name" content="LySnake个人博客">
-<meta property="og:description" content="本方主要讲下常用电脑中的硬件与相关功能，旨在了帮助小白了解计算机硬件。">
-<meta property="og:updated_time" content="2017-03-19T23:11:38.520Z">
+<meta property="og:description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
+<meta property="og:updated_time" content="2017-07-05T15:01:33.282Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="电脑小白系列之电脑硬件了解">
-<meta name="twitter:description" content="本方主要讲下常用电脑中的硬件与相关功能，旨在了帮助小白了解计算机硬件。">
+<meta name="twitter:title" content="C++ Primer Plus学习笔记(6)">
+<meta name="twitter:description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>电脑小白系列之电脑硬件了解 | LySnake个人博客</title>
+<title>C++ Primer Plus学习笔记(6) | LySnake个人博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -275,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-电脑小白系列之电脑硬件了解" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-C++ Primer Plus学习笔记(6)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="" class="article-date">
-      <time datetime="2017-02-19T09:46:46.000Z" itemprop="datePublished">2017-02-19</time>
+      <time datetime="2017-07-05T13:59:27.000Z" itemprop="datePublished">2017-07-05</time>
 </a>
 
  
@@ -303,7 +303,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      电脑小白系列之电脑硬件了解
+      C++ Primer Plus学习笔记(6)
     </h1>
   
 
@@ -318,7 +318,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/电脑小白/">电脑小白</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/c/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/cocos2d-x/">cocos2d-x</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -328,23 +328,36 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>本方主要讲下常用电脑中的硬件与相关功能，旨在了帮助小白了解计算机硬件。<br><a id="more"></a></p>
-<h2 id="冯·诺伊曼结构"><a href="#冯·诺伊曼结构" class="headerlink" title="冯·诺伊曼结构"></a>冯·诺伊曼结构</h2><p>如今的计算机，都是以1945年6月30日冯·诺伊曼提出的基本结构：计算机硬件由运算器、控制器、存储器、输入设备和输出设备五大部分组成。每个组成部分可能存在于一台计算机中不同硬件位置上。</p>
-<blockquote>
-<p><em>运算器、控制器（CPU）</em>：这二个基本部件，在工程实现上都存在于中央控制处理器CPU中，有任何操作请求，一定都会到CPU中请求处理。在实际用户操作中，所有用户操作，都会抽象成一系列的数学运算、逻辑运算，也都要交于CPU处理，所以CPU决定了计算机最高处理性能，在个人组装机中，优先选择的都是CPU，其次再选择其它硬件设备。</p>
-<p><em>存储器</em>：存储器类别很多，在小白的眼里，只要记得内存、硬盘（移动硬盘）、U盘、固态硬盘(SSD)这几样就好了。按主流硬件读取速度来说，内存&gt;固态&gt;U盘&gt;硬盘，特殊一点的是内存是一个断电就会丢失存储数据的一个临时存储设备，充当CPU与硬盘（机械硬盘和固态硬盘）之间的高速缓存。个人电脑中所有数据都要从内存中读取进CPU再进行处理，但对于计算机来说，不一定要有内存计算机才能运行。</p>
-<p><em>*输入设备</em>：输入设备常见的有键盘、鼠标、麦、触摸板、手写板，接收用户操作(转换成数据)给计算机进行处理。</p>
-<p><em>*输出设备</em>：输出设备常见的有显示器、耳机，输出计算机处理后的数据，提供给用户进行交互操作。</p>
-</blockquote>
-<h2 id="电脑中常见硬件"><a href="#电脑中常见硬件" class="headerlink" title="电脑中常见硬件"></a>电脑中常见硬件</h2><h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>在个人计算中，中高端CPU都是使用Intel公司产品，中低端CPU都是使用AMD公司产品，目前组装个人电脑都是以i5往上走，i3很少使用了，在15年上市了新的Skylake系列，支持读取性能更高的内存条、更省电。个人电脑更像是一个集权的国家，CPU代表着中央政府，所有处理都要交于CPU处理、分发执行。另外，当前CPU也负责显示方面的计算,也就是说CPU内还有一个GPU，就是我们常说的集显，但因为GPU常计算小数类型的值，CPU主要是整数类型和逻辑值，另外也因为显示渲染在个人PC中越来越重要，产热也高，所以GPU可以单独有一个硬件，那就是显卡。这种问题常见于笔记本中，在买笔记本时，常说独显更好，是因为独立显卡有自己的内存条，且高端显卡的内存已经是第五代的DDR5了，有独显后，显卡和CPU都有各自的存储，并且，独显有自己更强更专一的渲染，不会占用CPU使用内存导致内存不足，也不会占用CPU的计算而延迟用户操作的响应。</p>
-<h3 id="主板"><a href="#主板" class="headerlink" title="主板"></a>主板</h3><p>主板通常认为是载体就好了，类似于自行车的三角架一样，其它部件都要在其上搭载。通常CPU决定了计算机的计算性能，通过CPU引出的针角查看哪些主板能使用，另外，主板上也存在其它的芯片，用于辅助CPU进行控制用的，还自带声卡、网卡等，所以主板还负责网络接收与发送，数字信息转成音频信息等。不论是CPU、内存条、电源、显卡、硬盘、独立声卡、光驱等，都要与主板联接进行信息传输。电脑开关、USB接口、显示器接口、网线接口、耳机接口等都在主板上面。如果是台式电脑，所有的这些硬件接口都是规范化的，并且也是防呆设计(指接口设计避免用户插错，只有用蛮力才有可能插错)，不用担心插错问题。</p>
-<h3 id="独立-显卡"><a href="#独立-显卡" class="headerlink" title="(独立)显卡"></a>(独立)显卡</h3><p>显卡负责图像的渲染，显示器显示的内容都是从显卡中获得。显卡插在主板上，对外可接显示器的信号线，显卡有自己独立的内存，就是我们说的显存，好的显卡已经使用第五代DDR5的内存，对于晃卡而言，并不是显存越大越好，显存大但速度慢一样是渣显卡，这也是电脑城骗术之一。但电脑是可以不用显卡的，可以使用集成显卡，也就是使用CPU内的GPU，不过这个就看CPU的性能与用户自己的需求了，玩大型游戏还是要独立显卡，如lol、使命等，日常看视频、QQ游戏等，集成显卡就好。</p>
-<h3 id="内存条"><a href="#内存条" class="headerlink" title="内存条"></a>内存条</h3><p>前面提到过，内存是<code>一个断电就会丢失存储数据的一个临时存储设备，充当CPU与硬盘（机械硬盘和固态硬盘）之间的高速缓存</code>,目前老电脑都是4G内存，主流已经开始8G内存了，现如今手机都开始8G内存了。内存在计算机体系系统中，充当CPU与硬盘之间的高速缓存，对于计算机来说，内存越大越好，如果可以，操作系统会根据用户常用软件、文件等，尽可能把内存全部使用完。当前内存的速度在第三代内存DDR3的1600MHZ左右，新的Skylake系列支持第四代内存DDR4的2133MHZ。</p>
-<h3 id="硬盘"><a href="#硬盘" class="headerlink" title="硬盘"></a>硬盘</h3><p>目前市场的机械硬盘都是1T，500G的机械硬盘开始减少，另外，还有固态硬盘(SSD)，读写速度是机械硬盘的好几倍，常见的还只是128G和256G，它们都是一种相对永久的存储设备，所有文件、软件都保存在硬盘中。现在，CPU和内存的性能都在快速提升，而机械硬盘受限于机械结构，读写速度提升相对过慢，已成为计算机体系的一个瓶颈，目前苹果电脑都配有固态硬盘，开机流畅响应快速，如果你也想有这样的电脑体验，请安装固态硬盘，把windows操作系统安装在固态硬盘中，常用软件也安装在固态硬盘中，如果还有机械硬盘，把不常用文件使用机械硬盘存储。另外，读写快速的固态硬盘，也只是能更快速地把文件从固态硬盘上读写到内存中，以此来加快开机速度和响应速度，但并不能改变CPU的执行速度和内存的读写速度，但确实会有更好的用户体验。</p>
-<h3 id="显示器"><a href="#显示器" class="headerlink" title="显示器"></a>显示器</h3><p>显示器把显卡(集显或独显)处理过的显示数据通过旧的VGA接口或更高传输速率的HDMI接口传输到显示器进行显示，现在主流显示器有19寸、24寸甚至更大的，类型也很多样。如果细看电视机或显示器，是能看到很微小的点阵的，这个类似于图片或视频的1080 <em> 1920这种，表示有乘积个像素点，每个像素点使用RGB(红绿蓝)三色组成万千色，常见的每一色1个字节(8个bit即8位的2进制，如果一张图1080 </em> 1920 像素点，图片大小大概是1080 <em>  1920 </em> 3 / 1024 KB)，按色彩程度不同，共有256种，三色组合就有256 <em> 256 </em> 256种色彩，还有使用RGBA作为像素点数据的，只是多了一位A(透明度)。</p>
-<h3 id="键盘、鼠标"><a href="#键盘、鼠标" class="headerlink" title="键盘、鼠标"></a>键盘、鼠标</h3><p>鼠标没有什么说的，都是光电鼠标，也有一些人体工程学鼠标，如果是玩游戏，鼠标还是要大一些的好用些，精度掌控更高。但是相对键盘而言就有很多讲头了。笔记本电脑和常见的100元以下的键盘，都是薄膜键盘，价格便宜，但是手感差，基本上也没有什么人体工程学上的设计，高端点的键盘，基本上都是机械键盘，手感多样，更适合打字、游戏等偏向，而且也更耐用(据说专业打字的也可以用50年这样的年限)，另外，机械键盘具有很高的自定义化，可以自己组装些背光灯、换键冒、换轴等，所以如果是只坏了几个键，也是可以自己行购买配件维修的。根据按键轴的不同，键盘会有不同的按键反馈，比如对于常打字的来说，青轴机械键盘每一次按键，都会有二次触感反馈，而且所需力道少，另外就是还有一个声音反馈。但机械键盘也有缺点，就是碰水就坏，主要生产轴的公司也就那么几家，国内的轴厂都太次了，容易坏轴，另一个就是价格比较高，cherry轴最低也要将近400元。那有其它一些键盘，水很深。不论是鼠标还是键盘，都是使用USB接口，老旧的有PS/2接口。</p>
-<h3 id="电源"><a href="#电源" class="headerlink" title="电源"></a>电源</h3><p>电脑电源连接家庭用电，转化输出给CPU、主板、显卡、硬盘等供电，电脑正常运行与高速运行，它的耗电是不一样的，所以好的电源应能提供最高电量，如果电脑在高速运行中电源不能提供充足的电能，那可能会无由头的停机且不好查找问题。在某些装机教程中，作者会建议读者不要购买某宝或电脑城里已经组好的整机，因为你看到的电脑配置，主要配件确实是对应的配件，可是对于大多数的我们来说，卖家更老道，他们可以使用二手CPU、显卡，虽然它们是正品，又或者次品点的内存条，而买家都只是会看一般的参数，常见的就是下个鲁大师软件查看配置，这根本无法了解到卖家作了什么，而且一台电脑，可动手的地方很多，虽然主要配件最多是次品，部分配件因为不起眼，真的就有可能会成为电脑的短板。其中之一就是电源，一般买家没有谁看电源，而电源品牌也很混杂，就算一般买家查看了这点，你也就是看个功率，好像很强的样子，可是，关注过材料吗？铭牌参数具体的意义吗？电脑的参考功率，其中有很多文章，它的实际意义是说，各种组合最高是350W或500W，但其中还有转化率的问题，还有就是，每一种组合也有它的最大功能，不论是组合的还是最终的功能，都不能超。因为电源给CPU、主板、显卡、硬盘供电，也差不多这样分成组，CPU组不能超过多少，显卡供电不能超过多少，主板不能超过多少，各组之合不能超过电脑额定功率*转化率。所以对于一个500W的电源确不一定比350W的电源更适合你的电脑。另一方面，材料问题，线问题，接口问题，因此在某宝或电脑城购买已配好的电脑，不好花点时间自己组得更放心。</p>
-<h2 id="引申链接"><a href="#引申链接" class="headerlink" title="引申链接"></a>引申链接</h2><p><a href="http://linux.vbird.org/linux_basic/0130designlinux.php#hardware" target="_blank" rel="external">&lt;鸟哥的linux私房菜&gt;中关于硬件的形象化描述</a><br><a href="http://linux.vbird.org/linux_basic/0510osloader.php#startup" target="_blank" rel="external">&lt;鸟哥的linux私房菜&gt;之开机流程</a></p>
+        <h2 id="16-string类和标准模板库"><a href="#16-string类和标准模板库" class="headerlink" title="16 string类和标准模板库"></a>16 string类和标准模板库</h2><h3 id="16-1-string类"><a href="#16-1-string类" class="headerlink" title="16.1 string类"></a>16.1 string类</h3><p>string实际上是模板规范basic_string<char>的一个tyepdef,同时省略了与内存管理相关的参数。</char></p>
+<p>第一个限制因素是string对象的最大允许长度，由常量string::npos指定。这通常是最大的unsigned int值或最大的unsigned long值，因此对于普通的交互式输入，这不会带来实际的限制；但如果您试图将整个文件的内容读取到单个string对象中，这可能成为限制因素。第二个限制因素是程序可以使用的内存量。</p>
+<p>string版本的getline()函数从输入中读取字符，并将其存储到目标string中，直到发生下列3种情况之一：</p>
+<ul>
+<li>到达文件尾，在这种情况下，输入流的eofbit将会被设置，这意味着方法fail()和eof()都将返回true;.</li>
+<li>遇到分界字符(默认为\n)，在这种情况下，将把分界字符从输入流中删除，但不存储它。</li>
+<li>读取的字符数达到最大允许值(string::npos和可供分配的内存字节数中较小的一个)，在这种情况下，将设置输入流failbit，这意味着方法fail()将返回true.</li>
+</ul>
+<p>输入流对象有一个统计系统，用于跟踪流的错误状态，在这个系统中，检测到文件尾后将设置eofbit寄存器，检测到输入错误时将设置failbit寄存器，一切顺利时将设置goodbit寄存器。</p>
+<p>string版本的operator&gt;&gt;()函数的行为与此类似，只是它不断读取，直到遇到空白字符并将其解放思想在输入队列中，而不是不断读取，直到遇到分界字符并将其丢弃。空白字符指的是空格、换行符和制表符，更普遍地说，是任何将其作为参数来调用isspace()时，该函数返回ture的字符。</p>
+<p>string库还提供了：删除字符串的部分或分部内容、用一个字符串的部分或全部内容替换另一个字符串的部分或全部内容、 将数据插入到字符串中或删除字符串中的数据、将一个字符串的部分或全部内容与另一个字符串的部分或全部内容进行比较、从字符串中提取子字符串、将一个字符串中的内容复制到另一个字符串中、交换二个字符串的内容。</p>
+<p>很多C++实现分配一个比实际字符串大的内存块，为字符串提供了增大空间。然而，如果字符串不断增大，超过了内存块的大小，程序将分配一个大小为原来二倍的新内存块，以提供足够的增大空间，避免不断地分配新的内存块。</p>
+<h3 id="16-2-auto-ptr类"><a href="#16-2-auto-ptr类" class="headerlink" title="16.2 auto_ptr类"></a>16.2 auto_ptr类</h3><p>auto_ptr是一个模板类，用于管理动态内存分配的用法。</p>
+<p>对于基本类型，并没有提供这种额外服务；但对于类，则可以通过析构函数机制来提供。因此，普通指针的问题在于：它只是一个常规指针，不是类对象。如果它是类是对象，则可以在对象过期时，让它的析构函数删除被指向的内存。这正是auto_ptr背后的思想。</p>
+<p>auto_ptr模板定义了类似指针的对象，可以将new获得(直接或间接)的地址赋给这种对象。当auto_ptr对象过期时，其析构函数将使用delete来释放内存。 因此，如果将new返回的地址赋给auto_ptr对象时，无须记住稍后释放这些内存。在auto_ptr对象过期时，这些内在将自动被释放。</p>
+<p>auto_ptr是一种智能指针(smart pointer)—类似于指针，但特性比指针更多。auto_ptr类被定义为在很多方面与常规指针类似。例如，如果ps是一个auto_ptr，则可以对它执行解除引用操作(*ps)和递增操作(++ps)，用它来访问结构成员(ps-&gt;puffIndex)，将它赋给指向相同类型的常规指针。</p>
+<p>对于new和new[]，必须相应地使用delete和delete[]。auto_ptr模板使用的是delete，而不是delete[]，因此它只能与new一起使用，而不能与new[]一起使用。没有适用于动态数组的auto_ptr等同物。可以复制头文件memory中的auto_ptr模板，将它重命名为auto_arr_ptr，然后对基进行修改，使之使用delete[]，而不是delete。</p>
+<p>只以有对new分配的内存使用auto_ptr对象，而不要对由new[]分配的或通过声明变量分配的内存使用它。</p>
+<p>智能指针是这样一种类，即其对象的特征类似于指针。例如，智能指针可以存储new分配的内在地址，也可以被解除引用。因为智能指针是一个类对象，因此它可以修改和扩充简单指针的行为。例如，智能指针可以建立引用计数，这样多个对象可共由智能指针跟踪的同一个值。当使用该值的对象数为0时，智能指针将删除这个值。智能指针可以提高内在的使用效率，帮助防止内存泄漏，但并不要求用户熟悉新的编程技术。</p>
+<h3 id="16-3-STL"><a href="#16-3-STL" class="headerlink" title="16.3 STL"></a>16.3 STL</h3><p>STL提供了一组表示容器、迭代器、函数对象和算法的模板。容器是一个与数组类似的单元，可以存储若干个值。STL容器是同质的，即存储的值的类型相同；算法是完成特定任务(如对数组进行排序或在链表中查找特定值)的处方；迭代器能够用来遍历容易的对象，与能够遍历数组的指针类似，是广义的指针；函数对象是类似于函数的对象，可以是类对象或函数指针(包括函数名，因为函数名被用作指针)。STL使得能够构造各种容器(包括数组、队列、链表)和执行各种操作(包括搜索、排序和随机排列)。</p>
+<p>STL不是面向对象的编程，而是一种不同的编程模式—通用编程技术。</p>
+<p><strong>矢量(vector)</strong>：对应数组，而不是数学矢量，计算矢量存储了一组可随机访问的值，即可以使用索引来直接访问适量的第10个元素，而不必首先访问前面第9个元素。将一个vector对象赋给另一个对象，使用[]操作符来访问vector元素。要使类成为通过的，应将它设计为模板类。这正是STL所做的工作—在头文件vector中定义了一个模板。</p>
+<p><strong>分配器</strong>：各种 STL容器模板都接受一个可选的模板参数，该参数指定使用哪个分配器对象来管理内存。如果活该模板参数的值，则容器模板将默认使用allocator<t>类。这个类以标准方式使用new和delete。</t></p>
+<p>所有的STL容器都提供了一些基本方法，其中包括size()—返回容器中元素数目、swap()—交换二个窗口的内容、begin()—返回一个指向容器中第一个元素的迭代器，end()—返回一个表示超过容器尾的迭代器。</p>
+<p><strong>迭代器</strong>：是一个广义的指针，事实上，它可以是指针，也可以是一个可对其执行类似指针的操作—如解引用、和递增操作的对象。稍后将知道，对指向迭代器的指针进行广义化使得STL能够为各种不同的窗口类(包括那些简单指针无法处理的类)提供统一的接口。每个窗口类都定义了一个合适的迭代器，该迭代器的类开是一个名为iterator的typedef，其作用域为整个类(模板中嵌套类定义iterator)。</p>
+<p><strong>超过结尾(past-the-end)</strong>：它是一种迭代器，指向容器最后一个元素后面的那个元素。这与C-风格字符串最后一个字符后面的空字符类似，只是空字符是一个值，而“超过结尾”是一个指向元素的指针（迭代器）。end()成员函数标识超过结尾的位置。如果将迭代器设置为窗口的第一个元素，并不断地递增，则最终它将到达窗口结尾，从而遍历整个容器的内容。</p>
+<p>push_back()是一个方便的方法，它将元素添加到矢量的末尾。erase()方法删除适量中给定区间的元素。insert()方法的功能与erase()相反。它接受3个迭代器参数，第一个参数指定了新元素的插入位置，第二个和第三个迭代器参数定义了被插入区间，该区间通常是另一个窗口对象的一部分。</p>
+<p>STL从更广泛的角度定义了非成员函数来执行这些操作，即不是为每个容器类定义find()函数，而是定义一个适用于所有容器类的非成员函数find()。这种设计理念省去了大量重复工作。for_each()函数可用于许多窗口类，它接受3个参数。前二个是定义窗口中敬意的迭代器，最后一个是指向函数的指针（更普遍地说，最后一个参数是一个函数对象）。for_each()函数将被指向的函数应用于容器敬意中的各个元素。被指向的函数不能修改窗口元素的值。</p>
+<h3 id="16-4-通用编程技术"><a href="#16-4-通用编程技术" class="headerlink" title="16.4 通用编程技术"></a>16.4 通用编程技术</h3><p>STL是一种通用编程技术，面向对象编程关注的是编程的数据方面，而通用编程技术关注的是算法。它们之间的共同点是抽象和创建可重用代码，但它们的理念绝然不同。在C++中，完成通用程序的工具是模板。当然，模板使得能够按通用类型定义函数或类，而STL通过通用算法更进一步。</p>
+<p>模板使得算法独立于存储的数据类型，而迭代器使得算法独立于使用的容器类型。因此，它们都是STL通用方法的重要组成部分。</p>
 
       
     </div>
@@ -353,13 +366,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="">电脑小白系列之电脑硬件了解</a></p>
+        <p><span>本文标题:</span><a href="">C++ Primer Plus学习笔记(6)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LySnake</a></p>
-        <p><span>发布时间:</span>2017-02-19, 17:46:46</p>
-        <p><span>最后更新:</span>2017-03-20, 07:11:38</p>
+        <p><span>发布时间:</span>2017-07-05, 21:59:27</p>
+        <p><span>最后更新:</span>2017-07-05, 23:01:33</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="" title="电脑小白系列之电脑硬件了解">http://LySnake.github.io/archives/technology/电脑小白系列之电脑硬件了解.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/电脑小白系列之电脑硬件了解.html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="" title="C++ Primer Plus学习笔记(6)">http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(6).html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(6).html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -371,16 +384,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="电脑小白系列之操作系统安装.html">
-                    电脑小白之操作系统安装
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="电脑小白系列之电脑日常管理.html">
-                    电脑小白系列之电脑日常管理
+                <a href="C++ Primer Plus学习笔记(5).html">
+                    C++ Primer Plus学习笔记(5)
                 </a>
             </div>
         
@@ -392,7 +399,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#冯·诺伊曼结构"><span class="toc-number">1.</span> <span class="toc-text">冯·诺伊曼结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#电脑中常见硬件"><span class="toc-number">2.</span> <span class="toc-text">电脑中常见硬件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU"><span class="toc-number">2.1.</span> <span class="toc-text">CPU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主板"><span class="toc-number">2.2.</span> <span class="toc-text">主板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#独立-显卡"><span class="toc-number">2.3.</span> <span class="toc-text">(独立)显卡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内存条"><span class="toc-number">2.4.</span> <span class="toc-text">内存条</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#硬盘"><span class="toc-number">2.5.</span> <span class="toc-text">硬盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示器"><span class="toc-number">2.6.</span> <span class="toc-text">显示器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#键盘、鼠标"><span class="toc-number">2.7.</span> <span class="toc-text">键盘、鼠标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#电源"><span class="toc-number">2.8.</span> <span class="toc-text">电源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引申链接"><span class="toc-number">3.</span> <span class="toc-text">引申链接</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#16-string类和标准模板库"><span class="toc-number">1.</span> <span class="toc-text">16 string类和标准模板库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#16-1-string类"><span class="toc-number">1.1.</span> <span class="toc-text">16.1 string类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-2-auto-ptr类"><span class="toc-number">1.2.</span> <span class="toc-text">16.2 auto_ptr类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-3-STL"><span class="toc-number">1.3.</span> <span class="toc-text">16.3 STL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-4-通用编程技术"><span class="toc-number">1.4.</span> <span class="toc-text">16.4 通用编程技术</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -430,7 +437,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="archives/technology/电脑小白系列之电脑硬件了解.html" data-title="电脑小白系列之电脑硬件了解" data-url="http://LySnake.github.io"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="archives/technology/C++ Primer Plus学习笔记(6).html" data-title="C++ Primer Plus学习笔记(6)" data-url="http://LySnake.github.io"></div>
     <script>
         var duoshuoQuery = {short_name:"lysnake"};
         var loadComment = function(){
@@ -443,7 +450,7 @@
         
             // Add comment count
             $(function(){
-                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=lysnake&threads=archives/technology/电脑小白系列之电脑硬件了解.html&callback=?";
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=lysnake&threads=archives/technology/C++ Primer Plus学习笔记(6).html&callback=?";
                 $.getJSON(jsonUrl, function(result){
                     $.each(result.response, function(i, field){
                         var value = field.comments;
@@ -491,21 +498,19 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="电脑小白系列之操作系统安装.html" title="上一篇: 电脑小白之操作系统安装">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="电脑小白系列之电脑日常管理.html" title="下一篇: 电脑小白系列之电脑日常管理">
+            <a href="C++ Primer Plus学习笔记(5).html" title="下一篇: C++ Primer Plus学习笔记(5)">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(6).html">C++ Primer Plus学习笔记(6)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(5).html">C++ Primer Plus学习笔记(5)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(4).html">C++ Primer Plus学习笔记(4)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(3).html">C++ Primer Plus学习笔记(3)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(2).html">C++ Primer Plus学习笔记(2)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(1).html">C++ Primer Plus学习笔记(1)</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑常见错误诊断.html">电脑小白系列之电脑常见错误诊断</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="">电脑小白系列之电脑硬件了解</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑日常管理.html">电脑小白系列之电脑日常管理</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="Github Pages与Hexo框架博客的搭建.html">Github Pages与Hexo框架博客的搭建</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="">C++ Primer Plus学习笔记(6)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(5).html">C++ Primer Plus学习笔记(5)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(4).html">C++ Primer Plus学习笔记(4)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(3).html">C++ Primer Plus学习笔记(3)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(2).html">C++ Primer Plus学习笔记(2)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(1).html">C++ Primer Plus学习笔记(1)</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑常见错误诊断.html">电脑小白系列之电脑常见错误诊断</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑硬件了解.html">电脑小白系列之电脑硬件了解</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑日常管理.html">电脑小白系列之电脑日常管理</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="Github Pages与Hexo框架博客的搭建.html">Github Pages与Hexo框架博客的搭建</a></li></ul>
 
 
 
