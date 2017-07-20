@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(6).html">
 <meta property="og:site_name" content="LySnake个人博客">
 <meta property="og:description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
-<meta property="og:updated_time" content="2017-07-13T15:30:11.090Z">
+<meta property="og:updated_time" content="2017-07-20T15:26:48.920Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ Primer Plus学习笔记(6)">
 <meta name="twitter:description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
@@ -406,6 +406,26 @@
 <li>multmap范例</li>
 </ul>
 <p>与set相似，multimap也是可反转的，经过排序的联合容器，但在multimap中，关键字的类型与值类型不同，在multimap对象中，特定的关键字可能与多个值相关联。基本的multimap声明使用模板参数指定了关键字的类型和扬存储的值的类型。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">multmap&lt;int,string&gt; codes;</div></pre></td></tr></table></figure></p>
+<h3 id="16-5-函数对象"><a href="#16-5-函数对象" class="headerlink" title="16.5 函数对象"></a>16.5 函数对象</h3><p>很多STL算法都使用函数对象—也叫函数符。函数符是可以以函数方式与()结合使用的任意对象。这包括函数名、指向函数的指针和重载了()操作符的类对象(即定义了函数operator()()的类)。</p>
+<p>对于STL中的算法<figure class="highlight plain"><figcaption><span>templateObj.end(), ShowReview);```，通常算3个参数可以是常规函数，也可以是函数符。实际上，这提出了一个问题：如何声明第3个参数呢？不能把它声明为函数指针，因为函数指针指定了参数类型。由于容器可以包含任意类型，所以预先是无法知道应使用哪种参数类型的。STL通过使用模板解决了这个问题。for_each的原型看上去就像这样：</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```C++</div><div class="line">template&lt;class InputIterator, class Function&gt;</div><div class="line">Function for_each(InputIterator first, InputItertor last, Function f);</div><div class="line"></div><div class="line">void ShowReview(const Review&amp;);</div></pre></td></tr></table></figure></p>
+<p>这样，标识符ShowReview的类型为void(*)(const Review &amp;),这也是赋给模板参数Function的类型，对于不同的函数调用，Function参数可以表示具有重载的()操作符的类类型。</p>
+<h4 id="16-5-1-函数符的概念"><a href="#16-5-1-函数符的概念" class="headerlink" title="16.5.1 函数符的概念"></a>16.5.1 函数符的概念</h4><p><strong> 函数符的概念 </strong>：</p>
+<ul>
+<li>生成器是不用参数就可以调用的函数符。</li>
+<li>一元函数是用一个参数可以调用的函数符。</li>
+<li>二元函数是用二个参数可以调用的函数符。</li>
+</ul>
+<p>改进版：</p>
+<ul>
+<li>返回bool值的一元函数是断言。</li>
+<li>返回bool值的二元函数是二元断言。</li>
+</ul>
+<h4 id="16-5-2-预定义的函数符"><a href="#16-5-2-预定义的函数符" class="headerlink" title="16.5.2 预定义的函数符"></a>16.5.2 预定义的函数符</h4><p>STL定义了多个基本函数符，它们执行诸多如将两个值相加、比较两个值是否相等操作。提供这些函数对象是为了支持将函数作为参数的STL函数。对于所有内置的自述操作符、关系操作符和逻辑操作符，STL都提供了等价的函数符。</p>
+<h4 id="16-5-3-自适应函数和函数适配器"><a href="#16-5-3-自适应函数和函数适配器" class="headerlink" title="16.5.3 自适应函数和函数适配器"></a>16.5.3 自适应函数和函数适配器</h4><p>自适应生成器、自适应一元函数、自适应二元函数、自适应断言和自适应二元断言，如下表列出的预定义函数都是自适应的。</p>
+<p>|:—-|:—-:|:—-|:—-:|<br>|+|plus|&gt;|greater|<br>|-|minus|&lt;|less|<br>|*|multiplies|&gt;=|greater_equal|<br>|/|divides|&lt;=|less_equal|<br>|%|modulus|&amp;&amp;|logical_and|<br>|-|negate|”||”|logical_or|<br>|==|equal_to|!|logical_not|<br>|!=|not_equal_to|</p>
+<p>使用函数符成为自适应的原因是，它携带了标识参数类型和返回值类型的typedef成员。这些成员分别是result_type、first_argument_type和second_argument_type，它们的作用是不言自明的。函数符自适应性的意义在于：函数适配器对象可以使用函数对象，并认为存在这些typedef成员。</p>
+<h4 id="16-6-算法"><a href="#16-6-算法" class="headerlink" title="16.6 算法"></a>16.6 算法</h4><p>STL包含了很多处理容器的非成员函数，前面已经介绍过其中的一些：sort()、copy()、find()、random_shuffle()、set_union()、set_intersection()、set_difference()和transform()。可能已经注意到，它们的总体设计是相同的，都使用迭代器来标识要处理的数据敬意和结果的放置位置。有些函数还接受一个函数对象参数，并使用它来处理数据。</p>
+<p>对于算法函数设计，有二个主要的通用部分。首先，它们都使用模板来提供通用类型；其次，它们都使用迭代器来提供访问容器中数据的通用表示。因此，copy()函数可用于将double值存储在数组中的容器、将string值存储在链表中容器，也可用于将用户定义的对象存储在树结构中的窗口。因为指针是一种特殊的迭代器，因此诸多copy()等STL函数可用于常规数组。</p>
 
       
     </div>
@@ -417,7 +437,7 @@
         <p><span>本文标题:</span><a href="">C++ Primer Plus学习笔记(6)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LySnake</a></p>
         <p><span>发布时间:</span>2017-07-05, 21:59:27</p>
-        <p><span>最后更新:</span>2017-07-13, 23:30:11</p>
+        <p><span>最后更新:</span>2017-07-20, 23:26:48</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="" title="C++ Primer Plus学习笔记(6)">http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(6).html</a>
             <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(6).html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -447,7 +467,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#16-string类和标准模板库"><span class="toc-number">1.</span> <span class="toc-text">16 string类和标准模板库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#16-1-string类"><span class="toc-number">1.1.</span> <span class="toc-text">16.1 string类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-2-auto-ptr类"><span class="toc-number">1.2.</span> <span class="toc-text">16.2 auto_ptr类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-3-STL"><span class="toc-number">1.3.</span> <span class="toc-text">16.3 STL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-4-通用编程技术"><span class="toc-number">1.4.</span> <span class="toc-text">16.4 通用编程技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-4-5-容器各类"><span class="toc-number">1.5.</span> <span class="toc-text">16.4.5 容器各类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#序列"><span class="toc-number">1.5.1.</span> <span class="toc-text">序列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-4-6-联合容器"><span class="toc-number">1.5.2.</span> <span class="toc-text">16.4.6 联合容器</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#16-string类和标准模板库"><span class="toc-number">1.</span> <span class="toc-text">16 string类和标准模板库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#16-1-string类"><span class="toc-number">1.1.</span> <span class="toc-text">16.1 string类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-2-auto-ptr类"><span class="toc-number">1.2.</span> <span class="toc-text">16.2 auto_ptr类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-3-STL"><span class="toc-number">1.3.</span> <span class="toc-text">16.3 STL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-4-通用编程技术"><span class="toc-number">1.4.</span> <span class="toc-text">16.4 通用编程技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-4-5-容器各类"><span class="toc-number">1.5.</span> <span class="toc-text">16.4.5 容器各类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#序列"><span class="toc-number">1.5.1.</span> <span class="toc-text">序列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-4-6-联合容器"><span class="toc-number">1.5.2.</span> <span class="toc-text">16.4.6 联合容器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-5-函数对象"><span class="toc-number">1.6.</span> <span class="toc-text">16.5 函数对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#16-5-1-函数符的概念"><span class="toc-number">1.6.1.</span> <span class="toc-text">16.5.1 函数符的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-5-2-预定义的函数符"><span class="toc-number">1.6.2.</span> <span class="toc-text">16.5.2 预定义的函数符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-5-3-自适应函数和函数适配器"><span class="toc-number">1.6.3.</span> <span class="toc-text">16.5.3 自适应函数和函数适配器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-6-算法"><span class="toc-number">1.6.4.</span> <span class="toc-text">16.6 算法</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>

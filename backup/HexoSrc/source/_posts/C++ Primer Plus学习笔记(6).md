@@ -154,5 +154,53 @@ STL set是多个櫂的模型，它是一个联合集合，可反转，可排序�
 ```C+++
 multmap<int,string> codes;
 ```
+### 16.5 函数对象 ###
+很多STL算法都使用函数对象---也叫函数符。函数符是可以以函数方式与()结合使用的任意对象。这包括函数名、指向函数的指针和重载了()操作符的类对象(即定义了函数operator()()的类)。
 
+对于STL中的算法```for_each(templateObj.begin(), templateObj.end(), ShowReview);```，通常算3个参数可以是常规函数，也可以是函数符。实际上，这提出了一个问题：如何声明第3个参数呢？不能把它声明为函数指针，因为函数指针指定了参数类型。由于容器可以包含任意类型，所以预先是无法知道应使用哪种参数类型的。STL通过使用模板解决了这个问题。for_each的原型看上去就像这样：
+
+```C++
+template<class InputIterator, class Function>
+Function for_each(InputIterator first, InputItertor last, Function f);
+
+void ShowReview(const Review&);
+```
+这样，标识符ShowReview的类型为void(*)(const Review &),这也是赋给模板参数Function的类型，对于不同的函数调用，Function参数可以表示具有重载的()操作符的类类型。
+
+#### 16.5.1 函数符的概念 ####
+
+** 函数符的概念 **：
+
+- 生成器是不用参数就可以调用的函数符。
+- 一元函数是用一个参数可以调用的函数符。
+- 二元函数是用二个参数可以调用的函数符。
+
+改进版：
+
+- 返回bool值的一元函数是断言。
+- 返回bool值的二元函数是二元断言。
+
+#### 16.5.2 预定义的函数符 ####
+STL定义了多个基本函数符，它们执行诸多如将两个值相加、比较两个值是否相等操作。提供这些函数对象是为了支持将函数作为参数的STL函数。对于所有内置的自述操作符、关系操作符和逻辑操作符，STL都提供了等价的函数符。
+
+#### 16.5.3 自适应函数和函数适配器 ####
+自适应生成器、自适应一元函数、自适应二元函数、自适应断言和自适应二元断言，如下表列出的预定义函数都是自适应的。
+
+|:----|:----:|:----|:----:|
+|+|plus|>|greater|
+|-|minus|<|less|
+|*|multiplies|>=|greater_equal|
+|/|divides|<=|less_equal|
+|%|modulus|&&|logical_and|
+|-|negate|"||"|logical_or|
+|==|equal_to|!|logical_not|
+|!=|not_equal_to|
+
+使用函数符成为自适应的原因是，它携带了标识参数类型和返回值类型的typedef成员。这些成员分别是result_type、first_argument_type和second_argument_type，它们的作用是不言自明的。函数符自适应性的意义在于：函数适配器对象可以使用函数对象，并认为存在这些typedef成员。
+
+
+#### 16.6 算法 ####
+STL包含了很多处理容器的非成员函数，前面已经介绍过其中的一些：sort()、copy()、find()、random_shuffle()、set_union()、set_intersection()、set_difference()和transform()。可能已经注意到，它们的总体设计是相同的，都使用迭代器来标识要处理的数据敬意和结果的放置位置。有些函数还接受一个函数对象参数，并使用它来处理数据。
+
+对于算法函数设计，有二个主要的通用部分。首先，它们都使用模板来提供通用类型；其次，它们都使用迭代器来提供访问容器中数据的通用表示。因此，copy()函数可用于将double值存储在数组中的容器、将string值存储在链表中容器，也可用于将用户定义的对象存储在树结构中的窗口。因为指针是一种特殊的迭代器，因此诸多copy()等STL函数可用于常规数组。
 
