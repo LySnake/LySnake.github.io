@@ -1223,7 +1223,7 @@
     <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html"/>
     <id>http://LySnake.github.io/archives/technology/电脑小白系列之常用软件推荐.html</id>
     <published>2017-02-06T07:09:00.190Z</published>
-    <updated>2017-06-28T15:50:01.136Z</updated>
+    <updated>2017-09-18T15:23:46.152Z</updated>
     
     <content type="html"><![CDATA[<p>分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。<br><a id="more"></a></p>
 <h2 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h2><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p><a href="https://www.zhihu.com/question/28013848" target="_blank" rel="external">如何高效地使用搜索引擎？</a>：来自zhihu的问答。</p>
@@ -1252,6 +1252,7 @@
 <p><a href="https://www.voidtools.com/downloads/" target="_blank" rel="external">Everything</a>:windows下文件搜索工具，比系统默认的文件检索快得多且支持正则表达式，但不支持文件内容检索，windows自带的检索工具可以设置成检索文件内容。</p>
 <p><a href="http://pan.baidu.com/s/1eSJZ9cu" target="_blank" rel="external">SourceInsight</a>:多语言代码编辑工具，支持代码高亮，定义跳转，全局搜索，但对中文支持不太好。</p>
 <p><a href="http://pan.baidu.com/s/1hsHnIb6" target="_blank" rel="external">UltraISO</a>:打开ISO文件工具。</p>
+<p><a href="https://zh.dvdfab.cn/" target="_blank" rel="external">dvdfab</a>:好用的ISO文件工具。</p>
 <p><a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=2&amp;ch=&amp;tn=baiduhome_pg&amp;bar=&amp;wd=VMware+%E4%B8%8B%E8%BD%BD&amp;rsv_spt=1&amp;oq=fireworks+%E4%B8%8B%E8%BD%BD&amp;rsv_pq=fe1db2c5000198ef&amp;rsv_t=0101HNZP1hokgvnDfCG5xUelLKmDrgNQ31p4elzWh%2FMLyL2eWO6YmVnLIVHSDnA1sy9O&amp;rqlang=cn&amp;rsv_enter=0&amp;inputT=3987" target="_blank" rel="external">VMware</a>:虚拟机软件，在win下的该软件里再安装其它操作系统，但现在windows 10已经有linux子系统了，现在一般可以不用选择这个方案。</p>
 <p><a href="http://download.flvcd.com/" target="_blank" rel="external">硕鼠</a>:支持多个网站的在线视频下载。</p>
 <p><a href="http://music.163.com/" target="_blank" rel="external">网易云音乐</a>:美观、友好、歌曲推荐算法强。</p>
