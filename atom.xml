@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://LySnake.github.io/"/>
-  <updated>2018-02-24T13:23:18.370Z</updated>
+  <updated>2018-02-24T13:37:41.901Z</updated>
   <id>http://LySnake.github.io/</id>
   
   <author>
@@ -16,11 +16,168 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>常用软件推荐</title>
+    <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html"/>
+    <id>http://LySnake.github.io/archives/technology/电脑小白系列之常用软件推荐.html</id>
+    <published>2017-07-27T02:13:12.000Z</published>
+    <updated>2018-02-24T13:37:41.901Z</updated>
+    
+    <content type="html"><![CDATA[<p>分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。<br><a id="more"></a></p>
+<h2 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h2><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p><a href="https://www.zhihu.com/question/28013848" target="_blank" rel="external">如何高效地使用搜索引擎？</a>：来自zhihu的问答。</p>
+<p><a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif" target="_blank" rel="external">Proxy SwitchyOmega</a>:来自<a href="https://github.com/XX-net/XX-Net" target="_blank" rel="external">XX-Net</a>,插件单独使chrome使用XX-Net搭建梯子，也可以不使用插件，使PC全局智能上梯子。</p>
+<p><a href="https://chrome.google.com/webstore/detail/clickclean/ghgabhipcejejjmhhchfonmamedcbeod" target="_blank" rel="external">Click&amp;Clean</a>:管理工具，可管理chrome，也可以管理PC设备。</p>
+<p><a href="https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj" target="_blank" rel="external">Save to Pocket</a>:pocket，可存网页到网上，支持iOS、安卓平台，支持zhihu等APP或网页分享到pocket APP。</p>
+<p><a href="https://chrome.google.com/webstore/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8A%A9%E6%89%8B%EF%BC%9Abilibilicom-%E7%BB%BC%E5%90%88%E8%BE%85%E5%8A%A9%E6%89%A9%E5%B1%95/kpbnombpnpcffllnianjibmpadjolanh" target="_blank" rel="external">嗶哩嗶哩助手</a>:B站，看直播可自动化领取瓜子等。</p>
+<p><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" target="_blank" rel="external">擴充功能uBlock Origin</a>:一款高效率的廣告攔截工具。</p>
+<p><a href="https://chrome.google.com/webstore/detail/dream-afar-new-tab/henmfoppjjkcencpbjaigfahdjlgpegn" target="_blank" rel="external">遠方 New Tab</a>:打开一个新标签页，背景图都是实时更新的美图，与<a href="https://juejin.im/extension/?utm_source=extension&amp;utm_medium=zhihu&amp;utm_campaign=20595240" target="_blank" rel="external">掘金</a>冲突。</p>
+<p><a href="https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc" target="_blank" rel="external">Octotree</a>:在<a href="www.github.com">github</a>上，打开一个项目，能在左侧以windows资源管理器一样以树状图显示项目文件结构。</p>
+<p><a href="https://chrome.google.com/webstore/detail/web%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8Bfehelper/pkgccpejnmalmdinmhkkfafefagiiiad?hl=zh-CN" target="_blank" rel="external">WEB前端助手(FeHelper)</a>:前端会用到的小工具。</p>
+<p><a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="external">Tampermonkey</a>:很强大的插件，允许运行JS充当功能，相关JS文件可以去<a href="https://greasyfork.org/zh-CN" target="_blank" rel="external">Greasy Fork</a>下载，比如一些特殊网站的JS，免登录使用zhihu，购物党比价工具、下载youtube视频等。</p>
+<p><a href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=zh-CN" target="_blank" rel="external">Vimium</a>:游览网站像操作vim一样操作。</p>
+<p><a href="https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb" target="_blank" rel="external">google翻译</a>:翻译网页或选中字词或短语时翻译。</p>
+<p><a href="https://juejin.im/extension/?utm_source=extension&amp;utm_medium=zhihu&amp;utm_campaign=20595240" target="_blank" rel="external">掘金</a>：在新标签页展示内容，为设计师、程序员、产品经理每日发现优质内容。与<a href="https://chrome.google.com/webstore/detail/dream-afar-new-tab/henmfoppjjkcencpbjaigfahdjlgpegn" target="_blank" rel="external">遠方 New Tab</a>冲突。</p>
+<p><a href="https://chrome.google.com/webstore/detail/send-to-kindle-by-klipme/ipkfnchcgalnafehpglfbommidgmalan" target="_blank" rel="external">Send to Kindle</a>:一键发送网页文章到Kindle阅读器。</p>
+<p><a href="https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien" target="_blank" rel="external">Isometric Contributions</a>:让你在GitHub上的commit像盖楼一样的展示，很有趣，展示下Android大神Jake Wharton的commit情况。</p>
+<p><a href="https://github.com/anasnakawa/chrome-github-avatars" target="_blank" rel="external">Avatars for Github</a>:顾名思义，默认我们在GitHub主页动态只能看到id的，而安装了这个插件就可以看到GitHub头像了.</p>
+<p><a href="https://chrome.google.com/webstore/detail/%E7%9F%A5%E4%B9%8E%E5%A4%B4%E5%83%8F%E6%94%BE%E5%A4%A7%E5%99%A8/iodddkdbdgcmepjlfieigdigioepgibn?hl=zh-CN" target="_blank" rel="external">知乎头像放大器</a>:把用户头像放大，比直接打开链接还要大。</p>
+<p><a href="https://www.zhihu.com/question/23228162" target="_blank" rel="external">chrome有哪些好用的插件</a></p>
+<hr>
+<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p><a href="https://www.zhihu.com/question/32129337" target="_blank" rel="external">如何优雅使用windows 10</a>:来自zhihu的问答。</p>
+<p><a href="https://atom.io/" target="_blank" rel="external">Atom</a>：Atom 是 Github 专门为程序员推出的一个跨平台文本编辑器。具有简洁和直观的图形用户界面，并有很多有趣的特点：支持CSS，HTML，JavaScript等网页编程语言。它支持宏，自动完成分屏功能，集成了文件管理器。</p>
+<p><a href="http://www.scootersoftware.com/download.php" target="_blank" rel="external">BCompare</a>：跨平台的文件比较工具。</p>
+<p><a href="http://download.pchome.net/system/treak/detail-4359.html" target="_blank" rel="external">EasyBCD</a>:修改PC上多个系统引导程序，选择默认系统引导。</p>
+<p><a href="https://www.voidtools.com/downloads/" target="_blank" rel="external">Everything</a>:windows下文件搜索工具，比系统默认的文件检索快得多且支持正则表达式，但不支持文件内容检索，windows自带的检索工具可以设置成检索文件内容。</p>
+<p><a href="http://pan.baidu.com/s/1eSJZ9cu" target="_blank" rel="external">SourceInsight</a>:多语言代码编辑工具，支持代码高亮，定义跳转，全局搜索，但对中文支持不太好。</p>
+<p><a href="http://pan.baidu.com/s/1hsHnIb6" target="_blank" rel="external">UltraISO</a>:打开ISO文件工具。</p>
+<p><a href="https://zh.dvdfab.cn/" target="_blank" rel="external">dvdfab</a>:好用的ISO文件工具。</p>
+<p><a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=2&amp;ch=&amp;tn=baiduhome_pg&amp;bar=&amp;wd=VMware+%E4%B8%8B%E8%BD%BD&amp;rsv_spt=1&amp;oq=fireworks+%E4%B8%8B%E8%BD%BD&amp;rsv_pq=fe1db2c5000198ef&amp;rsv_t=0101HNZP1hokgvnDfCG5xUelLKmDrgNQ31p4elzWh%2FMLyL2eWO6YmVnLIVHSDnA1sy9O&amp;rqlang=cn&amp;rsv_enter=0&amp;inputT=3987" target="_blank" rel="external">VMware</a>:虚拟机软件，在win下的该软件里再安装其它操作系统，但现在windows 10已经有linux子系统了，现在一般可以不用选择这个方案。</p>
+<p><a href="http://download.flvcd.com/" target="_blank" rel="external">硕鼠</a>:支持多个网站的在线视频下载。</p>
+<p><a href="http://music.163.com/" target="_blank" rel="external">网易云音乐</a>:美观、友好、歌曲推荐算法强。</p>
+<p><a href="http://foxmail.com.cn/" target="_blank" rel="external">FoxMail</a>:本地mail客户端。</p>
+<p><a href="https://github.com/Wox-launcher/Wox/releases" target="_blank" rel="external">Wox</a>:功能如Mac下的Alfred，使用alt+space可以启用该程序，可以快速检索本地文件、程序并启用，不再频繁操作鼠标和查找文件(检索使用了Everything)。并有大量插件、自定义一些操作，也有默认常用操作，如：g github即为google检索github。</p>
+<p><a href="http://www.listary.com/" target="_blank" rel="external">Listary</a>:如功能和Wox一样，但是匹配没有Wox好。来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
+<p><a href="https://www.sourcetreeapp.com/" target="_blank" rel="external">SourceTree</a>:git应用Gui程序，支持windows、iOS平台。</p>
+<p><a href="http://www.xitongcheng.com/jiaocheng/win10_article_27723.html" target="_blank" rel="external">Ubuntu on Windows</a>:在windows 10下安装ubuntu子系统，即可不用虚拟机，也能有linux环境，可用于开发。但目前该系统还有很多坑要填，而且下载也是要win搭个梯子。</p>
+<p><a href="http://www.vim.org/download.php" target="_blank" rel="external">Gvim</a>:win下的GUI VIM，如果不是一定要vim才能快速编辑或能熟练使用，还是不要在win下使用vim，相对不是那么友好。(比如常算之后多少个char，使用vim还是很快的)</p>
+<p><a href="http://cn.ejie.me/" target="_blank" rel="external">Clover</a>:让windows系统的文件管理器像chrome一样，支持多标签页功能，目前还有不少BUG，但对于常打开多个窗口查找文件来说，还是十分方便。</p>
+<p><a href="http://www.huyanbao.com" target="_blank" rel="external">护眼宝</a>：修改屏幕色彩，相传更护眼。有Android、iOS、MAC、windows版。</p>
+<p><a href="https://www.teamviewer.com/zhcn/" target="_blank" rel="external">TeamViewer</a>:远程控制，内网穿透，VPN共享，跨平台.对个人免费。目前没有使用过，来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
+<p><a href="https://anydesk.com/remote-desktop" target="_blank" rel="external">AnyDesk</a>:远程控制效果或许会超出你的想象，作为TeamViewer备用方案,来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
+<p><a href="http://sunlogin.oray.com/zh_CN/" target="_blank" rel="external">向日葵</a>:官网信息(远程手机操作PC开机，控制)，来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
+<p><a href="http://www.cockos.com/licecap/" target="_blank" rel="external">licecap</a>:Gif文件录制工具。</p>
+<p><em>Powertool</em>:系统清理工具。</p>
+<hr>
+<h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><p><a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">zsh</a>:更友好的shell(漂亮的themes，更多的输入匹配)。</p>
+<p><a href="https://github.com/DemonCloud/Aix-Vim" target="_blank" rel="external">vim</a>:linux下最常用的编辑器，代码高亮，跳转，IDE界面等，只是要配置成自己更适合的还要多去踩坑。</p>
+<hr>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><h3 id="云梯"><a href="#云梯" class="headerlink" title="云梯"></a>云梯</h3><p><a href="https://github.com/XX-net/XX-Net" target="_blank" rel="external">XX-Net</a>：免费使用google的AppID,每个ID有1G，每个google帐号最多12个AppID，网络速度不错，youtube也能看视频，优点是每天早上可更新流量，且支持chrome、firefox。</p>
+<p><a href="https://github.com/getlantern/forum#%E8%93%9D%E7%81%AFlantern%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD" target="_blank" rel="external">蓝灯(Lantern)</a>:免费情况下每月800M，速度不错，优点搭建快速。</p>
+<p><a href="https://github.com/softwaredownload/openwrt-fanqiang" target="_blank" rel="external">openwrt</a>:实现路由器自动云梯，且因内置linux系统，可定制化功能，比如外接硬盘当网盘、自动下载BT等。但路由器成本不低，适合居家使用，未曾试用过。</p>
+<p><a href="https://uzer.me/" target="_blank" rel="external">UZER.ME</a>:云端软件，常见的如chrome、AI、PS等与办公想关。默认翻墙chrome可以进google、youtube。</p>
+<p><a href="https://wsgzao.github.io/post/fq/" target="_blank" rel="external">更多梯子</a>:这里罗列的方案，大都末使用过。</p>
+<h3 id="数据备份恢复"><a href="#数据备份恢复" class="headerlink" title="数据备份恢复"></a>数据备份恢复</h3><p>数据备份软件来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>,没有使用过。</p>
+<p><a href="http://www.onekeyrestore.cn/" target="_blank" rel="external">易数一键还原</a>:以DiskGenius为内核开发，安全易用靠谱,同时推荐ORM一键还原系统。</p>
+<p><a href="http://www.diskgenius.cn/" target="_blank" rel="external">DiskGenius</a>:国内磁盘分区和数据恢复的佼佼者,Mod By MyCrack.</p>
+<p><a href="http://www.0daydown.com/?s=EaseUS+Data+Recovery" target="_blank" rel="external">EaseUS Data Recovery Wizard</a>:原先是国产易我数据恢复，现在依旧犀利啊</p>
+<h3 id="其它网友环境"><a href="#其它网友环境" class="headerlink" title="其它网友环境"></a>其它网友环境</h3><p><a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao推荐的软件</a>。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Github Pages与Hexo框架博客的搭建</title>
+    <link href="http://LySnake.github.io/archives/technology/Github%20Pages%E4%B8%8EHexo%E6%A1%86%E6%9E%B6%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA.html"/>
+    <id>http://LySnake.github.io/archives/technology/Github Pages与Hexo框架博客的搭建.html</id>
+    <published>2017-07-24T02:13:12.000Z</published>
+    <updated>2018-02-24T13:37:22.752Z</updated>
+    
+    <content type="html"><![CDATA[<p>这篇博文的目的不是<a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>与<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo框架</a>框架搭建个人博客的教学，毕竟官网教学更详细更全面，而是记录本人搭建过程中了解、学习并汇总的一些东西，附带链接陈列出来，主要供第一次搭建的朋友参考学习。<br><a id="more"></a></p>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="git与github"><a href="#git与github" class="headerlink" title="git与github"></a>git与github</h3><p>git:查看廖雪峰的<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001373962845513aefd77a99f4145f0a2c7a7ca057e7570000" target="_blank" rel="external">git简介</a>。<br>git工具是Linus继linux开源操作系统之后又一影响世界的项目，因与linux的关系，所以本身是命令行模式，对大多数人来说是不够友好的，在实际使用中可以使用windows或iOS平台上的桌面软件，虽然这样并不能使用git的全部功能。<a href="https://www.github.com/" target="_blank" rel="external">Github</a>就是使用git的通信协议，得力于开源精神而创建的一个平台，并且linux项目也在<a href="https://www.github.com/" target="_blank" rel="external">Github</a>上托管，我们可以使用桌面软件<a href="https://www.sourcetreeapp.com/" target="_blank" rel="external">Source Tree</a>管理我们在<a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>上的博客项目。</p>
+<p>学习成本：初期算半天吧，git重操作，前期学习<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的git教学</a>了解基本理念，之后以多用多学为主，不会咱可以google。</p>
+<h3 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h3><p><a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>具体信息查看官网是最权威的，这里提出为何使用Github Pages搭建博客的原因：</p>
+<ul>
+<li>版本管理：<a href="www.github.com">github</a>是目前程序员最火的一个免费的版本管理平台，所谓版本管理，主要是针对文本文档的管理，解决多人、异地、长时间维护共同项目文档所带来的问题，并因为开源精神，所以Free(免费且自由)。</li>
+<li>展示：<a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>是给<a href="www.github.com">github</a>中用户或项目的一个展示项目，并免费提供300M空间，就项目而言，提供项目介绍与使用相关，对于个人而言可以作为博客，分享知识，也有利于他人了解自己。</li>
+<li>全球优良的网络：这个平台是程序员为主的平台，有google、微软等众多一线科技公司在这发布开源项目，也有现今互联网基石linux在其平台进行管理，而且也是技术界大佬建立的公司，在全球都拥有很好的网络连接。</li>
+<li>学习：<a href="www.github.com">github</a>上有很多开源的项目，因此也提供了很多开源的软件，比如<a href="https://github.com/Wox-launcher/Wox" target="_blank" rel="external">wox</a>方便windows更好的打开应用。同样，<a href="www.github.com">github</a>也是程序员学习，创建开源项目的地方，可以与他人一同开发、维护开源项目，这其中必不可少的使用git版本管理工具。</li>
+<li>其他领域：<a href="www.github.com">github</a>同样开始影响其他领域，可以一起创建项目翻译国外文档、写小说、写项目说明。学习并使用github或许能学习到不一样的知识。参考<a href="https://www.gitbook.com/" target="_blank" rel="external">gitbook</a></li>
+<li>搭建学习成本：根据<a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>创建<a href="www.github.com">github</a>帐号，Github Pages项目，不到一小时。</li>
+</ul>
+<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><p><a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>中介绍使用Jekyll框架，因为勘察时感觉对于个人博客而言Jekyll的主题不够华丽，而后选择了<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo框架</a>。在使用上，需要安装Node.js，以命令行的形式使用，对于没有使用过命令行操作电脑的小伙伴还是有点不友好的。对于windows用户可以使用<a href="https://github.com/cmderdev/cmder" target="_blank" rel="external">cmder</a>代替CMD。win7以上可以使用powershell。对于什么是命令行，使用win + R组合键再输入cmd，看到的界面就是命令行界面，以输入字符的方式操作电脑。</p>
+<p><strong>学习成本</strong>：参考<a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="external">Hexo命令</a>,命令行常用操作也就只有一个网页，常用不到5个命令。但了解、熟悉并使用一定的自定义要看个人。全部搭建完花费4天时间。以后只要编写markdown文档和常用几个命令了。</p>
+<h3 id="静态网站"><a href="#静态网站" class="headerlink" title="静态网站"></a>静态网站</h3><p><strong>个人在该博客中对静态、动态网站的理解</strong>：对于浏览器而言是没有多大的区别，相关的也就是使用中要与服务器发送或接收数据，对于服务器而言，静态网页差不多就是网络端存储了些网页相关的资源文件，如html、css、js、图片等，服务器主要响应文件请求与发送；而对于动态网站，我们可以参考QQ空间，每个人的空间基本结构是一样的，但是每个人每个时间点显示的信息都是不一样的，这是因为后台使用PHP、Python、Java等web服务器，在每个用户请求页面时通过与数据库交互，获取特定数据再生成特定资源文件(html、css等)发送到用户浏览器。</p>
+<h3 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h3><p><a href="http://markdown-zh.readthedocs.io/en/latest/" target="_blank" rel="external">Markdown</a>官方：</p>
+<blockquote>
+<p>Markdown 的目标是易于阅读, 创作和编辑文章. HTML 是一种 发布 格式; Markdown 是一种 创作 格式. 因此, Markdown 处理的都是纯文本。</p>
+</blockquote>
+<p>目前，已知在<a href="www.github.com">github</a>上的项目介绍文件，就是使用Markdown，并且在项目相关的issues等一些文字发布区域，也支持Markdown的编写与预览。其他网站也有推荐使用Markdown进行回答、评论、书写，比如<a href="http://www.jianshu.com/p/d62ca374c90f" target="_blank" rel="external">简书</a>，而我们搭建的博客，就是通过使用Markdown编写成源文件，通过<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo框架</a>与<a href="https://hexo.io/themes/" target="_blank" rel="external">相关主题</a>生成静态网页，再更新到<a href="www.github.com">github</a>个人博客项目库中。并且Markdown可以通过更多插件，提供更多功能，可以预见的是，Markdown将会越加火热。</p>
+<p><strong>学习成本</strong>：半天，与git一样，初步了解后多写多练，不会或者忘记勤查文档。</p>
+<h2 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h2><h3 id="Hexo本地工程目录"><a href="#Hexo本地工程目录" class="headerlink" title="Hexo本地工程目录"></a>Hexo本地工程目录</h3><p>参考<a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="external">Hexo建站</a>,假设我们在HexoInit目录下使用<code>hexo init</code>命令来初始化Hexo工程，参考<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">Hexo配置</a>设置配置文件，在HexoInit目录下，我们可以看到:</p>
+<ul>
+<li>node_modules目录：该目录是npm下载的一些插件，不需直接管理，如有添加、删除应尽量使用npm命令。</li>
+<li>public目录：当使用<code>hexo g</code>命令后，会生成静态站相关文件，先通过<code>hexo s</code>本地查看页面，以便修改，最后直接把该目录所有文件上传（commit）到<a href="www.github.com">github</a>个人博客项目，然后再访问。</li>
+<li>scaffolds目录：该目录存放模板，模板文件是markdown文件<code>*.md</code>，初始化时已存在三个模板文件，分别对应三个<code>layout</code>。现假设我们有模板jottings.md,内容如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">layout: post</div><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">comments: false</div><div class="line">categories:</div><div class="line">  - archives</div><div class="line">  - jottings</div><div class="line">tags:</div><div class="line">---</div></pre></td></tr></table></figure>
+<p>当使用<code>hexo new jottings fileName</code>命令时，就会以jottings.md的内容生成一个fileName.md文件在source/_posts/目录下，相关配置参考<a href="https://hexo.io/zh-cn/docs/front-matter.html" target="_blank" rel="external">Front-matter</a>。</p>
+<ul>
+<li>source目录：存放使用markdown编写的源文件，当使用<code>hexo g</code>命令生成public目录文件时，Hexo和主题就会使用source目录中的*.md文件生成最后的静态网页文件，其下子目录分布与layout有关。</li>
+<li>themes目录：存放配置主题，相关说明见<a href="https://hexo.io/zh-cn/docs/themes.html" target="_blank" rel="external">Hexo主题说明</a>。</li>
+<li>_config.yml文件：这是Hexo本地工程的配置文件，相关使用说明参考<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">Hexo配置</a></li>
+<li>db.json文件：缓存文件，使用<code>hexo clean</code>会清除，使用<code>hexo g</code>时会生成。</li>
+<li>package.json文件：该本地工程npm配置文件，记录了node_modules目录安装的插件，如果存在一份配置好的package.json文件，可以直接在HexoInit目录下使用<code>npm install</code>命令读取配置文件安装相关插件。</li>
+</ul>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>node_modules目录内容可以根据package.json生成，public目录根据source目录生成，所以我们应备份source目录与_config.yml、package.json二个文件，另外，如果有定制化的scaffolds目录文件，也要备份，以便于今后重建工程时能快速搭建。</p>
+<h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><p>该博客使用的是<a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="external">yelee主题</a>，<a href="https://hexo.io/themes/" target="_blank" rel="external">更多主题选择</a>,选择自己喜欢的主题，参考<a href="https://hexo.io/zh-cn/docs/themes.html" target="_blank" rel="external">Hexo主题说明</a>配置，一般一个完善的主题会有使用帮助，具体配置，如<a href="http://moxfive.coding.me/yelee/" target="_blank" rel="external">yelee使用说明</a>。在yelee使用说明中，可以查看主题完成显示相关，个性化相关的一些配置，也集成了一些第三方服务与评论系统。</p>
+<h2 id="相关帮助连接"><a href="#相关帮助连接" class="headerlink" title="相关帮助连接"></a>相关帮助连接</h2><ul>
+<li><a href="https://github.com/getlantern/forum#%E8%93%9D%E7%81%AFlantern%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD" target="_blank" rel="external">蓝灯番墙</a></li>
+<li><a href="https://wsgzao.github.io/post/fq/" target="_blank" rel="external">更多番墙方案</a>:个人使用XX-NET</li>
+<li><a href="www.github.com">github</a></li>
+<li><a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a></li>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的git教学</a></li>
+<li><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo官网</a></li>
+<li><a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo主题</a></li>
+<li><a href="http://markdown-zh.readthedocs.io/en/latest/" target="_blank" rel="external">Markdown官方教程</a></li>
+<li><a href="https://github.com/cmderdev/cmder" target="_blank" rel="external">cmder</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">阮一峰博客-Github Pages搭建博客入门</a></li>
+<li><a href="https://wsgzao.github.io/post/hexo-guide/" target="_blank" rel="external">使用GitHub和Hexo搭建免费静态Blog</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这篇博文的目的不是&lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;与&lt;a href=&quot;https://hexo.io/zh-cn/docs/index.html&quot;&gt;Hexo框架&lt;/a&gt;框架搭建个人博客的教学，毕竟官网教学更详细更全面，而是记录本人搭建过程中了解、学习并汇总的一些东西，附带链接陈列出来，主要供第一次搭建的朋友参考学习。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+      <category term="Github Pages" scheme="http://LySnake.github.io/tags/github-pages/"/>
+    
+      <category term="Hexo" scheme="http://LySnake.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C++ Primer Plus学习笔记(7)</title>
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(7).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(7).html</id>
     <published>2017-07-22T02:13:12.000Z</published>
-    <updated>2018-02-24T13:23:18.370Z</updated>
+    <updated>2018-02-24T13:37:11.656Z</updated>
     
     <content type="html"><![CDATA[<h2 id="第17章-输入、输出和文件"><a href="#第17章-输入、输出和文件" class="headerlink" title="第17章 输入、输出和文件"></a>第17章 输入、输出和文件</h2><h3 id="17-1-C-输入和输出概述"><a href="#17-1-C-输入和输出概述" class="headerlink" title="17.1 C++输入和输出概述"></a>17.1 C++输入和输出概述</h3><p>C++程序把输入和输出看作是字节流。输入时，程序从输入流中抽取字节；输出时，程序将字节插入到输出流中。对于面向文本的程序，每个字节代表一个字符，更通俗地说，字节可以构成字符或数值数据的二进制表示。输入流中的字节可能来自键盘，也可能来自存储设备（如硬盘）或其它程序。同样，输入流中的字节可以流向屏幕、打印机、存储设备或其它程序。流充当了程序和流源或流目标之间的桥梁。这使得C++程序可以以相同的方式对待来自键盘的输入和来自文件的输入。C++程序只是检查字节流，而不需要知道字节来自何向。</p>
 <p>通常，通过使用缓冲区可以更高效地处理输入和输出。缓冲区是用作中介的内存块，它是将信息从设备传输到程序或从程序传输给设备的临时存储工具。通常，像磁盘驱动器这样的设备，以512字节(或更多)的块为单位来传输信息，而程序通常每次只能处理一个字节的信息。缓冲区帮助匹配这二种不同的信息传输速率。</p>
@@ -304,296 +461,6 @@
   </entry>
   
   <entry>
-    <title>C++ Primer Plus学习笔记(5)</title>
-    <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(5).html"/>
-    <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(5).html</id>
-    <published>2017-07-01T14:28:08.127Z</published>
-    <updated>2018-02-24T13:23:05.685Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="15-友元、异常和其他"><a href="#15-友元、异常和其他" class="headerlink" title="15. 友元、异常和其他"></a>15. 友元、异常和其他</h2><h3 id="15-1-友元类"><a href="#15-1-友元类" class="headerlink" title="15.1 友元类"></a>15.1 友元类</h3><p>将类作为友元，友元类的所有方法都可以访问原始类的私有成员和保护成员。另外，也可以做更严格的限制，只将特定的成员函数指定为另一个类的友元。</p>
-<p>友元声明可以位于公有、私有或保护部分，其所在的位置无关紧要。由于友元类中的方法使用了包含类相关信息，所以编译器必须了解包含类后才能处理友元类。</p>
-<p>类友元是一种自然用语，用于表示一些关系。如果不使用某些形式的友元关系，则必须将包含类的私有部分设置为公有，或者创建一个笨拙的、大型类来包含这二个类。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Tv</div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="keyword">friend</span> <span class="keyword">class</span> Remote; </div><div class="line">    <span class="comment">//todo</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Remote</div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">set_chan</span><span class="params">(Tv &amp;t, <span class="keyword">int</span> c)</span></span>&#123;t.channel = c&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="15-2-友元成员函数"><a href="#15-2-友元成员函数" class="headerlink" title="15.2 友元成员函数"></a>15.2 友元成员函数</h3><p>确实可以选择仅让特定的类成员成为另一个类的友元，而不必让整个类成为友元，不过这样做稍微有点麻烦，必须小心排列各种声明和定义的顺序。为此，将使用前向声明来处理。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Tv;           <span class="comment">//前向声明</span></div><div class="line"><span class="keyword">class</span> Remote&#123;...&#125;;  <span class="comment">//友元类</span></div><div class="line"><span class="keyword">class</span> Tv&#123;...&#125;;      <span class="comment">//包含类</span></div></pre></td></tr></table></figure>
-<p>另外，可以把友元类的成员函数，实现写在Tv类的后边（头文件中），加inline关键字实现成员方法为内联方法，这样，可以让编译器不在类声明中就要知道包含类的过多信息，避免因编译器不知道包含类的成员信息而无法编译。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> TVFM_H_</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> TVFM_H_</span></div><div class="line"></div><div class="line"><span class="keyword">class</span> Tv;   <span class="comment">//前向声明</span></div><div class="line"><span class="keyword">class</span> Remote </div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">   <span class="keyword">enum</span> &#123;TV&#125;;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">   <span class="keyword">int</span> mode;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">   Remote(<span class="keyword">int</span> m =TV):mode(TV)&#123;&#125;</div><div class="line">   <span class="function"><span class="keyword">bool</span> <span class="title">set_mode</span><span class="params">(Tv &amp;t)</span></span>;</div><div class="line">   <span class="keyword">void</span> Remote::set_chan(Tv &amp;t, <span class="keyword">int</span> c);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Tv</div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="keyword">friend</span> <span class="keyword">void</span> Remote::set_chan(Tv &amp;t, <span class="keyword">int</span> c);</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="keyword">int</span> channel;</div><div class="line"><span class="comment">//todo</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">inline</span> <span class="keyword">void</span> Remote::set_chan(Tv &amp;t, <span class="keyword">int</span> c)&#123;t.channel = c;&#125;</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
-<p>内联函数的链接性是内部的，这意味着函数定义必须在使用函数的文件中，在这个例子中，内联定义位于头文件中，因此在使用函数的文件中包含头文件可确保将定义放在正确的地方。也可以将定义放在实现文件中，但必须删除关键字inline，这样函数的链接性将是外部的。</p>
-<h3 id="15-1-3-其他友好关系"><a href="#15-1-3-其他友好关系" class="headerlink" title="15.1.3 其他友好关系"></a>15.1.3 其他友好关系</h3><p><strong>二个类相互成为友元</strong>：当二个类都要相互修改另一个类的成员信息时。</p>
-<p><strong>共同的友元</strong>：函数需要访问二个类的私有数据。从逻辑上看，这样的函数应是每个类的成员函数，但这是不可能的，它可以是一个类的成员，同时是另一个类的友元，不过有时将函数作为二个类的友元更合理。</p>
-<h3 id="15-2-嵌套类"><a href="#15-2-嵌套类" class="headerlink" title="15.2 嵌套类"></a>15.2 嵌套类</h3><p>在C++中，可以将类声明放在另一个类中。在另一个类中声明的类被称为嵌套类，它通过提供新的类型类作用域来避免名称混乱。包含类的成员函数可以创建和使用被嵌套类的对象；而声明位于公有部分，才能在包含类的外面使用嵌套类，而且必须使用作用域解析操作符。</p>
-<p>对类进行嵌套与包含并不同。包含意味着将类对象作为另一个类的成员，而对类进行嵌套不创建类成员，而是定义了一种类型，该类型仅在包含嵌套类声明的类中有效。</p>
-<p>由于结构体是一种其成员在默认情况下为公有的类，所以Node结构体实际上是一个嵌套类，但该定义并没有充分利用类的功能。具体地说，它没有显式构造函数。可以如下添加：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line">	<span class="keyword">class</span> Node</div><div class="line">	&#123;</div><div class="line">	 <span class="keyword">public</span>:</div><div class="line">     	Item item;</div><div class="line">		Node* next;</div><div class="line">		Node(<span class="keyword">const</span> Item &amp;i):item(i),next(<span class="number">0</span>)&#123;&#125;</div><div class="line">	&#125;;</div><div class="line"><span class="comment">//todo</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="15-2-1-嵌套类和访问权限"><a href="#15-2-1-嵌套类和访问权限" class="headerlink" title="15.2.1 嵌套类和访问权限"></a>15.2.1 嵌套类和访问权限</h3><p>嵌套类的声明位置决定了嵌套类的作用域，即它决定了程序的哪些部分可以创建这种类的对象。其次，和其他类一样，嵌套类的公有部分、保护部分和私有部分控制了对类成员的访问。</p>
-<p>如果嵌套类是在另一个类的私有部分声明的，则只有后者知道它。另外，类的成员的默认访问权限是私有的。</p>
-<p>如果嵌套类是在另一个类的保护部分声明的，则它对于后者来说是可见的，但是对于外部世界则是不可见的。不过，在这种情况中，派生类将知道嵌套类，并可以直接创建这种类型的对象。如果嵌套类是在另一个类的公有部分声明的，则允许后者、后者的派生类以及外部世界使用它，因为它是公有的。不过，由于嵌套类的作用域为包含它的类，因此外部世界使用它时，使用类限定符。</p>
-<p>嵌套结构和枚举的作用域有些相同。其实，很多程序员都使用公有枚举来提供可供客户程序员使用的类常数。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">声明位置</th>
-<th style="text-align:center">包含它的类是否可以使用它</th>
-<th style="text-align:center">从包含它的类派生而来的类是否可以使用它</th>
-<th style="text-align:center">外部世界是否可以使用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">私有部分</td>
-<td style="text-align:center">是</td>
-<td style="text-align:center">否</td>
-<td style="text-align:center">否</td>
-</tr>
-<tr>
-<td style="text-align:center">保护部分</td>
-<td style="text-align:center">是</td>
-<td style="text-align:center">是</td>
-<td style="text-align:center">否</td>
-</tr>
-<tr>
-<td style="text-align:center">公有部分</td>
-<td style="text-align:center">是</td>
-<td style="text-align:center">是</td>
-<td style="text-align:center">是，通过类限定符来使用</td>
-</tr>
-</tbody>
-</table>
-<h3 id="15-2-2-模板中的嵌套"><a href="#15-2-2-模板中的嵌套" class="headerlink" title="15.2.2 模板中的嵌套"></a>15.2.2 模板中的嵌套</h3><p>STL中的迭代器就是通过模板中嵌套类定义实现的，并且可以与包含模板使用同样的类型作为参数而不用再使用template声明。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> QUEUETP_H_</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> QUEUETP_H_</span></div><div class="line"></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Item&gt;</div><div class="line"><span class="keyword">class</span> QueueTP</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="keyword">enum</span>&#123;Q_SIZE = <span class="number">10</span>&#125;;</div><div class="line"></div><div class="line">	<span class="keyword">class</span> Node</div><div class="line">	&#123;</div><div class="line">	<span class="keyword">public</span>:</div><div class="line">	    Item item;</div><div class="line">	    Node *next;</div><div class="line">	    Node(<span class="keyword">const</span> Item &amp;i):item(i),next(<span class="number">0</span>)&#123;&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"><span class="comment">//todo</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
-<h3 id="15-3-异常"><a href="#15-3-异常" class="headerlink" title="15.3 异常"></a>15.3 异常</h3><p>程序有时会遇到运行阶段的错误，导致程序无法正常地运行下去。例如，程序可能试图打开一个不可用的文件，请求过多的内存，或者遭遇不能容忍的值。通常，程序员都会试图避免这种意外的情况。C++异常为处理这种情况提供了一种功能强大而灵活的工具。有些编译器默认关闭这种特性，可能需要使用编译器选项来启用它。</p>
-<p>abort()函数的原型位于头文件cstdlib（或stdlib.h)中，其典型实现是向标准错误流(即cerr使用的错误流)发送消息abnormal program termination (程序异常终止)，然后终止程序。它还返回一个随实现而异的值，告诉操作系统（如果程序是由另一个程序调用的，则告诉父进程），处理失败。abort()是否刷新文件缓冲区（用于存储读写到文件中的数据的内存区域）取决于实现。</p>
-<h3 id="15-3-3-异常机制"><a href="#15-3-3-异常机制" class="headerlink" title="15.3.3 异常机制"></a>15.3.3 异常机制</h3><p>C++异常是对程序运行过程中发生的异常情况（例如被0除）的一种响应。异常提供了将控制权从程序的一个部分传递到另一部分的途径。对异常的处理有3个组成部分：</p>
-<ul>
-<li>引发异常</li>
-<li>捕获有处理程序的异常</li>
-<li>使用try块</li>
-</ul>
-<p>throw语句实际上是跳转，即命令程序跳到另一条语句。throw关键字表示引发异常，紧随其后的值（例如字符串或对象）指出了异常的特征。</p>
-<p>程序使用异常处理程序来捕获异常，异常处理程序位于要处理问题的程序中。catch关键字表示捕获异常。处理程序以关键字catch开头，随后是位于括号中的类型声明，它指出了异常处理程序要响应的异常类型。然后是一个用花括号括起的代码块，指出要采取的措施。catch关键字和异常类型用作标签，指出当异常被引发时，程序应跳到这个位置执行。异常处理程序也被称为catch块。</p>
-<p>try块标识其中特定的异常可能被激活的代码块，它后面跟一个或多个catch块。try块是由关键字try指示的，关键字try的后面是一个由花括号括起的代码块，表明需要注意这些代码引发的异常。</p>
-<p>如果try块中某条语句导致异常被引发，则后面的catch块将对异常进行处理。如果程序在try块的外面产生异常，将无法被catch捕获。</p>
-<p>异常类型可以是字符串或其它C++类型，通常为类类型。执行throw语句类似执行返回语句，因为它也将终止函数的执行，但throw不是将控制权返回给调用程序，而是导致程序沿函数调用序列后退，直到找到包含try块的函数。</p>
-<p>关键字catch表明这是一个处理程序，而chatch(type &amp;value)中的type则表明该处理程序与type类型异常匹配，value与函数参数定义极其相似，因为匹配的类型对象将被赋给value。另外，当异常与该处理程序匹配时，程序将执行括号中的代码。</p>
-<p>执行完try块中的语句后，如果没有引发任何异常，则程序跳过try块后面的catch块，直接执行处理程序后面的第一条语句。</p>
-<p>如果函数引发了异常，而没有try块或没有匹配的处理程序时，在默认情况下，程序最终将调用abort()函数，但可以修改这种行为。</p>
-<p>通常，引发异常的函数将传递一个对象，这样做的主要优点之是，可以使用不同的类型来区分不同的函数在不同情况下引发的异常。另外，对象可以提供信息，程序员可以根据这些信息来确定引发异常的原因，同是，catch块可以根据这些信息来决定采取什么样的措施。</p>
-<p>可使用异常规范对函数定义进行限定，指出它将引发哪些类型的异常。为此，可在函数定义的后面加上异常规范，它由关键字throw和异常类型列表组成，异常类型列表被括在括号中，并用逗号分隔。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//异常规范</span></div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">hmean</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span> <span class="title">throw</span><span class="params">(bad_hmean)</span></span>;</div></pre></td></tr></table></figure>
-<p>这完成了二项工作，首先，它告诉编译器，该函数引发哪些类型的异常。如果以后该函数引发了其他类型的异常，程序(最终)将调用abort()函数，对这种越权做出反应。其次，使用异常规范将提醒阅读该原型的人，该函数引发异常，应提供try块和处理程序。对于引发多种异常的函数，可提供一个由逗号分隔的异常类型列表。这种句法与函数原型参数列表句法类似。如果异常规范中的括号内为空，则表明该函数不会引发异常。</p>
-<p>C++通常通过将信息放在堆栈中来处理函数调用，具体地说，程序将调用函数的指令的地址(返回地址)放到堆栈中。当被调用的函数执行完毕后，程序将使用该地址来确定从哪里开始继续执行。另外，函数调用将函数参数放到堆栈中。 在堆栈中，这些函数参数被视为自动变量。如果被调用的函数创建了新的自动变量，则这些变量也将被添加到堆栈中。如果被调用的函数调用了另一个函数，则后者的信息将被添加到堆栈中，依此类推。当函数结束时，程序流将跳到该函数被调用时存储的地址处，同时堆栈顶端的元素被释放。因此，函数通常都返回到调用它的函数，依此类推，同时每个函数都在结束时释放其自动变量。如果自动变量是类对象，则类的析构函数(如果有的话–&gt;只有需要的时候编译器才会创建)将被调用。</p>
-<p>现在假设函数由于出现异常(而不是由于返回)而终止，则程序也将释放堆栈中的内存，但不会在释放堆栈的第一个返回地址后停止，而是继续释放堆栈，直到找到一个位于try块中的返回地址。随后，控制权将转到块尾的异常处理程序，而不是函数调用后面的第一条语句，这个过程被称为堆栈解退。引发机制的一个非常重要的特性是，和函数返回一样，对于堆栈中的自动类对象，类的析构函数将被调用。不过函数返回仅仅处理该函数放在堆栈中的对象，而throw语句则处理try块和throw之间整个函数调用序列放在堆栈中的对象。如果没有堆栈解退这种特性，则引发异常后，对于中间函数调用放在堆栈中的自动类对象，其析构函数将不会被调用。</p>
-<p>程序进行堆栈解退以回到能够捕获异常的地方时，将释放堆栈中的自动存储型变量。如果变量是类对象，将为该对象调用析构函数。</p>
-<p>普通函数中，返回语句将控制权返回到调用函数，但throw语句将控制权向上返回到第一个这样的函数：包含能够捕获相应异常的try-catch组合。</p>
-<p>catch中的类型变量，使用的是throw的类型变量的一个副本，因为自动变量将会释放。</p>
-<p>throw语句将生成拷贝，为何代码中使用引用呢？毕竟将引用作为返回值的通常原因是避免创建拷贝以提高效率。答案是，引用还有另一个重要牲：基类引用可以执行派生类对象，假设有一组通过继承关联起来的异常类型，则在异常规范中只需列出一个类型引用，它将与任何派生类对象匹配。</p>
-<p>如果有一个异常类继承层次结构，应这样排列catch块：将捕获位于层次结构最下面的异常类的catch语句放在最前面，将捕获基类异常的catch语句放在最后面。</p>
-<h3 id="15-3-7-exception"><a href="#15-3-7-exception" class="headerlink" title="15.3.7 exception"></a>15.3.7 exception</h3><p>C++异常的主要目的是为设计容错程序提供语言级支持，即异常使得在程序设计中包含错误处理功能更容易，以免事后采取一些严格的错误处理方式。异常的灵活性和相对方便性激励着程序员在条件允许的情况下在程序设计中加入错误处理功能。简而言之，异常是这样的一种特性：类似于类，可以改变您的编程方式。</p>
-<p>为支持该语言，exception头文件(以前为exception.h或except.h)定义了exception类，C++可以把它用作其他异常类的基类。代码可以引发exception异常，也可以将exception类用作基类。有一个名为what()的虚拟成员函数，它返回一个字符串，该字符串的特征随实现而异，然而，由于这是一个虚方法，因此可以从exception派生而来的类中重新定义它。</p>
-<p>C++库定义了很多基于exception的异常类型。头文件exception提供了bad_exception，供函数unexpected()使用。</p>
-<p>头文件stdexcept定义了其他几个异常类，首先，该文件定义了logic_error和runtime_error类，它们都是以公有方式从exception派生而来的。</p>
-<p><strong>下溢错误</strong>：下溢错误在浮点数计算中，一般而言，存在浮点类型可以表示的最小非零值，计算结果比这个值还小时将导致下溢错误。整形和浮点型都可能发生上溢错误，当计算结果超过了某种类型能够表示的最大数量级时，将发生上溢错误。计算结果可能不在函数允许范围之内，但没有发生上溢或下溢错误，在这种情况下，可以使用range_error异常。</p>
-<p>对于处理使用new时可能出现的内存分配问题，C++提供了二种可供选择的方式。第一种方式（一度是惟一的方式）是，让new在无法满足内存请求时返回一个空指针；第二种方式是，让new引发bad_alloc异常。new文件(以前为new.h)中包含了bad_alloc类的声明，它是从exception类公有派生而来的。实现只能提供一种方式，但也可以使用编译器开关或其它一些方法，让编程都能够选择喜欢的方式。</p>
-<p>异常、类和继承以三种方式相互关联。首先，可以像标准C++库所做的那样，从一个异常类派生出另一个；其次，可以在类定义中嵌套异常类声明来组合异常；第三，这种嵌套声明本身可被继承，还可用作基类。</p>
-<p>C++规定， 在派生类中重新定义基类的方法时，函数特征标必须相同，但返回类型可以不同，条件是派生类方法的返回类型是直接或间接地从基类方法的返回类型派生而来的。这种规则也适用于异常规范。派生类方法的异常规范必须与基类方法相同，或者使用的类型是直接或间接从基类方法的异常规范中使用的类型派生而来的。</p>
-<h3 id="15-3-9-异常何时会迷失方向"><a href="#15-3-9-异常何时会迷失方向" class="headerlink" title="15.3.9 异常何时会迷失方向"></a>15.3.9 异常何时会迷失方向</h3><p>异常被引发后，在二种情况下，会导致问题。首先，如果它是在带异常规范的函数中引发的，则必须与规范列表中的某种异常匹配(在继承层次结构中，类类型与这个类及其派生类的对象匹配)，否则称为意外异常。在默认情况下，这将导致程序异常终止。如果异常不是在函数中引发的(或者函数没有异常规范)，则它必须被捕获。如果没有被捕获(在没有try块或没有匹配的catch块时，将出现这种情况)，则异常被称为未捕获异常。在默认情况下，这将导致程序异常终止。不过，可以修改程序对意外异常和未捕获异常的反应。</p>
-<p>未捕获异常不会导致程序立刻终止。相反，程序将首先调用函数terminate()。在默认情况下，terminate()调用abort()函数。可以指定terminate()应调用的函数(而不是abort())来修改terminate()的这种行为。 为此，可调用set_terminate()函数。set_terminate()函数和terminate()都是在头文件exception中声明的。</p>
-<p>原则上，异常规范应包含函数调用的其他函数引发的异常。</p>
-<p>使用异常会增加代码，降低程序的运行速度。异常规范不适用于模板，因为模板函数引发的异常可能随特定的具体化而异。异常和动态内在分配不能总是协同工作。</p>
-<p>简而言之，虽然异常处理对于某些项目极为重要，但它也会增加编程的工作量、增大程序、降低程序的速度。另外，编译器对异常的支持以及用户的经验还没有达到成熟的程度，所以应有节制地使用这种特性。</p>
-<h3 id="15-4-RTTI"><a href="#15-4-RTTI" class="headerlink" title="15.4 RTTI"></a>15.4 RTTI</h3><p>RTTI是运行阶段类型识别(Runtime Type Identification)的简称。这是新添加到C++中的特性之一，很多老式实现并不支持。另一些实现可能包含开关RTTI的编译器设置。RTTI旨在为程序在运行阶段确定对象的类型提供一种标准方式。</p>
-<p>为何要知道类型？可能希望调用类方法的正确版本，在这种情况下，只要该函数是类层次结构中所有成员都拥有的虚函数，则并不真正需要知道对象的类型。但派生对象可能包含不是继承而来的方法，在这种情况下，只有某些类型的对象可以使用该方法。也可能是出于调用目的，想跟踪生成的对象的类型。</p>
-<h3 id="15-4-2-RTTI的工作原理"><a href="#15-4-2-RTTI的工作原理" class="headerlink" title="15.4.2 RTTI的工作原理"></a>15.4.2 RTTI的工作原理</h3><p>C++有3个支持RTTI的元素：</p>
-<ul>
-<li>如果可能的话，dynamic_cast操作符将使用一个指向基类的指针来生成一个指向派生类的指针；否则，该操作符返回0–空指针。</li>
-<li>typeid操作符返回一个指出对象的类型的值。</li>
-<li>type_info结构存储了有关特定类型的信息。</li>
-</ul>
-<p>只能将RTTI用于包含虚函数的类层次结构，原因在于只有对于这种类层次结构，才应该将派生对象的地址赋给基类的指针。</p>
-<p><strong>dynamic_case操作符</strong>：</p>
-<p>dynamic_cast操作符是最常用的RTTI组件。它不能回答“指针指向的是哪类对象”这样的问题，但能够回答“是否可以安全地将对象的地址赋给特定类型的指针”这样的问题。</p>
-<p>通常想知道类型的原因在于：知道类型后，就可以知道调用特定的方法是否安全。要调用方法，类型并不一定要完全匹配，而可以是定义了方法的虚拟版本的基类类型。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//指针pg的类型是否可被安全地转换为Superb *?如果可以，操作符将返回对象的地址，否则返回一个空指针。</span></div><div class="line">Superb *pm = dynamic_case&lt;Superb *&gt; (pg);</div></pre></td></tr></table></figure>
-<p>编译器支持RTTI，在默认情况下，它也可能关闭该特性。如果该特性被关闭，程序可能仍能够通过编译，但将出现运行阶段错误。在这种情况下，读者应查看文档或菜单选项。</p>
-<p>也可以将dynamic_cast用于引用，其用法稍微有点不同：没有与空指针对应的引用值，因此无法使用特殊的引用值来指示失败。当请求不正确时，dynamic_cast将引发类型为bad_cast的异常，这种异常是从exception类派生而来的。它是在头文件typeinfo中定义。</p>
-<p><strong>typeid操作符和type_info类</strong>：</p>
-<p>typeid关键字使得能够确定二个对象是否为同种类型。它与sizeof有些想像，可以接受二种参数：</p>
-<ul>
-<li>类名。</li>
-<li>结果为对象的表达式。</li>
-</ul>
-<p>typeid操作符返回一个对type_info对象的引用，其中，type_info是在头文件typeinfo(以前为typeinfo.h)中定义的一个类。type_info类重载了==和!=操作符，以便可以使用这些操作符来对类型进行比较。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeid</span>(ClassName) == <span class="keyword">typeid</span>(Obj)</div></pre></td></tr></table></figure>
-<h3 id="15-5-类型转换操作符"><a href="#15-5-类型转换操作符" class="headerlink" title="15.5 类型转换操作符"></a>15.5 类型转换操作符</h3><ul>
-<li>dynamic_cast </li>
-<li>const_cast</li>
-<li>static_cast</li>
-<li>reinterpret_cast</li>
-</ul>
-<p><strong>dynamic_cast</strong>操作符使得能够在类层次结构中进行向上转换(由于is-a关系，这样的类型转换是安全的），而不允许其它转换。</p>
-<p><strong>const_cast</strong>操作符用于执行只有一种用途的类型转换，即改变值为const或volatile。</p>
-<p><strong>static_cast</strong>:<code>static_cast&lt; type-name&gt; (expression)</code>仅当type_name可被隐匿转换为expression所属的类型或expression可被隐匿转换为type_name所属的类型时，上述转换才是合法的，否则将出错。</p>
-<p><strong>reinterpret_cast</strong>操作符用于天生危险的类型转换。它不允许删除const，但会执行其他令人生厌的操作。有时程序员必须做一些依赖于实现的、令人生厌的操作，使用reinterpret_cast操作符可以简化对这种行为的跟踪工作。然而，reinterprete_cast操作符并不支持所有的类型转换。例如，可以将指针类型转换为足以存储指针表示的整形，但不能将指针转换为更小的整形或浮点型，另一个限制是，不能将函数指针转换为数据指针，反之亦然。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>类可以将其他函数，其他类和其他类的成员函数作为友元。在某些情况下，可能需要使用前向声明，需要特别注意类和方法声明的顺序，以正确地组合友元。</p>
-<p>嵌套类是在其他类中声明的类，它有助于设计这样的助手类，即实现其他类，但不必是公有接口的组成部分。</p>
-<p>C++异常机制为处理拙劣的编程事件，如不适当的值、I/O失败等，提供了一种灵活的方式。引发异常将终止当前执行的函数，将控制权付给匹配的catch块。catch块紧跟在try块后面，为捕获异常，直接或间接导致的函数调用必须位于try块中。这样的程序将执行catch块中的代码。这些代码试图解决问题或终止程序。类可以包含嵌套的异常类，嵌套异常类在相应的问题被发现时将被引发。函数可以包含异常规范，指出在该函数中可能引发的异常。未被捕获的异常(没有匹配的catch块的异常)在默认情况下将终止程序，意外异常也是如些。</p>
-<p>RTTI特性让程序能够检测对象的类型。dynamic_cast操作符用于将派生类指针转换为基类指针，其主要是确保可以安全地调用虚函数。typeid操作符返回一个type_info对象。可以对二个typeid的返回值进行比较，以确定对象是否为特定的类型，而返回的type_info对象可用于获得关于对象的信息。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记
-    
-    </summary>
-    
-      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
-    
-      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
-    
-    
-      <category term="C++" scheme="http://LySnake.github.io/tags/c/"/>
-    
-      <category term="C++ Primer Plus" scheme="http://LySnake.github.io/tags/c-primer-plus/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++ Primer Plus学习笔记(4)</title>
-    <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(4).html"/>
-    <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(4).html</id>
-    <published>2017-06-19T14:28:39.997Z</published>
-    <updated>2018-02-24T13:22:55.768Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="14-C-中的代码重用"><a href="#14-C-中的代码重用" class="headerlink" title="14 C++中的代码重用"></a>14 C++中的代码重用</h2><h3 id="14-1-包含对象成员的类"><a href="#14-1-包含对象成员的类" class="headerlink" title="14.1 包含对象成员的类"></a>14.1 包含对象成员的类</h3><p><strong>has-a</strong>:本身是另一个类的对象的成员变量。这种方法称为包含、组合或层次化。另一种方法是通过私有或保护继承。获得接口是is-a关系的组成部分。而使用组合，类可以获得实现，但不能获得接口。不继承接口是has-a关系的组成部分。</p>
-<p><strong>多重继承</strong>：使得能够使用两个或更多的基类派生出来新的类，将基类的功能组合在一起。</p>
-<p>模板特性意味着声明对象时，必须指定具体的数据类型。</p>
-<p>对于继承的基类对象部分，构造函数在成员初始化列表中使用类名来调用特定的基类构造函数。对于成员对象，在成员初始化列表中使用成员名调用构造函数。C++要求在构建对象的其它部分之前，先构建继承对象的所有成员对象。因此，如果初始化列表未显式初始化成员对象，C++将使用成员对象类的默认构造函数。</p>
-<h3 id="14-2-私有继承"><a href="#14-2-私有继承" class="headerlink" title="14.2 私有继承"></a>14.2 私有继承</h3><p>C++还有另一种实现has-a关系的途径–私有继承，基类的公有成员和保护成员都将成为派生类的私有成员。这意味着基类方法将不会成为派生对象公有接口的一部分，但可以在派生类的成员函数中使用它们。</p>
-<p>使用公有继承，基类的公有方法将成为派生类的公有方法。简而言之，派生类将继承基类的接口：这是is-a关系的一部分。使用私有继承，基类的公有方法将成为派生类的私有方法，简而言之，派生类不继承基类的接口。正如从被包含对象中看到的，这种不完全继承是has-a关系的一部分。</p>
-<p>包含将对象作为一个命名的成员对象添加到类中，而私有继承将对象作为一个未被命名的继承对象添加到类中。</p>
-<p>当在头文件使用class声明派生类时，如果没有使用public等关键字声明如何继承基类，则以默认以private方式继承。</p>
-<p>使用多个基类的继承被称为多重继承（multiple inheritance,MI）.</p>
-<p>对于继承基类的对象部分，使用初始化列表方法，使用基类的构造函数初始化基类的对象部分。</p>
-<p>私有继承时，通过强制类型转换访问基类对象部分。</p>
-<p>用类名显式地限定函数名不适合于友元函数，这是因为友元不属于类。不过，可以通过显式地转换为基类来调用正确的函数。在私有继承中，在不进行显式类型转换的情况下，不能将指向派生类的引用或指针赋给基类引用或指针(基类公有方法通过私有继承成为派生类的私有方法，不具有is-a关系)。另外，由于派生类使用的是多继承，编译器将无法确定应转换成哪个基类，如果两个基类都提供了相同的函数。</p>
-<p>类声明中包含表示被包含类的显式命名对象，代码可以通过名称引用这些对象，而 使用继承将使关系更抽象。其次，继承会引起许多问题，尤其从多个基类继承时，可能必须处理许多问题，例如包含同名方法的独立的基类，或共享祖先的独立的基类。另外，包含能够包括多个同类的子对象。如果某个类需要3个string对象，可以使用包含声明3个独立的string成员。而继承则只能使用一个这样的对象(当对象都没有名称时，将难以区分)。</p>
-<p>类包含保护成员(可以是数据成员，也可以成员函数)，则这样的成员在派生类中是可用的，但在继承层次结构外是不可用的。如果使用组合将这样的类包含在另一个类中，则后者将不是派生类，而是位于继承层次结构之外，因此不能访问保护成员。但通过继承得到的将是派生类，因此它能够访问保护成员。另一种需要使用私有继承的情况是需要重新定义虚函数。派生类可以重新定义虚函数，但包含类不能。使用私有继承，重新定义的函数将只能在类中使用，而不是公有的。(通常，应使用包含建立has-a关系；如果新类需要访问原有类的保护成员，或需要重新定义虚函数，则应使用私有继承)</p>
-<h3 id="14-3-保护继承"><a href="#14-3-保护继承" class="headerlink" title="14.3 保护继承"></a>14.3 保护继承</h3><p>保护继承是私有继承的变体。保护继承在列出基类时使用关键字protected.</p>
-<p>使用保护继承时，基类的公有成员和保护成员都将成为派生类的保护成员。和私有继承一样，基类的接口在派生类中也是可用的，但在继承层次结构之外是不可用的。当从派生类派生出另一个类时，私有继承和保护继承之间的主要区别便呈现出来了。使用私有继承时，第三代类将不能使用基类的接口，这是因为基类的公有方法在派生类中将变成私有方法；使用保护继承时，基类的公有方法在第二代中将变成受保护的，因此第三代派生类可以使用它们。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">特征</th>
-<th style="text-align:center">公有继承</th>
-<th style="text-align:center">保护继承</th>
-<th style="text-align:center">私有继承</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">公有成员变成</td>
-<td style="text-align:center">派生类的公有成员</td>
-<td style="text-align:center">派生类的保护成员</td>
-<td style="text-align:center">派生类的私有成员</td>
-</tr>
-<tr>
-<td style="text-align:center">保护成员变成</td>
-<td style="text-align:center">派生类的保护成员</td>
-<td style="text-align:center">派生类的保护成员</td>
-<td style="text-align:center">派生类的私有成员</td>
-</tr>
-<tr>
-<td style="text-align:center">私有成员变成</td>
-<td style="text-align:center">只能通过基类接口访问</td>
-<td style="text-align:center">只能通过基类接口访问</td>
-<td style="text-align:center">只能通过基类接口访问</td>
-</tr>
-<tr>
-<td style="text-align:center">能否隐式向上转换</td>
-<td style="text-align:center">是</td>
-<td style="text-align:center">是（但只能在派生类中）</td>
-<td style="text-align:center">否</td>
-</tr>
-</tbody>
-</table>
-<p><strong>将函数调用包装在另一个函数调用中，即使用一个using声明（就像名称空间那样）来指出派生类可以使用特定的基类成员(使用using声明基类成员函数的作用域)，即使采用的私有派生。</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Student: <span class="keyword">private</span> <span class="built_in">std</span>::<span class="built_in">string</span> ,<span class="keyword">private</span> <span class="built_in">std</span>::valarray&lt;<span class="keyword">double</span>&gt;</div><div class="line">&#123;</div><div class="line">   pulibc:</div><div class="line">        <span class="keyword">using</span> <span class="built_in">std</span>::valarray&lt;<span class="keyword">double</span>&gt;::min; </div><div class="line">        <span class="keyword">using</span> <span class="built_in">std</span>::valarray&lt;<span class="keyword">double</span>&gt;::min;</div><div class="line">   <span class="comment">//something</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>using声明只使用成员名—没有圆括号、函数牲标和返回类型。using声明只适用于继承，而不适用于包含。</p>
-<h3 id="14-3-多重继承"><a href="#14-3-多重继承" class="headerlink" title="14.3 多重继承"></a>14.3 多重继承</h3><p>MI描述的是有多个直接基类的类。与单继承一样，公有MI表示的也是is-a关系。必须使用关键字public来限定每一个类。这是因为除非特别指出，否刚编译器将使用默认的私有派生。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Worker&#123;&#125;;</div><div class="line"><span class="keyword">class</span> Singing :<span class="keyword">public</span> Worker&#123;&#125;;</div><div class="line"><span class="keyword">class</span> Waiter  :<span class="keyword">public</span> Worker&#123;&#125;;</div><div class="line"><span class="keyword">class</span> SSingingWaiter :<span class="keyword">public</span> Singing, <span class="keyword">public</span> Waiter&#123;&#125;</div><div class="line"></div><div class="line"><span class="comment">//示例</span></div><div class="line">SingingWaiter ed;</div><div class="line"><span class="comment">//有歧义</span></div><div class="line">Worker * pw = &amp;ed;</div><div class="line"><span class="comment">//正确方式</span></div><div class="line">Worker *pw1 = (Waiter *)&amp;ed;</div><div class="line">Worker *pw2 = (Singing *)&amp;ed;</div></pre></td></tr></table></figure>
-<p>通常这种赋值将反基类指针设置为派生对象中的基类的地址。但ed中包含两个Worker对象，有两个地址可供选择，所以应使用类型转换来指定对象。这将使得基类指针来引用不同的对象(多态性)复杂化。</p>
-<p>当C++引入多重继承的同时，它引入了一种新技术—虚基类(virtual base class)，使MI成为可能。</p>
-<p><strong>虚基类</strong>：虚基类使得从多个类(它们的基类相同)派生出的对象只继承一个基类对象。从本质上说，继承的Singing和Waiter对象共享一个Worker对象，而不是各自引入自己的Worker对象的拷贝。因为SingingWaiter现在只包含一个Worker对象。所以可以使用多态。</p>
-<p>为什么不抛弃将基类声明为虚拟的这种方式，而使虚拟行为成为MI准则呢？第一，在一些情况下，可能需要基类的多个拷贝；第二，将基类作为虚拟的要求程序员完成额外的计算，为不需要的工具付出代价是不应该的；</p>
-<p>使用虚基类时，需要对类构造函数采用一种新的方法。对于非虚基类，惟一可以出现在初始化列表中的构造函数是相临基类构造函数。但这些构造函数可能需要将信息传递给其基类。C++在基类是虚拟时，禁止信息通过中间类自动传递给基类，可以在初始化列表中使用基类的基类的构造函数，来完成祖父虚拟基类对象部分的初始化(非虚拟基类不可使用该方法)。</p>
-<p>在祖先相同时，使用MI必须引入虚基类，并修改构造函数初始化列表的规则。另外，如果在编写这些类时没有考虑到MI，则还可能需要重新编写它们。</p>
-<p>如果基类是虚基类，派生类将包含基类的一个子对象；如果基类不是虚基类，派生类将包含多个子对象。当虚 基类和非虚基类混合时，情况将如何呢？如：假设类B被用作类C和D的虚基类，同时被用作类X和Y的非虚基类，而类M是从C、D、X和Y派生而来的。在这种情况下，类M从虚拟派生祖先（即类C和D）那里共继承了一个B类子对象，并从每一个非虚拟派生祖先（即类X和类Y）分别继承了一个B类子对象。因此，它包含三个B类子对象。当类通过多条虚拟途径和非虚拟途径继承某个特定的基类时，该类将包含一个表示所有的虚拟途径的基类子对象和分别表示各条非虚拟途径的多个基类子对象。</p>
-<p>使用虚基类将改变C++解析二义性的方式。使用非虚基类时，规则很简单。如果类从不同的类那里继承了两个或更多的同名成员，则使用该成员名时，如果没有用类名进行限定，将导致二义性。但如果使用的是虚基类，则这样做不一定会导致二义性。在这种情况下，如果某个名称优先于其它所有名称，则使用它时，即便不使用限定符也不会导致二义性。</p>
-<p>从虚基类的一个或多个实例派生而来的类将只继承了一个基类对象。</p>
-<ul>
-<li>有间接虚基类的派生类包含直接调用间接基类构造函数的构造函数，这对于间接非虚基类来说是非法的。</li>
-<li>能过优先规则解决名称二义性。（派生类中的名称优先于直接或间接祖先类中的相同名称）</li>
-</ul>
-<h3 id="14-4-1-定义类模板"><a href="#14-4-1-定义类模板" class="headerlink" title="14.4.1 定义类模板"></a>14.4.1 定义类模板</h3><p>模板提供参数化类型，即能够将类型名作为参数传递给接收方来建立类或函数。使用模板成员函数替换原有类的类方法，每个函数头都将以相同的模板声明打头。</p>
-<p>和模板函数一样，模板类以下面这样的代码开：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> Type&gt;</div><div class="line"><span class="keyword">class</span> Stack</div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">count</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//Stack&lt;Type&gt;作限定符</span></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> Type&gt;</div><div class="line"><span class="keyword">void</span> Stack&lt;Type&gt;::count()&#123;&#125;</div></pre></td></tr></table></figure></p>
-<p>其中，Stack<classname>作为类型，如果在类声明中定义了方法（内联定义），则可以活力模板前缀和类限定符(Stack<type>)。</type></classname></p>
-<p>模板的具体实现—例如用来处理string对象的堆栈类—被称为实例化或具体化。除非编译器实现了新的export关键字，否则将模板成员函数旋转在一个独立的实现文件中将无法运行。因为模板不是函数，它们不能编译。模板必须与特定的模板实例化请求一起使用。为此，最简单的方法是将所有模板信息放在一个头文件中，并在要使用这些模板的文件中包含该头文件。</p>
-<p>注意，必须显式地提供所需的类型，这与常规的函数模板是不同的，因为编译器可以根据函数的参数类型来确定要生成哪种函数。</p>
-<p>任县指针堆栈的方法之一是，让调用程序提供一个指针数组，基中每个指针都指向不同的字符串，反这些指针放在堆栈中是有意义的，因为每个指针都将指向不同的字符串。</p>
-<p>模板常被用作窗口类，这是因为类型参数的概念非常适合于将相同的存储方案用于不同类型。</p>
-<p><strong>表达式参数</strong>：指定特殊的类型而不是用作通用类型名，称为非类型或表达式参数。在实例化模板时，用作表达式的参数的值必须是常量表达式，因为在编译期，要对特定类型进行模板实例化，生成特定类型的类代码。</p>
-<p><strong>模板类可用作基类，也可用作组件类，还可用作基他模板的类型参数，递归使用模板，使用多个类型参数</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div><div class="line"><span class="keyword">class</span> Array</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    T entry;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//用于基类</span></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> Type&gt;</div><div class="line"><span class="keyword">class</span> GrowArray: <span class="keyword">public</span>&lt;Tyep&gt; &#123;&#125;;</div><div class="line"></div><div class="line"><span class="comment">//用作组件类</span></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> Tp&gt;</div><div class="line"><span class="keyword">class</span> Stack</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    Array&lt;Tp&gt; ar;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//用作基他模板的类开参数</span></div><div class="line">Array &lt;Stack&lt;<span class="keyword">int</span>&gt; &gt; asi;    <span class="comment">//必须使用至少一个空白字符将两个&gt;符号分开，以避免与&gt;&gt;操作符混淆。</span></div><div class="line"></div><div class="line"><span class="comment">//递归使用模板</span></div><div class="line">ArrayTP&lt; ArrayTP&lt;<span class="keyword">int</span>, <span class="number">5</span>&gt;， <span class="number">10</span>&gt; twodee;</div><div class="line"></div><div class="line"><span class="comment">//使用多个类型参数</span></div><div class="line"></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> T1, <span class="keyword">class</span> T2&gt;</div><div class="line"><span class="keyword">class</span> Pair</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    T1 a;</div><div class="line">    T2 b;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function">T1 &amp;<span class="title">first</span><span class="params">()</span></span>;</div><div class="line">    <span class="function">T2 &amp;<span class="title">second</span><span class="params">()</span></span>;</div><div class="line">    <span class="function">T1 <span class="title">first</span><span class="params">()</span><span class="keyword">const</span></span>&#123;&#125;;</div><div class="line">    <span class="function">T2 <span class="title">second</span><span class="params">()</span><span class="keyword">const</span></span>&#123;&#125;;</div><div class="line">    Pair()&#123;&#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T1, <span class="keyword">class</span> T2&gt;</div><div class="line">T1 &amp; Pair&lt;T1, T2&gt;::first()</div><div class="line">&#123;&#125;</div><div class="line"><span class="comment">//todo</span></div></pre></td></tr></table></figure>
-<p><strong>默认类型模板参数</strong></p>
-<p>类模板的另一项新特性是，可以为类型参数提供默认值，在以下代码中，如果省略T2的值，编译器将使用int。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T1, <span class="keyword">class</span> T2 = <span class="keyword">int</span>&gt; </div><div class="line"><span class="keyword">class</span> Topo&#123;&#125;</div></pre></td></tr></table></figure></p>
-<p>虽然可以为类模板类型参数提供默认值，但不能为函数模板参数提供默认值。不过可以为非类型参数提供默认值，这对于类模板和函数都是适用的。</p>
-<h3 id="14-4-6-模板的具体化"><a href="#14-4-6-模板的具体化" class="headerlink" title="14.4.6 模板的具体化"></a>14.4.6 模板的具体化</h3><p>类模板与函数模板很相似，因为可以有隐式实例化、显式实例化和显式具体化，它们统称为具体化。模板以通用类型的方式描述类，而具体化是使用具体的类型生成类声明。</p>
-<p><strong>隐式实例化</strong>：它们声明一个或多个对象，所需的类型，而编译器使用通用模板提供的处方生成具体的类定义。编译器在需要对象前，不会生成类的隐式实例化，如：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ArrayTP&lt;<span class="keyword">double</span>, <span class="number">30</span>&gt; *pt;   		<span class="comment">//没有生成对象，则不会隐式实例化。</span></div><div class="line">pt = <span class="keyword">new</span> ArrayTP&lt;<span class="keyword">double</span>, <span class="number">30</span>&gt;;   <span class="comment">//隐式实例化。</span></div></pre></td></tr></table></figure>
-<p><strong>显式实例化</strong>：当使用关键字template并指出所需类型来声明类时，编译器将生成类声明的显式实例化。声明必须位于模板定义所在的名称空间中。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在这种情况下，虽然没有创建或提及类对象，编译器也将通过通过模板生成类声明和定义。</span></div><div class="line"><span class="keyword">template</span> <span class="keyword">class</span> ArrayTP&lt;<span class="built_in">string</span>, <span class="number">100</span>&gt;;</div></pre></td></tr></table></figure>
-<p><strong>显式具体化</strong>：是特定类型(用于替换模板中的通用类型)的定义，有时候可能需要在为特殊类型实例化时，对模板进行修改，使基行为不同。在这种情况下，可以创建显式具体化。当具体化模板和通用模板都与实例化请求匹配时，编译器将使用具体化版本。具体化类模板定义的格式如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">class</span> ClassName&lt;specialized-type-name&gt;&#123;...&#125;;</div><div class="line"><span class="comment">//使用新表示法提供一个专供char*类型使用的SortedArray模板，可以使用与下面类似的代码</span></div><div class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">class</span> SortedArray&lt;<span class="keyword">char</span>*&gt;&#123;...&#125;;</div></pre></td></tr></table></figure></p>
-<p><strong>部分具体化</strong>：C++还允许部分具体化，即部分限制模板的通用。如：部分具体化可以给类型参数之一指定具体的类型。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//通用模板</span></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T1, <span class="keyword">class</span> T2&gt; <span class="keyword">class</span> Pair&#123;&#125;;</div><div class="line"><span class="comment">//部分具体化模板</span></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T1&gt; <span class="keyword">class</span> Pair&lt;T1, <span class="keyword">int</span>&gt;&#123;&#125;;</div></pre></td></tr></table></figure></p>
-<p>关键字template后面的&lt;&gt;声明的是没有被具体化的类型参数。 因此，上述第二个声明将T2具体化为int，但T1保持不变。注意，如果指定所有的类型，则&lt;&gt;内将为空，这将导致显式具体化。</p>
-<p>如果有多个模板可供选择，则编译器将使用具体化程度最高的模板。</p>
-<h3 id="14-4-7-成员模板"><a href="#14-4-7-成员模板" class="headerlink" title="14.4.7 成员模板"></a>14.4.7 成员模板</h3><p>C++模板支持的另一个新特性是：模板可用作结构、 类或模板类的成员。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">class</span> Beta</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:  </div><div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> V&gt; </div><div class="line">    <span class="keyword">class</span> Hold</div><div class="line">	&#123;</div><div class="line">	<span class="keyword">private</span>:</div><div class="line">		V val;</div><div class="line">	<span class="keyword">public</span>:</div><div class="line">		Hold(V v = <span class="number">0</span>):V(v)&#123;&#125;;</div><div class="line">	&#125;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    Beta(T t,<span class="keyword">int</span> i):q(t), n(i)&#123;&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Hold模板类是在私有部分声明的，因此只能在Beta类中访问它。</p>
-<h3 id="14-4-8-将模板用作参数"><a href="#14-4-8-将模板用作参数" class="headerlink" title="14.4.8 将模板用作参数"></a>14.4.8 将模板用作参数</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span>　<span class="meta-string">"stacktp.h"</span></span></div><div class="line"><span class="comment">//模板参数</span></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class</span> Thing&gt;</div><div class="line"><span class="keyword">class</span> Crab</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    Thing&lt;<span class="keyword">int</span>&gt; s1;</div><div class="line">    Thing&lt;<span class="keyword">double</span>&gt; s2;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    Crab();</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">double</span> x)</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  Crab&lt;Stack&gt; nebula;</div><div class="line">  <span class="comment">//todo</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Crab模板的成员s1、s2，使用模板参数声明的Thing模板去实例化成员，当使用时模板参数为Stack，则使用Stack去实例化s1、s2。</p>
-<h3 id="14-4-9-模板类和友元"><a href="#14-4-9-模板类和友元" class="headerlink" title="14.4.9 模板类和友元"></a>14.4.9 模板类和友元</h3><p>模板类声明也可以有码元，模板的友元分3类：</p>
-<ul>
-<li>非模板友元</li>
-<li>约束模板友元，即友元的类型取决于类被实例化时的类型。</li>
-<li>非约束模板码元，即友元的所有具体化都是类的每一个具体化的友元。</li>
-</ul>
-<p><strong>非模板友元</strong>：为具体模板实例化编写不同的友元。如果友元不带模板类型参数，则所有模板实例化共用一个友元函数，如果友元带模板类型参数，则为不同类型的模板实例化编写相应的友元。</p>
-<p><strong>模板类的约束模板友元函数</strong>：约束模板友元函数是在类外面声明的模板的具体化。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TT&gt;</div><div class="line">CLASS HasFriendT</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>: </div><div class="line">    TT item;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">int</span> ct;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    HasFriendT(<span class="keyword">const</span> TT &amp;i):item(i)&#123;ct++;&#125;</div><div class="line">    ~HasFriendT()&#123;ct--;&#125;</div><div class="line"></div><div class="line">    <span class="comment">//声明中的&lt;&gt;指出这是模板具体化。</span></div><div class="line">    <span class="keyword">friend</span> <span class="keyword">void</span> counts&lt;TT&gt;();</div><div class="line">    <span class="comment">//对于report，&lt;&gt;可以为空，这是因为可以从函数参数推断出模板类型参数。</span></div><div class="line">    <span class="keyword">friend</span> <span class="keyword">void</span> report&lt;&gt; (HasFriendT&lt;TT&gt; &amp;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//模板类外声明的模板函数友元</span></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">int</span> HasFriendT&lt;T&gt;::ct = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">counts</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  <span class="built_in">cout</span> &lt;&lt; hf.item &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//声明中的&lt;&gt;指出这是模板具体化。</span></div><div class="line">    counts&lt;<span class="keyword">int</span>&gt;();</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>模板类的非约束模板友元函数</strong>：通过在类内部声明模板，可以创建非约束码元函数，即每个函数具体化都是每个类具体化的码元。对于非约束友元，友元模板类型参数与模板类型参数是不同的。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">class</span> ManyFriend</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    T item;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    ManyFriend (<span class="keyword">const</span> T &amp;i):item(i) &#123;&#125;</div><div class="line">     </div><div class="line">    <span class="comment">//模板类内声明的模板函数友元，定义与类成员模板函数一起定义</span></div><div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> C, <span class="keyword">typename</span> D&gt; </div><div class="line">    <span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">show2</span><span class="params">(C &amp; c, D &amp; d)</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">template</span> &lt; <span class="keyword">typename</span> C, <span class="keyword">typename</span> D&gt; </div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">show2</span><span class="params">(C &amp; c, D &amp; d)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; c.item &lt;&lt; <span class="string">","</span> &lt;&lt; d.item &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//todo</span></div><div class="line">    show2(hfdb, hfi2);</div><div class="line">    <span class="comment">//todo</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="14-5-总结"><a href="#14-5-总结" class="headerlink" title="14.5 总结"></a>14.5 总结</h3><p>使用私有继承时，基类的公有成员和保护成员将成为派生类的私有成员；使用保护继承时，基类的公有成员和保护成员将成为派生类的保护成员。无论使用哪种继承，基类的公有接口都将成为派生类的内部接口。这有时候被称为继承实现，但不继承接口，因为派生类对象不能显式地使用基类的接口。因此，不能将派生对象看作是一种基类的对象。由于这个原因，在不进行显式类型转换的情况下，基类指针或引用将不能指向派生类对象。</p>
-<p>还可以通过开发包含对象成员的类来重用类代码。这种方法被称为包含、 层次化或组合，它建立的也是has-a关系。与私有继承和保护继承相比，包含更容易实现和使用，所以通常优先采用这种方式。不过，私有继承和保护继承与包含有一些不同的功能。例如，继承允许派生类访问基类的保护成员；还允许派生类重新定义从基类那里继承的虚函数。因为包含不是继承，所以通过包含来重用类代码时， 不能使用这些功能。 另一方面，如果需要使用某个类的几个对象，则用包含更适合。</p>
-<p>可以提供显式具体化—覆盖模板定义的具体类声明。方法是以template&lt;&gt;打头，然后是模板类名称，再加上尖括号（其中包含要具体化的类型）。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记
-    
-    </summary>
-    
-      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
-    
-      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
-    
-    
-      <category term="C++" scheme="http://LySnake.github.io/tags/c/"/>
-    
-      <category term="C++ Primer Plus" scheme="http://LySnake.github.io/tags/c-primer-plus/"/>
-    
-  </entry>
-  
-  <entry>
     <title>C++ Primer Plus学习笔记(3)</title>
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(3).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(3).html</id>
@@ -800,170 +667,6 @@
   </entry>
   
   <entry>
-    <title>C++ Primer Plus学习笔记(2)</title>
-    <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(2).html"/>
-    <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(2).html</id>
-    <published>2017-06-04T15:16:05.036Z</published>
-    <updated>2018-02-24T13:23:03.505Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="11-使用类"><a href="#11-使用类" class="headerlink" title="11.使用类"></a>11.使用类</h2><h3 id="11-2-1-操作符重载"><a href="#11-2-1-操作符重载" class="headerlink" title="11.2.1 操作符重载"></a>11.2.1 操作符重载</h3><p><strong>操作符重载</strong>是一种形式的C++多态，操作符重载将重载的概念扩展到操作符上，允许赋予C++操作符多种含义。要重载操作符，需使用被称为操作符函数的特殊函数形式。操作符函数的格式如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ClassName total, coding, fixing;</div><div class="line"><span class="comment">//可以像使用成员方法一样使用操作符重载</span></div><div class="line">total = coding.<span class="keyword">operator</span>+(fixing);</div><div class="line"><span class="comment">//以可以使用操作符表示法：</span></div><div class="line">total = coding + fixing;</div><div class="line"></div><div class="line"><span class="comment">//注意，在操作符表示法中，操作符左侧的对象（这里为coding）是调用对象，操作符右边（这里是fixing)是作为参数被传递的对象。</span></div></pre></td></tr></table></figure>
-<p>operator +()重载+操作符，operator -()重载-操作符。op必须是有效的C++操作符，不能虚构一个新的符号。</p>
-<h3 id="11-2-2操作符重载的限制"><a href="#11-2-2操作符重载的限制" class="headerlink" title="11.2.2操作符重载的限制"></a>11.2.2操作符重载的限制</h3><ul>
-<li>重载后的操作符必须至少有一个操作数是用户定义，这将防止用户为标准类型重载操作符。因此不能将减法操作符重载为计算两个double值的和，而不是它们的差。</li>
-<li>使用操作符时不能违反操作符原来的句法规则。例如，不能将求模操作符(%)重载成使用一个操作数(%x;），同样也不能修改操作符的优先级。因此，如果将加号操作符重载成将两个类相加，则新的操作符与原来的加号具有相同的优先级。</li>
-<li>不能定义新的操作符。</li>
-<li>不能重载下面的操作符<blockquote>
-<ul>
-<li>sizeof—sizeof操作符。(sizeof操作符是编译时运算)</li>
-<li>.—成员操作符。</li>
-<li>.*—成员指针操作符。</li>
-<li>::—作用域解析操作符。</li>
-<li>?:—条件操作符。</li>
-<li>typeid—一个RTTI操作符。</li>
-<li>const_cast—强制类型转换操作符。</li>
-<li>dynamic_cast—强制类型转换操作符。</li>
-<li>reinterpret_cast—强制类型转换操作符。</li>
-<li>static_cast—强制类型转换操作符。</li>
-</ul>
-</blockquote>
-</li>
-<li>大多操作符都可以通过成员或非成员函数进行重载，但下面的操作符只能通过成员函数进行重载：<blockquote>
-<ul>
-<li>=—赋值操作符。</li>
-<li>()—函数调用操作符。</li>
-<li>[]—下标操作符。</li>
-<li>-&gt;—通过指针访问的类成员的操作符。</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h3 id="11-3友元简介"><a href="#11-3友元简介" class="headerlink" title="11.3友元简介"></a>11.3友元简介</h3><p>友元有3种：</p>
-<ul>
-<li>友元函数。</li>
-<li>友元类。</li>
-<li>友元成员函数。</li>
-</ul>
-<p>通过让函数成为类的友元，可以赋予该函数与类的成员函数相同的访问权限。非成员函数不是由对象调用的，它使用的所有值（包括对象）都是显示参数(非this传入)。对于非成员重载操作符函数来说，操作符表达式左边的操作数对应于操作符函数的第一个参数，操作符表达式右边的操作数对应于操作符函数的第二个参数。</p>
-<p>创建友元函数的第一步是将其原型放在类声明中，并在原型声明前加上关键字friend：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">friend</span> TypeName <span class="keyword">operator</span>* (<span class="keyword">double</span> m, <span class="keyword">const</span> className &amp;T);</div></pre></td></tr></table></figure></p>
-<ul>
-<li>显然operator*()函数是在类声明中声明的，但它不是成员函数，因此不能使用成员操作符来调用。</li>
-<li>虽然operator*()函数不是成员函数，但它与函数的访问权限相同。</li>
-</ul>
-<p>第二步是编写函数定义。因为它不是成员函数，所以不要使用className::限定符。加外不要在定义中使用关键字friend。简而言之，友元函数是非成员函数，其访问权限与成员函数相同。</p>
-<p>ostream类对该操作符进行了重载，将其转换为一个输出工具，前面讲过，cout是一个ostream对象，它是智能的。能够识别所有的C++基本类型。这是因为对于每种基本类型，ostream类声明中都包含了相应的重载的operator&lt;&lt;()定义。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//通过返回ostream的引用实现链式调用</span></div><div class="line">ostream &amp; <span class="keyword">operator</span>&lt;&lt;(ostream &amp;os, <span class="keyword">const</span> className &amp;t)</div><div class="line">&#123;</div><div class="line">	os&lt;&lt; t.intValue &lt;&lt; t.floatValue &lt;&lt; t.stringValue ;</div><div class="line">	<span class="keyword">return</span> os;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>非成员版本的重载操作符函数所需的形参数目与操作符使用的操作数数目相同，而成员版本所需的参数数目少一个，因为其中的一个操作数是被隐式地传递的调用对象(this)。</p>
-<h3 id="11-6类的自动转换和强制类型转换"><a href="#11-6类的自动转换和强制类型转换" class="headerlink" title="11.6类的自动转换和强制类型转换"></a>11.6类的自动转换和强制类型转换</h3><p>C++的目标之一就是把类实现为与基本类型一致，所以也存在隐式转换问题。</p>
-<p>对于类ClassName，如果存在一个参数的构造函数，那么：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 存在ClassName::ClassName(TypeName)构造函数</span></div><div class="line">ClassName classValue ;</div><div class="line"><span class="comment">//相当于==&gt;classValue = ClassName::ClassName(TypeNameValue);通过构造函数以参数构造了一个对象。形成隐式转换。   </span></div><div class="line">classValue = TypeNameValue;</div></pre></td></tr></table></figure>
-<p>最新的C++实现新增了一个关键字(explicit)，用来关闭这种自动特性。也就是说，可以这样声明构造函数：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//告知编译器禁止使用隐式转换，但仍然允许显式转换，即显式强制类型转换</span></div><div class="line"><span class="function"><span class="keyword">explicit</span> <span class="title">ClassName</span><span class="params">(TypeName value)</span></span>;    </div><div class="line"><span class="comment">//强制类型转换      </span></div><div class="line">ClassNameValue = ClassName(TypeNameValue);</div></pre></td></tr></table></figure></p>
-<p>只接受一个参数(可存在其它默认参数)的构造函数定义了从参数到类类型的转换。如果使用关键字explicit限定了这种构造函数，则它只能用于显示转换，否则也可以用于隐式转换。</p>
-<p>当没有使用explicit限定只能用于强制转换，则在以下情况发生隐式转换：</p>
-<ul>
-<li>将ClassName对象初始化为TypeName值时。    //ClassName ClassNameValue = TypeNameValue;</li>
-<li>将TypeName值赋给ClassName对象时。       //相当于先调用ClassName(TypeNameValue)构造，再调用Copy构造。</li>
-<li>将TypeName值传递给接受ClassName参数的函数时。   </li>
-<li>返回值被声明为ClassName类型的函数试图返回一个TypeName类型值时。</li>
-</ul>
-<p>函数原型提供的参数匹配过程，允许使用ClassName(TypeName)构造函数来转换其他数值类型。比如TypeName是float类型，当把int类型当做实参时，int先转换为float，再转换成TypeName给形参.</p>
-<h3 id="11-6-2转换函数"><a href="#11-6-2转换函数" class="headerlink" title="11.6.2转换函数"></a>11.6.2转换函数</h3><p>构造函数只用于从某种类型到类类型的转换。要进行相反的转换必须使用特殊的C++操作符—转换函数。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//TypeName为int、float、double等</span></div><div class="line"><span class="function"><span class="keyword">operator</span> <span class="title">typeName</span><span class="params">()</span></span>;</div></pre></td></tr></table></figure>
-<ul>
-<li>转换函数必须是类方法。</li>
-<li>转换函数不能指定返回类型，但要有返回值。(typeName已经指定类型，无需过多注明)</li>
-<li>转换函数不能有参数。(类的对象this即是参数对象)</li>
-</ul>
-<p>TypeName(这里为double）指出了要转换成的类型，因此不需要指定返回类型。转换函数是类方法意味着：它需要通过类对象来调用，从而告知函数要转换的值。因此，函数不需要参数。虽然没有返回类型，这二个函数也将返回所需的值。</p>
-<p>提供执行自动、隐式转换的函数所存在的问题是：在用户希望转换时，转换函数也可能进行转换。原则来说，最好使用显示转换，而避免隐式转换。关键字explicit不能用于转换函数，但只需用一个功能相同的非转换函数替换访转换函数即可，但仅在被显式地调用时，该函数才会执行。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ClassName::<span class="function"><span class="keyword">operator</span> <span class="title">int</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="comment">//todo</span></div><div class="line">	<span class="keyword">return</span> intValue;</div><div class="line">&#125;;</div><div class="line"><span class="comment">//改写为</span></div><div class="line">ClassName::ClassName2int()&#123;&#125;;</div></pre></td></tr></table></figure>
-<p>C++提供了下面的类型转换：</p>
-<ul>
-<li>只有一个参数的类构造函数用于将类型与该参数相同的值转换为类类型。例如，将int值赋给ClassName对象时，接受int参数的ClassName类构造函数将自动被调用。不过，在构造函数声明中使用explicit可防止隐式转换，而只允许显式转换。</li>
-<li>被称为转换函数的特殊类成员操作符函数，用于将类对象转换为其他类型。转换函数是类成员，没有返回类型、没有参数类型、名为operator typeName()，其中，typeName是对象将被转换成的类型。<strong>将类对象赋给typeName变量或将其强制转换为TypeName类型时，该转换函数将自动被调用</strong>。</li>
-</ul>
-<p>全局对象，因为全局对象将在程序的main()函数被调用之前创建。程序员可以创建一个类，其默认构造函数将调用所有的bootstrap函数。实现在main()函数调用之前，执行全局类对象的构造函数来初始化一些数据。</p>
-<p>C++允许指定在基本类型之间进行转换的方式。首先，任何可接受一个参数的构造函数都可被用作转换函数，将类型与该参数相同的值转换为类。如果将类型与该参数相同的值赋给对象，则C++将自动调用该构造函数。要将类对象转换为其他类型，必须定义转换函数，指出如何进行这种转换。转换函数必须是成员函数。将类对象转换为TypeName类型的转换函数的原型如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//注意，转换函数没有返回类型、没有参数(必须是成员函数，存在隐式参数this)，但必须返回转换后的值（虽然没有声明返回类型）</span></div><div class="line"><span class="function"><span class="keyword">operator</span> <span class="title">typeName</span><span class="params">()</span></span>;</div></pre></td></tr></table></figure></p>
-<h2 id="12-类和动态内存分配"><a href="#12-类和动态内存分配" class="headerlink" title="12.类和动态内存分配"></a>12.类和动态内存分配</h2><p>类中定义static成员变量，则该变量存储在全局数据区，所有类对象共有，且作用域为类作用域。不能在类的声明中初始化静态成员变量，这是因为声明描述了如何分配内存，但并不分配内存，可以使用这种格式来创建对象，从而分配和初始化内存。对于静态类成员，可以在类声明之外使用单独的语句来进行初始化，这是因为静态类成员是单独存储的，而不是对象的组成部分。请注意，初始化语句指出了类型，并使用了作用域操作符。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在类声明之外使用单独的语句来进行初始化</span></div><div class="line">staitc <span class="keyword">int</span> ClassName::ClassNameValue  iValue = <span class="number">110</span>;</div></pre></td></tr></table></figure>
-<p>如果使用new[]来分配内存，则应使用delete[]来释放内存。并且在类中，所有的构造函数统一使用new或new[]，析构函数中使用delete或delete[]。delete可以释放NULL地址。</p>
-<p>自动存储对象被删除的顺序与创建的顺序相反。</p>
-<p>当使用一个对象来初始化另一个对象时，编译器将自动生成构造函数(称为复制构造函数，因为它创建对象的一个副本)。自动生成的构造函数不知道需要更新静态变量和深copy成员变量指向new出来的空间。</p>
-<h3 id="12-1-2-隐式成员函数"><a href="#12-1-2-隐式成员函数" class="headerlink" title="12.1.2 隐式成员函数"></a>12.1.2 隐式成员函数</h3><p>隐式成员函数：</p>
-<ul>
-<li>默认构造函数，如果没有定义构造函数。</li>
-<li>复制构造函数，如果没有定义。</li>
-<li>赋值操作符，如果没有定义。</li>
-<li>默认析构函数，如果没有定义。</li>
-<li>地址操作符，如果没有定义。</li>
-</ul>
-<h4 id="默认构造函数"><a href="#默认构造函数" class="headerlink" title="默认构造函数"></a>默认构造函数</h4><p>如果没有提供任何构造函数，C++将创建默认构造函数。如果定义了构造函数，C++将不会定义默认构造函数。如果希望在创建对象时显式地对它进行初始化，或需要创建对象数组时，则必须显式地定义默认构造函数。</p>
-<h4 id="复制构造函数"><a href="#复制构造函数" class="headerlink" title="复制构造函数"></a>复制构造函数</h4><p>复制构造函数用于将一个对象复制到新创建的对象中。<strong>也就是说，它用于初始化过程中，而不是常规的赋值过程，执行于构造对象时，是一个构造函数</strong>。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> ClassName</div><div class="line">&#123;</div><div class="line">	ClassName(ClassName&amp;);   <span class="comment">//复制构造函数</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p><strong>何时调用复制构造函数</strong></p>
-<p>新建一个对象并将其初始化为同类现有对象时，复制构造函数都将被调用。这在很多情况下都可能发生，最常见的情况是将新对象显式地初始化为现有的对象。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> StringBad</div><div class="line">&#123;</div><div class="line">    StringBad(StringBad&amp;);</div><div class="line">&#125;; </div><div class="line">StringBad motto;</div><div class="line">StringBad metoo = motto;</div><div class="line">StringBad also = StringBad(motto);</div></pre></td></tr></table></figure></p>
-<p><strong>这二种声明可能会使用复制构造函数直接创建metoo和also对象，也可能使用复制构造函数生成一个临时对象，然后将临时对象的内容赋给metoo和also。</strong></p>
-<p>具体的说，当函数按值传递对象或函数返回对象时，都将使用复制构造函数。记住，按值传递意味着创建原始变量的一个副本。编译器生成临时对象，也将使用复制构造函数。例如，将3个Vector对象相加时，编译器可能生成临时的Vector对象来保存中间结果。何时生成临时对象随编译器而异，但无论是哪种编译器，当按值传递和返回时，都将调用复制构造函数。</p>
-<p><strong>复制构造函数的功能</strong></p>
-<p>默认的复制构造函数依次复制非静态成员（成员复制也称为浅复制），复制的是成员变量的值。</p>
-<h4 id="赋值操作符"><a href="#赋值操作符" class="headerlink" title="赋值操作符"></a>赋值操作符</h4><p>C++允许类对象赋值，这是通过自动为类重载赋值操作符实现的。</p>
-<p><strong>何时使用赋值操作符</strong></p>
-<ul>
-<li>将已有对象赋给另一个对象时，将使用重载的赋值操作符。<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> StringBad</div><div class="line">&#123;</div><div class="line">	<span class="keyword">operator</span>=(<span class="keyword">const</span> StringBad&amp;);  <span class="comment">//注意自我复制带来的先delete再new的情况。</span></div><div class="line">&#125; </div><div class="line">StringBad metoo = motto;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>不过，实现时也可能分两步来处理这条语句：使用复制构造函数创建一个临时对象，然后通过赋值将临时对象的值复制到新对象中，这就是说，初始化总是会调用复制构造函数，而使用=操作符时也有可能调用复制构造函数。</p>
-<p><strong>赋值操作符的功能</strong>：与复制构造函数相似，赋值操作符的隐式实现也对成员进行依次复制，如成员本身就是类对象，则程序将使用为这个类定义的赋值操作符来复制该成员，但静态数据成员不受影响。</p>
-<p><strong>重载时，C++将区分常量与非常量函数的特征标，因此可以提供另一个仅供const String对象使用的operator[] ()版本。</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//实现对String类对象使用[]操作符取index下标的值</span></div><div class="line"><span class="keyword">const</span> <span class="keyword">char</span> &amp; String::<span class="keyword">operator</span>[](<span class="keyword">int</span> index)<span class="keyword">const</span>;</div></pre></td></tr></table></figure>
-<h3 id="12-1-4-在构造函数中使用new时应注意的事项"><a href="#12-1-4-在构造函数中使用new时应注意的事项" class="headerlink" title="12.1.4 在构造函数中使用new时应注意的事项"></a>12.1.4 在构造函数中使用new时应注意的事项</h3><p>因为<strong>隐式成员函数</strong>的存在，使用new时应当这样做：</p>
-<ul>
-<li>如果在构造函数中使用new来初始化指针成员，则应在析构函数中使用delete.</li>
-<li>new和delete必须相互兼容。new对应于delete，new[]对应于delete[]。</li>
-<li>如果有多个构造函数，则必须以相同的方式使用new，要么都带[]，要么都不带，因为只有一个析构函数，因此所有的构造函数都必须与它兼容。不过，可以在一个构造函数中使用new来初始化指针，而在另一个构造函数中将指针初始化为NULL,这是因为delete(无论是否有[])可以用于NULL。</li>
-<li>应定义一个复制构造函数，通过深度复制将一个对象初始化为另一个对象。</li>
-<li>复制构造函数应分配足够的空间来存储复制的数据，并复制数据，而不仅仅是数据的地址。另外，还应该更新所有受影响的静态类成员。</li>
-<li>应当定义一个赋值操作符，通过深度复制将一个对象复制给另一个对象。</li>
-</ul>
-<p><strong>返回const类型，则说明返回值为右值，不可当左值</strong></p>
-<h4 id="布局new操作符"><a href="#布局new操作符" class="headerlink" title="布局new操作符"></a>布局new操作符</h4><p>布局new操作符让您能够在分配内存时指定内存位置。但在该内存上分配的对象需要显示调用析构函数进行析构。</p>
-<ul>
-<li>程序员必须负责管理布局new操作符从中使用的缓冲区内存单元。要使用不同的内存单元，程序员需要提供二个位于缓冲区的不同地址，并确保这二个内存单元不重叠(如果对同一个地址使用布局new，则会使后new的对象覆盖前一个对象数据)。</li>
-<li><p>如果使用布局new操作符来为对象分配内存，必须确保其析构函数被调用。原因在于delete可与常规new操作符配合使用，但不能与布局new操作符配合使用。为了确保析构函数被调用，显式地为使用布局new操作符创建的对象调用析构函数。正常情况下将自动调用析构函数，这是需要显式调用析构函数的少数几种情况之一。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ClassName classNameValue;</div><div class="line"><span class="comment">//或使用指针pClassNameValue-&gt;~ClassName;进行显式调用析构函数。</span></div><div class="line">classNameValue.~ClassName();</div></pre></td></tr></table></figure>
-</li>
-<li><p>对于使用布局new操作符创建的对象，应以与创建顺序相反的顺序进行析构。原因在于，晚创建的对象可能依赖于早创建的对象。</p>
-</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">  <span class="keyword">struct</span> Node</div><div class="line">  &#123;</div><div class="line">	<span class="comment">//tode</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>C++新特性：在类声明中嵌套结构或类声明，通过将Node声明放在Queue类中，可以使其作用域为整个类。也就是说，Node是这样一种类型：可以使用它来声明类成员，也可以将它作为类方法中的类型名称，但只能在类中使用。如果声明在类的私有部分，则只能在这个类使用被声明的类型，如果声明是在公有部分，则可以从类的外部通过作用域解析操作符使用被声明的类型。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line">	Queue();</div><div class="line">&#125;</div><div class="line">Queue::Queue():refValue(value1),constValue(refValue)</div><div class="line">&#123;</div><div class="line">	<span class="comment">//tode</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>对需要在分配内存时就要初始化的成员(const成员，引用变量成员,基类部分数据)，则必须使用成员初始化列表初始化。</p>
-<p><strong>从概念上说，调用构造函数时，对象将在括号中的代码执行之前被创建。因此调用Queue()构造函数将导致程序首先给成员变量分配内存。然后，程序流程进入到括号中，使用常规的赋值方式将值存储到内存中。因此，对于const成员变量和引用成员变量，必须在执行到构造函数体之前，即创建对象时进行初始化。C++提供了一种特殊的句法来完成上述工作，它叫作成员初始化列表。成员初始化列表由逗号分隔的初始化列表组成(前面带冒号)。它位于参数列表的右括号之后，函数体左括号之前。</strong></p>
-<p>初值可以是常量或构造函数的参数列表中的参数。只有构造函数可以使用这种初始化列表句法。使用成员初始化列表的效率更高(因为在构造函数之前，其const成员，引用成员，基类部分就已经完成初始化，在构造函数中只是进行赋值操作)。</p>
-<p>数据成员被初始化的顺序与它们出现在类声明中的顺序相同，与初始化器中的排列顺序无关。</p>
-<p>成员初始化列表中使用的括号方式也可以用于常规的初始化中。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> games = <span class="number">163</span>;</div><div class="line"><span class="keyword">double</span> talk = <span class="number">2.7</span>;</div><div class="line"><span class="comment">//可改写为</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">games</span><span class="params">(<span class="number">163</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">talk</span><span class="params">(<span class="number">2.7</span>)</span></span>;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记
-    
-    </summary>
-    
-      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
-    
-      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
-    
-    
-      <category term="C++" scheme="http://LySnake.github.io/tags/c/"/>
-    
-      <category term="C++ Primer Plus" scheme="http://LySnake.github.io/tags/c-primer-plus/"/>
-    
-  </entry>
-  
-  <entry>
     <title>C++ Primer Plus学习笔记(1)</title>
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(1).html</id>
@@ -1138,6 +841,159 @@
   </entry>
   
   <entry>
+    <title>C++ Primer Plus学习笔记(5)</title>
+    <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(5).html"/>
+    <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(5).html</id>
+    <published>2017-02-23T10:31:52.000Z</published>
+    <updated>2018-02-24T13:37:01.529Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="15-友元、异常和其他"><a href="#15-友元、异常和其他" class="headerlink" title="15. 友元、异常和其他"></a>15. 友元、异常和其他</h2><h3 id="15-1-友元类"><a href="#15-1-友元类" class="headerlink" title="15.1 友元类"></a>15.1 友元类</h3><p>将类作为友元，友元类的所有方法都可以访问原始类的私有成员和保护成员。另外，也可以做更严格的限制，只将特定的成员函数指定为另一个类的友元。</p>
+<p>友元声明可以位于公有、私有或保护部分，其所在的位置无关紧要。由于友元类中的方法使用了包含类相关信息，所以编译器必须了解包含类后才能处理友元类。</p>
+<p>类友元是一种自然用语，用于表示一些关系。如果不使用某些形式的友元关系，则必须将包含类的私有部分设置为公有，或者创建一个笨拙的、大型类来包含这二个类。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Tv</div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="keyword">friend</span> <span class="keyword">class</span> Remote; </div><div class="line">    <span class="comment">//todo</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Remote</div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">set_chan</span><span class="params">(Tv &amp;t, <span class="keyword">int</span> c)</span></span>&#123;t.channel = c&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="15-2-友元成员函数"><a href="#15-2-友元成员函数" class="headerlink" title="15.2 友元成员函数"></a>15.2 友元成员函数</h3><p>确实可以选择仅让特定的类成员成为另一个类的友元，而不必让整个类成为友元，不过这样做稍微有点麻烦，必须小心排列各种声明和定义的顺序。为此，将使用前向声明来处理。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Tv;           <span class="comment">//前向声明</span></div><div class="line"><span class="keyword">class</span> Remote&#123;...&#125;;  <span class="comment">//友元类</span></div><div class="line"><span class="keyword">class</span> Tv&#123;...&#125;;      <span class="comment">//包含类</span></div></pre></td></tr></table></figure>
+<p>另外，可以把友元类的成员函数，实现写在Tv类的后边（头文件中），加inline关键字实现成员方法为内联方法，这样，可以让编译器不在类声明中就要知道包含类的过多信息，避免因编译器不知道包含类的成员信息而无法编译。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> TVFM_H_</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> TVFM_H_</span></div><div class="line"></div><div class="line"><span class="keyword">class</span> Tv;   <span class="comment">//前向声明</span></div><div class="line"><span class="keyword">class</span> Remote </div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">   <span class="keyword">enum</span> &#123;TV&#125;;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">   <span class="keyword">int</span> mode;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">   Remote(<span class="keyword">int</span> m =TV):mode(TV)&#123;&#125;</div><div class="line">   <span class="function"><span class="keyword">bool</span> <span class="title">set_mode</span><span class="params">(Tv &amp;t)</span></span>;</div><div class="line">   <span class="keyword">void</span> Remote::set_chan(Tv &amp;t, <span class="keyword">int</span> c);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Tv</div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="keyword">friend</span> <span class="keyword">void</span> Remote::set_chan(Tv &amp;t, <span class="keyword">int</span> c);</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="keyword">int</span> channel;</div><div class="line"><span class="comment">//todo</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">inline</span> <span class="keyword">void</span> Remote::set_chan(Tv &amp;t, <span class="keyword">int</span> c)&#123;t.channel = c;&#125;</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
+<p>内联函数的链接性是内部的，这意味着函数定义必须在使用函数的文件中，在这个例子中，内联定义位于头文件中，因此在使用函数的文件中包含头文件可确保将定义放在正确的地方。也可以将定义放在实现文件中，但必须删除关键字inline，这样函数的链接性将是外部的。</p>
+<h3 id="15-1-3-其他友好关系"><a href="#15-1-3-其他友好关系" class="headerlink" title="15.1.3 其他友好关系"></a>15.1.3 其他友好关系</h3><p><strong>二个类相互成为友元</strong>：当二个类都要相互修改另一个类的成员信息时。</p>
+<p><strong>共同的友元</strong>：函数需要访问二个类的私有数据。从逻辑上看，这样的函数应是每个类的成员函数，但这是不可能的，它可以是一个类的成员，同时是另一个类的友元，不过有时将函数作为二个类的友元更合理。</p>
+<h3 id="15-2-嵌套类"><a href="#15-2-嵌套类" class="headerlink" title="15.2 嵌套类"></a>15.2 嵌套类</h3><p>在C++中，可以将类声明放在另一个类中。在另一个类中声明的类被称为嵌套类，它通过提供新的类型类作用域来避免名称混乱。包含类的成员函数可以创建和使用被嵌套类的对象；而声明位于公有部分，才能在包含类的外面使用嵌套类，而且必须使用作用域解析操作符。</p>
+<p>对类进行嵌套与包含并不同。包含意味着将类对象作为另一个类的成员，而对类进行嵌套不创建类成员，而是定义了一种类型，该类型仅在包含嵌套类声明的类中有效。</p>
+<p>由于结构体是一种其成员在默认情况下为公有的类，所以Node结构体实际上是一个嵌套类，但该定义并没有充分利用类的功能。具体地说，它没有显式构造函数。可以如下添加：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line">	<span class="keyword">class</span> Node</div><div class="line">	&#123;</div><div class="line">	 <span class="keyword">public</span>:</div><div class="line">     	Item item;</div><div class="line">		Node* next;</div><div class="line">		Node(<span class="keyword">const</span> Item &amp;i):item(i),next(<span class="number">0</span>)&#123;&#125;</div><div class="line">	&#125;;</div><div class="line"><span class="comment">//todo</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="15-2-1-嵌套类和访问权限"><a href="#15-2-1-嵌套类和访问权限" class="headerlink" title="15.2.1 嵌套类和访问权限"></a>15.2.1 嵌套类和访问权限</h3><p>嵌套类的声明位置决定了嵌套类的作用域，即它决定了程序的哪些部分可以创建这种类的对象。其次，和其他类一样，嵌套类的公有部分、保护部分和私有部分控制了对类成员的访问。</p>
+<p>如果嵌套类是在另一个类的私有部分声明的，则只有后者知道它。另外，类的成员的默认访问权限是私有的。</p>
+<p>如果嵌套类是在另一个类的保护部分声明的，则它对于后者来说是可见的，但是对于外部世界则是不可见的。不过，在这种情况中，派生类将知道嵌套类，并可以直接创建这种类型的对象。如果嵌套类是在另一个类的公有部分声明的，则允许后者、后者的派生类以及外部世界使用它，因为它是公有的。不过，由于嵌套类的作用域为包含它的类，因此外部世界使用它时，使用类限定符。</p>
+<p>嵌套结构和枚举的作用域有些相同。其实，很多程序员都使用公有枚举来提供可供客户程序员使用的类常数。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">声明位置</th>
+<th style="text-align:center">包含它的类是否可以使用它</th>
+<th style="text-align:center">从包含它的类派生而来的类是否可以使用它</th>
+<th style="text-align:center">外部世界是否可以使用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">私有部分</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">保护部分</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">公有部分</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是，通过类限定符来使用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="15-2-2-模板中的嵌套"><a href="#15-2-2-模板中的嵌套" class="headerlink" title="15.2.2 模板中的嵌套"></a>15.2.2 模板中的嵌套</h3><p>STL中的迭代器就是通过模板中嵌套类定义实现的，并且可以与包含模板使用同样的类型作为参数而不用再使用template声明。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> QUEUETP_H_</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> QUEUETP_H_</span></div><div class="line"></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Item&gt;</div><div class="line"><span class="keyword">class</span> QueueTP</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    <span class="keyword">enum</span>&#123;Q_SIZE = <span class="number">10</span>&#125;;</div><div class="line"></div><div class="line">	<span class="keyword">class</span> Node</div><div class="line">	&#123;</div><div class="line">	<span class="keyword">public</span>:</div><div class="line">	    Item item;</div><div class="line">	    Node *next;</div><div class="line">	    Node(<span class="keyword">const</span> Item &amp;i):item(i),next(<span class="number">0</span>)&#123;&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"><span class="comment">//todo</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
+<h3 id="15-3-异常"><a href="#15-3-异常" class="headerlink" title="15.3 异常"></a>15.3 异常</h3><p>程序有时会遇到运行阶段的错误，导致程序无法正常地运行下去。例如，程序可能试图打开一个不可用的文件，请求过多的内存，或者遭遇不能容忍的值。通常，程序员都会试图避免这种意外的情况。C++异常为处理这种情况提供了一种功能强大而灵活的工具。有些编译器默认关闭这种特性，可能需要使用编译器选项来启用它。</p>
+<p>abort()函数的原型位于头文件cstdlib（或stdlib.h)中，其典型实现是向标准错误流(即cerr使用的错误流)发送消息abnormal program termination (程序异常终止)，然后终止程序。它还返回一个随实现而异的值，告诉操作系统（如果程序是由另一个程序调用的，则告诉父进程），处理失败。abort()是否刷新文件缓冲区（用于存储读写到文件中的数据的内存区域）取决于实现。</p>
+<h3 id="15-3-3-异常机制"><a href="#15-3-3-异常机制" class="headerlink" title="15.3.3 异常机制"></a>15.3.3 异常机制</h3><p>C++异常是对程序运行过程中发生的异常情况（例如被0除）的一种响应。异常提供了将控制权从程序的一个部分传递到另一部分的途径。对异常的处理有3个组成部分：</p>
+<ul>
+<li>引发异常</li>
+<li>捕获有处理程序的异常</li>
+<li>使用try块</li>
+</ul>
+<p>throw语句实际上是跳转，即命令程序跳到另一条语句。throw关键字表示引发异常，紧随其后的值（例如字符串或对象）指出了异常的特征。</p>
+<p>程序使用异常处理程序来捕获异常，异常处理程序位于要处理问题的程序中。catch关键字表示捕获异常。处理程序以关键字catch开头，随后是位于括号中的类型声明，它指出了异常处理程序要响应的异常类型。然后是一个用花括号括起的代码块，指出要采取的措施。catch关键字和异常类型用作标签，指出当异常被引发时，程序应跳到这个位置执行。异常处理程序也被称为catch块。</p>
+<p>try块标识其中特定的异常可能被激活的代码块，它后面跟一个或多个catch块。try块是由关键字try指示的，关键字try的后面是一个由花括号括起的代码块，表明需要注意这些代码引发的异常。</p>
+<p>如果try块中某条语句导致异常被引发，则后面的catch块将对异常进行处理。如果程序在try块的外面产生异常，将无法被catch捕获。</p>
+<p>异常类型可以是字符串或其它C++类型，通常为类类型。执行throw语句类似执行返回语句，因为它也将终止函数的执行，但throw不是将控制权返回给调用程序，而是导致程序沿函数调用序列后退，直到找到包含try块的函数。</p>
+<p>关键字catch表明这是一个处理程序，而chatch(type &amp;value)中的type则表明该处理程序与type类型异常匹配，value与函数参数定义极其相似，因为匹配的类型对象将被赋给value。另外，当异常与该处理程序匹配时，程序将执行括号中的代码。</p>
+<p>执行完try块中的语句后，如果没有引发任何异常，则程序跳过try块后面的catch块，直接执行处理程序后面的第一条语句。</p>
+<p>如果函数引发了异常，而没有try块或没有匹配的处理程序时，在默认情况下，程序最终将调用abort()函数，但可以修改这种行为。</p>
+<p>通常，引发异常的函数将传递一个对象，这样做的主要优点之是，可以使用不同的类型来区分不同的函数在不同情况下引发的异常。另外，对象可以提供信息，程序员可以根据这些信息来确定引发异常的原因，同是，catch块可以根据这些信息来决定采取什么样的措施。</p>
+<p>可使用异常规范对函数定义进行限定，指出它将引发哪些类型的异常。为此，可在函数定义的后面加上异常规范，它由关键字throw和异常类型列表组成，异常类型列表被括在括号中，并用逗号分隔。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//异常规范</span></div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">hmean</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span> <span class="title">throw</span><span class="params">(bad_hmean)</span></span>;</div></pre></td></tr></table></figure>
+<p>这完成了二项工作，首先，它告诉编译器，该函数引发哪些类型的异常。如果以后该函数引发了其他类型的异常，程序(最终)将调用abort()函数，对这种越权做出反应。其次，使用异常规范将提醒阅读该原型的人，该函数引发异常，应提供try块和处理程序。对于引发多种异常的函数，可提供一个由逗号分隔的异常类型列表。这种句法与函数原型参数列表句法类似。如果异常规范中的括号内为空，则表明该函数不会引发异常。</p>
+<p>C++通常通过将信息放在堆栈中来处理函数调用，具体地说，程序将调用函数的指令的地址(返回地址)放到堆栈中。当被调用的函数执行完毕后，程序将使用该地址来确定从哪里开始继续执行。另外，函数调用将函数参数放到堆栈中。 在堆栈中，这些函数参数被视为自动变量。如果被调用的函数创建了新的自动变量，则这些变量也将被添加到堆栈中。如果被调用的函数调用了另一个函数，则后者的信息将被添加到堆栈中，依此类推。当函数结束时，程序流将跳到该函数被调用时存储的地址处，同时堆栈顶端的元素被释放。因此，函数通常都返回到调用它的函数，依此类推，同时每个函数都在结束时释放其自动变量。如果自动变量是类对象，则类的析构函数(如果有的话–&gt;只有需要的时候编译器才会创建)将被调用。</p>
+<p>现在假设函数由于出现异常(而不是由于返回)而终止，则程序也将释放堆栈中的内存，但不会在释放堆栈的第一个返回地址后停止，而是继续释放堆栈，直到找到一个位于try块中的返回地址。随后，控制权将转到块尾的异常处理程序，而不是函数调用后面的第一条语句，这个过程被称为堆栈解退。引发机制的一个非常重要的特性是，和函数返回一样，对于堆栈中的自动类对象，类的析构函数将被调用。不过函数返回仅仅处理该函数放在堆栈中的对象，而throw语句则处理try块和throw之间整个函数调用序列放在堆栈中的对象。如果没有堆栈解退这种特性，则引发异常后，对于中间函数调用放在堆栈中的自动类对象，其析构函数将不会被调用。</p>
+<p>程序进行堆栈解退以回到能够捕获异常的地方时，将释放堆栈中的自动存储型变量。如果变量是类对象，将为该对象调用析构函数。</p>
+<p>普通函数中，返回语句将控制权返回到调用函数，但throw语句将控制权向上返回到第一个这样的函数：包含能够捕获相应异常的try-catch组合。</p>
+<p>catch中的类型变量，使用的是throw的类型变量的一个副本，因为自动变量将会释放。</p>
+<p>throw语句将生成拷贝，为何代码中使用引用呢？毕竟将引用作为返回值的通常原因是避免创建拷贝以提高效率。答案是，引用还有另一个重要牲：基类引用可以执行派生类对象，假设有一组通过继承关联起来的异常类型，则在异常规范中只需列出一个类型引用，它将与任何派生类对象匹配。</p>
+<p>如果有一个异常类继承层次结构，应这样排列catch块：将捕获位于层次结构最下面的异常类的catch语句放在最前面，将捕获基类异常的catch语句放在最后面。</p>
+<h3 id="15-3-7-exception"><a href="#15-3-7-exception" class="headerlink" title="15.3.7 exception"></a>15.3.7 exception</h3><p>C++异常的主要目的是为设计容错程序提供语言级支持，即异常使得在程序设计中包含错误处理功能更容易，以免事后采取一些严格的错误处理方式。异常的灵活性和相对方便性激励着程序员在条件允许的情况下在程序设计中加入错误处理功能。简而言之，异常是这样的一种特性：类似于类，可以改变您的编程方式。</p>
+<p>为支持该语言，exception头文件(以前为exception.h或except.h)定义了exception类，C++可以把它用作其他异常类的基类。代码可以引发exception异常，也可以将exception类用作基类。有一个名为what()的虚拟成员函数，它返回一个字符串，该字符串的特征随实现而异，然而，由于这是一个虚方法，因此可以从exception派生而来的类中重新定义它。</p>
+<p>C++库定义了很多基于exception的异常类型。头文件exception提供了bad_exception，供函数unexpected()使用。</p>
+<p>头文件stdexcept定义了其他几个异常类，首先，该文件定义了logic_error和runtime_error类，它们都是以公有方式从exception派生而来的。</p>
+<p><strong>下溢错误</strong>：下溢错误在浮点数计算中，一般而言，存在浮点类型可以表示的最小非零值，计算结果比这个值还小时将导致下溢错误。整形和浮点型都可能发生上溢错误，当计算结果超过了某种类型能够表示的最大数量级时，将发生上溢错误。计算结果可能不在函数允许范围之内，但没有发生上溢或下溢错误，在这种情况下，可以使用range_error异常。</p>
+<p>对于处理使用new时可能出现的内存分配问题，C++提供了二种可供选择的方式。第一种方式（一度是惟一的方式）是，让new在无法满足内存请求时返回一个空指针；第二种方式是，让new引发bad_alloc异常。new文件(以前为new.h)中包含了bad_alloc类的声明，它是从exception类公有派生而来的。实现只能提供一种方式，但也可以使用编译器开关或其它一些方法，让编程都能够选择喜欢的方式。</p>
+<p>异常、类和继承以三种方式相互关联。首先，可以像标准C++库所做的那样，从一个异常类派生出另一个；其次，可以在类定义中嵌套异常类声明来组合异常；第三，这种嵌套声明本身可被继承，还可用作基类。</p>
+<p>C++规定， 在派生类中重新定义基类的方法时，函数特征标必须相同，但返回类型可以不同，条件是派生类方法的返回类型是直接或间接地从基类方法的返回类型派生而来的。这种规则也适用于异常规范。派生类方法的异常规范必须与基类方法相同，或者使用的类型是直接或间接从基类方法的异常规范中使用的类型派生而来的。</p>
+<h3 id="15-3-9-异常何时会迷失方向"><a href="#15-3-9-异常何时会迷失方向" class="headerlink" title="15.3.9 异常何时会迷失方向"></a>15.3.9 异常何时会迷失方向</h3><p>异常被引发后，在二种情况下，会导致问题。首先，如果它是在带异常规范的函数中引发的，则必须与规范列表中的某种异常匹配(在继承层次结构中，类类型与这个类及其派生类的对象匹配)，否则称为意外异常。在默认情况下，这将导致程序异常终止。如果异常不是在函数中引发的(或者函数没有异常规范)，则它必须被捕获。如果没有被捕获(在没有try块或没有匹配的catch块时，将出现这种情况)，则异常被称为未捕获异常。在默认情况下，这将导致程序异常终止。不过，可以修改程序对意外异常和未捕获异常的反应。</p>
+<p>未捕获异常不会导致程序立刻终止。相反，程序将首先调用函数terminate()。在默认情况下，terminate()调用abort()函数。可以指定terminate()应调用的函数(而不是abort())来修改terminate()的这种行为。 为此，可调用set_terminate()函数。set_terminate()函数和terminate()都是在头文件exception中声明的。</p>
+<p>原则上，异常规范应包含函数调用的其他函数引发的异常。</p>
+<p>使用异常会增加代码，降低程序的运行速度。异常规范不适用于模板，因为模板函数引发的异常可能随特定的具体化而异。异常和动态内在分配不能总是协同工作。</p>
+<p>简而言之，虽然异常处理对于某些项目极为重要，但它也会增加编程的工作量、增大程序、降低程序的速度。另外，编译器对异常的支持以及用户的经验还没有达到成熟的程度，所以应有节制地使用这种特性。</p>
+<h3 id="15-4-RTTI"><a href="#15-4-RTTI" class="headerlink" title="15.4 RTTI"></a>15.4 RTTI</h3><p>RTTI是运行阶段类型识别(Runtime Type Identification)的简称。这是新添加到C++中的特性之一，很多老式实现并不支持。另一些实现可能包含开关RTTI的编译器设置。RTTI旨在为程序在运行阶段确定对象的类型提供一种标准方式。</p>
+<p>为何要知道类型？可能希望调用类方法的正确版本，在这种情况下，只要该函数是类层次结构中所有成员都拥有的虚函数，则并不真正需要知道对象的类型。但派生对象可能包含不是继承而来的方法，在这种情况下，只有某些类型的对象可以使用该方法。也可能是出于调用目的，想跟踪生成的对象的类型。</p>
+<h3 id="15-4-2-RTTI的工作原理"><a href="#15-4-2-RTTI的工作原理" class="headerlink" title="15.4.2 RTTI的工作原理"></a>15.4.2 RTTI的工作原理</h3><p>C++有3个支持RTTI的元素：</p>
+<ul>
+<li>如果可能的话，dynamic_cast操作符将使用一个指向基类的指针来生成一个指向派生类的指针；否则，该操作符返回0–空指针。</li>
+<li>typeid操作符返回一个指出对象的类型的值。</li>
+<li>type_info结构存储了有关特定类型的信息。</li>
+</ul>
+<p>只能将RTTI用于包含虚函数的类层次结构，原因在于只有对于这种类层次结构，才应该将派生对象的地址赋给基类的指针。</p>
+<p><strong>dynamic_case操作符</strong>：</p>
+<p>dynamic_cast操作符是最常用的RTTI组件。它不能回答“指针指向的是哪类对象”这样的问题，但能够回答“是否可以安全地将对象的地址赋给特定类型的指针”这样的问题。</p>
+<p>通常想知道类型的原因在于：知道类型后，就可以知道调用特定的方法是否安全。要调用方法，类型并不一定要完全匹配，而可以是定义了方法的虚拟版本的基类类型。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//指针pg的类型是否可被安全地转换为Superb *?如果可以，操作符将返回对象的地址，否则返回一个空指针。</span></div><div class="line">Superb *pm = dynamic_case&lt;Superb *&gt; (pg);</div></pre></td></tr></table></figure>
+<p>编译器支持RTTI，在默认情况下，它也可能关闭该特性。如果该特性被关闭，程序可能仍能够通过编译，但将出现运行阶段错误。在这种情况下，读者应查看文档或菜单选项。</p>
+<p>也可以将dynamic_cast用于引用，其用法稍微有点不同：没有与空指针对应的引用值，因此无法使用特殊的引用值来指示失败。当请求不正确时，dynamic_cast将引发类型为bad_cast的异常，这种异常是从exception类派生而来的。它是在头文件typeinfo中定义。</p>
+<p><strong>typeid操作符和type_info类</strong>：</p>
+<p>typeid关键字使得能够确定二个对象是否为同种类型。它与sizeof有些想像，可以接受二种参数：</p>
+<ul>
+<li>类名。</li>
+<li>结果为对象的表达式。</li>
+</ul>
+<p>typeid操作符返回一个对type_info对象的引用，其中，type_info是在头文件typeinfo(以前为typeinfo.h)中定义的一个类。type_info类重载了==和!=操作符，以便可以使用这些操作符来对类型进行比较。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeid</span>(ClassName) == <span class="keyword">typeid</span>(Obj)</div></pre></td></tr></table></figure>
+<h3 id="15-5-类型转换操作符"><a href="#15-5-类型转换操作符" class="headerlink" title="15.5 类型转换操作符"></a>15.5 类型转换操作符</h3><ul>
+<li>dynamic_cast </li>
+<li>const_cast</li>
+<li>static_cast</li>
+<li>reinterpret_cast</li>
+</ul>
+<p><strong>dynamic_cast</strong>操作符使得能够在类层次结构中进行向上转换(由于is-a关系，这样的类型转换是安全的），而不允许其它转换。</p>
+<p><strong>const_cast</strong>操作符用于执行只有一种用途的类型转换，即改变值为const或volatile。</p>
+<p><strong>static_cast</strong>:<code>static_cast&lt; type-name&gt; (expression)</code>仅当type_name可被隐匿转换为expression所属的类型或expression可被隐匿转换为type_name所属的类型时，上述转换才是合法的，否则将出错。</p>
+<p><strong>reinterpret_cast</strong>操作符用于天生危险的类型转换。它不允许删除const，但会执行其他令人生厌的操作。有时程序员必须做一些依赖于实现的、令人生厌的操作，使用reinterpret_cast操作符可以简化对这种行为的跟踪工作。然而，reinterprete_cast操作符并不支持所有的类型转换。例如，可以将指针类型转换为足以存储指针表示的整形，但不能将指针转换为更小的整形或浮点型，另一个限制是，不能将函数指针转换为数据指针，反之亦然。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>类可以将其他函数，其他类和其他类的成员函数作为友元。在某些情况下，可能需要使用前向声明，需要特别注意类和方法声明的顺序，以正确地组合友元。</p>
+<p>嵌套类是在其他类中声明的类，它有助于设计这样的助手类，即实现其他类，但不必是公有接口的组成部分。</p>
+<p>C++异常机制为处理拙劣的编程事件，如不适当的值、I/O失败等，提供了一种灵活的方式。引发异常将终止当前执行的函数，将控制权付给匹配的catch块。catch块紧跟在try块后面，为捕获异常，直接或间接导致的函数调用必须位于try块中。这样的程序将执行catch块中的代码。这些代码试图解决问题或终止程序。类可以包含嵌套的异常类，嵌套异常类在相应的问题被发现时将被引发。函数可以包含异常规范，指出在该函数中可能引发的异常。未被捕获的异常(没有匹配的catch块的异常)在默认情况下将终止程序，意外异常也是如些。</p>
+<p>RTTI特性让程序能够检测对象的类型。dynamic_cast操作符用于将派生类指针转换为基类指针，其主要是确保可以安全地调用虚函数。typeid操作符返回一个type_info对象。可以对二个typeid的返回值进行比较，以确定对象是否为特定的类型，而返回的type_info对象可用于获得关于对象的信息。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+      <category term="C++" scheme="http://LySnake.github.io/tags/c/"/>
+    
+      <category term="C++ Primer Plus" scheme="http://LySnake.github.io/tags/c-primer-plus/"/>
+    
+  </entry>
+  
+  <entry>
     <title>电脑小白系列之电脑硬件了解</title>
     <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E7%94%B5%E8%84%91%E7%A1%AC%E4%BB%B6%E4%BA%86%E8%A7%A3.html"/>
     <id>http://LySnake.github.io/archives/technology/电脑小白系列之电脑硬件了解.html</id>
@@ -1219,75 +1075,128 @@
   </entry>
   
   <entry>
-    <title>常用软件推荐</title>
-    <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html"/>
-    <id>http://LySnake.github.io/archives/technology/电脑小白系列之常用软件推荐.html</id>
-    <published>2017-02-06T07:09:00.190Z</published>
-    <updated>2017-09-18T15:23:46.152Z</updated>
+    <title>C++ Primer Plus学习笔记(4)</title>
+    <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(4).html"/>
+    <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(4).html</id>
+    <published>2017-01-26T10:31:52.000Z</published>
+    <updated>2018-02-24T13:36:52.021Z</updated>
     
-    <content type="html"><![CDATA[<p>分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。<br><a id="more"></a></p>
-<h2 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h2><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p><a href="https://www.zhihu.com/question/28013848" target="_blank" rel="external">如何高效地使用搜索引擎？</a>：来自zhihu的问答。</p>
-<p><a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif" target="_blank" rel="external">Proxy SwitchyOmega</a>:来自<a href="https://github.com/XX-net/XX-Net" target="_blank" rel="external">XX-Net</a>,插件单独使chrome使用XX-Net搭建梯子，也可以不使用插件，使PC全局智能上梯子。</p>
-<p><a href="https://chrome.google.com/webstore/detail/clickclean/ghgabhipcejejjmhhchfonmamedcbeod" target="_blank" rel="external">Click&amp;Clean</a>:管理工具，可管理chrome，也可以管理PC设备。</p>
-<p><a href="https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj" target="_blank" rel="external">Save to Pocket</a>:pocket，可存网页到网上，支持iOS、安卓平台，支持zhihu等APP或网页分享到pocket APP。</p>
-<p><a href="https://chrome.google.com/webstore/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8A%A9%E6%89%8B%EF%BC%9Abilibilicom-%E7%BB%BC%E5%90%88%E8%BE%85%E5%8A%A9%E6%89%A9%E5%B1%95/kpbnombpnpcffllnianjibmpadjolanh" target="_blank" rel="external">嗶哩嗶哩助手</a>:B站，看直播可自动化领取瓜子等。</p>
-<p><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" target="_blank" rel="external">擴充功能uBlock Origin</a>:一款高效率的廣告攔截工具。</p>
-<p><a href="https://chrome.google.com/webstore/detail/dream-afar-new-tab/henmfoppjjkcencpbjaigfahdjlgpegn" target="_blank" rel="external">遠方 New Tab</a>:打开一个新标签页，背景图都是实时更新的美图，与<a href="https://juejin.im/extension/?utm_source=extension&amp;utm_medium=zhihu&amp;utm_campaign=20595240" target="_blank" rel="external">掘金</a>冲突。</p>
-<p><a href="https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc" target="_blank" rel="external">Octotree</a>:在<a href="www.github.com">github</a>上，打开一个项目，能在左侧以windows资源管理器一样以树状图显示项目文件结构。</p>
-<p><a href="https://chrome.google.com/webstore/detail/web%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8Bfehelper/pkgccpejnmalmdinmhkkfafefagiiiad?hl=zh-CN" target="_blank" rel="external">WEB前端助手(FeHelper)</a>:前端会用到的小工具。</p>
-<p><a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="external">Tampermonkey</a>:很强大的插件，允许运行JS充当功能，相关JS文件可以去<a href="https://greasyfork.org/zh-CN" target="_blank" rel="external">Greasy Fork</a>下载，比如一些特殊网站的JS，免登录使用zhihu，购物党比价工具、下载youtube视频等。</p>
-<p><a href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=zh-CN" target="_blank" rel="external">Vimium</a>:游览网站像操作vim一样操作。</p>
-<p><a href="https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb" target="_blank" rel="external">google翻译</a>:翻译网页或选中字词或短语时翻译。</p>
-<p><a href="https://juejin.im/extension/?utm_source=extension&amp;utm_medium=zhihu&amp;utm_campaign=20595240" target="_blank" rel="external">掘金</a>：在新标签页展示内容，为设计师、程序员、产品经理每日发现优质内容。与<a href="https://chrome.google.com/webstore/detail/dream-afar-new-tab/henmfoppjjkcencpbjaigfahdjlgpegn" target="_blank" rel="external">遠方 New Tab</a>冲突。</p>
-<p><a href="https://chrome.google.com/webstore/detail/send-to-kindle-by-klipme/ipkfnchcgalnafehpglfbommidgmalan" target="_blank" rel="external">Send to Kindle</a>:一键发送网页文章到Kindle阅读器。</p>
-<p><a href="https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien" target="_blank" rel="external">Isometric Contributions</a>:让你在GitHub上的commit像盖楼一样的展示，很有趣，展示下Android大神Jake Wharton的commit情况。</p>
-<p><a href="https://github.com/anasnakawa/chrome-github-avatars" target="_blank" rel="external">Avatars for Github</a>:顾名思义，默认我们在GitHub主页动态只能看到id的，而安装了这个插件就可以看到GitHub头像了.</p>
-<p><a href="https://chrome.google.com/webstore/detail/%E7%9F%A5%E4%B9%8E%E5%A4%B4%E5%83%8F%E6%94%BE%E5%A4%A7%E5%99%A8/iodddkdbdgcmepjlfieigdigioepgibn?hl=zh-CN" target="_blank" rel="external">知乎头像放大器</a>:把用户头像放大，比直接打开链接还要大。</p>
-<p><a href="https://www.zhihu.com/question/23228162" target="_blank" rel="external">chrome有哪些好用的插件</a></p>
-<hr>
-<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p><a href="https://www.zhihu.com/question/32129337" target="_blank" rel="external">如何优雅使用windows 10</a>:来自zhihu的问答。</p>
-<p><a href="https://atom.io/" target="_blank" rel="external">Atom</a>：Atom 是 Github 专门为程序员推出的一个跨平台文本编辑器。具有简洁和直观的图形用户界面，并有很多有趣的特点：支持CSS，HTML，JavaScript等网页编程语言。它支持宏，自动完成分屏功能，集成了文件管理器。</p>
-<p><a href="http://www.scootersoftware.com/download.php" target="_blank" rel="external">BCompare</a>：跨平台的文件比较工具。</p>
-<p><a href="http://download.pchome.net/system/treak/detail-4359.html" target="_blank" rel="external">EasyBCD</a>:修改PC上多个系统引导程序，选择默认系统引导。</p>
-<p><a href="https://www.voidtools.com/downloads/" target="_blank" rel="external">Everything</a>:windows下文件搜索工具，比系统默认的文件检索快得多且支持正则表达式，但不支持文件内容检索，windows自带的检索工具可以设置成检索文件内容。</p>
-<p><a href="http://pan.baidu.com/s/1eSJZ9cu" target="_blank" rel="external">SourceInsight</a>:多语言代码编辑工具，支持代码高亮，定义跳转，全局搜索，但对中文支持不太好。</p>
-<p><a href="http://pan.baidu.com/s/1hsHnIb6" target="_blank" rel="external">UltraISO</a>:打开ISO文件工具。</p>
-<p><a href="https://zh.dvdfab.cn/" target="_blank" rel="external">dvdfab</a>:好用的ISO文件工具。</p>
-<p><a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=2&amp;ch=&amp;tn=baiduhome_pg&amp;bar=&amp;wd=VMware+%E4%B8%8B%E8%BD%BD&amp;rsv_spt=1&amp;oq=fireworks+%E4%B8%8B%E8%BD%BD&amp;rsv_pq=fe1db2c5000198ef&amp;rsv_t=0101HNZP1hokgvnDfCG5xUelLKmDrgNQ31p4elzWh%2FMLyL2eWO6YmVnLIVHSDnA1sy9O&amp;rqlang=cn&amp;rsv_enter=0&amp;inputT=3987" target="_blank" rel="external">VMware</a>:虚拟机软件，在win下的该软件里再安装其它操作系统，但现在windows 10已经有linux子系统了，现在一般可以不用选择这个方案。</p>
-<p><a href="http://download.flvcd.com/" target="_blank" rel="external">硕鼠</a>:支持多个网站的在线视频下载。</p>
-<p><a href="http://music.163.com/" target="_blank" rel="external">网易云音乐</a>:美观、友好、歌曲推荐算法强。</p>
-<p><a href="http://foxmail.com.cn/" target="_blank" rel="external">FoxMail</a>:本地mail客户端。</p>
-<p><a href="https://github.com/Wox-launcher/Wox/releases" target="_blank" rel="external">Wox</a>:功能如Mac下的Alfred，使用alt+space可以启用该程序，可以快速检索本地文件、程序并启用，不再频繁操作鼠标和查找文件(检索使用了Everything)。并有大量插件、自定义一些操作，也有默认常用操作，如：g github即为google检索github。</p>
-<p><a href="http://www.listary.com/" target="_blank" rel="external">Listary</a>:如功能和Wox一样，但是匹配没有Wox好。来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
-<p><a href="https://www.sourcetreeapp.com/" target="_blank" rel="external">SourceTree</a>:git应用Gui程序，支持windows、iOS平台。</p>
-<p><a href="http://www.xitongcheng.com/jiaocheng/win10_article_27723.html" target="_blank" rel="external">Ubuntu on Windows</a>:在windows 10下安装ubuntu子系统，即可不用虚拟机，也能有linux环境，可用于开发。但目前该系统还有很多坑要填，而且下载也是要win搭个梯子。</p>
-<p><a href="http://www.vim.org/download.php" target="_blank" rel="external">Gvim</a>:win下的GUI VIM，如果不是一定要vim才能快速编辑或能熟练使用，还是不要在win下使用vim，相对不是那么友好。(比如常算之后多少个char，使用vim还是很快的)</p>
-<p><a href="http://cn.ejie.me/" target="_blank" rel="external">Clover</a>:让windows系统的文件管理器像chrome一样，支持多标签页功能，目前还有不少BUG，但对于常打开多个窗口查找文件来说，还是十分方便。</p>
-<p><a href="http://www.huyanbao.com" target="_blank" rel="external">护眼宝</a>：修改屏幕色彩，相传更护眼。有Android、iOS、MAC、windows版。</p>
-<p><a href="https://www.teamviewer.com/zhcn/" target="_blank" rel="external">TeamViewer</a>:远程控制，内网穿透，VPN共享，跨平台.对个人免费。目前没有使用过，来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
-<p><a href="https://anydesk.com/remote-desktop" target="_blank" rel="external">AnyDesk</a>:远程控制效果或许会超出你的想象，作为TeamViewer备用方案,来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
-<p><a href="http://sunlogin.oray.com/zh_CN/" target="_blank" rel="external">向日葵</a>:官网信息(远程手机操作PC开机，控制)，来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
-<p><a href="http://www.cockos.com/licecap/" target="_blank" rel="external">licecap</a>:Gif文件录制工具。</p>
-<p><em>Powertool</em>:系统清理工具。</p>
-<hr>
-<h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><p><a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">zsh</a>:更友好的shell(漂亮的themes，更多的输入匹配)。</p>
-<p><a href="https://github.com/DemonCloud/Aix-Vim" target="_blank" rel="external">vim</a>:linux下最常用的编辑器，代码高亮，跳转，IDE界面等，只是要配置成自己更适合的还要多去踩坑。</p>
-<hr>
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><h3 id="云梯"><a href="#云梯" class="headerlink" title="云梯"></a>云梯</h3><p><a href="https://github.com/XX-net/XX-Net" target="_blank" rel="external">XX-Net</a>：免费使用google的AppID,每个ID有1G，每个google帐号最多12个AppID，网络速度不错，youtube也能看视频，优点是每天早上可更新流量，且支持chrome、firefox。</p>
-<p><a href="https://github.com/getlantern/forum#%E8%93%9D%E7%81%AFlantern%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD" target="_blank" rel="external">蓝灯(Lantern)</a>:免费情况下每月800M，速度不错，优点搭建快速。</p>
-<p><a href="https://github.com/softwaredownload/openwrt-fanqiang" target="_blank" rel="external">openwrt</a>:实现路由器自动云梯，且因内置linux系统，可定制化功能，比如外接硬盘当网盘、自动下载BT等。但路由器成本不低，适合居家使用，未曾试用过。</p>
-<p><a href="https://uzer.me/" target="_blank" rel="external">UZER.ME</a>:云端软件，常见的如chrome、AI、PS等与办公想关。默认翻墙chrome可以进google、youtube。</p>
-<p><a href="https://wsgzao.github.io/post/fq/" target="_blank" rel="external">更多梯子</a>:这里罗列的方案，大都末使用过。</p>
-<h3 id="数据备份恢复"><a href="#数据备份恢复" class="headerlink" title="数据备份恢复"></a>数据备份恢复</h3><p>数据备份软件来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>,没有使用过。</p>
-<p><a href="http://www.onekeyrestore.cn/" target="_blank" rel="external">易数一键还原</a>:以DiskGenius为内核开发，安全易用靠谱,同时推荐ORM一键还原系统。</p>
-<p><a href="http://www.diskgenius.cn/" target="_blank" rel="external">DiskGenius</a>:国内磁盘分区和数据恢复的佼佼者,Mod By MyCrack.</p>
-<p><a href="http://www.0daydown.com/?s=EaseUS+Data+Recovery" target="_blank" rel="external">EaseUS Data Recovery Wizard</a>:原先是国产易我数据恢复，现在依旧犀利啊</p>
-<h3 id="其它网友环境"><a href="#其它网友环境" class="headerlink" title="其它网友环境"></a>其它网友环境</h3><p><a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao推荐的软件</a>。</p>
+    <content type="html"><![CDATA[<h2 id="14-C-中的代码重用"><a href="#14-C-中的代码重用" class="headerlink" title="14 C++中的代码重用"></a>14 C++中的代码重用</h2><h3 id="14-1-包含对象成员的类"><a href="#14-1-包含对象成员的类" class="headerlink" title="14.1 包含对象成员的类"></a>14.1 包含对象成员的类</h3><p><strong>has-a</strong>:本身是另一个类的对象的成员变量。这种方法称为包含、组合或层次化。另一种方法是通过私有或保护继承。获得接口是is-a关系的组成部分。而使用组合，类可以获得实现，但不能获得接口。不继承接口是has-a关系的组成部分。</p>
+<p><strong>多重继承</strong>：使得能够使用两个或更多的基类派生出来新的类，将基类的功能组合在一起。</p>
+<p>模板特性意味着声明对象时，必须指定具体的数据类型。</p>
+<p>对于继承的基类对象部分，构造函数在成员初始化列表中使用类名来调用特定的基类构造函数。对于成员对象，在成员初始化列表中使用成员名调用构造函数。C++要求在构建对象的其它部分之前，先构建继承对象的所有成员对象。因此，如果初始化列表未显式初始化成员对象，C++将使用成员对象类的默认构造函数。</p>
+<h3 id="14-2-私有继承"><a href="#14-2-私有继承" class="headerlink" title="14.2 私有继承"></a>14.2 私有继承</h3><p>C++还有另一种实现has-a关系的途径–私有继承，基类的公有成员和保护成员都将成为派生类的私有成员。这意味着基类方法将不会成为派生对象公有接口的一部分，但可以在派生类的成员函数中使用它们。</p>
+<p>使用公有继承，基类的公有方法将成为派生类的公有方法。简而言之，派生类将继承基类的接口：这是is-a关系的一部分。使用私有继承，基类的公有方法将成为派生类的私有方法，简而言之，派生类不继承基类的接口。正如从被包含对象中看到的，这种不完全继承是has-a关系的一部分。</p>
+<p>包含将对象作为一个命名的成员对象添加到类中，而私有继承将对象作为一个未被命名的继承对象添加到类中。</p>
+<p>当在头文件使用class声明派生类时，如果没有使用public等关键字声明如何继承基类，则以默认以private方式继承。</p>
+<p>使用多个基类的继承被称为多重继承（multiple inheritance,MI）.</p>
+<p>对于继承基类的对象部分，使用初始化列表方法，使用基类的构造函数初始化基类的对象部分。</p>
+<p>私有继承时，通过强制类型转换访问基类对象部分。</p>
+<p>用类名显式地限定函数名不适合于友元函数，这是因为友元不属于类。不过，可以通过显式地转换为基类来调用正确的函数。在私有继承中，在不进行显式类型转换的情况下，不能将指向派生类的引用或指针赋给基类引用或指针(基类公有方法通过私有继承成为派生类的私有方法，不具有is-a关系)。另外，由于派生类使用的是多继承，编译器将无法确定应转换成哪个基类，如果两个基类都提供了相同的函数。</p>
+<p>类声明中包含表示被包含类的显式命名对象，代码可以通过名称引用这些对象，而 使用继承将使关系更抽象。其次，继承会引起许多问题，尤其从多个基类继承时，可能必须处理许多问题，例如包含同名方法的独立的基类，或共享祖先的独立的基类。另外，包含能够包括多个同类的子对象。如果某个类需要3个string对象，可以使用包含声明3个独立的string成员。而继承则只能使用一个这样的对象(当对象都没有名称时，将难以区分)。</p>
+<p>类包含保护成员(可以是数据成员，也可以成员函数)，则这样的成员在派生类中是可用的，但在继承层次结构外是不可用的。如果使用组合将这样的类包含在另一个类中，则后者将不是派生类，而是位于继承层次结构之外，因此不能访问保护成员。但通过继承得到的将是派生类，因此它能够访问保护成员。另一种需要使用私有继承的情况是需要重新定义虚函数。派生类可以重新定义虚函数，但包含类不能。使用私有继承，重新定义的函数将只能在类中使用，而不是公有的。(通常，应使用包含建立has-a关系；如果新类需要访问原有类的保护成员，或需要重新定义虚函数，则应使用私有继承)</p>
+<h3 id="14-3-保护继承"><a href="#14-3-保护继承" class="headerlink" title="14.3 保护继承"></a>14.3 保护继承</h3><p>保护继承是私有继承的变体。保护继承在列出基类时使用关键字protected.</p>
+<p>使用保护继承时，基类的公有成员和保护成员都将成为派生类的保护成员。和私有继承一样，基类的接口在派生类中也是可用的，但在继承层次结构之外是不可用的。当从派生类派生出另一个类时，私有继承和保护继承之间的主要区别便呈现出来了。使用私有继承时，第三代类将不能使用基类的接口，这是因为基类的公有方法在派生类中将变成私有方法；使用保护继承时，基类的公有方法在第二代中将变成受保护的，因此第三代派生类可以使用它们。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">特征</th>
+<th style="text-align:center">公有继承</th>
+<th style="text-align:center">保护继承</th>
+<th style="text-align:center">私有继承</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">公有成员变成</td>
+<td style="text-align:center">派生类的公有成员</td>
+<td style="text-align:center">派生类的保护成员</td>
+<td style="text-align:center">派生类的私有成员</td>
+</tr>
+<tr>
+<td style="text-align:center">保护成员变成</td>
+<td style="text-align:center">派生类的保护成员</td>
+<td style="text-align:center">派生类的保护成员</td>
+<td style="text-align:center">派生类的私有成员</td>
+</tr>
+<tr>
+<td style="text-align:center">私有成员变成</td>
+<td style="text-align:center">只能通过基类接口访问</td>
+<td style="text-align:center">只能通过基类接口访问</td>
+<td style="text-align:center">只能通过基类接口访问</td>
+</tr>
+<tr>
+<td style="text-align:center">能否隐式向上转换</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是（但只能在派生类中）</td>
+<td style="text-align:center">否</td>
+</tr>
+</tbody>
+</table>
+<p><strong>将函数调用包装在另一个函数调用中，即使用一个using声明（就像名称空间那样）来指出派生类可以使用特定的基类成员(使用using声明基类成员函数的作用域)，即使采用的私有派生。</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Student: <span class="keyword">private</span> <span class="built_in">std</span>::<span class="built_in">string</span> ,<span class="keyword">private</span> <span class="built_in">std</span>::valarray&lt;<span class="keyword">double</span>&gt;</div><div class="line">&#123;</div><div class="line">   pulibc:</div><div class="line">        <span class="keyword">using</span> <span class="built_in">std</span>::valarray&lt;<span class="keyword">double</span>&gt;::min; </div><div class="line">        <span class="keyword">using</span> <span class="built_in">std</span>::valarray&lt;<span class="keyword">double</span>&gt;::min;</div><div class="line">   <span class="comment">//something</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>using声明只使用成员名—没有圆括号、函数牲标和返回类型。using声明只适用于继承，而不适用于包含。</p>
+<h3 id="14-3-多重继承"><a href="#14-3-多重继承" class="headerlink" title="14.3 多重继承"></a>14.3 多重继承</h3><p>MI描述的是有多个直接基类的类。与单继承一样，公有MI表示的也是is-a关系。必须使用关键字public来限定每一个类。这是因为除非特别指出，否刚编译器将使用默认的私有派生。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Worker&#123;&#125;;</div><div class="line"><span class="keyword">class</span> Singing :<span class="keyword">public</span> Worker&#123;&#125;;</div><div class="line"><span class="keyword">class</span> Waiter  :<span class="keyword">public</span> Worker&#123;&#125;;</div><div class="line"><span class="keyword">class</span> SSingingWaiter :<span class="keyword">public</span> Singing, <span class="keyword">public</span> Waiter&#123;&#125;</div><div class="line"></div><div class="line"><span class="comment">//示例</span></div><div class="line">SingingWaiter ed;</div><div class="line"><span class="comment">//有歧义</span></div><div class="line">Worker * pw = &amp;ed;</div><div class="line"><span class="comment">//正确方式</span></div><div class="line">Worker *pw1 = (Waiter *)&amp;ed;</div><div class="line">Worker *pw2 = (Singing *)&amp;ed;</div></pre></td></tr></table></figure>
+<p>通常这种赋值将反基类指针设置为派生对象中的基类的地址。但ed中包含两个Worker对象，有两个地址可供选择，所以应使用类型转换来指定对象。这将使得基类指针来引用不同的对象(多态性)复杂化。</p>
+<p>当C++引入多重继承的同时，它引入了一种新技术—虚基类(virtual base class)，使MI成为可能。</p>
+<p><strong>虚基类</strong>：虚基类使得从多个类(它们的基类相同)派生出的对象只继承一个基类对象。从本质上说，继承的Singing和Waiter对象共享一个Worker对象，而不是各自引入自己的Worker对象的拷贝。因为SingingWaiter现在只包含一个Worker对象。所以可以使用多态。</p>
+<p>为什么不抛弃将基类声明为虚拟的这种方式，而使虚拟行为成为MI准则呢？第一，在一些情况下，可能需要基类的多个拷贝；第二，将基类作为虚拟的要求程序员完成额外的计算，为不需要的工具付出代价是不应该的；</p>
+<p>使用虚基类时，需要对类构造函数采用一种新的方法。对于非虚基类，惟一可以出现在初始化列表中的构造函数是相临基类构造函数。但这些构造函数可能需要将信息传递给其基类。C++在基类是虚拟时，禁止信息通过中间类自动传递给基类，可以在初始化列表中使用基类的基类的构造函数，来完成祖父虚拟基类对象部分的初始化(非虚拟基类不可使用该方法)。</p>
+<p>在祖先相同时，使用MI必须引入虚基类，并修改构造函数初始化列表的规则。另外，如果在编写这些类时没有考虑到MI，则还可能需要重新编写它们。</p>
+<p>如果基类是虚基类，派生类将包含基类的一个子对象；如果基类不是虚基类，派生类将包含多个子对象。当虚 基类和非虚基类混合时，情况将如何呢？如：假设类B被用作类C和D的虚基类，同时被用作类X和Y的非虚基类，而类M是从C、D、X和Y派生而来的。在这种情况下，类M从虚拟派生祖先（即类C和D）那里共继承了一个B类子对象，并从每一个非虚拟派生祖先（即类X和类Y）分别继承了一个B类子对象。因此，它包含三个B类子对象。当类通过多条虚拟途径和非虚拟途径继承某个特定的基类时，该类将包含一个表示所有的虚拟途径的基类子对象和分别表示各条非虚拟途径的多个基类子对象。</p>
+<p>使用虚基类将改变C++解析二义性的方式。使用非虚基类时，规则很简单。如果类从不同的类那里继承了两个或更多的同名成员，则使用该成员名时，如果没有用类名进行限定，将导致二义性。但如果使用的是虚基类，则这样做不一定会导致二义性。在这种情况下，如果某个名称优先于其它所有名称，则使用它时，即便不使用限定符也不会导致二义性。</p>
+<p>从虚基类的一个或多个实例派生而来的类将只继承了一个基类对象。</p>
+<ul>
+<li>有间接虚基类的派生类包含直接调用间接基类构造函数的构造函数，这对于间接非虚基类来说是非法的。</li>
+<li>能过优先规则解决名称二义性。（派生类中的名称优先于直接或间接祖先类中的相同名称）</li>
+</ul>
+<h3 id="14-4-1-定义类模板"><a href="#14-4-1-定义类模板" class="headerlink" title="14.4.1 定义类模板"></a>14.4.1 定义类模板</h3><p>模板提供参数化类型，即能够将类型名作为参数传递给接收方来建立类或函数。使用模板成员函数替换原有类的类方法，每个函数头都将以相同的模板声明打头。</p>
+<p>和模板函数一样，模板类以下面这样的代码开：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> Type&gt;</div><div class="line"><span class="keyword">class</span> Stack</div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">count</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//Stack&lt;Type&gt;作限定符</span></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> Type&gt;</div><div class="line"><span class="keyword">void</span> Stack&lt;Type&gt;::count()&#123;&#125;</div></pre></td></tr></table></figure></p>
+<p>其中，Stack<classname>作为类型，如果在类声明中定义了方法（内联定义），则可以活力模板前缀和类限定符(Stack<type>)。</type></classname></p>
+<p>模板的具体实现—例如用来处理string对象的堆栈类—被称为实例化或具体化。除非编译器实现了新的export关键字，否则将模板成员函数旋转在一个独立的实现文件中将无法运行。因为模板不是函数，它们不能编译。模板必须与特定的模板实例化请求一起使用。为此，最简单的方法是将所有模板信息放在一个头文件中，并在要使用这些模板的文件中包含该头文件。</p>
+<p>注意，必须显式地提供所需的类型，这与常规的函数模板是不同的，因为编译器可以根据函数的参数类型来确定要生成哪种函数。</p>
+<p>任县指针堆栈的方法之一是，让调用程序提供一个指针数组，基中每个指针都指向不同的字符串，反这些指针放在堆栈中是有意义的，因为每个指针都将指向不同的字符串。</p>
+<p>模板常被用作窗口类，这是因为类型参数的概念非常适合于将相同的存储方案用于不同类型。</p>
+<p><strong>表达式参数</strong>：指定特殊的类型而不是用作通用类型名，称为非类型或表达式参数。在实例化模板时，用作表达式的参数的值必须是常量表达式，因为在编译期，要对特定类型进行模板实例化，生成特定类型的类代码。</p>
+<p><strong>模板类可用作基类，也可用作组件类，还可用作基他模板的类型参数，递归使用模板，使用多个类型参数</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div><div class="line"><span class="keyword">class</span> Array</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    T entry;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//用于基类</span></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> Type&gt;</div><div class="line"><span class="keyword">class</span> GrowArray: <span class="keyword">public</span>&lt;Tyep&gt; &#123;&#125;;</div><div class="line"></div><div class="line"><span class="comment">//用作组件类</span></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> Tp&gt;</div><div class="line"><span class="keyword">class</span> Stack</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    Array&lt;Tp&gt; ar;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//用作基他模板的类开参数</span></div><div class="line">Array &lt;Stack&lt;<span class="keyword">int</span>&gt; &gt; asi;    <span class="comment">//必须使用至少一个空白字符将两个&gt;符号分开，以避免与&gt;&gt;操作符混淆。</span></div><div class="line"></div><div class="line"><span class="comment">//递归使用模板</span></div><div class="line">ArrayTP&lt; ArrayTP&lt;<span class="keyword">int</span>, <span class="number">5</span>&gt;， <span class="number">10</span>&gt; twodee;</div><div class="line"></div><div class="line"><span class="comment">//使用多个类型参数</span></div><div class="line"></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> T1, <span class="keyword">class</span> T2&gt;</div><div class="line"><span class="keyword">class</span> Pair</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    T1 a;</div><div class="line">    T2 b;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function">T1 &amp;<span class="title">first</span><span class="params">()</span></span>;</div><div class="line">    <span class="function">T2 &amp;<span class="title">second</span><span class="params">()</span></span>;</div><div class="line">    <span class="function">T1 <span class="title">first</span><span class="params">()</span><span class="keyword">const</span></span>&#123;&#125;;</div><div class="line">    <span class="function">T2 <span class="title">second</span><span class="params">()</span><span class="keyword">const</span></span>&#123;&#125;;</div><div class="line">    Pair()&#123;&#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T1, <span class="keyword">class</span> T2&gt;</div><div class="line">T1 &amp; Pair&lt;T1, T2&gt;::first()</div><div class="line">&#123;&#125;</div><div class="line"><span class="comment">//todo</span></div></pre></td></tr></table></figure>
+<p><strong>默认类型模板参数</strong></p>
+<p>类模板的另一项新特性是，可以为类型参数提供默认值，在以下代码中，如果省略T2的值，编译器将使用int。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T1, <span class="keyword">class</span> T2 = <span class="keyword">int</span>&gt; </div><div class="line"><span class="keyword">class</span> Topo&#123;&#125;</div></pre></td></tr></table></figure></p>
+<p>虽然可以为类模板类型参数提供默认值，但不能为函数模板参数提供默认值。不过可以为非类型参数提供默认值，这对于类模板和函数都是适用的。</p>
+<h3 id="14-4-6-模板的具体化"><a href="#14-4-6-模板的具体化" class="headerlink" title="14.4.6 模板的具体化"></a>14.4.6 模板的具体化</h3><p>类模板与函数模板很相似，因为可以有隐式实例化、显式实例化和显式具体化，它们统称为具体化。模板以通用类型的方式描述类，而具体化是使用具体的类型生成类声明。</p>
+<p><strong>隐式实例化</strong>：它们声明一个或多个对象，所需的类型，而编译器使用通用模板提供的处方生成具体的类定义。编译器在需要对象前，不会生成类的隐式实例化，如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ArrayTP&lt;<span class="keyword">double</span>, <span class="number">30</span>&gt; *pt;   		<span class="comment">//没有生成对象，则不会隐式实例化。</span></div><div class="line">pt = <span class="keyword">new</span> ArrayTP&lt;<span class="keyword">double</span>, <span class="number">30</span>&gt;;   <span class="comment">//隐式实例化。</span></div></pre></td></tr></table></figure>
+<p><strong>显式实例化</strong>：当使用关键字template并指出所需类型来声明类时，编译器将生成类声明的显式实例化。声明必须位于模板定义所在的名称空间中。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在这种情况下，虽然没有创建或提及类对象，编译器也将通过通过模板生成类声明和定义。</span></div><div class="line"><span class="keyword">template</span> <span class="keyword">class</span> ArrayTP&lt;<span class="built_in">string</span>, <span class="number">100</span>&gt;;</div></pre></td></tr></table></figure>
+<p><strong>显式具体化</strong>：是特定类型(用于替换模板中的通用类型)的定义，有时候可能需要在为特殊类型实例化时，对模板进行修改，使基行为不同。在这种情况下，可以创建显式具体化。当具体化模板和通用模板都与实例化请求匹配时，编译器将使用具体化版本。具体化类模板定义的格式如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">class</span> ClassName&lt;specialized-type-name&gt;&#123;...&#125;;</div><div class="line"><span class="comment">//使用新表示法提供一个专供char*类型使用的SortedArray模板，可以使用与下面类似的代码</span></div><div class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">class</span> SortedArray&lt;<span class="keyword">char</span>*&gt;&#123;...&#125;;</div></pre></td></tr></table></figure></p>
+<p><strong>部分具体化</strong>：C++还允许部分具体化，即部分限制模板的通用。如：部分具体化可以给类型参数之一指定具体的类型。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//通用模板</span></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T1, <span class="keyword">class</span> T2&gt; <span class="keyword">class</span> Pair&#123;&#125;;</div><div class="line"><span class="comment">//部分具体化模板</span></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T1&gt; <span class="keyword">class</span> Pair&lt;T1, <span class="keyword">int</span>&gt;&#123;&#125;;</div></pre></td></tr></table></figure></p>
+<p>关键字template后面的&lt;&gt;声明的是没有被具体化的类型参数。 因此，上述第二个声明将T2具体化为int，但T1保持不变。注意，如果指定所有的类型，则&lt;&gt;内将为空，这将导致显式具体化。</p>
+<p>如果有多个模板可供选择，则编译器将使用具体化程度最高的模板。</p>
+<h3 id="14-4-7-成员模板"><a href="#14-4-7-成员模板" class="headerlink" title="14.4.7 成员模板"></a>14.4.7 成员模板</h3><p>C++模板支持的另一个新特性是：模板可用作结构、 类或模板类的成员。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">class</span> Beta</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:  </div><div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> V&gt; </div><div class="line">    <span class="keyword">class</span> Hold</div><div class="line">	&#123;</div><div class="line">	<span class="keyword">private</span>:</div><div class="line">		V val;</div><div class="line">	<span class="keyword">public</span>:</div><div class="line">		Hold(V v = <span class="number">0</span>):V(v)&#123;&#125;;</div><div class="line">	&#125;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    Beta(T t,<span class="keyword">int</span> i):q(t), n(i)&#123;&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Hold模板类是在私有部分声明的，因此只能在Beta类中访问它。</p>
+<h3 id="14-4-8-将模板用作参数"><a href="#14-4-8-将模板用作参数" class="headerlink" title="14.4.8 将模板用作参数"></a>14.4.8 将模板用作参数</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span>　<span class="meta-string">"stacktp.h"</span></span></div><div class="line"><span class="comment">//模板参数</span></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class</span> Thing&gt;</div><div class="line"><span class="keyword">class</span> Crab</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    Thing&lt;<span class="keyword">int</span>&gt; s1;</div><div class="line">    Thing&lt;<span class="keyword">double</span>&gt; s2;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    Crab();</div><div class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">double</span> x)</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  Crab&lt;Stack&gt; nebula;</div><div class="line">  <span class="comment">//todo</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Crab模板的成员s1、s2，使用模板参数声明的Thing模板去实例化成员，当使用时模板参数为Stack，则使用Stack去实例化s1、s2。</p>
+<h3 id="14-4-9-模板类和友元"><a href="#14-4-9-模板类和友元" class="headerlink" title="14.4.9 模板类和友元"></a>14.4.9 模板类和友元</h3><p>模板类声明也可以有码元，模板的友元分3类：</p>
+<ul>
+<li>非模板友元</li>
+<li>约束模板友元，即友元的类型取决于类被实例化时的类型。</li>
+<li>非约束模板码元，即友元的所有具体化都是类的每一个具体化的友元。</li>
+</ul>
+<p><strong>非模板友元</strong>：为具体模板实例化编写不同的友元。如果友元不带模板类型参数，则所有模板实例化共用一个友元函数，如果友元带模板类型参数，则为不同类型的模板实例化编写相应的友元。</p>
+<p><strong>模板类的约束模板友元函数</strong>：约束模板友元函数是在类外面声明的模板的具体化。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TT&gt;</div><div class="line">CLASS HasFriendT</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>: </div><div class="line">    TT item;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">int</span> ct;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    HasFriendT(<span class="keyword">const</span> TT &amp;i):item(i)&#123;ct++;&#125;</div><div class="line">    ~HasFriendT()&#123;ct--;&#125;</div><div class="line"></div><div class="line">    <span class="comment">//声明中的&lt;&gt;指出这是模板具体化。</span></div><div class="line">    <span class="keyword">friend</span> <span class="keyword">void</span> counts&lt;TT&gt;();</div><div class="line">    <span class="comment">//对于report，&lt;&gt;可以为空，这是因为可以从函数参数推断出模板类型参数。</span></div><div class="line">    <span class="keyword">friend</span> <span class="keyword">void</span> report&lt;&gt; (HasFriendT&lt;TT&gt; &amp;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//模板类外声明的模板函数友元</span></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">int</span> HasFriendT&lt;T&gt;::ct = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">counts</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  <span class="built_in">cout</span> &lt;&lt; hf.item &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//声明中的&lt;&gt;指出这是模板具体化。</span></div><div class="line">    counts&lt;<span class="keyword">int</span>&gt;();</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>模板类的非约束模板友元函数</strong>：通过在类内部声明模板，可以创建非约束码元函数，即每个函数具体化都是每个类具体化的码元。对于非约束友元，友元模板类型参数与模板类型参数是不同的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">class</span> ManyFriend</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">    T item;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    ManyFriend (<span class="keyword">const</span> T &amp;i):item(i) &#123;&#125;</div><div class="line">     </div><div class="line">    <span class="comment">//模板类内声明的模板函数友元，定义与类成员模板函数一起定义</span></div><div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> C, <span class="keyword">typename</span> D&gt; </div><div class="line">    <span class="function"><span class="keyword">friend</span> <span class="keyword">void</span> <span class="title">show2</span><span class="params">(C &amp; c, D &amp; d)</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">template</span> &lt; <span class="keyword">typename</span> C, <span class="keyword">typename</span> D&gt; </div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">show2</span><span class="params">(C &amp; c, D &amp; d)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; c.item &lt;&lt; <span class="string">","</span> &lt;&lt; d.item &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//todo</span></div><div class="line">    show2(hfdb, hfi2);</div><div class="line">    <span class="comment">//todo</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="14-5-总结"><a href="#14-5-总结" class="headerlink" title="14.5 总结"></a>14.5 总结</h3><p>使用私有继承时，基类的公有成员和保护成员将成为派生类的私有成员；使用保护继承时，基类的公有成员和保护成员将成为派生类的保护成员。无论使用哪种继承，基类的公有接口都将成为派生类的内部接口。这有时候被称为继承实现，但不继承接口，因为派生类对象不能显式地使用基类的接口。因此，不能将派生对象看作是一种基类的对象。由于这个原因，在不进行显式类型转换的情况下，基类指针或引用将不能指向派生类对象。</p>
+<p>还可以通过开发包含对象成员的类来重用类代码。这种方法被称为包含、 层次化或组合，它建立的也是has-a关系。与私有继承和保护继承相比，包含更容易实现和使用，所以通常优先采用这种方式。不过，私有继承和保护继承与包含有一些不同的功能。例如，继承允许派生类访问基类的保护成员；还允许派生类重新定义从基类那里继承的虚函数。因为包含不是继承，所以通过包含来重用类代码时， 不能使用这些功能。 另一方面，如果需要使用某个类的几个对象，则用包含更适合。</p>
+<p>可以提供显式具体化—覆盖模板定义的具体类声明。方法是以template&lt;&gt;打头，然后是模板类名称，再加上尖括号（其中包含要具体化的类型）。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。&lt;br&gt;
+      个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记
     
     </summary>
     
@@ -1295,72 +1204,163 @@
     
       <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
     
+    
+      <category term="C++" scheme="http://LySnake.github.io/tags/c/"/>
+    
+      <category term="C++ Primer Plus" scheme="http://LySnake.github.io/tags/c-primer-plus/"/>
     
   </entry>
   
   <entry>
-    <title>Github Pages与Hexo框架博客的搭建</title>
-    <link href="http://LySnake.github.io/archives/technology/Github%20Pages%E4%B8%8EHexo%E6%A1%86%E6%9E%B6%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA.html"/>
-    <id>http://LySnake.github.io/archives/technology/Github Pages与Hexo框架博客的搭建.html</id>
-    <published>2017-01-22T18:45:57.418Z</published>
-    <updated>2017-02-02T05:10:19.747Z</updated>
+    <title>C++ Primer Plus学习笔记(2)</title>
+    <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(2).html"/>
+    <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(2).html</id>
+    <published>2017-01-24T10:31:52.000Z</published>
+    <updated>2018-02-24T13:36:35.563Z</updated>
     
-    <content type="html"><![CDATA[<p>这篇博文的目的不是<a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>与<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo框架</a>框架搭建个人博客的教学，毕竟官网教学更详细更全面，而是记录本人搭建过程中了解、学习并汇总的一些东西，附带链接陈列出来，主要供第一次搭建的朋友参考学习。<br><a id="more"></a></p>
-<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="git与github"><a href="#git与github" class="headerlink" title="git与github"></a>git与github</h3><p>git:查看廖雪峰的<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001373962845513aefd77a99f4145f0a2c7a7ca057e7570000" target="_blank" rel="external">git简介</a>。<br>git工具是Linus继linux开源操作系统之后又一影响世界的项目，因与linux的关系，所以本身是命令行模式，对大多数人来说是不够友好的，在实际使用中可以使用windows或iOS平台上的桌面软件，虽然这样并不能使用git的全部功能。<a href="https://www.github.com/" target="_blank" rel="external">Github</a>就是使用git的通信协议，得力于开源精神而创建的一个平台，并且linux项目也在<a href="https://www.github.com/" target="_blank" rel="external">Github</a>上托管，我们可以使用桌面软件<a href="https://www.sourcetreeapp.com/" target="_blank" rel="external">Source Tree</a>管理我们在<a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>上的博客项目。</p>
-<p>学习成本：初期算半天吧，git重操作，前期学习<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的git教学</a>了解基本理念，之后以多用多学为主，不会咱可以google。</p>
-<h3 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h3><p><a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>具体信息查看官网是最权威的，这里提出为何使用Github Pages搭建博客的原因：</p>
+    <content type="html"><![CDATA[<h2 id="11-使用类"><a href="#11-使用类" class="headerlink" title="11.使用类"></a>11.使用类</h2><h3 id="11-2-1-操作符重载"><a href="#11-2-1-操作符重载" class="headerlink" title="11.2.1 操作符重载"></a>11.2.1 操作符重载</h3><p><strong>操作符重载</strong>是一种形式的C++多态，操作符重载将重载的概念扩展到操作符上，允许赋予C++操作符多种含义。要重载操作符，需使用被称为操作符函数的特殊函数形式。操作符函数的格式如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ClassName total, coding, fixing;</div><div class="line"><span class="comment">//可以像使用成员方法一样使用操作符重载</span></div><div class="line">total = coding.<span class="keyword">operator</span>+(fixing);</div><div class="line"><span class="comment">//以可以使用操作符表示法：</span></div><div class="line">total = coding + fixing;</div><div class="line"></div><div class="line"><span class="comment">//注意，在操作符表示法中，操作符左侧的对象（这里为coding）是调用对象，操作符右边（这里是fixing)是作为参数被传递的对象。</span></div></pre></td></tr></table></figure>
+<p>operator +()重载+操作符，operator -()重载-操作符。op必须是有效的C++操作符，不能虚构一个新的符号。</p>
+<h3 id="11-2-2操作符重载的限制"><a href="#11-2-2操作符重载的限制" class="headerlink" title="11.2.2操作符重载的限制"></a>11.2.2操作符重载的限制</h3><ul>
+<li>重载后的操作符必须至少有一个操作数是用户定义，这将防止用户为标准类型重载操作符。因此不能将减法操作符重载为计算两个double值的和，而不是它们的差。</li>
+<li>使用操作符时不能违反操作符原来的句法规则。例如，不能将求模操作符(%)重载成使用一个操作数(%x;），同样也不能修改操作符的优先级。因此，如果将加号操作符重载成将两个类相加，则新的操作符与原来的加号具有相同的优先级。</li>
+<li>不能定义新的操作符。</li>
+<li>不能重载下面的操作符<blockquote>
 <ul>
-<li>版本管理：<a href="www.github.com">github</a>是目前程序员最火的一个免费的版本管理平台，所谓版本管理，主要是针对文本文档的管理，解决多人、异地、长时间维护共同项目文档所带来的问题，并因为开源精神，所以Free(免费且自由)。</li>
-<li>展示：<a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>是给<a href="www.github.com">github</a>中用户或项目的一个展示项目，并免费提供300M空间，就项目而言，提供项目介绍与使用相关，对于个人而言可以作为博客，分享知识，也有利于他人了解自己。</li>
-<li>全球优良的网络：这个平台是程序员为主的平台，有google、微软等众多一线科技公司在这发布开源项目，也有现今互联网基石linux在其平台进行管理，而且也是技术界大佬建立的公司，在全球都拥有很好的网络连接。</li>
-<li>学习：<a href="www.github.com">github</a>上有很多开源的项目，因此也提供了很多开源的软件，比如<a href="https://github.com/Wox-launcher/Wox" target="_blank" rel="external">wox</a>方便windows更好的打开应用。同样，<a href="www.github.com">github</a>也是程序员学习，创建开源项目的地方，可以与他人一同开发、维护开源项目，这其中必不可少的使用git版本管理工具。</li>
-<li>其他领域：<a href="www.github.com">github</a>同样开始影响其他领域，可以一起创建项目翻译国外文档、写小说、写项目说明。学习并使用github或许能学习到不一样的知识。参考<a href="https://www.gitbook.com/" target="_blank" rel="external">gitbook</a></li>
-<li>搭建学习成本：根据<a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>创建<a href="www.github.com">github</a>帐号，Github Pages项目，不到一小时。</li>
+<li>sizeof—sizeof操作符。(sizeof操作符是编译时运算)</li>
+<li>.—成员操作符。</li>
+<li>.*—成员指针操作符。</li>
+<li>::—作用域解析操作符。</li>
+<li>?:—条件操作符。</li>
+<li>typeid—一个RTTI操作符。</li>
+<li>const_cast—强制类型转换操作符。</li>
+<li>dynamic_cast—强制类型转换操作符。</li>
+<li>reinterpret_cast—强制类型转换操作符。</li>
+<li>static_cast—强制类型转换操作符。</li>
 </ul>
-<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><p><a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>中介绍使用Jekyll框架，因为勘察时感觉对于个人博客而言Jekyll的主题不够华丽，而后选择了<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo框架</a>。在使用上，需要安装Node.js，以命令行的形式使用，对于没有使用过命令行操作电脑的小伙伴还是有点不友好的。对于windows用户可以使用<a href="https://github.com/cmderdev/cmder" target="_blank" rel="external">cmder</a>代替CMD。win7以上可以使用powershell。对于什么是命令行，使用win + R组合键再输入cmd，看到的界面就是命令行界面，以输入字符的方式操作电脑。</p>
-<p><strong>学习成本</strong>：参考<a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="external">Hexo命令</a>,命令行常用操作也就只有一个网页，常用不到5个命令。但了解、熟悉并使用一定的自定义要看个人。全部搭建完花费4天时间。以后只要编写markdown文档和常用几个命令了。</p>
-<h3 id="静态网站"><a href="#静态网站" class="headerlink" title="静态网站"></a>静态网站</h3><p><strong>个人在该博客中对静态、动态网站的理解</strong>：对于浏览器而言是没有多大的区别，相关的也就是使用中要与服务器发送或接收数据，对于服务器而言，静态网页差不多就是网络端存储了些网页相关的资源文件，如html、css、js、图片等，服务器主要响应文件请求与发送；而对于动态网站，我们可以参考QQ空间，每个人的空间基本结构是一样的，但是每个人每个时间点显示的信息都是不一样的，这是因为后台使用PHP、Python、Java等web服务器，在每个用户请求页面时通过与数据库交互，获取特定数据再生成特定资源文件(html、css等)发送到用户浏览器。</p>
-<h3 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h3><p><a href="http://markdown-zh.readthedocs.io/en/latest/" target="_blank" rel="external">Markdown</a>官方：</p>
-<blockquote>
-<p>Markdown 的目标是易于阅读, 创作和编辑文章. HTML 是一种 发布 格式; Markdown 是一种 创作 格式. 因此, Markdown 处理的都是纯文本。</p>
 </blockquote>
-<p>目前，已知在<a href="www.github.com">github</a>上的项目介绍文件，就是使用Markdown，并且在项目相关的issues等一些文字发布区域，也支持Markdown的编写与预览。其他网站也有推荐使用Markdown进行回答、评论、书写，比如<a href="http://www.jianshu.com/p/d62ca374c90f" target="_blank" rel="external">简书</a>，而我们搭建的博客，就是通过使用Markdown编写成源文件，通过<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo框架</a>与<a href="https://hexo.io/themes/" target="_blank" rel="external">相关主题</a>生成静态网页，再更新到<a href="www.github.com">github</a>个人博客项目库中。并且Markdown可以通过更多插件，提供更多功能，可以预见的是，Markdown将会越加火热。</p>
-<p><strong>学习成本</strong>：半天，与git一样，初步了解后多写多练，不会或者忘记勤查文档。</p>
-<h2 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h2><h3 id="Hexo本地工程目录"><a href="#Hexo本地工程目录" class="headerlink" title="Hexo本地工程目录"></a>Hexo本地工程目录</h3><p>参考<a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="external">Hexo建站</a>,假设我们在HexoInit目录下使用<code>hexo init</code>命令来初始化Hexo工程，参考<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">Hexo配置</a>设置配置文件，在HexoInit目录下，我们可以看到:</p>
+</li>
+<li>大多操作符都可以通过成员或非成员函数进行重载，但下面的操作符只能通过成员函数进行重载：<blockquote>
 <ul>
-<li>node_modules目录：该目录是npm下载的一些插件，不需直接管理，如有添加、删除应尽量使用npm命令。</li>
-<li>public目录：当使用<code>hexo g</code>命令后，会生成静态站相关文件，先通过<code>hexo s</code>本地查看页面，以便修改，最后直接把该目录所有文件上传（commit）到<a href="www.github.com">github</a>个人博客项目，然后再访问。</li>
-<li>scaffolds目录：该目录存放模板，模板文件是markdown文件<code>*.md</code>，初始化时已存在三个模板文件，分别对应三个<code>layout</code>。现假设我们有模板jottings.md,内容如下：</li>
+<li>=—赋值操作符。</li>
+<li>()—函数调用操作符。</li>
+<li>[]—下标操作符。</li>
+<li>-&gt;—通过指针访问的类成员的操作符。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">layout: post</div><div class="line">title: &#123;&#123; title &#125;&#125;</div><div class="line">date: &#123;&#123; date &#125;&#125;</div><div class="line">update: &#123;&#123; updated &#125;&#125;</div><div class="line">comments: false</div><div class="line">categories:</div><div class="line">  - archives</div><div class="line">  - jottings</div><div class="line">tags:</div><div class="line">---</div></pre></td></tr></table></figure>
-<p>当使用<code>hexo new jottings fileName</code>命令时，就会以jottings.md的内容生成一个fileName.md文件在source/_posts/目录下，相关配置参考<a href="https://hexo.io/zh-cn/docs/front-matter.html" target="_blank" rel="external">Front-matter</a>。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="11-3友元简介"><a href="#11-3友元简介" class="headerlink" title="11.3友元简介"></a>11.3友元简介</h3><p>友元有3种：</p>
 <ul>
-<li>source目录：存放使用markdown编写的源文件，当使用<code>hexo g</code>命令生成public目录文件时，Hexo和主题就会使用source目录中的*.md文件生成最后的静态网页文件，其下子目录分布与layout有关。</li>
-<li>themes目录：存放配置主题，相关说明见<a href="https://hexo.io/zh-cn/docs/themes.html" target="_blank" rel="external">Hexo主题说明</a>。</li>
-<li>_config.yml文件：这是Hexo本地工程的配置文件，相关使用说明参考<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">Hexo配置</a></li>
-<li>db.json文件：缓存文件，使用<code>hexo clean</code>会清除，使用<code>hexo g</code>时会生成。</li>
-<li>package.json文件：该本地工程npm配置文件，记录了node_modules目录安装的插件，如果存在一份配置好的package.json文件，可以直接在HexoInit目录下使用<code>npm install</code>命令读取配置文件安装相关插件。</li>
+<li>友元函数。</li>
+<li>友元类。</li>
+<li>友元成员函数。</li>
 </ul>
-<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>node_modules目录内容可以根据package.json生成，public目录根据source目录生成，所以我们应备份source目录与_config.yml、package.json二个文件，另外，如果有定制化的scaffolds目录文件，也要备份，以便于今后重建工程时能快速搭建。</p>
-<h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><p>该博客使用的是<a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="external">yelee主题</a>，<a href="https://hexo.io/themes/" target="_blank" rel="external">更多主题选择</a>,选择自己喜欢的主题，参考<a href="https://hexo.io/zh-cn/docs/themes.html" target="_blank" rel="external">Hexo主题说明</a>配置，一般一个完善的主题会有使用帮助，具体配置，如<a href="http://moxfive.coding.me/yelee/" target="_blank" rel="external">yelee使用说明</a>。在yelee使用说明中，可以查看主题完成显示相关，个性化相关的一些配置，也集成了一些第三方服务与评论系统。</p>
-<h2 id="相关帮助连接"><a href="#相关帮助连接" class="headerlink" title="相关帮助连接"></a>相关帮助连接</h2><ul>
-<li><a href="https://github.com/getlantern/forum#%E8%93%9D%E7%81%AFlantern%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD" target="_blank" rel="external">蓝灯番墙</a></li>
-<li><a href="https://wsgzao.github.io/post/fq/" target="_blank" rel="external">更多番墙方案</a>:个人使用XX-NET</li>
-<li><a href="www.github.com">github</a></li>
-<li><a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a></li>
-<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰的git教学</a></li>
-<li><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo官网</a></li>
-<li><a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo主题</a></li>
-<li><a href="http://markdown-zh.readthedocs.io/en/latest/" target="_blank" rel="external">Markdown官方教程</a></li>
-<li><a href="https://github.com/cmderdev/cmder" target="_blank" rel="external">cmder</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">阮一峰博客-Github Pages搭建博客入门</a></li>
-<li><a href="https://wsgzao.github.io/post/hexo-guide/" target="_blank" rel="external">使用GitHub和Hexo搭建免费静态Blog</a></li>
+<p>通过让函数成为类的友元，可以赋予该函数与类的成员函数相同的访问权限。非成员函数不是由对象调用的，它使用的所有值（包括对象）都是显示参数(非this传入)。对于非成员重载操作符函数来说，操作符表达式左边的操作数对应于操作符函数的第一个参数，操作符表达式右边的操作数对应于操作符函数的第二个参数。</p>
+<p>创建友元函数的第一步是将其原型放在类声明中，并在原型声明前加上关键字friend：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">friend</span> TypeName <span class="keyword">operator</span>* (<span class="keyword">double</span> m, <span class="keyword">const</span> className &amp;T);</div></pre></td></tr></table></figure></p>
+<ul>
+<li>显然operator*()函数是在类声明中声明的，但它不是成员函数，因此不能使用成员操作符来调用。</li>
+<li>虽然operator*()函数不是成员函数，但它与函数的访问权限相同。</li>
 </ul>
+<p>第二步是编写函数定义。因为它不是成员函数，所以不要使用className::限定符。加外不要在定义中使用关键字friend。简而言之，友元函数是非成员函数，其访问权限与成员函数相同。</p>
+<p>ostream类对该操作符进行了重载，将其转换为一个输出工具，前面讲过，cout是一个ostream对象，它是智能的。能够识别所有的C++基本类型。这是因为对于每种基本类型，ostream类声明中都包含了相应的重载的operator&lt;&lt;()定义。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//通过返回ostream的引用实现链式调用</span></div><div class="line">ostream &amp; <span class="keyword">operator</span>&lt;&lt;(ostream &amp;os, <span class="keyword">const</span> className &amp;t)</div><div class="line">&#123;</div><div class="line">	os&lt;&lt; t.intValue &lt;&lt; t.floatValue &lt;&lt; t.stringValue ;</div><div class="line">	<span class="keyword">return</span> os;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>非成员版本的重载操作符函数所需的形参数目与操作符使用的操作数数目相同，而成员版本所需的参数数目少一个，因为其中的一个操作数是被隐式地传递的调用对象(this)。</p>
+<h3 id="11-6类的自动转换和强制类型转换"><a href="#11-6类的自动转换和强制类型转换" class="headerlink" title="11.6类的自动转换和强制类型转换"></a>11.6类的自动转换和强制类型转换</h3><p>C++的目标之一就是把类实现为与基本类型一致，所以也存在隐式转换问题。</p>
+<p>对于类ClassName，如果存在一个参数的构造函数，那么：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 存在ClassName::ClassName(TypeName)构造函数</span></div><div class="line">ClassName classValue ;</div><div class="line"><span class="comment">//相当于==&gt;classValue = ClassName::ClassName(TypeNameValue);通过构造函数以参数构造了一个对象。形成隐式转换。   </span></div><div class="line">classValue = TypeNameValue;</div></pre></td></tr></table></figure>
+<p>最新的C++实现新增了一个关键字(explicit)，用来关闭这种自动特性。也就是说，可以这样声明构造函数：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//告知编译器禁止使用隐式转换，但仍然允许显式转换，即显式强制类型转换</span></div><div class="line"><span class="function"><span class="keyword">explicit</span> <span class="title">ClassName</span><span class="params">(TypeName value)</span></span>;    </div><div class="line"><span class="comment">//强制类型转换      </span></div><div class="line">ClassNameValue = ClassName(TypeNameValue);</div></pre></td></tr></table></figure></p>
+<p>只接受一个参数(可存在其它默认参数)的构造函数定义了从参数到类类型的转换。如果使用关键字explicit限定了这种构造函数，则它只能用于显示转换，否则也可以用于隐式转换。</p>
+<p>当没有使用explicit限定只能用于强制转换，则在以下情况发生隐式转换：</p>
+<ul>
+<li>将ClassName对象初始化为TypeName值时。    //ClassName ClassNameValue = TypeNameValue;</li>
+<li>将TypeName值赋给ClassName对象时。       //相当于先调用ClassName(TypeNameValue)构造，再调用Copy构造。</li>
+<li>将TypeName值传递给接受ClassName参数的函数时。   </li>
+<li>返回值被声明为ClassName类型的函数试图返回一个TypeName类型值时。</li>
+</ul>
+<p>函数原型提供的参数匹配过程，允许使用ClassName(TypeName)构造函数来转换其他数值类型。比如TypeName是float类型，当把int类型当做实参时，int先转换为float，再转换成TypeName给形参.</p>
+<h3 id="11-6-2转换函数"><a href="#11-6-2转换函数" class="headerlink" title="11.6.2转换函数"></a>11.6.2转换函数</h3><p>构造函数只用于从某种类型到类类型的转换。要进行相反的转换必须使用特殊的C++操作符—转换函数。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//TypeName为int、float、double等</span></div><div class="line"><span class="function"><span class="keyword">operator</span> <span class="title">typeName</span><span class="params">()</span></span>;</div></pre></td></tr></table></figure>
+<ul>
+<li>转换函数必须是类方法。</li>
+<li>转换函数不能指定返回类型，但要有返回值。(typeName已经指定类型，无需过多注明)</li>
+<li>转换函数不能有参数。(类的对象this即是参数对象)</li>
+</ul>
+<p>TypeName(这里为double）指出了要转换成的类型，因此不需要指定返回类型。转换函数是类方法意味着：它需要通过类对象来调用，从而告知函数要转换的值。因此，函数不需要参数。虽然没有返回类型，这二个函数也将返回所需的值。</p>
+<p>提供执行自动、隐式转换的函数所存在的问题是：在用户希望转换时，转换函数也可能进行转换。原则来说，最好使用显示转换，而避免隐式转换。关键字explicit不能用于转换函数，但只需用一个功能相同的非转换函数替换访转换函数即可，但仅在被显式地调用时，该函数才会执行。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ClassName::<span class="function"><span class="keyword">operator</span> <span class="title">int</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="comment">//todo</span></div><div class="line">	<span class="keyword">return</span> intValue;</div><div class="line">&#125;;</div><div class="line"><span class="comment">//改写为</span></div><div class="line">ClassName::ClassName2int()&#123;&#125;;</div></pre></td></tr></table></figure>
+<p>C++提供了下面的类型转换：</p>
+<ul>
+<li>只有一个参数的类构造函数用于将类型与该参数相同的值转换为类类型。例如，将int值赋给ClassName对象时，接受int参数的ClassName类构造函数将自动被调用。不过，在构造函数声明中使用explicit可防止隐式转换，而只允许显式转换。</li>
+<li>被称为转换函数的特殊类成员操作符函数，用于将类对象转换为其他类型。转换函数是类成员，没有返回类型、没有参数类型、名为operator typeName()，其中，typeName是对象将被转换成的类型。<strong>将类对象赋给typeName变量或将其强制转换为TypeName类型时，该转换函数将自动被调用</strong>。</li>
+</ul>
+<p>全局对象，因为全局对象将在程序的main()函数被调用之前创建。程序员可以创建一个类，其默认构造函数将调用所有的bootstrap函数。实现在main()函数调用之前，执行全局类对象的构造函数来初始化一些数据。</p>
+<p>C++允许指定在基本类型之间进行转换的方式。首先，任何可接受一个参数的构造函数都可被用作转换函数，将类型与该参数相同的值转换为类。如果将类型与该参数相同的值赋给对象，则C++将自动调用该构造函数。要将类对象转换为其他类型，必须定义转换函数，指出如何进行这种转换。转换函数必须是成员函数。将类对象转换为TypeName类型的转换函数的原型如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//注意，转换函数没有返回类型、没有参数(必须是成员函数，存在隐式参数this)，但必须返回转换后的值（虽然没有声明返回类型）</span></div><div class="line"><span class="function"><span class="keyword">operator</span> <span class="title">typeName</span><span class="params">()</span></span>;</div></pre></td></tr></table></figure></p>
+<h2 id="12-类和动态内存分配"><a href="#12-类和动态内存分配" class="headerlink" title="12.类和动态内存分配"></a>12.类和动态内存分配</h2><p>类中定义static成员变量，则该变量存储在全局数据区，所有类对象共有，且作用域为类作用域。不能在类的声明中初始化静态成员变量，这是因为声明描述了如何分配内存，但并不分配内存，可以使用这种格式来创建对象，从而分配和初始化内存。对于静态类成员，可以在类声明之外使用单独的语句来进行初始化，这是因为静态类成员是单独存储的，而不是对象的组成部分。请注意，初始化语句指出了类型，并使用了作用域操作符。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在类声明之外使用单独的语句来进行初始化</span></div><div class="line">staitc <span class="keyword">int</span> ClassName::ClassNameValue  iValue = <span class="number">110</span>;</div></pre></td></tr></table></figure>
+<p>如果使用new[]来分配内存，则应使用delete[]来释放内存。并且在类中，所有的构造函数统一使用new或new[]，析构函数中使用delete或delete[]。delete可以释放NULL地址。</p>
+<p>自动存储对象被删除的顺序与创建的顺序相反。</p>
+<p>当使用一个对象来初始化另一个对象时，编译器将自动生成构造函数(称为复制构造函数，因为它创建对象的一个副本)。自动生成的构造函数不知道需要更新静态变量和深copy成员变量指向new出来的空间。</p>
+<h3 id="12-1-2-隐式成员函数"><a href="#12-1-2-隐式成员函数" class="headerlink" title="12.1.2 隐式成员函数"></a>12.1.2 隐式成员函数</h3><p>隐式成员函数：</p>
+<ul>
+<li>默认构造函数，如果没有定义构造函数。</li>
+<li>复制构造函数，如果没有定义。</li>
+<li>赋值操作符，如果没有定义。</li>
+<li>默认析构函数，如果没有定义。</li>
+<li>地址操作符，如果没有定义。</li>
+</ul>
+<h4 id="默认构造函数"><a href="#默认构造函数" class="headerlink" title="默认构造函数"></a>默认构造函数</h4><p>如果没有提供任何构造函数，C++将创建默认构造函数。如果定义了构造函数，C++将不会定义默认构造函数。如果希望在创建对象时显式地对它进行初始化，或需要创建对象数组时，则必须显式地定义默认构造函数。</p>
+<h4 id="复制构造函数"><a href="#复制构造函数" class="headerlink" title="复制构造函数"></a>复制构造函数</h4><p>复制构造函数用于将一个对象复制到新创建的对象中。<strong>也就是说，它用于初始化过程中，而不是常规的赋值过程，执行于构造对象时，是一个构造函数</strong>。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> ClassName</div><div class="line">&#123;</div><div class="line">	ClassName(ClassName&amp;);   <span class="comment">//复制构造函数</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>何时调用复制构造函数</strong></p>
+<p>新建一个对象并将其初始化为同类现有对象时，复制构造函数都将被调用。这在很多情况下都可能发生，最常见的情况是将新对象显式地初始化为现有的对象。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> StringBad</div><div class="line">&#123;</div><div class="line">    StringBad(StringBad&amp;);</div><div class="line">&#125;; </div><div class="line">StringBad motto;</div><div class="line">StringBad metoo = motto;</div><div class="line">StringBad also = StringBad(motto);</div></pre></td></tr></table></figure></p>
+<p><strong>这二种声明可能会使用复制构造函数直接创建metoo和also对象，也可能使用复制构造函数生成一个临时对象，然后将临时对象的内容赋给metoo和also。</strong></p>
+<p>具体的说，当函数按值传递对象或函数返回对象时，都将使用复制构造函数。记住，按值传递意味着创建原始变量的一个副本。编译器生成临时对象，也将使用复制构造函数。例如，将3个Vector对象相加时，编译器可能生成临时的Vector对象来保存中间结果。何时生成临时对象随编译器而异，但无论是哪种编译器，当按值传递和返回时，都将调用复制构造函数。</p>
+<p><strong>复制构造函数的功能</strong></p>
+<p>默认的复制构造函数依次复制非静态成员（成员复制也称为浅复制），复制的是成员变量的值。</p>
+<h4 id="赋值操作符"><a href="#赋值操作符" class="headerlink" title="赋值操作符"></a>赋值操作符</h4><p>C++允许类对象赋值，这是通过自动为类重载赋值操作符实现的。</p>
+<p><strong>何时使用赋值操作符</strong></p>
+<ul>
+<li>将已有对象赋给另一个对象时，将使用重载的赋值操作符。<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> StringBad</div><div class="line">&#123;</div><div class="line">	<span class="keyword">operator</span>=(<span class="keyword">const</span> StringBad&amp;);  <span class="comment">//注意自我复制带来的先delete再new的情况。</span></div><div class="line">&#125; </div><div class="line">StringBad metoo = motto;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>不过，实现时也可能分两步来处理这条语句：使用复制构造函数创建一个临时对象，然后通过赋值将临时对象的值复制到新对象中，这就是说，初始化总是会调用复制构造函数，而使用=操作符时也有可能调用复制构造函数。</p>
+<p><strong>赋值操作符的功能</strong>：与复制构造函数相似，赋值操作符的隐式实现也对成员进行依次复制，如成员本身就是类对象，则程序将使用为这个类定义的赋值操作符来复制该成员，但静态数据成员不受影响。</p>
+<p><strong>重载时，C++将区分常量与非常量函数的特征标，因此可以提供另一个仅供const String对象使用的operator[] ()版本。</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//实现对String类对象使用[]操作符取index下标的值</span></div><div class="line"><span class="keyword">const</span> <span class="keyword">char</span> &amp; String::<span class="keyword">operator</span>[](<span class="keyword">int</span> index)<span class="keyword">const</span>;</div></pre></td></tr></table></figure>
+<h3 id="12-1-4-在构造函数中使用new时应注意的事项"><a href="#12-1-4-在构造函数中使用new时应注意的事项" class="headerlink" title="12.1.4 在构造函数中使用new时应注意的事项"></a>12.1.4 在构造函数中使用new时应注意的事项</h3><p>因为<strong>隐式成员函数</strong>的存在，使用new时应当这样做：</p>
+<ul>
+<li>如果在构造函数中使用new来初始化指针成员，则应在析构函数中使用delete.</li>
+<li>new和delete必须相互兼容。new对应于delete，new[]对应于delete[]。</li>
+<li>如果有多个构造函数，则必须以相同的方式使用new，要么都带[]，要么都不带，因为只有一个析构函数，因此所有的构造函数都必须与它兼容。不过，可以在一个构造函数中使用new来初始化指针，而在另一个构造函数中将指针初始化为NULL,这是因为delete(无论是否有[])可以用于NULL。</li>
+<li>应定义一个复制构造函数，通过深度复制将一个对象初始化为另一个对象。</li>
+<li>复制构造函数应分配足够的空间来存储复制的数据，并复制数据，而不仅仅是数据的地址。另外，还应该更新所有受影响的静态类成员。</li>
+<li>应当定义一个赋值操作符，通过深度复制将一个对象复制给另一个对象。</li>
+</ul>
+<p><strong>返回const类型，则说明返回值为右值，不可当左值</strong></p>
+<h4 id="布局new操作符"><a href="#布局new操作符" class="headerlink" title="布局new操作符"></a>布局new操作符</h4><p>布局new操作符让您能够在分配内存时指定内存位置。但在该内存上分配的对象需要显示调用析构函数进行析构。</p>
+<ul>
+<li>程序员必须负责管理布局new操作符从中使用的缓冲区内存单元。要使用不同的内存单元，程序员需要提供二个位于缓冲区的不同地址，并确保这二个内存单元不重叠(如果对同一个地址使用布局new，则会使后new的对象覆盖前一个对象数据)。</li>
+<li><p>如果使用布局new操作符来为对象分配内存，必须确保其析构函数被调用。原因在于delete可与常规new操作符配合使用，但不能与布局new操作符配合使用。为了确保析构函数被调用，显式地为使用布局new操作符创建的对象调用析构函数。正常情况下将自动调用析构函数，这是需要显式调用析构函数的少数几种情况之一。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ClassName classNameValue;</div><div class="line"><span class="comment">//或使用指针pClassNameValue-&gt;~ClassName;进行显式调用析构函数。</span></div><div class="line">classNameValue.~ClassName();</div></pre></td></tr></table></figure>
+</li>
+<li><p>对于使用布局new操作符创建的对象，应以与创建顺序相反的顺序进行析构。原因在于，晚创建的对象可能依赖于早创建的对象。</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">  <span class="keyword">struct</span> Node</div><div class="line">  &#123;</div><div class="line">	<span class="comment">//tode</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>C++新特性：在类声明中嵌套结构或类声明，通过将Node声明放在Queue类中，可以使其作用域为整个类。也就是说，Node是这样一种类型：可以使用它来声明类成员，也可以将它作为类方法中的类型名称，但只能在类中使用。如果声明在类的私有部分，则只能在这个类使用被声明的类型，如果声明是在公有部分，则可以从类的外部通过作用域解析操作符使用被声明的类型。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line">	Queue();</div><div class="line">&#125;</div><div class="line">Queue::Queue():refValue(value1),constValue(refValue)</div><div class="line">&#123;</div><div class="line">	<span class="comment">//tode</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>对需要在分配内存时就要初始化的成员(const成员，引用变量成员,基类部分数据)，则必须使用成员初始化列表初始化。</p>
+<p><strong>从概念上说，调用构造函数时，对象将在括号中的代码执行之前被创建。因此调用Queue()构造函数将导致程序首先给成员变量分配内存。然后，程序流程进入到括号中，使用常规的赋值方式将值存储到内存中。因此，对于const成员变量和引用成员变量，必须在执行到构造函数体之前，即创建对象时进行初始化。C++提供了一种特殊的句法来完成上述工作，它叫作成员初始化列表。成员初始化列表由逗号分隔的初始化列表组成(前面带冒号)。它位于参数列表的右括号之后，函数体左括号之前。</strong></p>
+<p>初值可以是常量或构造函数的参数列表中的参数。只有构造函数可以使用这种初始化列表句法。使用成员初始化列表的效率更高(因为在构造函数之前，其const成员，引用成员，基类部分就已经完成初始化，在构造函数中只是进行赋值操作)。</p>
+<p>数据成员被初始化的顺序与它们出现在类声明中的顺序相同，与初始化器中的排列顺序无关。</p>
+<p>成员初始化列表中使用的括号方式也可以用于常规的初始化中。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> games = <span class="number">163</span>;</div><div class="line"><span class="keyword">double</span> talk = <span class="number">2.7</span>;</div><div class="line"><span class="comment">//可改写为</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">games</span><span class="params">(<span class="number">163</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">talk</span><span class="params">(<span class="number">2.7</span>)</span></span>;</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;这篇博文的目的不是&lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;与&lt;a href=&quot;https://hexo.io/zh-cn/docs/index.html&quot;&gt;Hexo框架&lt;/a&gt;框架搭建个人博客的教学，毕竟官网教学更详细更全面，而是记录本人搭建过程中了解、学习并汇总的一些东西，附带链接陈列出来，主要供第一次搭建的朋友参考学习。&lt;br&gt;
+      个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记
     
     </summary>
     
@@ -1369,9 +1369,9 @@
       <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
     
     
-      <category term="Github Pages" scheme="http://LySnake.github.io/tags/github-pages/"/>
+      <category term="C++" scheme="http://LySnake.github.io/tags/c/"/>
     
-      <category term="Hexo" scheme="http://LySnake.github.io/tags/hexo/"/>
+      <category term="C++ Primer Plus" scheme="http://LySnake.github.io/tags/c-primer-plus/"/>
     
   </entry>
   
