@@ -9,7 +9,6 @@ tags:
   - C++ Primer Plus
 description: 个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记
 date:  {{ date }}
-update: {{ update }}
 ---
 	
 ## 15. 友元、异常和其他 ##

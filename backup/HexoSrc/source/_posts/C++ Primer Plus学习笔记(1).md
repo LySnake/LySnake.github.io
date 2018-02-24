@@ -9,7 +9,6 @@ tags:
   - C++ Primer Plus
 description: 个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记
 date: 2017-05-21 18:47:33
-update:
 ---
 
 ### 0.预备知识 ###

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://LySnake.github.io/"/>
-  <updated>2018-02-24T12:53:05.417Z</updated>
+  <updated>2018-02-24T13:23:18.370Z</updated>
   <id>http://LySnake.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(7).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(7).html</id>
     <published>2017-07-22T02:13:12.000Z</published>
-    <updated>2018-02-24T12:53:05.417Z</updated>
+    <updated>2018-02-24T13:23:18.370Z</updated>
     
     <content type="html"><![CDATA[<h2 id="第17章-输入、输出和文件"><a href="#第17章-输入、输出和文件" class="headerlink" title="第17章 输入、输出和文件"></a>第17章 输入、输出和文件</h2><h3 id="17-1-C-输入和输出概述"><a href="#17-1-C-输入和输出概述" class="headerlink" title="17.1 C++输入和输出概述"></a>17.1 C++输入和输出概述</h3><p>C++程序把输入和输出看作是字节流。输入时，程序从输入流中抽取字节；输出时，程序将字节插入到输出流中。对于面向文本的程序，每个字节代表一个字符，更通俗地说，字节可以构成字符或数值数据的二进制表示。输入流中的字节可能来自键盘，也可能来自存储设备（如硬盘）或其它程序。同样，输入流中的字节可以流向屏幕、打印机、存储设备或其它程序。流充当了程序和流源或流目标之间的桥梁。这使得C++程序可以以相同的方式对待来自键盘的输入和来自文件的输入。C++程序只是检查字节流，而不需要知道字节来自何向。</p>
 <p>通常，通过使用缓冲区可以更高效地处理输入和输出。缓冲区是用作中介的内存块，它是将信息从设备传输到程序或从程序传输给设备的临时存储工具。通常，像磁盘驱动器这样的设备，以512字节(或更多)的块为单位来传输信息，而程序通常每次只能处理一个字节的信息。缓冲区帮助匹配这二种不同的信息传输速率。</p>
@@ -127,7 +127,7 @@
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(6).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(6).html</id>
     <published>2017-07-05T13:59:27.000Z</published>
-    <updated>2018-02-24T12:53:04.492Z</updated>
+    <updated>2018-02-24T13:23:22.538Z</updated>
     
     <content type="html"><![CDATA[<h2 id="16-string类和标准模板库"><a href="#16-string类和标准模板库" class="headerlink" title="16 string类和标准模板库"></a>16 string类和标准模板库</h2><h3 id="16-1-string类"><a href="#16-1-string类" class="headerlink" title="16.1 string类"></a>16.1 string类</h3><p>string实际上是模板规范basic_string<char>的一个tyepdef,同时省略了与内存管理相关的参数。</char></p>
 <p>第一个限制因素是string对象的最大允许长度，由常量string::npos指定。这通常是最大的unsigned int值或最大的unsigned long值，因此对于普通的交互式输入，这不会带来实际的限制；但如果您试图将整个文件的内容读取到单个string对象中，这可能成为限制因素。第二个限制因素是程序可以使用的内存量。</p>
@@ -308,7 +308,7 @@
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(5).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(5).html</id>
     <published>2017-07-01T14:28:08.127Z</published>
-    <updated>2018-02-24T12:53:03.171Z</updated>
+    <updated>2018-02-24T13:23:05.685Z</updated>
     
     <content type="html"><![CDATA[<h2 id="15-友元、异常和其他"><a href="#15-友元、异常和其他" class="headerlink" title="15. 友元、异常和其他"></a>15. 友元、异常和其他</h2><h3 id="15-1-友元类"><a href="#15-1-友元类" class="headerlink" title="15.1 友元类"></a>15.1 友元类</h3><p>将类作为友元，友元类的所有方法都可以访问原始类的私有成员和保护成员。另外，也可以做更严格的限制，只将特定的成员函数指定为另一个类的友元。</p>
 <p>友元声明可以位于公有、私有或保护部分，其所在的位置无关紧要。由于友元类中的方法使用了包含类相关信息，所以编译器必须了解包含类后才能处理友元类。</p>
@@ -461,7 +461,7 @@
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(4).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(4).html</id>
     <published>2017-06-19T14:28:39.997Z</published>
-    <updated>2018-02-24T12:52:40.736Z</updated>
+    <updated>2018-02-24T13:22:55.768Z</updated>
     
     <content type="html"><![CDATA[<h2 id="14-C-中的代码重用"><a href="#14-C-中的代码重用" class="headerlink" title="14 C++中的代码重用"></a>14 C++中的代码重用</h2><h3 id="14-1-包含对象成员的类"><a href="#14-1-包含对象成员的类" class="headerlink" title="14.1 包含对象成员的类"></a>14.1 包含对象成员的类</h3><p><strong>has-a</strong>:本身是另一个类的对象的成员变量。这种方法称为包含、组合或层次化。另一种方法是通过私有或保护继承。获得接口是is-a关系的组成部分。而使用组合，类可以获得实现，但不能获得接口。不继承接口是has-a关系的组成部分。</p>
 <p><strong>多重继承</strong>：使得能够使用两个或更多的基类派生出来新的类，将基类的功能组合在一起。</p>
@@ -598,7 +598,7 @@
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(3).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(3).html</id>
     <published>2017-06-11T09:15:03.000Z</published>
-    <updated>2018-02-24T12:52:38.276Z</updated>
+    <updated>2018-02-24T13:23:00.564Z</updated>
     
     <content type="html"><![CDATA[<h2 id="13-类继承"><a href="#13-类继承" class="headerlink" title="13. 类继承"></a>13. 类继承</h2><h3 id="13-1派生一个类"><a href="#13-1派生一个类" class="headerlink" title="13.1派生一个类"></a>13.1派生一个类</h3><p>从一个类派生出另一个类时，原始类称为基类，继承类称为派生类。使用公有派生，基类的公有成员将成为派生类的公有成员；基类的私有部分也将成为派生类的一部分，但只能通过基类的公有和保护方法访问。</p>
 <ul>
@@ -804,7 +804,7 @@
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(2).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(2).html</id>
     <published>2017-06-04T15:16:05.036Z</published>
-    <updated>2018-02-24T12:52:35.891Z</updated>
+    <updated>2018-02-24T13:23:03.505Z</updated>
     
     <content type="html"><![CDATA[<h2 id="11-使用类"><a href="#11-使用类" class="headerlink" title="11.使用类"></a>11.使用类</h2><h3 id="11-2-1-操作符重载"><a href="#11-2-1-操作符重载" class="headerlink" title="11.2.1 操作符重载"></a>11.2.1 操作符重载</h3><p><strong>操作符重载</strong>是一种形式的C++多态，操作符重载将重载的概念扩展到操作符上，允许赋予C++操作符多种含义。要重载操作符，需使用被称为操作符函数的特殊函数形式。操作符函数的格式如下：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ClassName total, coding, fixing;</div><div class="line"><span class="comment">//可以像使用成员方法一样使用操作符重载</span></div><div class="line">total = coding.<span class="keyword">operator</span>+(fixing);</div><div class="line"><span class="comment">//以可以使用操作符表示法：</span></div><div class="line">total = coding + fixing;</div><div class="line"></div><div class="line"><span class="comment">//注意，在操作符表示法中，操作符左侧的对象（这里为coding）是调用对象，操作符右边（这里是fixing)是作为参数被传递的对象。</span></div></pre></td></tr></table></figure>
@@ -968,7 +968,7 @@
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(1).html</id>
     <published>2017-05-21T10:47:33.000Z</published>
-    <updated>2018-02-24T12:52:09.072Z</updated>
+    <updated>2018-02-24T13:22:41.593Z</updated>
     
     <content type="html"><![CDATA[<h3 id="0-预备知识"><a href="#0-预备知识" class="headerlink" title="0.预备知识"></a>0.预备知识</h3><p>C++是C语言的超集，这意味着任何有效的C程序都是有效的C++程序。</p>
 <p>最初，Stroustrup实现C++时，使用了一个C++到C的编译器程序，而不是开发直接的C++到目标代码的编译器。前者叫做cfront（表示C前端，C fron end），它将C++源代码翻译成C源代码，然后使用一个标准C编译器对其进行编译。这种方法简化了向C的领域引入C++的过程，其它实现也采用这种方法将C++引入到其它平台。随着C++的日渐普及，越来越多的实现转向创建C++编译器，直接将C++源代码生成目标代码。</p>
@@ -1075,7 +1075,7 @@
     <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E7%94%B5%E8%84%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E8%AF%8A%E6%96%AD.html"/>
     <id>http://LySnake.github.io/archives/technology/电脑小白系列之电脑常见错误诊断.html</id>
     <published>2017-05-21T10:45:03.000Z</published>
-    <updated>2018-02-24T12:54:19.715Z</updated>
+    <updated>2018-02-24T13:23:49.958Z</updated>
     
     <summary type="html">
     
@@ -1095,7 +1095,7 @@
     <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85.html"/>
     <id>http://LySnake.github.io/archives/technology/电脑小白系列之操作系统安装.html</id>
     <published>2017-05-05T17:34:38.000Z</published>
-    <updated>2018-02-24T12:53:28.659Z</updated>
+    <updated>2018-02-24T13:23:25.724Z</updated>
     
     <content type="html"><![CDATA[<p>主要介绍windows系统安装，以此让小白放心安装其它系统，比如手机Android、iOS，以及PC上的linux系统。<br><a id="more"></a></p>
 <p>###操作系统的本质###<br>其实，说白了，操作系统也是一个软件，作为一个软件，你可以放心地在机器(PC、手机等)上卸载与安装，只是因为操作系统本身要管理计算机资源(软件、硬件)，其它软件或用户都要借助操作系统才能操作机器，所以操作系统的”卸载与安装”比其它软件更麻烦些，如果失败，机器会无法正常运行，也有可能因为操作失误，造成数据丢失，但这一切都不会影响电脑本身硬件，所以安装系统失败可以再交安装，因此在安装系统中最重要的就是小心误操作引起的数据丢失。另外，在手机上传说有自己安装系统，因为影响引导系统的软件从而导致无法再安装系统从而成为“砖块机”，不过这种情况目前也只是听过。</p>
@@ -1142,7 +1142,7 @@
     <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E7%94%B5%E8%84%91%E7%A1%AC%E4%BB%B6%E4%BA%86%E8%A7%A3.html"/>
     <id>http://LySnake.github.io/archives/technology/电脑小白系列之电脑硬件了解.html</id>
     <published>2017-02-19T09:46:46.000Z</published>
-    <updated>2018-02-24T12:53:59.828Z</updated>
+    <updated>2018-02-24T13:23:41.082Z</updated>
     
     <content type="html"><![CDATA[<p>本方主要讲下常用电脑中的硬件与相关功能，旨在了帮助小白了解计算机硬件。<br><a id="more"></a></p>
 <h2 id="冯·诺伊曼结构"><a href="#冯·诺伊曼结构" class="headerlink" title="冯·诺伊曼结构"></a>冯·诺伊曼结构</h2><p>如今的计算机，都是以1945年6月30日冯·诺伊曼提出的基本结构：计算机硬件由运算器、控制器、存储器、输入设备和输出设备五大部分组成。每个组成部分可能存在于一台计算机中不同硬件位置上。</p>
@@ -1183,7 +1183,7 @@
     <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E7%94%B5%E8%84%91%E6%97%A5%E5%B8%B8%E7%AE%A1%E7%90%86.html"/>
     <id>http://LySnake.github.io/archives/technology/电脑小白系列之电脑日常管理.html</id>
     <published>2017-02-09T13:03:48.000Z</published>
-    <updated>2017-02-19T06:50:46.096Z</updated>
+    <updated>2018-02-24T13:23:44.164Z</updated>
     
     <content type="html"><![CDATA[<p>在生活中经常会碰到电脑乱成一团，软件都是百度系，各种小广告软件，重复软件，一台电脑同时存在360、百度、腾讯、金山多家杀软，有这些特点的人大多是文科生为主，次之还有老一代人。对此，本文主要说些电脑文件管理、软件管理等常见的小白问题。<br><a id="more"></a></p>
 <h2 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h2><p>打开<code>我的电脑</code>，可以看到C盘D盘等。一般的桌面上的所有文件也是存储于C盘用户目录下。计算机对于文件管理，是以树型结构进行管理的，每个盘符可以看做一个树根，其下的每个文件夹都可以看做是子树或形象点说是树枝，对于经常查看文件管理器的人来说，这已经是老生常谈，但我要说的是针对常用软件安装目录与个人文件保存问题。</p>

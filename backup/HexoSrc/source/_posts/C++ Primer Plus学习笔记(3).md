@@ -9,7 +9,6 @@ tags:
   - C++ Primer Plus
 description: 个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记
 date: 2017-06-11 17:15:03
-update: {{ update }}
 ---
 ## 13. 类继承 ##
 
