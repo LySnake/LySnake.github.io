@@ -9,6 +9,7 @@ tags:
   - C++ Primer Plus
 description: 个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记
 date: 2017-07-05 21:59:27
+updated: {{ updated }}
 ---
 ## 16 string类和标准模板库 ##
 

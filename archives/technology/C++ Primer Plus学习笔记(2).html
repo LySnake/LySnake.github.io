@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(2).html">
 <meta property="og:site_name" content="LySnake个人博客">
 <meta property="og:description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
-<meta property="og:updated_time" content="2017-06-13T13:26:10.589Z">
+<meta property="og:updated_time" content="2018-02-25T03:46:33.574Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ Primer Plus学习笔记(2)">
 <meta name="twitter:description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
@@ -192,7 +192,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/c/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/c-primer-plus/">C++ Primer Plus</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/github-pages/">Github Pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/cocos2d-x/">cocos2d-x</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/电脑小白/">电脑小白</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/c/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/c-primer-plus/">C++ Primer Plus</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/github-pages/">Github Pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/电脑小白/">电脑小白</a></li></ul>
                     </div>
                 </section>
                 
@@ -279,7 +279,7 @@
   
     <div class="article-meta">
       <a href="" class="article-date">
-      <time datetime="2017-06-04T15:16:05.036Z" itemprop="datePublished">2017-06-04</time>
+      <time datetime="2017-05-21T14:06:46.000Z" itemprop="datePublished">2017-05-21</time>
 </a>
 
  
@@ -328,9 +328,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="11-使用类"><a href="#11-使用类" class="headerlink" title="11.使用类"></a>11.使用类</h2><p><strong>操作符重载</strong>是一种形式的C++多态，操作符重载将重载的概念扩展到操作符上，允许赋予C++操作符多种含义。要重载操作符，需使用被称为操作符函数的特殊函数形式。操作符函数的格式如下：</p>
+        <h2 id="11-使用类"><a href="#11-使用类" class="headerlink" title="11.使用类"></a>11.使用类</h2><h3 id="11-2-1-操作符重载"><a href="#11-2-1-操作符重载" class="headerlink" title="11.2.1 操作符重载"></a>11.2.1 操作符重载</h3><p><strong>操作符重载</strong>是一种形式的C++多态，操作符重载将重载的概念扩展到操作符上，允许赋予C++操作符多种含义。要重载操作符，需使用被称为操作符函数的特殊函数形式。操作符函数的格式如下：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ClassName total, coding, fixing;</div><div class="line"><span class="comment">//可以像使用成员方法一样使用操作符重载</span></div><div class="line">total = coding.<span class="keyword">operator</span>+(fixing);</div><div class="line"><span class="comment">//以可以使用操作符表示法：</span></div><div class="line">total = coding + fixing;</div><div class="line"></div><div class="line"><span class="comment">//注意，在操作符表示法中，操作符左侧的对象（这里为coding）是调用对象，操作符右边（这里是fixing)是作为参数被传递的对象。</span></div></pre></td></tr></table></figure>
-<p>其中，op是将要重载的操作符。例如，operator +()重载+操作符，operator -()重载-操作符。op必须是有效的C++操作符，不能虚构一个新的符号。</p>
+<p>operator +()重载+操作符，operator -()重载-操作符。op必须是有效的C++操作符，不能虚构一个新的符号。</p>
 <h3 id="11-2-2操作符重载的限制"><a href="#11-2-2操作符重载的限制" class="headerlink" title="11.2.2操作符重载的限制"></a>11.2.2操作符重载的限制</h3><ul>
 <li>重载后的操作符必须至少有一个操作数是用户定义，这将防止用户为标准类型重载操作符。因此不能将减法操作符重载为计算两个double值的和，而不是它们的差。</li>
 <li>使用操作符时不能违反操作符原来的句法规则。例如，不能将求模操作符(%)重载成使用一个操作数(%x;），同样也不能修改操作符的优先级。因此，如果将加号操作符重载成将两个类相加，则新的操作符与原来的加号具有相同的优先级。</li>
@@ -360,7 +360,7 @@
 </blockquote>
 </li>
 </ul>
-<h3 id="11-3友元简介"><a href="#11-3友元简介" class="headerlink" title="11.3友元简介"></a>11.3友元简介</h3><p>友元有3钟：</p>
+<h3 id="11-3友元简介"><a href="#11-3友元简介" class="headerlink" title="11.3友元简介"></a>11.3友元简介</h3><p>友元有3种：</p>
 <ul>
 <li>友元函数。</li>
 <li>友元类。</li>
@@ -380,11 +380,11 @@
 <p>对于类ClassName，如果存在一个参数的构造函数，那么：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 存在ClassName::ClassName(TypeName)构造函数</span></div><div class="line">ClassName classValue ;</div><div class="line"><span class="comment">//相当于==&gt;classValue = ClassName::ClassName(TypeNameValue);通过构造函数以参数构造了一个对象。形成隐式转换。   </span></div><div class="line">classValue = TypeNameValue;</div></pre></td></tr></table></figure>
 <p>最新的C++实现新增了一个关键字(explicit)，用来关闭这种自动特性。也就是说，可以这样声明构造函数：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//告知编译器禁止使用隐式转换，但仍然允许显式转换，即显式强制类型转换</span></div><div class="line"><span class="function"><span class="keyword">explicit</span> <span class="title">ClassName</span><span class="params">(TypeName value)</span></span>;    </div><div class="line"><span class="comment">//强制类型转换      </span></div><div class="line">ClassNameValue = ClassName(TypeNameValue);</div></pre></td></tr></table></figure></p>
-<p>只接受一个参数的构造函数定义了从参数到类类型的转换。如果使用关键字explicit限定了这种构造函数，则它只能用于显示转换，否则也可以用于隐式转换。</p>
+<p>只接受一个参数(可存在其它默认参数)的构造函数定义了从参数到类类型的转换。如果使用关键字explicit限定了这种构造函数，则它只能用于显示转换，否则也可以用于隐式转换。</p>
 <p>当没有使用explicit限定只能用于强制转换，则在以下情况发生隐式转换：</p>
 <ul>
-<li>将ClassName对象初始化为TypeName值时。    //ClassNameValue = ClassName(TypeNameValue);</li>
-<li>将TypeName值赋给ClassName对象时。       //classValue = TypeNameValue;</li>
+<li>将ClassName对象初始化为TypeName值时。    //ClassName ClassNameValue = TypeNameValue;</li>
+<li>将TypeName值赋给ClassName对象时。       //相当于先调用ClassName(TypeNameValue)构造，再调用Copy构造。</li>
 <li>将TypeName值传递给接受ClassName参数的函数时。   </li>
 <li>返回值被声明为ClassName类型的函数试图返回一个TypeName类型值时。</li>
 </ul>
@@ -394,7 +394,7 @@
 <ul>
 <li>转换函数必须是类方法。</li>
 <li>转换函数不能指定返回类型，但要有返回值。(typeName已经指定类型，无需过多注明)</li>
-<li>转换函数不能有参数。(类的对象即是参数对象)</li>
+<li>转换函数不能有参数。(类的对象this即是参数对象)</li>
 </ul>
 <p>TypeName(这里为double）指出了要转换成的类型，因此不需要指定返回类型。转换函数是类方法意味着：它需要通过类对象来调用，从而告知函数要转换的值。因此，函数不需要参数。虽然没有返回类型，这二个函数也将返回所需的值。</p>
 <p>提供执行自动、隐式转换的函数所存在的问题是：在用户希望转换时，转换函数也可能进行转换。原则来说，最好使用显示转换，而避免隐式转换。关键字explicit不能用于转换函数，但只需用一个功能相同的非转换函数替换访转换函数即可，但仅在被显式地调用时，该函数才会执行。</p>
@@ -405,7 +405,7 @@
 <li>被称为转换函数的特殊类成员操作符函数，用于将类对象转换为其他类型。转换函数是类成员，没有返回类型、没有参数类型、名为operator typeName()，其中，typeName是对象将被转换成的类型。<strong>将类对象赋给typeName变量或将其强制转换为TypeName类型时，该转换函数将自动被调用</strong>。</li>
 </ul>
 <p>全局对象，因为全局对象将在程序的main()函数被调用之前创建。程序员可以创建一个类，其默认构造函数将调用所有的bootstrap函数。实现在main()函数调用之前，执行全局类对象的构造函数来初始化一些数据。</p>
-<p>C++允许指定在基本类型之间进行转换的方式。首先，任何接受唯一一个参数的构造函数都可被用作转换函数，将类型与该参数相同的值转换为类。如果将类型与该参数相同的值赋给对象，则C++将自动调用该构造函数。要将类对象转换为其他类型，必须定义转换函数，指出如何进行这种转换。转换函数必须是成员函数。将类对象转换为TypeName类型的转换函数的原型如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//注意，转换函数没有返回类型、没有参数(必须是成员函数，this)，但必须返回转换后的值（虽然没有声明返回类型）</span></div><div class="line"><span class="function"><span class="keyword">operator</span> <span class="title">typeName</span><span class="params">()</span></span>;</div></pre></td></tr></table></figure></p>
+<p>C++允许指定在基本类型之间进行转换的方式。首先，任何可接受一个参数的构造函数都可被用作转换函数，将类型与该参数相同的值转换为类。如果将类型与该参数相同的值赋给对象，则C++将自动调用该构造函数。要将类对象转换为其他类型，必须定义转换函数，指出如何进行这种转换。转换函数必须是成员函数。将类对象转换为TypeName类型的转换函数的原型如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//注意，转换函数没有返回类型、没有参数(必须是成员函数，存在隐式参数this)，但必须返回转换后的值（虽然没有声明返回类型）</span></div><div class="line"><span class="function"><span class="keyword">operator</span> <span class="title">typeName</span><span class="params">()</span></span>;</div></pre></td></tr></table></figure></p>
 <h2 id="12-类和动态内存分配"><a href="#12-类和动态内存分配" class="headerlink" title="12.类和动态内存分配"></a>12.类和动态内存分配</h2><p>类中定义static成员变量，则该变量存储在全局数据区，所有类对象共有，且作用域为类作用域。不能在类的声明中初始化静态成员变量，这是因为声明描述了如何分配内存，但并不分配内存，可以使用这种格式来创建对象，从而分配和初始化内存。对于静态类成员，可以在类声明之外使用单独的语句来进行初始化，这是因为静态类成员是单独存储的，而不是对象的组成部分。请注意，初始化语句指出了类型，并使用了作用域操作符。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在类声明之外使用单独的语句来进行初始化</span></div><div class="line">staitc <span class="keyword">int</span> ClassName::ClassNameValue  iValue = <span class="number">110</span>;</div></pre></td></tr></table></figure>
 <p>如果使用new[]来分配内存，则应使用delete[]来释放内存。并且在类中，所有的构造函数统一使用new或new[]，析构函数中使用delete或delete[]。delete可以释放NULL地址。</p>
@@ -424,7 +424,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> ClassName</div><div class="line">&#123;</div><div class="line">	ClassName(ClassName&amp;);   <span class="comment">//复制构造函数</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p><strong>何时调用复制构造函数</strong></p>
 <p>新建一个对象并将其初始化为同类现有对象时，复制构造函数都将被调用。这在很多情况下都可能发生，最常见的情况是将新对象显式地初始化为现有的对象。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> StringBad</div><div class="line">&#123;</div><div class="line">    StringBad(StringBad&amp;);</div><div class="line">&#125;; </div><div class="line">StringBad motto;</div><div class="line">StringBad metoo = motto;</div><div class="line">StringBad also = StringBad(motto);</div></pre></td></tr></table></figure></p>
-<p>这二种声明可能会使用复制构造函数直接创建metoo和also对象，也可能使用复制构造函数生成一个临时对象，然后将临时对象的内容赋给metoo和also。</p>
+<p><strong>这二种声明可能会使用复制构造函数直接创建metoo和also对象，也可能使用复制构造函数生成一个临时对象，然后将临时对象的内容赋给metoo和also。</strong></p>
 <p>具体的说，当函数按值传递对象或函数返回对象时，都将使用复制构造函数。记住，按值传递意味着创建原始变量的一个副本。编译器生成临时对象，也将使用复制构造函数。例如，将3个Vector对象相加时，编译器可能生成临时的Vector对象来保存中间结果。何时生成临时对象随编译器而异，但无论是哪种编译器，当按值传递和返回时，都将调用复制构造函数。</p>
 <p><strong>复制构造函数的功能</strong></p>
 <p>默认的复制构造函数依次复制非静态成员（成员复制也称为浅复制），复制的是成员变量的值。</p>
@@ -448,22 +448,21 @@
 <li>应当定义一个赋值操作符，通过深度复制将一个对象复制给另一个对象。</li>
 </ul>
 <p><strong>返回const类型，则说明返回值为右值，不可当左值</strong></p>
-<p>###　布局new操作符 ###</p>
-<p>布局new操作符让您能够在分配内存时指定内存位置。但在该内存上分配的对象需要显示调用析构函数进行析构。</p>
+<h4 id="布局new操作符"><a href="#布局new操作符" class="headerlink" title="布局new操作符"></a>布局new操作符</h4><p>布局new操作符让您能够在分配内存时指定内存位置。但在该内存上分配的对象需要显示调用析构函数进行析构。</p>
 <ul>
-<li>程序员必须负责管理布局new操作符从中使用的缓冲区内存单元。要使用不同的内存单元，程序员需要提供二个位于缓冲区的不同地址，并确保这二个内在单元不重叠(如果对同一个地址使用布局new，则会使后new的对象覆盖前一个对象数据)。</li>
+<li>程序员必须负责管理布局new操作符从中使用的缓冲区内存单元。要使用不同的内存单元，程序员需要提供二个位于缓冲区的不同地址，并确保这二个内存单元不重叠(如果对同一个地址使用布局new，则会使后new的对象覆盖前一个对象数据)。</li>
 <li><p>如果使用布局new操作符来为对象分配内存，必须确保其析构函数被调用。原因在于delete可与常规new操作符配合使用，但不能与布局new操作符配合使用。为了确保析构函数被调用，显式地为使用布局new操作符创建的对象调用析构函数。正常情况下将自动调用析构函数，这是需要显式调用析构函数的少数几种情况之一。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ClassName classNameValue;</div><div class="line"><span class="comment">//或使用指针pClassNameValue-&gt;~ClassName;进行显式调用析构函数。</span></div><div class="line">classNameValue.~ClassName();</div></pre></td></tr></table></figure>
 </li>
 <li><p>对于使用布局new操作符创建的对象，应以与创建顺序相反的顺序进行析构。原因在于，晚创建的对象可能依赖于早创建的对象。</p>
 </li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line">	<span class="keyword">private</span>:</div><div class="line">		<span class="keyword">struct</span> Node</div><div class="line">		&#123;</div><div class="line">			<span class="comment">//tode</span></div><div class="line">		&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>C++新特性：在类声明中嵌套结构或类声明，通过将Node声明放在Queue类中，可以使其作用域为整个类。也就是说，Node是这样一种类型：可以使用它来声明类成员，也可以将它作为类方法中的类型名称，但只能在类中使用。如果声明在类的私有部分进行的，则只能在这个类使用被声明的类型，如果声明是在公有部分进行的，则可以从类的外部通过作用域解析操作符使用被声明的类型。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">  <span class="keyword">struct</span> Node</div><div class="line">  &#123;</div><div class="line">	<span class="comment">//tode</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>C++新特性：在类声明中嵌套结构或类声明，通过将Node声明放在Queue类中，可以使其作用域为整个类。也就是说，Node是这样一种类型：可以使用它来声明类成员，也可以将它作为类方法中的类型名称，但只能在类中使用。如果声明在类的私有部分，则只能在这个类使用被声明的类型，如果声明是在公有部分，则可以从类的外部通过作用域解析操作符使用被声明的类型。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line">	Queue();</div><div class="line">&#125;</div><div class="line">Queue::Queue():refValue(value1),constValue(refValue)</div><div class="line">&#123;</div><div class="line">	<span class="comment">//tode</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>对需要在分配内存时就要初始化的成员(const成员，引用变量成员,基类构造)，则必须使用成员初始化列表初始化。</p>
-<p>从概念上说，调用构造函数时，对象将在括号中的代码执行之前被创建。因此调用Queue()构造函数将导致程序首先给成员变量分配内存。然后，程序流程进入到括号中，使用常规的赋值方式将值存储到内存中。因此，对于const成员变量和引用成员变量，必须在执行到构造函数体之前，即创建对象时进行初始化。C++提供了一种特殊的句法来完成上述工作，它叫作成员初始化列表。成员初始化列表由逗号分隔的初始化列表组成(前面带冒号)。它位于参数列表的右括号之后，函数体左括号之前。</p>
-<p>初值可以是常量或构造函数的参数列表中的参数。只有构造函数可以使用这种初始化列表句法。使用成员初始化列表的效率更高。</p>
+<p>对需要在分配内存时就要初始化的成员(const成员，引用变量成员,基类部分数据)，则必须使用成员初始化列表初始化。</p>
+<p><strong>从概念上说，调用构造函数时，对象将在括号中的代码执行之前被创建。因此调用Queue()构造函数将导致程序首先给成员变量分配内存。然后，程序流程进入到括号中，使用常规的赋值方式将值存储到内存中。因此，对于const成员变量和引用成员变量，必须在执行到构造函数体之前，即创建对象时进行初始化。C++提供了一种特殊的句法来完成上述工作，它叫作成员初始化列表。成员初始化列表由逗号分隔的初始化列表组成(前面带冒号)。它位于参数列表的右括号之后，函数体左括号之前。</strong></p>
+<p>初值可以是常量或构造函数的参数列表中的参数。只有构造函数可以使用这种初始化列表句法。使用成员初始化列表的效率更高(因为在构造函数之前，其const成员，引用成员，基类部分就已经完成初始化，在构造函数中只是进行赋值操作)。</p>
 <p>数据成员被初始化的顺序与它们出现在类声明中的顺序相同，与初始化器中的排列顺序无关。</p>
 <p>成员初始化列表中使用的括号方式也可以用于常规的初始化中。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> games = <span class="number">163</span>;</div><div class="line"><span class="keyword">double</span> talk = <span class="number">2.7</span>;</div><div class="line"><span class="comment">//可改写为</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">games</span><span class="params">(<span class="number">163</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">talk</span><span class="params">(<span class="number">2.7</span>)</span></span>;</div></pre></td></tr></table></figure>
@@ -477,8 +476,8 @@
     <div class="copyright">
         <p><span>本文标题:</span><a href="">C++ Primer Plus学习笔记(2)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LySnake</a></p>
-        <p><span>发布时间:</span>2017-06-04, 23:16:05</p>
-        <p><span>最后更新:</span>2017-06-13, 21:26:10</p>
+        <p><span>发布时间:</span>2017-05-21, 22:06:46</p>
+        <p><span>最后更新:</span>2018-02-25, 11:46:33</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="" title="C++ Primer Plus学习笔记(2)">http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(2).html</a>
             <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(2).html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -514,7 +513,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-使用类"><span class="toc-number">1.</span> <span class="toc-text">11.使用类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2-2操作符重载的限制"><span class="toc-number">1.1.</span> <span class="toc-text">11.2.2操作符重载的限制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-3友元简介"><span class="toc-number">1.2.</span> <span class="toc-text">11.3友元简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-6类的自动转换和强制类型转换"><span class="toc-number">1.3.</span> <span class="toc-text">11.6类的自动转换和强制类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-6-2转换函数"><span class="toc-number">1.4.</span> <span class="toc-text">11.6.2转换函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-类和动态内存分配"><span class="toc-number">2.</span> <span class="toc-text">12.类和动态内存分配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-1-2-隐式成员函数"><span class="toc-number">2.1.</span> <span class="toc-text">12.1.2 隐式成员函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#默认构造函数"><span class="toc-number">2.1.1.</span> <span class="toc-text">默认构造函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#复制构造函数"><span class="toc-number">2.1.2.</span> <span class="toc-text">复制构造函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#赋值操作符"><span class="toc-number">2.1.3.</span> <span class="toc-text">赋值操作符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-1-4-在构造函数中使用new时应注意的事项"><span class="toc-number">2.2.</span> <span class="toc-text">12.1.4 在构造函数中使用new时应注意的事项</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-使用类"><span class="toc-number">1.</span> <span class="toc-text">11.使用类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2-1-操作符重载"><span class="toc-number">1.1.</span> <span class="toc-text">11.2.1 操作符重载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2-2操作符重载的限制"><span class="toc-number">1.2.</span> <span class="toc-text">11.2.2操作符重载的限制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-3友元简介"><span class="toc-number">1.3.</span> <span class="toc-text">11.3友元简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-6类的自动转换和强制类型转换"><span class="toc-number">1.4.</span> <span class="toc-text">11.6类的自动转换和强制类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-6-2转换函数"><span class="toc-number">1.5.</span> <span class="toc-text">11.6.2转换函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-类和动态内存分配"><span class="toc-number">2.</span> <span class="toc-text">12.类和动态内存分配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-1-2-隐式成员函数"><span class="toc-number">2.1.</span> <span class="toc-text">12.1.2 隐式成员函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#默认构造函数"><span class="toc-number">2.1.1.</span> <span class="toc-text">默认构造函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#复制构造函数"><span class="toc-number">2.1.2.</span> <span class="toc-text">复制构造函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#赋值操作符"><span class="toc-number">2.1.3.</span> <span class="toc-text">赋值操作符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-1-4-在构造函数中使用new时应注意的事项"><span class="toc-number">2.2.</span> <span class="toc-text">12.1.4 在构造函数中使用new时应注意的事项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#布局new操作符"><span class="toc-number">2.2.1.</span> <span class="toc-text">布局new操作符</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
@@ -627,7 +626,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(6).html">C++ Primer Plus学习笔记(6)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(5).html">C++ Primer Plus学习笔记(5)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(4).html">C++ Primer Plus学习笔记(4)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(3).html">C++ Primer Plus学习笔记(3)</a></li><li class="post-list-item"><a class="post-list-link" href="">C++ Primer Plus学习笔记(2)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(1).html">C++ Primer Plus学习笔记(1)</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑常见错误诊断.html">电脑小白系列之电脑常见错误诊断</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑硬件了解.html">电脑小白系列之电脑硬件了解</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑日常管理.html">电脑小白系列之电脑日常管理</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="Github Pages与Hexo框架博客的搭建.html">Github Pages与Hexo框架博客的搭建</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(7).html">C++ Primer Plus学习笔记(7)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(6).html">C++ Primer Plus学习笔记(6)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(5).html">C++ Primer Plus学习笔记(5)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(4).html">C++ Primer Plus学习笔记(4)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(3).html">C++ Primer Plus学习笔记(3)</a></li><li class="post-list-item"><a class="post-list-link" href="">C++ Primer Plus学习笔记(2)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(1).html">C++ Primer Plus学习笔记(1)</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑常见错误诊断.html">电脑小白系列之电脑常见错误诊断</a></li><li class="post-list-item"><a class="post-list-link" href="操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="Github Pages与Hexo框架博客的搭建.html">Github Pages与Hexo框架博客的搭建</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑硬件了解.html">电脑小白系列之电脑硬件了解</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑日常管理.html">电脑小白系列之电脑日常管理</a></li></ul>
 
 
 
@@ -641,7 +640,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2017 LySnake
+                2017-2018 LySnake
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>

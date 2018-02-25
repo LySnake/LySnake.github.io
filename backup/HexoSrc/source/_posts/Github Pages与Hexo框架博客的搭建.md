@@ -1,7 +1,7 @@
 ---
 title: Github Pages与Hexo框架博客的搭建
-date: {{ date }}
-update: {{ updated }}
+date: 2017-02-25 17:46:46
+updated: {{ updated }}
 comments: true
 categories:
   - archives

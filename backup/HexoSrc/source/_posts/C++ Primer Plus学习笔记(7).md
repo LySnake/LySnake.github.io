@@ -8,6 +8,7 @@ tags:
   - C++
   - C++ Primer Plus
 date: 2017-07-22 10:13:12
+updated: {{ updated }}
 description: 个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
+updated: {{ updated }}
 layout: draft
 comments: false
 categories:

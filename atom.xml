@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://LySnake.github.io/"/>
-  <updated>2017-07-20T15:26:48.920Z</updated>
+  <updated>2018-02-25T03:43:18.677Z</updated>
   <id>http://LySnake.github.io/</id>
   
   <author>
@@ -16,11 +16,118 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>C++ Primer Plus学习笔记(7)</title>
+    <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(7).html"/>
+    <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(7).html</id>
+    <published>2017-07-22T02:13:12.000Z</published>
+    <updated>2018-02-25T03:43:18.677Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第17章-输入、输出和文件"><a href="#第17章-输入、输出和文件" class="headerlink" title="第17章 输入、输出和文件"></a>第17章 输入、输出和文件</h2><h3 id="17-1-C-输入和输出概述"><a href="#17-1-C-输入和输出概述" class="headerlink" title="17.1 C++输入和输出概述"></a>17.1 C++输入和输出概述</h3><p>C++程序把输入和输出看作是字节流。输入时，程序从输入流中抽取字节；输出时，程序将字节插入到输出流中。对于面向文本的程序，每个字节代表一个字符，更通俗地说，字节可以构成字符或数值数据的二进制表示。输入流中的字节可能来自键盘，也可能来自存储设备（如硬盘）或其它程序。同样，输入流中的字节可以流向屏幕、打印机、存储设备或其它程序。流充当了程序和流源或流目标之间的桥梁。这使得C++程序可以以相同的方式对待来自键盘的输入和来自文件的输入。C++程序只是检查字节流，而不需要知道字节来自何向。</p>
+<p>通常，通过使用缓冲区可以更高效地处理输入和输出。缓冲区是用作中介的内存块，它是将信息从设备传输到程序或从程序传输给设备的临时存储工具。通常，像磁盘驱动器这样的设备，以512字节(或更多)的块为单位来传输信息，而程序通常每次只能处理一个字节的信息。缓冲区帮助匹配这二种不同的信息传输速率。</p>
+<p>键盘输入每次提供一个字符，因此在这种情况下，程序无须缓冲区来帮助匹配不同的数据传输速率。不过，对键盘输入进行缓冲可以让用户在将输入传输给程序之前返回并更正。C++程序通常在用户按下回车键时刷新输入缓冲区。</p>
+<p>使用ostream对象(如cout)来处理输出。创建这样的对象将打开一个流，自动创建缓冲区，并将其与流关联起来，同时使得能够使用类成员函数。</p>
+<p>I/O类被重新编写。为成为国际语言，C++必须能够处理需要要16位的国际字符集或更宽的字符类型。因此，该语言在传统的8位char（或”窄”)类型的基础上添加了wchar_t(或“宽”)字符类型。每种类型都需要有自己的I/O工具。</p>
+<p>C++的iostream类库管理了很多细节。例如，在程序中包含iostream文件将自动创建8个流对象(4个用于窄字符流，4个用于宽字符流)：</p>
+<ul>
+<li>cin对象对应于标准输入流。在默认情况下，这个流被关联到标准输入设备（通常为键盘）。wcin对象与此类似，但处理的是wchar_t类型。</li>
+<li>cout对象与标准输出流相对应是。在默认情况下，这个流被关联到标准输出设备(通常为显示器)。wcout对象与此类似，但处理的是wchar_t类型。</li>
+<li>cerr对象与标准错误流相对应，可用于显示错误消息。在默认情况下，这个流被关联到标准输出设备(通常为显示器)。这个流没有被缓冲，这意味着信息将被直接发送给屏幕，而不会等到缓冲区填满或新的换行符。wcerr对象与此类似，但处理的是wchar_t类型。</li>
+<li>clog对象也对应着标准错误流。在默认情况下，这个流被关联到标准输出设备(通常为显示器)。这个流被缓冲。wclog对象与此类似，但处理的是wchar_t类型。</li>
+</ul>
+<h3 id="17-2-使用cout进行输出"><a href="#17-2-使用cout进行输出" class="headerlink" title="17.2 使用cout进行输出"></a>17.2 使用cout进行输出</h3><p>如果您是C语言程序员，深受%类型说明符过多，当说明符类型与值不匹配时将发生问题等痛苦，则使用cout非常简单(当然，由于有cin，C++输入也非常简单)。</p>
+<p>C++用指向字符串存储位置的指针来表示字符串，对于其它类型的指针，C++将其对应于void *，并打印地址的数值表示。如果要获得字符串的地址，则必须将其强制转换为其它类型。</p>
+<p>wirte()方法并不会在遇到空字符时自动停止打印字符，而只是打印指定数目的字符，即使超出了字符串的边界。</p>
+<p>由于ostream类对cout对象处理的输出进行缓冲，所以输出不会立即发送到目标地址，而是被存储在缓冲区中，直到缓冲区填满。然后，程序将刷新(flush)缓冲区，把内容发送出去，并清空缓冲区，以存储新的数据。</p>
+<p>多数C++实现都会在输入即将发生时刷新缓冲区。</p>
+<p>如果实现不能在所希望时刷新输出，可以使用二个控制符中的一个来强行进行刷新。控制符flush刷新缓冲区，而控制符endl刷新缓冲区，并插入一个换行符。这二个控制符的使用方式与变量名相同。实际上，控制符也是函数，如flush()刷新cout缓冲区。</p>
+<p>ostream类是从ios类派生而来的，而后者是从ios_base类派生而来的。ios_base类存储了描述格式状态的信息。例如，一个类成员中某些位决定了使用计数系统，而另一个成员则决定了字段宽度。通过使用控制符，可以控制显示整数时使用的计数系统。通过使用ios_base的成员函数，可以控制字段宽度和小数倍数。由于ios_base类是ostream的间接基类，因此可以将其方法用于ostream对象(或子代)，如cout。</p>
+<p>三个最常用的控制符分别是setprecision()、setfill()和setw(),它们分别用来设置精度、填充字符和字段宽度。与前面讨论的控制符不同的是，这三个控制符带参数。setprecison()控制符接受一个指定精度的整数参数；setfill()控制符接受一个指定填充字符的char参数；setw()控制符接受一个指定字段宽度的整数参数。 由于它们都是控制符，因此可以用cout语句连接起来。</p>
+<h3 id="17-3-使用cin进行输入"><a href="#17-3-使用cin进行输入" class="headerlink" title="17.3 使用cin进行输入"></a>17.3 使用cin进行输入</h3><p>不同版本的读取操作符查看输入流的方法是相同的。它们跳过空白(空格、 换行符和制表符)，直到遇到非空白字符。即使对于单字符模式(参数类型为char、unsigned char和signed char)，情况也是如此，但对于C语言的字符输入函数，情况并非如此。在单字符模式下，&gt;&gt;操作符将读取该字符，将它放置到指定的位置。在其他模式下，&gt;&gt;操作符将读取一个指定类型的数据。也就是说，它读取从非空白字符开始到与目标类型不匹配的第一个字符之间的全部内容。</p>
+<p><strong>流状态</strong>(被定义为iostate类型，而iostate是一种bitmask类型)，由3个ios_base元素组成：eofbit、badbit和failbit，其中每个元素都是一位，可以是1（设置）或0（清除）。当cin操作到达文件未必时，它将设置eofbit；当cin操作未能读取到预期的字符时(像前一个例子那样)，它将设置failbit。I/O失败(如试图读取不可访问的文件或试图写入写保护的磁盘)，也可能将failbit设置为1。在一些无法诊断的失败破坏流时，badbit元素将被设置(实现没有必要就哪些情况下设置failbit，哪些情况下设置badbit达成一致)。当全部3个状态位都设置为0时，说明一切顺利。</p>
+<h3 id="17-4-文件输入与输出"><a href="#17-4-文件输入与输出" class="headerlink" title="17.4 文件输入与输出"></a>17.4 文件输入与输出</h3><p>C++在头文件fstream(以前为fstream.h)中定义了多个新类，其中包括用于文件输入的ifstream类和用于文件输出的ofstream类。C++还定义了一个fstream类，用于同步文件I/O。这些类都是从头文件iostream中的类派生而来的。</p>
+<p>使用文件I/O：</p>
+<p><strong>写文件</strong></p>
+<ol>
+<li>创建一个ofstream对象来管理输出流。首先应包含头文件fstream。</li>
+<li>将该对象与特定的文件关联起来。</li>
+<li>以使用cout的文件使用该对象，惟一的区别是：输出将进入文件，而不屏幕。</li>
+</ol>
+<p>对于大多数(但不是全部)实现来说，包含该文件便自动包括iostream文件，因此不必显示包含iostram。然后声明一个ofstream对象<strong>ofstream fout;</strong>。接下来必须将这个对象与特定的文件想关联。为此可以使用open()方法<strong>fout.open(“jar.txt”);</strong>，可以使用另一个构造函数将这二步合并成一条语句<strong>ofstream fout(“jar.txt”);</strong>。以这种方式打开文件来进行输出时， 如果没有这样的文件，将创建一个新文件；如果有这样的文件，则打开文件将清空文件，输出将进入到一个空文件中。以默认模式打开文件进行输出将自动把文件的长度截短为0，这相当于删除已有内容。</p>
+<p><strong>读文件</strong></p>
+<ol>
+<li>创建一个ifstream对象来管理输入流。</li>
+<li>将该对象与特定的文件关联起来。</li>
+<li>以使用cin的方式使用该对象。</li>
+</ol>
+<p>当输入和输出流对象过期时，到文件的连接将自动关闭。另外，也可以使用close()方法来显示地关闭到文件的连接<figure class="highlight plain"><figcaption><span>```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">可以同时打开的文件数取决于操作系统，但通常为20个左右。</div><div class="line"></div><div class="line">**文件模式**：描述的是文件将被如何使用：读、写、追加等。将流与文件关联时(无论是使用文件名初始化文件流对象，还是使用open()方法)，都可以提供指定文件模式的第二个参数：</div><div class="line"></div><div class="line">```C++</div><div class="line">ifstream fin(&quot;banjo&quot;,mode1);   //constructor with mode argument </div><div class="line">ofstream fout();</div><div class="line">fout.open(&quot;harp&quot;,mode2);       //open() with mode arguments</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">常量</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:center">常量</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ios_bash::in</td>
+<td style="text-align:center">打开文件，以便读取</td>
+<td style="text-align:center">ios_bash::app</td>
+<td style="text-align:center">追加到文件尾</td>
+</tr>
+<tr>
+<td style="text-align:left">ios_bash::out</td>
+<td style="text-align:center">打开文件，以便写入</td>
+<td style="text-align:center">ios_bash::trun</td>
+<td style="text-align:center">如果文件存在，则截短文件</td>
+</tr>
+<tr>
+<td style="text-align:left">ios_bash::ate</td>
+<td style="text-align:center">打开文件，并移到文件尾</td>
+<td style="text-align:center">ios_bash::binary</td>
+<td style="text-align:center">二进制文件</td>
+</tr>
+</tbody>
+</table>
+<p>二进制格式指的是存储值的计算机内部表示。也就是说，计算机不是存储字符，而是存储这个值的64位double表示。对于字符来说，二进制表示与文件表示是一样的，即字符的ASCII码的二进制表示。对于数字来说，二进制的表示与文件表示有很大差别。</p>
+<p>文本格式便于读取，可以使用编辑器或字处理器来读取和编辑文本文件，可以很方便地将文本文件从一个计算机系统传输到另一个计算机系统。二进制格式对于数字来说比较精确，因为它存储的是值的内部表示，因此不会有转换误或舍入误差，以二进缺点格式保存数据的速度更快，因为不需要转换，并可以大块地存储数据。二进制格式通常占用的空间较小，这取决于数据的特征。不过，如果另一个系统使用另一种内部表示，则可能无法将数据传输给该系统。同一系统上不同的编译器也可能使用不同的内部结构布局表示。在这种情况下，则必须编写一个将一种数据转换成另一种的程序。</p>
+<p>对于二进制数据，文本格式会引起问题，因此double值中间的字节可能与换行符的ASCII码有相同的模式。另外，在文件尾的检测方式也有区别。因此以二进制格式保存数据时，应使用二进制文件模式(UNIX系统只有一种文件模式，因此对于它来说，二进制模式和文本模式是一样的)</p>
+<p><strong>随机存取</strong></p>
+<p>随机存取指的是直接移动（不是依次移动）到文件的任何位置。随机存取常被用于数据库文件，程序维护一个独立的索引文件，该文件指出数据在主数据文件中的位置。这样，程序便可以直接跳到这个位置，读取（还可能修改）其中的数据。如果文件由长度相同的记录组成，这种方法实现起来最简单。每条记录表示一组相关的数据。</p>
+<p>fstream类为此继承了二个方法：seekg()和seekp()，前者将输入指针移到指定的文件位置，后者将输出指针移到指定的文件位置（实际上，由于fstream类使用缓冲区来存储中间数据，因此指向的是缓冲区中的位置，而不是实际的文件）。也可以将seekg()用于ifstream对象，将seekp()用于ofstream对象。</p>
+<h3 id="17-5-内核格式化"><a href="#17-5-内核格式化" class="headerlink" title="17.5 内核格式化"></a>17.5 内核格式化</h3><p>iostream族(family)支持程序与终端之间的I/O，而fstream族使用相同的接口提供程序和文件之间的I/O。C++库还提供了sstream族，它们使用相同的接口提供程序和string对象之间的I/O。也就是说，可以使用于cout的ostream方法将格式化信息写入到string对象中，并使用istream方法（如getline())来读取string对象中的信息。读取string对象中的格式化信息或将格式化信息写入string对象中被称为内核格式化(incore formatting)。</p>
+<p>sstream头文件定义了一个从ostream类派生而来的ostringstream类（还有一个基于wostream的wostringstream类，这个类用于宽字符集）。如果创建了一个ostringstream对象，则可以将信息写入其中，它将存储这些信息。可以将可用于cout的方法用于ostringstream对象。</p>
+<p>istringstream类允许使用istream方法族读取istringstream对象中的数据，istringstream对象可以使用string对象进行初始化。</p>
+<p>在用法案例分析中，开发小组列出了常用的方法或预期最终的系统将用于场景；找出元素、操作和职责，以确定可能要使用的类和类特性。CRC卡片是一种分析场景的简单方法。开发小组为每个类创建索引卡片，卡片上列出了类名、类责任（如表示的数据和执行的操作）以及类的合作者（如必须与之交互的其它类）。然后小组使用CRC卡片提供的接口便可以进入场景。</p>
+<p>在这方面，最新的工具是统一建模语言（Unified Modeling Language,UML），它不是一种编程语言，而是一种用于表示编程项目的分析和设计的语言，是由Grady Booch、Jim Rumbaugh和Ivar Jacobson开发的，他们分别更早的3种建语言OMT、OOSE的主要开发人员。</p>
+<p>缓冲区是内存中的临时存储区域，是程序与文件或其它I/O设备之间的桥梁。信息在缓冲区和文件之间传输时，将使用设备（如磁盘驱动器）处理效率最高的尺寸以大块数据的方式进行传输。信息在缓冲区和程序之间传输时，是逐字节传输的，这种方式对于程序中的处理操作更为方便。</p>
+<p>iostream和fstream文件构成了I/O类库，该类库定义了大量用于管理流的类。包含了iostream文件的C++程序将自动打开8个流，并使用8个对象管理它们。cin对象管理标准输入流，后者默认与标准输入设备（通常为键盘）相连；cout对象管理标准输出流，后者默认与标准输出设备（通常为显示器）相连；cerr和clog对象管理与标准错误设备（通常为显示器）相连的未被缓冲的流和被缓冲的流。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+      <category term="C++" scheme="http://LySnake.github.io/tags/c/"/>
+    
+      <category term="C++ Primer Plus" scheme="http://LySnake.github.io/tags/c-primer-plus/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C++ Primer Plus学习笔记(6)</title>
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(6).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(6).html</id>
     <published>2017-07-05T13:59:27.000Z</published>
-    <updated>2017-07-20T15:26:48.920Z</updated>
+    <updated>2018-02-25T03:43:27.229Z</updated>
     
     <content type="html"><![CDATA[<h2 id="16-string类和标准模板库"><a href="#16-string类和标准模板库" class="headerlink" title="16 string类和标准模板库"></a>16 string类和标准模板库</h2><h3 id="16-1-string类"><a href="#16-1-string类" class="headerlink" title="16.1 string类"></a>16.1 string类</h3><p>string实际上是模板规范basic_string<char>的一个tyepdef,同时省略了与内存管理相关的参数。</char></p>
 <p>第一个限制因素是string对象的最大允许长度，由常量string::npos指定。这通常是最大的unsigned int值或最大的unsigned long值，因此对于普通的交互式输入，这不会带来实际的限制；但如果您试图将整个文件的内容读取到单个string对象中，这可能成为限制因素。第二个限制因素是程序可以使用的内存量。</p>
@@ -116,7 +223,64 @@
 </ul>
 <h4 id="16-5-2-预定义的函数符"><a href="#16-5-2-预定义的函数符" class="headerlink" title="16.5.2 预定义的函数符"></a>16.5.2 预定义的函数符</h4><p>STL定义了多个基本函数符，它们执行诸多如将两个值相加、比较两个值是否相等操作。提供这些函数对象是为了支持将函数作为参数的STL函数。对于所有内置的自述操作符、关系操作符和逻辑操作符，STL都提供了等价的函数符。</p>
 <h4 id="16-5-3-自适应函数和函数适配器"><a href="#16-5-3-自适应函数和函数适配器" class="headerlink" title="16.5.3 自适应函数和函数适配器"></a>16.5.3 自适应函数和函数适配器</h4><p>自适应生成器、自适应一元函数、自适应二元函数、自适应断言和自适应二元断言，如下表列出的预定义函数都是自适应的。</p>
-<p>|:—-|:—-:|:—-|:—-:|<br>|+|plus|&gt;|greater|<br>|-|minus|&lt;|less|<br>|*|multiplies|&gt;=|greater_equal|<br>|/|divides|&lt;=|less_equal|<br>|%|modulus|&amp;&amp;|logical_and|<br>|-|negate|”||”|logical_or|<br>|==|equal_to|!|logical_not|<br>|!=|not_equal_to|</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作符</th>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">操作符</th>
+<th style="text-align:center">函数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>+</code></td>
+<td style="text-align:center">plus</td>
+<td style="text-align:center"><code>&gt;</code></td>
+<td style="text-align:center">greater</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-</code>;</td>
+<td style="text-align:center">minus</td>
+<td style="text-align:center"><code>&lt;</code></td>
+<td style="text-align:center">less</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>*</code></td>
+<td style="text-align:center">multiplies</td>
+<td style="text-align:center"><code>&gt;=</code></td>
+<td style="text-align:center">greater_equal</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>/</code></td>
+<td style="text-align:center">divides</td>
+<td style="text-align:center"><code>&lt;=</code></td>
+<td style="text-align:center">less_equal</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>%</code></td>
+<td style="text-align:center">modulus</td>
+<td style="text-align:center"><code>&amp;&amp;</code></td>
+<td style="text-align:center">logical_and</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-</code></td>
+<td style="text-align:center">negate</td>
+<td style="text-align:center"><code>丨丨</code></td>
+<td style="text-align:center">logical_or</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>==</code></td>
+<td style="text-align:center">equal_to</td>
+<td style="text-align:center"><code>!</code></td>
+<td style="text-align:center">logical_not</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>!=</code></td>
+<td style="text-align:center">not_equal_to</td>
+</tr>
+</tbody>
+</table>
 <p>使用函数符成为自适应的原因是，它携带了标识参数类型和返回值类型的typedef成员。这些成员分别是result_type、first_argument_type和second_argument_type，它们的作用是不言自明的。函数符自适应性的意义在于：函数适配器对象可以使用函数对象，并认为存在这些typedef成员。</p>
 <h4 id="16-6-算法"><a href="#16-6-算法" class="headerlink" title="16.6 算法"></a>16.6 算法</h4><p>STL包含了很多处理容器的非成员函数，前面已经介绍过其中的一些：sort()、copy()、find()、random_shuffle()、set_union()、set_intersection()、set_difference()和transform()。可能已经注意到，它们的总体设计是相同的，都使用迭代器来标识要处理的数据敬意和结果的放置位置。有些函数还接受一个函数对象参数，并使用它来处理数据。</p>
 <p>对于算法函数设计，有二个主要的通用部分。首先，它们都使用模板来提供通用类型；其次，它们都使用迭代器来提供访问容器中数据的通用表示。因此，copy()函数可用于将double值存储在数组中的容器、将string值存储在链表中容器，也可用于将用户定义的对象存储在树结构中的窗口。因为指针是一种特殊的迭代器，因此诸多copy()等STL函数可用于常规数组。</p>
@@ -135,7 +299,7 @@
     
       <category term="C++" scheme="http://LySnake.github.io/tags/c/"/>
     
-      <category term="cocos2d-x" scheme="http://LySnake.github.io/tags/cocos2d-x/"/>
+      <category term="C++ Primer Plus" scheme="http://LySnake.github.io/tags/c-primer-plus/"/>
     
   </entry>
   
@@ -143,8 +307,8 @@
     <title>C++ Primer Plus学习笔记(5)</title>
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(5).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(5).html</id>
-    <published>2017-07-01T14:28:08.127Z</published>
-    <updated>2017-07-04T15:40:25.928Z</updated>
+    <published>2017-07-01T14:06:46.000Z</published>
+    <updated>2018-02-25T03:44:49.933Z</updated>
     
     <content type="html"><![CDATA[<h2 id="15-友元、异常和其他"><a href="#15-友元、异常和其他" class="headerlink" title="15. 友元、异常和其他"></a>15. 友元、异常和其他</h2><h3 id="15-1-友元类"><a href="#15-1-友元类" class="headerlink" title="15.1 友元类"></a>15.1 友元类</h3><p>将类作为友元，友元类的所有方法都可以访问原始类的私有成员和保护成员。另外，也可以做更严格的限制，只将特定的成员函数指定为另一个类的友元。</p>
 <p>友元声明可以位于公有、私有或保护部分，其所在的位置无关紧要。由于友元类中的方法使用了包含类相关信息，所以编译器必须了解包含类后才能处理友元类。</p>
@@ -290,16 +454,14 @@
     
       <category term="C++ Primer Plus" scheme="http://LySnake.github.io/tags/c-primer-plus/"/>
     
-      <category term="cocos2d-x" scheme="http://LySnake.github.io/tags/cocos2d-x/"/>
-    
   </entry>
   
   <entry>
     <title>C++ Primer Plus学习笔记(4)</title>
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(4).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(4).html</id>
-    <published>2017-06-19T14:28:39.997Z</published>
-    <updated>2017-06-26T13:49:11.671Z</updated>
+    <published>2017-06-19T14:06:46.000Z</published>
+    <updated>2018-02-25T03:45:31.463Z</updated>
     
     <content type="html"><![CDATA[<h2 id="14-C-中的代码重用"><a href="#14-C-中的代码重用" class="headerlink" title="14 C++中的代码重用"></a>14 C++中的代码重用</h2><h3 id="14-1-包含对象成员的类"><a href="#14-1-包含对象成员的类" class="headerlink" title="14.1 包含对象成员的类"></a>14.1 包含对象成员的类</h3><p><strong>has-a</strong>:本身是另一个类的对象的成员变量。这种方法称为包含、组合或层次化。另一种方法是通过私有或保护继承。获得接口是is-a关系的组成部分。而使用组合，类可以获得实现，但不能获得接口。不继承接口是has-a关系的组成部分。</p>
 <p><strong>多重继承</strong>：使得能够使用两个或更多的基类派生出来新的类，将基类的功能组合在一起。</p>
@@ -429,8 +591,6 @@
     
       <category term="C++ Primer Plus" scheme="http://LySnake.github.io/tags/c-primer-plus/"/>
     
-      <category term="cocos2d-x" scheme="http://LySnake.github.io/tags/cocos2d-x/"/>
-    
   </entry>
   
   <entry>
@@ -438,7 +598,7 @@
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(3).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(3).html</id>
     <published>2017-06-11T09:15:03.000Z</published>
-    <updated>2017-06-13T15:21:14.153Z</updated>
+    <updated>2018-02-25T03:48:02.699Z</updated>
     
     <content type="html"><![CDATA[<h2 id="13-类继承"><a href="#13-类继承" class="headerlink" title="13. 类继承"></a>13. 类继承</h2><h3 id="13-1派生一个类"><a href="#13-1派生一个类" class="headerlink" title="13.1派生一个类"></a>13.1派生一个类</h3><p>从一个类派生出另一个类时，原始类称为基类，继承类称为派生类。使用公有派生，基类的公有成员将成为派生类的公有成员；基类的私有部分也将成为派生类的一部分，但只能通过基类的公有和保护方法访问。</p>
 <ul>
@@ -643,12 +803,12 @@
     <title>C++ Primer Plus学习笔记(2)</title>
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(2).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(2).html</id>
-    <published>2017-06-04T15:16:05.036Z</published>
-    <updated>2017-06-13T13:26:10.589Z</updated>
+    <published>2017-05-21T14:06:46.000Z</published>
+    <updated>2018-02-25T03:46:33.574Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="11-使用类"><a href="#11-使用类" class="headerlink" title="11.使用类"></a>11.使用类</h2><p><strong>操作符重载</strong>是一种形式的C++多态，操作符重载将重载的概念扩展到操作符上，允许赋予C++操作符多种含义。要重载操作符，需使用被称为操作符函数的特殊函数形式。操作符函数的格式如下：</p>
+    <content type="html"><![CDATA[<h2 id="11-使用类"><a href="#11-使用类" class="headerlink" title="11.使用类"></a>11.使用类</h2><h3 id="11-2-1-操作符重载"><a href="#11-2-1-操作符重载" class="headerlink" title="11.2.1 操作符重载"></a>11.2.1 操作符重载</h3><p><strong>操作符重载</strong>是一种形式的C++多态，操作符重载将重载的概念扩展到操作符上，允许赋予C++操作符多种含义。要重载操作符，需使用被称为操作符函数的特殊函数形式。操作符函数的格式如下：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ClassName total, coding, fixing;</div><div class="line"><span class="comment">//可以像使用成员方法一样使用操作符重载</span></div><div class="line">total = coding.<span class="keyword">operator</span>+(fixing);</div><div class="line"><span class="comment">//以可以使用操作符表示法：</span></div><div class="line">total = coding + fixing;</div><div class="line"></div><div class="line"><span class="comment">//注意，在操作符表示法中，操作符左侧的对象（这里为coding）是调用对象，操作符右边（这里是fixing)是作为参数被传递的对象。</span></div></pre></td></tr></table></figure>
-<p>其中，op是将要重载的操作符。例如，operator +()重载+操作符，operator -()重载-操作符。op必须是有效的C++操作符，不能虚构一个新的符号。</p>
+<p>operator +()重载+操作符，operator -()重载-操作符。op必须是有效的C++操作符，不能虚构一个新的符号。</p>
 <h3 id="11-2-2操作符重载的限制"><a href="#11-2-2操作符重载的限制" class="headerlink" title="11.2.2操作符重载的限制"></a>11.2.2操作符重载的限制</h3><ul>
 <li>重载后的操作符必须至少有一个操作数是用户定义，这将防止用户为标准类型重载操作符。因此不能将减法操作符重载为计算两个double值的和，而不是它们的差。</li>
 <li>使用操作符时不能违反操作符原来的句法规则。例如，不能将求模操作符(%)重载成使用一个操作数(%x;），同样也不能修改操作符的优先级。因此，如果将加号操作符重载成将两个类相加，则新的操作符与原来的加号具有相同的优先级。</li>
@@ -678,7 +838,7 @@
 </blockquote>
 </li>
 </ul>
-<h3 id="11-3友元简介"><a href="#11-3友元简介" class="headerlink" title="11.3友元简介"></a>11.3友元简介</h3><p>友元有3钟：</p>
+<h3 id="11-3友元简介"><a href="#11-3友元简介" class="headerlink" title="11.3友元简介"></a>11.3友元简介</h3><p>友元有3种：</p>
 <ul>
 <li>友元函数。</li>
 <li>友元类。</li>
@@ -698,11 +858,11 @@
 <p>对于类ClassName，如果存在一个参数的构造函数，那么：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 存在ClassName::ClassName(TypeName)构造函数</span></div><div class="line">ClassName classValue ;</div><div class="line"><span class="comment">//相当于==&gt;classValue = ClassName::ClassName(TypeNameValue);通过构造函数以参数构造了一个对象。形成隐式转换。   </span></div><div class="line">classValue = TypeNameValue;</div></pre></td></tr></table></figure>
 <p>最新的C++实现新增了一个关键字(explicit)，用来关闭这种自动特性。也就是说，可以这样声明构造函数：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//告知编译器禁止使用隐式转换，但仍然允许显式转换，即显式强制类型转换</span></div><div class="line"><span class="function"><span class="keyword">explicit</span> <span class="title">ClassName</span><span class="params">(TypeName value)</span></span>;    </div><div class="line"><span class="comment">//强制类型转换      </span></div><div class="line">ClassNameValue = ClassName(TypeNameValue);</div></pre></td></tr></table></figure></p>
-<p>只接受一个参数的构造函数定义了从参数到类类型的转换。如果使用关键字explicit限定了这种构造函数，则它只能用于显示转换，否则也可以用于隐式转换。</p>
+<p>只接受一个参数(可存在其它默认参数)的构造函数定义了从参数到类类型的转换。如果使用关键字explicit限定了这种构造函数，则它只能用于显示转换，否则也可以用于隐式转换。</p>
 <p>当没有使用explicit限定只能用于强制转换，则在以下情况发生隐式转换：</p>
 <ul>
-<li>将ClassName对象初始化为TypeName值时。    //ClassNameValue = ClassName(TypeNameValue);</li>
-<li>将TypeName值赋给ClassName对象时。       //classValue = TypeNameValue;</li>
+<li>将ClassName对象初始化为TypeName值时。    //ClassName ClassNameValue = TypeNameValue;</li>
+<li>将TypeName值赋给ClassName对象时。       //相当于先调用ClassName(TypeNameValue)构造，再调用Copy构造。</li>
 <li>将TypeName值传递给接受ClassName参数的函数时。   </li>
 <li>返回值被声明为ClassName类型的函数试图返回一个TypeName类型值时。</li>
 </ul>
@@ -712,7 +872,7 @@
 <ul>
 <li>转换函数必须是类方法。</li>
 <li>转换函数不能指定返回类型，但要有返回值。(typeName已经指定类型，无需过多注明)</li>
-<li>转换函数不能有参数。(类的对象即是参数对象)</li>
+<li>转换函数不能有参数。(类的对象this即是参数对象)</li>
 </ul>
 <p>TypeName(这里为double）指出了要转换成的类型，因此不需要指定返回类型。转换函数是类方法意味着：它需要通过类对象来调用，从而告知函数要转换的值。因此，函数不需要参数。虽然没有返回类型，这二个函数也将返回所需的值。</p>
 <p>提供执行自动、隐式转换的函数所存在的问题是：在用户希望转换时，转换函数也可能进行转换。原则来说，最好使用显示转换，而避免隐式转换。关键字explicit不能用于转换函数，但只需用一个功能相同的非转换函数替换访转换函数即可，但仅在被显式地调用时，该函数才会执行。</p>
@@ -723,7 +883,7 @@
 <li>被称为转换函数的特殊类成员操作符函数，用于将类对象转换为其他类型。转换函数是类成员，没有返回类型、没有参数类型、名为operator typeName()，其中，typeName是对象将被转换成的类型。<strong>将类对象赋给typeName变量或将其强制转换为TypeName类型时，该转换函数将自动被调用</strong>。</li>
 </ul>
 <p>全局对象，因为全局对象将在程序的main()函数被调用之前创建。程序员可以创建一个类，其默认构造函数将调用所有的bootstrap函数。实现在main()函数调用之前，执行全局类对象的构造函数来初始化一些数据。</p>
-<p>C++允许指定在基本类型之间进行转换的方式。首先，任何接受唯一一个参数的构造函数都可被用作转换函数，将类型与该参数相同的值转换为类。如果将类型与该参数相同的值赋给对象，则C++将自动调用该构造函数。要将类对象转换为其他类型，必须定义转换函数，指出如何进行这种转换。转换函数必须是成员函数。将类对象转换为TypeName类型的转换函数的原型如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//注意，转换函数没有返回类型、没有参数(必须是成员函数，this)，但必须返回转换后的值（虽然没有声明返回类型）</span></div><div class="line"><span class="function"><span class="keyword">operator</span> <span class="title">typeName</span><span class="params">()</span></span>;</div></pre></td></tr></table></figure></p>
+<p>C++允许指定在基本类型之间进行转换的方式。首先，任何可接受一个参数的构造函数都可被用作转换函数，将类型与该参数相同的值转换为类。如果将类型与该参数相同的值赋给对象，则C++将自动调用该构造函数。要将类对象转换为其他类型，必须定义转换函数，指出如何进行这种转换。转换函数必须是成员函数。将类对象转换为TypeName类型的转换函数的原型如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//注意，转换函数没有返回类型、没有参数(必须是成员函数，存在隐式参数this)，但必须返回转换后的值（虽然没有声明返回类型）</span></div><div class="line"><span class="function"><span class="keyword">operator</span> <span class="title">typeName</span><span class="params">()</span></span>;</div></pre></td></tr></table></figure></p>
 <h2 id="12-类和动态内存分配"><a href="#12-类和动态内存分配" class="headerlink" title="12.类和动态内存分配"></a>12.类和动态内存分配</h2><p>类中定义static成员变量，则该变量存储在全局数据区，所有类对象共有，且作用域为类作用域。不能在类的声明中初始化静态成员变量，这是因为声明描述了如何分配内存，但并不分配内存，可以使用这种格式来创建对象，从而分配和初始化内存。对于静态类成员，可以在类声明之外使用单独的语句来进行初始化，这是因为静态类成员是单独存储的，而不是对象的组成部分。请注意，初始化语句指出了类型，并使用了作用域操作符。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在类声明之外使用单独的语句来进行初始化</span></div><div class="line">staitc <span class="keyword">int</span> ClassName::ClassNameValue  iValue = <span class="number">110</span>;</div></pre></td></tr></table></figure>
 <p>如果使用new[]来分配内存，则应使用delete[]来释放内存。并且在类中，所有的构造函数统一使用new或new[]，析构函数中使用delete或delete[]。delete可以释放NULL地址。</p>
@@ -742,7 +902,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> ClassName</div><div class="line">&#123;</div><div class="line">	ClassName(ClassName&amp;);   <span class="comment">//复制构造函数</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p><strong>何时调用复制构造函数</strong></p>
 <p>新建一个对象并将其初始化为同类现有对象时，复制构造函数都将被调用。这在很多情况下都可能发生，最常见的情况是将新对象显式地初始化为现有的对象。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> StringBad</div><div class="line">&#123;</div><div class="line">    StringBad(StringBad&amp;);</div><div class="line">&#125;; </div><div class="line">StringBad motto;</div><div class="line">StringBad metoo = motto;</div><div class="line">StringBad also = StringBad(motto);</div></pre></td></tr></table></figure></p>
-<p>这二种声明可能会使用复制构造函数直接创建metoo和also对象，也可能使用复制构造函数生成一个临时对象，然后将临时对象的内容赋给metoo和also。</p>
+<p><strong>这二种声明可能会使用复制构造函数直接创建metoo和also对象，也可能使用复制构造函数生成一个临时对象，然后将临时对象的内容赋给metoo和also。</strong></p>
 <p>具体的说，当函数按值传递对象或函数返回对象时，都将使用复制构造函数。记住，按值传递意味着创建原始变量的一个副本。编译器生成临时对象，也将使用复制构造函数。例如，将3个Vector对象相加时，编译器可能生成临时的Vector对象来保存中间结果。何时生成临时对象随编译器而异，但无论是哪种编译器，当按值传递和返回时，都将调用复制构造函数。</p>
 <p><strong>复制构造函数的功能</strong></p>
 <p>默认的复制构造函数依次复制非静态成员（成员复制也称为浅复制），复制的是成员变量的值。</p>
@@ -766,22 +926,21 @@
 <li>应当定义一个赋值操作符，通过深度复制将一个对象复制给另一个对象。</li>
 </ul>
 <p><strong>返回const类型，则说明返回值为右值，不可当左值</strong></p>
-<p>###　布局new操作符 ###</p>
-<p>布局new操作符让您能够在分配内存时指定内存位置。但在该内存上分配的对象需要显示调用析构函数进行析构。</p>
+<h4 id="布局new操作符"><a href="#布局new操作符" class="headerlink" title="布局new操作符"></a>布局new操作符</h4><p>布局new操作符让您能够在分配内存时指定内存位置。但在该内存上分配的对象需要显示调用析构函数进行析构。</p>
 <ul>
-<li>程序员必须负责管理布局new操作符从中使用的缓冲区内存单元。要使用不同的内存单元，程序员需要提供二个位于缓冲区的不同地址，并确保这二个内在单元不重叠(如果对同一个地址使用布局new，则会使后new的对象覆盖前一个对象数据)。</li>
+<li>程序员必须负责管理布局new操作符从中使用的缓冲区内存单元。要使用不同的内存单元，程序员需要提供二个位于缓冲区的不同地址，并确保这二个内存单元不重叠(如果对同一个地址使用布局new，则会使后new的对象覆盖前一个对象数据)。</li>
 <li><p>如果使用布局new操作符来为对象分配内存，必须确保其析构函数被调用。原因在于delete可与常规new操作符配合使用，但不能与布局new操作符配合使用。为了确保析构函数被调用，显式地为使用布局new操作符创建的对象调用析构函数。正常情况下将自动调用析构函数，这是需要显式调用析构函数的少数几种情况之一。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ClassName classNameValue;</div><div class="line"><span class="comment">//或使用指针pClassNameValue-&gt;~ClassName;进行显式调用析构函数。</span></div><div class="line">classNameValue.~ClassName();</div></pre></td></tr></table></figure>
 </li>
 <li><p>对于使用布局new操作符创建的对象，应以与创建顺序相反的顺序进行析构。原因在于，晚创建的对象可能依赖于早创建的对象。</p>
 </li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line">	<span class="keyword">private</span>:</div><div class="line">		<span class="keyword">struct</span> Node</div><div class="line">		&#123;</div><div class="line">			<span class="comment">//tode</span></div><div class="line">		&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>C++新特性：在类声明中嵌套结构或类声明，通过将Node声明放在Queue类中，可以使其作用域为整个类。也就是说，Node是这样一种类型：可以使用它来声明类成员，也可以将它作为类方法中的类型名称，但只能在类中使用。如果声明在类的私有部分进行的，则只能在这个类使用被声明的类型，如果声明是在公有部分进行的，则可以从类的外部通过作用域解析操作符使用被声明的类型。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">  <span class="keyword">struct</span> Node</div><div class="line">  &#123;</div><div class="line">	<span class="comment">//tode</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>C++新特性：在类声明中嵌套结构或类声明，通过将Node声明放在Queue类中，可以使其作用域为整个类。也就是说，Node是这样一种类型：可以使用它来声明类成员，也可以将它作为类方法中的类型名称，但只能在类中使用。如果声明在类的私有部分，则只能在这个类使用被声明的类型，如果声明是在公有部分，则可以从类的外部通过作用域解析操作符使用被声明的类型。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Queue</div><div class="line">&#123;</div><div class="line">	Queue();</div><div class="line">&#125;</div><div class="line">Queue::Queue():refValue(value1),constValue(refValue)</div><div class="line">&#123;</div><div class="line">	<span class="comment">//tode</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>对需要在分配内存时就要初始化的成员(const成员，引用变量成员,基类构造)，则必须使用成员初始化列表初始化。</p>
-<p>从概念上说，调用构造函数时，对象将在括号中的代码执行之前被创建。因此调用Queue()构造函数将导致程序首先给成员变量分配内存。然后，程序流程进入到括号中，使用常规的赋值方式将值存储到内存中。因此，对于const成员变量和引用成员变量，必须在执行到构造函数体之前，即创建对象时进行初始化。C++提供了一种特殊的句法来完成上述工作，它叫作成员初始化列表。成员初始化列表由逗号分隔的初始化列表组成(前面带冒号)。它位于参数列表的右括号之后，函数体左括号之前。</p>
-<p>初值可以是常量或构造函数的参数列表中的参数。只有构造函数可以使用这种初始化列表句法。使用成员初始化列表的效率更高。</p>
+<p>对需要在分配内存时就要初始化的成员(const成员，引用变量成员,基类部分数据)，则必须使用成员初始化列表初始化。</p>
+<p><strong>从概念上说，调用构造函数时，对象将在括号中的代码执行之前被创建。因此调用Queue()构造函数将导致程序首先给成员变量分配内存。然后，程序流程进入到括号中，使用常规的赋值方式将值存储到内存中。因此，对于const成员变量和引用成员变量，必须在执行到构造函数体之前，即创建对象时进行初始化。C++提供了一种特殊的句法来完成上述工作，它叫作成员初始化列表。成员初始化列表由逗号分隔的初始化列表组成(前面带冒号)。它位于参数列表的右括号之后，函数体左括号之前。</strong></p>
+<p>初值可以是常量或构造函数的参数列表中的参数。只有构造函数可以使用这种初始化列表句法。使用成员初始化列表的效率更高(因为在构造函数之前，其const成员，引用成员，基类部分就已经完成初始化，在构造函数中只是进行赋值操作)。</p>
 <p>数据成员被初始化的顺序与它们出现在类声明中的顺序相同，与初始化器中的排列顺序无关。</p>
 <p>成员初始化列表中使用的括号方式也可以用于常规的初始化中。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> games = <span class="number">163</span>;</div><div class="line"><span class="keyword">double</span> talk = <span class="number">2.7</span>;</div><div class="line"><span class="comment">//可改写为</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">games</span><span class="params">(<span class="number">163</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">talk</span><span class="params">(<span class="number">2.7</span>)</span></span>;</div></pre></td></tr></table></figure>
@@ -809,37 +968,37 @@
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(1).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(1).html</id>
     <published>2017-05-21T10:47:33.000Z</published>
-    <updated>2017-06-07T15:33:38.726Z</updated>
+    <updated>2018-02-25T03:46:05.893Z</updated>
     
     <content type="html"><![CDATA[<h3 id="0-预备知识"><a href="#0-预备知识" class="headerlink" title="0.预备知识"></a>0.预备知识</h3><p>C++是C语言的超集，这意味着任何有效的C程序都是有效的C++程序。</p>
-<p>最初，Stroustrup实现C++时，使用了一个C++到C的编译器程序，而不是开发直接的C++到目标代码的编译器。前者叫做cfront（表示C前端，C fron end），它将C++源代码翻译成C源代码，然后使用一个标准C编译器对其进行编译。这种方法简化了向C的领域引入C++的过程，其它实现 也采用这种方法将C++引入到其它平台。随着C++的日渐普及，越来越多的实现转向创建C++编译器，直接将C++源代码生成目标代码。</p>
+<p>最初，Stroustrup实现C++时，使用了一个C++到C的编译器程序，而不是开发直接的C++到目标代码的编译器。前者叫做cfront（表示C前端，C fron end），它将C++源代码翻译成C源代码，然后使用一个标准C编译器对其进行编译。这种方法简化了向C的领域引入C++的过程，其它实现也采用这种方法将C++引入到其它平台。随着C++的日渐普及，越来越多的实现转向创建C++编译器，直接将C++源代码生成目标代码。</p>
 <h3 id="8-函数控幽"><a href="#8-函数控幽" class="headerlink" title="8.函数控幽"></a>8.函数控幽</h3><p><strong>名称修饰</strong>：对原始名称进行的表面看来无意义的修饰（或矫正，因人而异）将对参数数目和类型进行编码。添加的一组符号随函数特征标而异，而修饰时使用的约定随编译器而异。比如，正常的c函数声明void fn(int);在*.o文件中，链接器查看到的符号表差不多就是_fn，并没有带有参数类型标识，但C++因为有重载，重写，同一个函数名可能存在于多个类中或一个类中存在相同函数名但参数表不一样，此时目标文件*.obj中连接器查看到的符号表是带参数类型和顺序的，如_fn_i。</p>
-<p>TIP：<strong>C++标准允许每个编译器设计人员以他认为合适 的方式实现名称修饰，因此由不同编译器创建的二进制模块（对名胜代码文件）很可能无法正确地链接。也就是说，这二个编译器将为同一个当函数生成不同的修饰名称。名称的不同将使链接器无法将一个编译器生的函数调用与另一个编译器生成的函数定义匹配。在链接编译模块时，请确保所有文件或库都是由同一个编译器生成的。</strong></p>
+<p>TIP：<strong>C++标准允许每个编译器设计人员以他认为合适的方式实现名称修饰，因此由不同编译器创建的二进制模块（对应目标文件）很可能无法正确地链接。也就是说，这二个编译器将为同一个函数生成不同的修饰名称。名称的不同将使链接器无法将一个编译器生的函数调用与另一个编译器生成的函数定义匹配。在链接编译模块时，请确保所有文件或库都是由同一个编译器生成的。</strong></p>
 <p><strong>函数模板</strong>：是通用的函数描述，也就是说，它们使用通用类型来定义函数，其中的通用类型可用具体的类型（如int或float）替换，通过将类型作为参数传递给模板，可使编译器生成对应类型的函数。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;   <span class="comment">//也可使用 template &lt;typename T&gt;</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Swap</span><span class="params">(T&amp;, T)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//todo.</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>关键字template和class是必需的，除非可以使用关键字typename代替class，typename关键字使得参数T表示类型这一点更换为明显；不过，有大量的代码库是使用关键字class开发的。在这种上下文中这二个关键字是等同的。另外使用尖括号。模板并不创建任何函数，而只是告诉编译器如何定义函数。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;   <span class="comment">//也可使用 template &lt;typename T&gt;</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Swap</span><span class="params">(T&amp; a, T&amp; b)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//todo.</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>关键字template和class是必需的，除非可以使用关键字typename代替class，typename关键字使得参数T表示类型这一点更为明显；不过，有大量的代码库是使用关键字class开发的。在这种上下文中这二个关键字是等同的。另外使用尖括号。模板并不创建任何函数，而只是告诉编译器如何定义函数。</p>
 <p>并非所有的模板参数都是必须是模板参数类型。使用模板的好处是，它使生成多个函数定义更简单、更可靠。</p>
 <p>如果有多个原型，则编译器在选择原型时，非模板版本将优先于显式具体化和模板版本，而具体化将优先于使用模板生成的版本。</p>
 <p>在代码中包含函数模板本身并不会生成函数定义，它只是一个用于生成函数定义的方案。编译器使用模板为特定类型生成函数定义时，得到的是模板实例。</p>
 <p><strong>编译器选择使用哪个函数版本</strong>：</p>
 <ol>
 <li>创建候选函数列表。其中包含与被调用函数的名称相同的函数和模板函数。</li>
-<li>使用候选函数列表创建可行函数列表。这些都是参数数目正确的函数，为此有一个隐匿转换序列，其中包括实参类型与相应的形参类型完全匹配的情况。例如，使用float参数的函数调用 可以将访参数转换为double类型，从而是与double形参匹配，而模板可以为float生成一个实例。</li>
+<li>使用候选函数列表创建可行函数列表。这些都是参数数目正确的函数，为此有一个隐匿转换序列，其中包括实参类型与相应的形参类型完全匹配的情况。例如，使用float参数的函数调用可以将参数转换为double类型，从而是与double形参匹配，而模板可以为float生成一个实例。</li>
 <li>确定是否有最佳的可行函数。如果有，则使用它，否则访函数调用出错。</li>
 </ol>
 <h3 id="9-内存模型和名称空间"><a href="#9-内存模型和名称空间" class="headerlink" title="9.内存模型和名称空间"></a>9.内存模型和名称空间</h3><p>如果文件名包含在尖括号中，则C++编译器将在存储标准头文件的主机系统的文件系统中查找;但如果文件名包含在双引号中，则编译器将首先查找当前的工作目录或源代码目录（或其它目录，这取决于编译器）。如果没有在那里找到头文件，则将在标准位置查找。因此在包含自己的头文件时，应使用引号而不是尖括号。</p>
 <p><strong>作用域</strong>：描述了名称在文件（翻译单元）的多大范围内可见。例如，函数中定义的变量可在该函数中使用，但不能在其它函数中使用;而在文件中的函数定义之前定义的变量则可在所有函数中使用。</p>
-<p><strong>链接性</strong>：描述了名称如何在不同单元（源文件）间共享。链接性为外部的名称可在文件间共享，链接性为内部的名称只能由一个文件中的函数共享。自动变量没有链接性，因为它们不能共享。</p>
+<p><strong>链接性</strong>：描述了名称如何在不同单元（源文件）间共享。链接性为外部的名称可在文件间共享，链接性为内部的名称只能由一个文件中的函数共享。自动变量没有链接性，因此它们不能共享。</p>
 <p>堆栈的默认长度取决于实现，但编译器通常提供改变堆栈长度的选项。</p>
 <p>如果变量被关键字register修饰而存储在寄存器中，则没有内存地址，因此不能将地址操作符用于寄存器变量。</p>
-<p>如果没有初始化静态变量，编译器就将反它设置为0.在默认情况下，静态数组和结构将每个元素或成员的所有位都设置为0.</p>
-<p><strong>关键字valatile</strong>：表明即使程序代码没有对内在单元进行修改，其值也可能发生改变。例如，可以将一个指针指向某个硬件位置，其中包含了来串行端口的时间或信息，在这种情况下，硬件可能修改其中的内容。该关键字的作用是为了改善编译器的优化能力。例如，假设编译器发现，程序在几条语句中两次使用了某个变量的值，则编译器可能不是让程序查找这个值二次，面是将这个值缓存到寄存器中。这种优化假设变量的值在这二次使用之间不会变化，如果不将变量声明为volatile，则编译器将进行这种优化，将变量声明为volatile，相当于告诉编译器，不要进行这种优化。</p>
+<p>如果没有初始化静态变量，编译器就将它设置为0.在默认情况下，静态数组和结构将每个元素或成员的所有位都设置为0.</p>
+<p><strong>关键字valatile</strong>：表明即使程序代码没有对内存单元进行修改，其值也可能发生改变。例如，可以将一个指针指向某个硬件位置，其中包含了来自串行端口的时间或信息，在这种情况下，硬件可能修改其中的内容。该关键字的作用是为了改善编译器的优化能力。例如，假设编译器发现，程序在几条语句中两次使用了某个变量的值，则编译器可能不是让程序查找这个值二次，而是将这个值缓存到寄存器中。这种优化假设变量的值在这二次使用之间不会变化，如果不将变量声明为volatile，则编译器将进行这种优化，将变量声明为volatile，相当于告诉编译器，不要进行这种优化。</p>
 <p><strong>关键字mutable</strong>：指出即使结构（或类）变量为const，其某个成员也可以被修改(修饰某个成员)。</p>
 <p><strong>const</strong>:在C++中(但不是在C中)，const限定符对默认存储类型稍有影响。在默认情况下全局变量的链接性为外部的，但const全局变量的链接性为内部的。也就是说，C++看来，全局const就像使用了static说明符一样.<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> state = <span class="number">50</span>;   <span class="comment">//内部链接性，常数变量</span></div></pre></td></tr></table></figure></p>
 <p><strong>extern</strong>：程序员希望某个常量的链接性为外部的，则可以使用extern关键字来覆盖默认的内部链接性.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">extern</span> <span class="keyword">const</span> <span class="keyword">int</span> state = <span class="number">50</span>;  <span class="comment">//external linkge</span></div></pre></td></tr></table></figure>
-<p><strong>布局new操作符</strong>：指定要使用的位置地址，程序员可能使用这种特性来设置其内在管理规程或处理需要通过特定地址进行访问的硬件。但不可delete(delete只能用于这样的指针：指向常规new操作符分配的堆内存。)。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">auto</span> p1 = <span class="keyword">new</span> (pointName) typeName;   <span class="comment">//向地址为pointName申请一个类型为typeName的空间地址给p1;</span></div></pre></td></tr></table></figure>
+<p><strong>布局new操作符</strong>：指定要使用的位置地址，程序员可能使用这种特性来设置其内存管理规程或处理需要通过特定地址进行访问的硬件。但不可delete(delete只能用于这样的指针：指向常规new操作符分配的堆内存。)。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">auto</span> p1 = <span class="keyword">new</span> (pointName) typeName;   <span class="comment">//向地址为pointName申请一个类型为typeName的空间地址给p1;</span></div><div class="line"><span class="keyword">auto</span> p2 = <span class="keyword">new</span> (pointName) typeName;   <span class="comment">//向地址为pointName申请一个类型为typeName的空间地址给p2,如此便覆盖了p1所指向的空间。</span></div></pre></td></tr></table></figure>
 <h4 id="名称空间"><a href="#名称空间" class="headerlink" title="名称空间"></a>名称空间</h4><p><strong>声明区域</strong>：是可以在其中进行声明的区域。例如，可以在函数外面声明全局变量，对于这种变量，其声明区域为其声明所在的文件，对于在函数中声明的变量，其声明区域为其声明所在的代码块。</p>
 <p><strong>潜在作用域</strong>：变量的潜在作用域从声明开始，到其声明作用域的结尾。因此潜在作用域比声明区域小，这是由于变量必须定义后才能使用。</p>
 <p><strong>作用域</strong>：变量对程序而言可见的区域。变量并不是在潜在作用域内都可见，比如子代码块定义的变量隐藏现象。</p>
@@ -856,7 +1015,7 @@
 <p>在名称空间中可以嵌套使用using声明和using编译指令来生成新的名称空间。如：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">namespace</span> elements</div><div class="line">&#123;</div><div class="line"> <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"> <span class="comment">//或</span></div><div class="line"> <span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>名称空间别名</strong>：using myNewName = myth::elements::fire;</p>
-<p><strong>未命名的名称空间</strong>：就像后面跟着using编译指令一样，也就是说，在该名称空间中声明的名称的潜在作用域为：从声明点到该点声明区域末尾，从这个方面看，它们与全局变量相似。不过由于这种名称空间没有名称，因此不能显式地使用using声明或using编译指令来使它在其它位置都可用。具体地说，不能在当前的名称空间所属文件之外的其它文件中，使用该名称空间中的名称，因此这种方法可以替代链接性为内部的静态变量。实际上，C++标准不乱在名称空间和全局作用域中使用关键字static。</p>
+<p><strong>未命名的名称空间</strong>：就像后面跟着using编译指令一样，也就是说，在该名称空间中声明的名称的潜在作用域为：从声明点到该点声明区域末尾，从这个方面看，它们与全局变量相似。不过由于这种名称空间没有名称，因此不能显式地使用using声明或using编译指令来使它在其它位置都可用。具体地说，不能在当前的名称空间所属文件之外的其它文件中，使用该名称空间中的名称，因此这种方法可以替代链接性为内部的静态变量。实际上，C++标准不建议在名称空间和全局作用域中使用关键字static。</p>
 <p><strong>名称空间指导原则</strong>：</p>
 <ul>
 <li>使用在已命名的名称空间中的变量，而不是使用外部全局变量。</li>
@@ -872,10 +1031,10 @@
 <ol>
 <li>没有返回值，但没有被声明为void类型。实际上，构造函数没有声明类型。</li>
 <li>当构造函数可使用一个参数时，接受一个参数的赋值句法来将对象初始化为一个值。如：ClassName obj = value;</li>
-<li>如果没有定义任何构造函数，那编译器会生成一个啥也不作的默认构造函数。为类定义了构造函数后，程序员就必须为它提供默认构造函数。</li>
+<li>如果没有定义任何构造函数，当构造函数被需要时，编译器会生成一个啥也不作的默认构造函数(比如生成对象数组时要使用构造函数)。若类定义了构造函数后，程序员就必须为它提供默认构造函数。</li>
 <li>使用构造函数初始化对象。 </li>
 </ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ClassName a = ClassName(value1, value2);   <span class="comment">//使用带参构造函数初始化对象a或临时对象(对于初始化临时对象，再赋值给a对象，临时对象释放调用析构函数)，C++标准允许编译器使用两种方式来执行，第一种是直接初始化对象a,无临时对象，另一种是初始化临时对象，再赋值给对象a，然后临时变量调用析构函数释放。</span></div><div class="line"></div><div class="line"><span class="function">ClassName <span class="title">a</span><span class="params">()</span></span>;               <span class="comment">//使用无参构造函数初始化对象a，没有临时对象产生。</span></div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ClassName a = ClassName(value1, value2);   <span class="comment">//使用带参构造函数初始化对象a或临时对象(先初始化临时对象，再赋值给a对象，临时对象释放调用析构函数)，C++标准允许编译器使用两种方式来执行，第一种是直接初始化对象a,无临时对象，另一种是初始化临时对象，再赋值给对象a，然后临时变量调用析构函数释放。</span></div><div class="line"></div><div class="line"><span class="function">ClassName <span class="title">a</span><span class="params">()</span></span>;                             <span class="comment">//使用无参构造函数初始化对象a，没有临时对象产生。</span></div></pre></td></tr></table></figure>
 <p><strong>析构函数</strong>：对象过期时，程序将自动调用一个特殊的成员函数，完成清理工作。</p>
 <ol>
 <li>析构函数没有返回值类型，没有参数，其名称为类名称前加上~，且每个类只能有一个析构函数。</li>
@@ -885,12 +1044,12 @@
 <p><strong>const成员函数</strong>：如果定义了一个ClassName类型的对象a,且修饰成const，那么对象a的成员变量不能改变，但如果调用其成员方法，不能确保方法不修改其成员变量。因些对于这些方法，使用const关键字，保证函数不会修改调用对象。声明和定义如下：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">fn</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">float</span>)</span><span class="keyword">const</span></span>;                <span class="comment">//类中声明</span></div><div class="line"></div><div class="line"><span class="keyword">void</span> ClassName::fn(<span class="keyword">int</span>, <span class="keyword">float</span>)<span class="keyword">const</span>&#123;&#125;;   <span class="comment">//定义</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">const</span> Stock &amp; <span class="title">top</span><span class="params">(<span class="keyword">const</span> Stock &amp;s)</span><span class="keyword">const</span></span>;  <span class="comment">//括号中的const表明，该函数不会修改被显式地访问的对象，而括号后的const表明，该函数不会修改被隐式地访问的对象。由于该函数返回了二个const对象之一的引用，因些返回值类型也应为const引用。</span></div></pre></td></tr></table></figure>
 <p><strong>this</strong>:this指针指向用来调用成员函数的对象（this被作为隐藏参数传递给方法）。</p>
-<p>毕竟类的目标之一是使用户定义的类型与内置类型尽可能的相似，类的构造函数负责确保调用对象成员的构造函数。名为成员初始化列表的特性可提高构造函数设计的效率。</p>
+<p>毕竟类的目标之一是使用户定义的类型与内置类型尽可能的相似，类的构造函数负责确保调用对象成员的构造函数。名为成员初始化列表的特性可提高构造函数设计的效率(因为对于基类部分与成员为类成员的部分，先于该类被初始化，然后再执行该类的构造函数对基本类型进行<code>赋值而非初始化</code>，如果类成员在构造函数中被赋值，则该成员类对象先在构造函数之前使用默认构造函数，在该类构造函数中被赋值)。</p>
 <p><strong>类作用域</strong>：在类中定义的名称（如类数据成员名和类成员函数名）的作用域都为整个类，作用域为整个类的名称只在该类中是已知的，在类之外是不可知的。</p>
 <p><strong>作用域为整个类的常量</strong>：</p>
 <ol>
 <li><strong>在类中声明一个枚举</strong>：在类声明中声明的枚举的作用域为整个类，因此可以用枚举为整型常量提供作用域为整个类的符号名称。用这种方式声明枚举并不会创建类数据成员，也就是说，所有对象中都不包含枚举。另外，枚举常量只是一个符号名称，在作用域整个类的代码中遇到它时，编译器将用实际值来替换它。</li>
-<li><strong>使用static关键字</strong>：创建一个常量，该常量与其它静态变量存储在全局区，而不是存储在对象中。作用域为类作用域，存储在全局区，被这个类的所有对象共享。</li>
+<li><strong>使用static关键字创建一个常量</strong>：该常量与静态变量存储在全局区，而不是存储在对象中。作用域为类作用域，存储在全局区，被这个类的所有对象共享。</li>
 </ol>
 ]]></content>
     
@@ -916,7 +1075,7 @@
     <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E7%94%B5%E8%84%91%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E8%AF%8A%E6%96%AD.html"/>
     <id>http://LySnake.github.io/archives/technology/电脑小白系列之电脑常见错误诊断.html</id>
     <published>2017-05-21T10:45:03.000Z</published>
-    <updated>2017-06-19T14:30:13.800Z</updated>
+    <updated>2018-02-25T03:47:10.807Z</updated>
     
     <summary type="html">
     
@@ -933,10 +1092,57 @@
   
   <entry>
     <title>电脑小白之操作系统安装</title>
+    <link href="http://LySnake.github.io/archives/technology/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85.html"/>
+    <id>http://LySnake.github.io/archives/technology/操作系统安装.html</id>
+    <published>2017-05-05T17:34:38.000Z</published>
+    <updated>2018-02-25T03:47:35.784Z</updated>
+    
+    <content type="html"><![CDATA[<p>主要介绍windows系统安装，以此让小白放心安装其它系统，比如手机Android、iOS，以及PC上的linux系统。<br><a id="more"></a></p>
+<p>###操作系统的本质###<br>其实，说白了，操作系统也是一个软件，作为一个软件，你可以放心地在机器(PC、手机等)上卸载与安装，只是因为操作系统本身要管理计算机资源(软件、硬件)，其它软件或用户都要借助操作系统才能操作机器，所以操作系统的”卸载与安装”比其它软件更麻烦些，如果失败，机器会无法正常运行，也有可能因为操作失误，造成数据丢失，但这一切都不会影响电脑本身硬件，所以安装系统失败可以再交安装，因此在安装系统中最重要的就是小心误操作引起的数据丢失。另外，在手机上传说有自己安装系统，因为影响引导系统的软件从而导致无法再安装系统从而成为“砖块机”，不过这种情况目前也只是听过。</p>
+<p>###PC安装windows方式###</p>
+<p>####U盘PE系统安装####<br>这种方式安装windows系统，有个优点就是失败了，你还可以借助U盘PE系统进入PC，可以从PC的硬盘中再得到其它文件(包括安装使用的系统文件)，可以再次安装，对新手来说安装起来放心些。所以在这种U盘PE安装方式中，你可以多下载几个系统文件(支持<em>.ios或</em>.ghost),避免因某一系统文件安装失败而导致PC无法开机且难以更换另一系统文件。制件U盘PE系统，有很多软件，比较常见的有<a href="http://www.laomaotao.org/" target="_blank" rel="external">老毛桃</a>和【大白菜】(大白菜还是算了吧，网上有个一样内容的盗版网站，太难分辨了，假网站的系统文件如果自带电脑病毒，杀软也可能无力。这假网站还是百度加V的，所以百度有多差呢？)</p>
+<p><a href="http://www.laomaotao.org/jiaocheng/92/upqdzz.html" target="_blank" rel="external">老毛桃制作U盘PE系统</a></p>
+<p><a href="http://www.laomaotao.org/jiaocheng/92/upzwin7.html" target="_blank" rel="external">老毛桃安装windows 7系统</a></p>
+<p>####U盘iso文件安装####<br>微软官方都是以光盘出售windows操作系统的，ghost文件都是网友自己二次制作或都说是备份系统文件，所以网上还有光盘copy下来的iso文件可供使用，但是这种文件默认是写在光盘上的，所以U盘iso安装其实就是把iso文件写入U盘中，以U盘冒充光盘，让计算机以读光盘的方式读U盘，从而操作官方的安装方式，最常见的系统文件都是iso文件，所以这种方式支持安装windows和linux等，只是写入U盘时对ULtraISO操作选择不同的引导选项。这种方式写入U盘，会导致U盘成为一个只有iso且不能再存文件的U盘，除非格式化(格式化如果失败，只能使用更强的格式化方式，比如linux下的dd命令)。</p>
+<p><a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="external">UltraISO</a></p>
+<p><a href="http://blog.csdn.net/baigoocn/article/details/47406473" target="_blank" rel="external">UltraISO制作U盘iso安装系统</a></p>
+<p>####硬盘本地安装####<br>下载的iso文件(使用<a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="external">UltraISO</a>或<a href="https://daemon-tools.softonic.com.br/" target="_blank" rel="external">DAEMON Tools Lite</a>装载或解压，但别使用rar或7z，可能会有错误导致安装失败)或*.rar类文件，装载或解压后，在一级子目录下会有setup.exe类似的可执行软件，运行后会进入安装界面。这种方式简单，不要使用U盘，只要系统文件就好，但其实安装windows系统有时会因为系统文件缺失某些驱动，而导致安装失败，而此此时有可能处于安装到一半，导致原来的系统已破坏而不能开机。所以这种方式，推荐是在有安装经验的情况下再使用。</p>
+<p>###系统安装注意事项###<br>综上，安装操作系统不会影响电脑硬件，正常情况只是导致破坏原有的操作和系统导致不能正常开机，你可以重新安装系统以恢复计算机。目前只是听过手机有操作失误导致破坏引导软件，引起不能再交安装系统而成为“砖机”，但这种情况还是很少出现。那，在安装系统的时候，最怕出现的是什么呢？</p>
+<ul>
+<li>对系统分区不了解，原本安装windows系统，只要安装在原来的C分区中，但在安装系统时，当时的C分区已经不显示C分区了，误操作安装系统到另一分区，导致把一分区格式化装了操作系统。</li>
+<li>ghost有一种版本，似乎是针对电脑城全新安装系统用的，安装系统默认会对硬盘重新分区，导致硬盘数据全部丢失。</li>
+<li>安装系统，默认会把安装系统的分区格式化，所以这个分区的用户数据要分备份，在安装windows中，C盘就是我们要安装的分区，要先备份C盘中的个人文件，比如常见的桌面上的文件、以及默认下载的文件目录等。</li>
+</ul>
+<p><strong>所以，安装系统最重要的就是要备份好自己的文件，数据无价</strong></p>
+<p>###针对小白的虚拟机安装系统练习###<br>使用<a href="http://www.vmware.com/cn.html" target="_blank" rel="external">VMware</a>或<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="external">VirtualBox</a>虚拟软件，在windows系统上，进行安装虚拟系统，可以试着了解下安装系统会有什么操作、大概过程是什么，这种方式安装对现有系统很安装，要安装的虚拟系统与现在使用中的系统是完全分离的，不会影响现有分区与数据，仅会写入一个比较大的文件，但这个方式对于很老的电脑来说，可能会很卡。</p>
+<p><a href="http://blog.xuite.net/yh96301/blog/30283132-VirtualBox+%E5%AE%89%E8%A3%9D+Windows+7+%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1" target="_blank" rel="external">VirtualBox安装win7教程</a></p>
+<p>###计算机多系统安装###<br>了解下<a href="http://cn.linux.vbird.org/linux_basic/0130designlinux_2.php#partition_mbr" target="_blank" rel="external">多系统引导</a>，可以实现在一个实体机中，同时安装windows、iOS、linux系多个系统，可以每次开机选择自己要进入的系统，实现windows日常使用，linux、iOS办公，当然，这个也可以装虚拟机。原理简单的说就是开机启动后，主板BOIS会读硬盘固定位置数据（引导程序代码），BOIS把CPU控制执行权交给引导程序，引导程序再从硬盘分区上找到安装了系统的的分区再把CPU控制权给操作系统，因此可以有多个分区分别装有不同的系统，让这引导程序引导进行选择运行哪个系统。</p>
+<p>###<br><a href="http://msdn.itellyou.cn/" target="_blank" rel="external">正版windows系统文件下载</a></p>
+<p><a href="http://cn.linux.vbird.org/linux_basic/0130designlinux_2.php#partition_table" target="_blank" rel="external">硬盘分区与引导程序</a></p>
+<p><a href="http://neosmart.net/EasyRE/" target="_blank" rel="external">EasyBCD修复引导程序</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;主要介绍windows系统安装，以此让小白放心安装其它系统，比如手机Android、iOS，以及PC上的linux系统。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+      <category term="电脑小白" scheme="http://LySnake.github.io/tags/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>电脑小白之操作系统安装</title>
     <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85.html"/>
     <id>http://LySnake.github.io/archives/technology/电脑小白系列之操作系统安装.html</id>
     <published>2017-05-05T17:34:38.000Z</published>
-    <updated>2017-05-10T14:39:41.228Z</updated>
+    <updated>2018-02-25T03:47:26.758Z</updated>
     
     <content type="html"><![CDATA[<p>主要介绍windows系统安装，以此让小白放心安装其它系统，比如手机Android、iOS，以及PC上的linux系统。<br><a id="more"></a></p>
 <p>###操作系统的本质###<br>其实，说白了，操作系统也是一个软件，作为一个软件，你可以放心地在机器(PC、手机等)上卸载与安装，只是因为操作系统本身要管理计算机资源(软件、硬件)，其它软件或用户都要借助操作系统才能操作机器，所以操作系统的”卸载与安装”比其它软件更麻烦些，如果失败，机器会无法正常运行，也有可能因为操作失误，造成数据丢失，但这一切都不会影响电脑本身硬件，所以安装系统失败可以再交安装，因此在安装系统中最重要的就是小心误操作引起的数据丢失。另外，在手机上传说有自己安装系统，因为影响引导系统的软件从而导致无法再安装系统从而成为“砖块机”，不过这种情况目前也只是听过。</p>
@@ -979,97 +1185,17 @@
   </entry>
   
   <entry>
-    <title>电脑小白系列之电脑硬件了解</title>
-    <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E7%94%B5%E8%84%91%E7%A1%AC%E4%BB%B6%E4%BA%86%E8%A7%A3.html"/>
-    <id>http://LySnake.github.io/archives/technology/电脑小白系列之电脑硬件了解.html</id>
-    <published>2017-02-19T09:46:46.000Z</published>
-    <updated>2017-03-19T23:11:38.520Z</updated>
-    
-    <content type="html"><![CDATA[<p>本方主要讲下常用电脑中的硬件与相关功能，旨在了帮助小白了解计算机硬件。<br><a id="more"></a></p>
-<h2 id="冯·诺伊曼结构"><a href="#冯·诺伊曼结构" class="headerlink" title="冯·诺伊曼结构"></a>冯·诺伊曼结构</h2><p>如今的计算机，都是以1945年6月30日冯·诺伊曼提出的基本结构：计算机硬件由运算器、控制器、存储器、输入设备和输出设备五大部分组成。每个组成部分可能存在于一台计算机中不同硬件位置上。</p>
-<blockquote>
-<p><em>运算器、控制器（CPU）</em>：这二个基本部件，在工程实现上都存在于中央控制处理器CPU中，有任何操作请求，一定都会到CPU中请求处理。在实际用户操作中，所有用户操作，都会抽象成一系列的数学运算、逻辑运算，也都要交于CPU处理，所以CPU决定了计算机最高处理性能，在个人组装机中，优先选择的都是CPU，其次再选择其它硬件设备。</p>
-<p><em>存储器</em>：存储器类别很多，在小白的眼里，只要记得内存、硬盘（移动硬盘）、U盘、固态硬盘(SSD)这几样就好了。按主流硬件读取速度来说，内存&gt;固态&gt;U盘&gt;硬盘，特殊一点的是内存是一个断电就会丢失存储数据的一个临时存储设备，充当CPU与硬盘（机械硬盘和固态硬盘）之间的高速缓存。个人电脑中所有数据都要从内存中读取进CPU再进行处理，但对于计算机来说，不一定要有内存计算机才能运行。</p>
-<p><em>*输入设备</em>：输入设备常见的有键盘、鼠标、麦、触摸板、手写板，接收用户操作(转换成数据)给计算机进行处理。</p>
-<p><em>*输出设备</em>：输出设备常见的有显示器、耳机，输出计算机处理后的数据，提供给用户进行交互操作。</p>
-</blockquote>
-<h2 id="电脑中常见硬件"><a href="#电脑中常见硬件" class="headerlink" title="电脑中常见硬件"></a>电脑中常见硬件</h2><h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>在个人计算中，中高端CPU都是使用Intel公司产品，中低端CPU都是使用AMD公司产品，目前组装个人电脑都是以i5往上走，i3很少使用了，在15年上市了新的Skylake系列，支持读取性能更高的内存条、更省电。个人电脑更像是一个集权的国家，CPU代表着中央政府，所有处理都要交于CPU处理、分发执行。另外，当前CPU也负责显示方面的计算,也就是说CPU内还有一个GPU，就是我们常说的集显，但因为GPU常计算小数类型的值，CPU主要是整数类型和逻辑值，另外也因为显示渲染在个人PC中越来越重要，产热也高，所以GPU可以单独有一个硬件，那就是显卡。这种问题常见于笔记本中，在买笔记本时，常说独显更好，是因为独立显卡有自己的内存条，且高端显卡的内存已经是第五代的DDR5了，有独显后，显卡和CPU都有各自的存储，并且，独显有自己更强更专一的渲染，不会占用CPU使用内存导致内存不足，也不会占用CPU的计算而延迟用户操作的响应。</p>
-<h3 id="主板"><a href="#主板" class="headerlink" title="主板"></a>主板</h3><p>主板通常认为是载体就好了，类似于自行车的三角架一样，其它部件都要在其上搭载。通常CPU决定了计算机的计算性能，通过CPU引出的针角查看哪些主板能使用，另外，主板上也存在其它的芯片，用于辅助CPU进行控制用的，还自带声卡、网卡等，所以主板还负责网络接收与发送，数字信息转成音频信息等。不论是CPU、内存条、电源、显卡、硬盘、独立声卡、光驱等，都要与主板联接进行信息传输。电脑开关、USB接口、显示器接口、网线接口、耳机接口等都在主板上面。如果是台式电脑，所有的这些硬件接口都是规范化的，并且也是防呆设计(指接口设计避免用户插错，只有用蛮力才有可能插错)，不用担心插错问题。</p>
-<h3 id="独立-显卡"><a href="#独立-显卡" class="headerlink" title="(独立)显卡"></a>(独立)显卡</h3><p>显卡负责图像的渲染，显示器显示的内容都是从显卡中获得。显卡插在主板上，对外可接显示器的信号线，显卡有自己独立的内存，就是我们说的显存，好的显卡已经使用第五代DDR5的内存，对于晃卡而言，并不是显存越大越好，显存大但速度慢一样是渣显卡，这也是电脑城骗术之一。但电脑是可以不用显卡的，可以使用集成显卡，也就是使用CPU内的GPU，不过这个就看CPU的性能与用户自己的需求了，玩大型游戏还是要独立显卡，如lol、使命等，日常看视频、QQ游戏等，集成显卡就好。</p>
-<h3 id="内存条"><a href="#内存条" class="headerlink" title="内存条"></a>内存条</h3><p>前面提到过，内存是<code>一个断电就会丢失存储数据的一个临时存储设备，充当CPU与硬盘（机械硬盘和固态硬盘）之间的高速缓存</code>,目前老电脑都是4G内存，主流已经开始8G内存了，现如今手机都开始8G内存了。内存在计算机体系系统中，充当CPU与硬盘之间的高速缓存，对于计算机来说，内存越大越好，如果可以，操作系统会根据用户常用软件、文件等，尽可能把内存全部使用完。当前内存的速度在第三代内存DDR3的1600MHZ左右，新的Skylake系列支持第四代内存DDR4的2133MHZ。</p>
-<h3 id="硬盘"><a href="#硬盘" class="headerlink" title="硬盘"></a>硬盘</h3><p>目前市场的机械硬盘都是1T，500G的机械硬盘开始减少，另外，还有固态硬盘(SSD)，读写速度是机械硬盘的好几倍，常见的还只是128G和256G，它们都是一种相对永久的存储设备，所有文件、软件都保存在硬盘中。现在，CPU和内存的性能都在快速提升，而机械硬盘受限于机械结构，读写速度提升相对过慢，已成为计算机体系的一个瓶颈，目前苹果电脑都配有固态硬盘，开机流畅响应快速，如果你也想有这样的电脑体验，请安装固态硬盘，把windows操作系统安装在固态硬盘中，常用软件也安装在固态硬盘中，如果还有机械硬盘，把不常用文件使用机械硬盘存储。另外，读写快速的固态硬盘，也只是能更快速地把文件从固态硬盘上读写到内存中，以此来加快开机速度和响应速度，但并不能改变CPU的执行速度和内存的读写速度，但确实会有更好的用户体验。</p>
-<h3 id="显示器"><a href="#显示器" class="headerlink" title="显示器"></a>显示器</h3><p>显示器把显卡(集显或独显)处理过的显示数据通过旧的VGA接口或更高传输速率的HDMI接口传输到显示器进行显示，现在主流显示器有19寸、24寸甚至更大的，类型也很多样。如果细看电视机或显示器，是能看到很微小的点阵的，这个类似于图片或视频的1080 <em> 1920这种，表示有乘积个像素点，每个像素点使用RGB(红绿蓝)三色组成万千色，常见的每一色1个字节(8个bit即8位的2进制，如果一张图1080 </em> 1920 像素点，图片大小大概是1080 <em>  1920 </em> 3 / 1024 KB)，按色彩程度不同，共有256种，三色组合就有256 <em> 256 </em> 256种色彩，还有使用RGBA作为像素点数据的，只是多了一位A(透明度)。</p>
-<h3 id="键盘、鼠标"><a href="#键盘、鼠标" class="headerlink" title="键盘、鼠标"></a>键盘、鼠标</h3><p>鼠标没有什么说的，都是光电鼠标，也有一些人体工程学鼠标，如果是玩游戏，鼠标还是要大一些的好用些，精度掌控更高。但是相对键盘而言就有很多讲头了。笔记本电脑和常见的100元以下的键盘，都是薄膜键盘，价格便宜，但是手感差，基本上也没有什么人体工程学上的设计，高端点的键盘，基本上都是机械键盘，手感多样，更适合打字、游戏等偏向，而且也更耐用(据说专业打字的也可以用50年这样的年限)，另外，机械键盘具有很高的自定义化，可以自己组装些背光灯、换键冒、换轴等，所以如果是只坏了几个键，也是可以自己行购买配件维修的。根据按键轴的不同，键盘会有不同的按键反馈，比如对于常打字的来说，青轴机械键盘每一次按键，都会有二次触感反馈，而且所需力道少，另外就是还有一个声音反馈。但机械键盘也有缺点，就是碰水就坏，主要生产轴的公司也就那么几家，国内的轴厂都太次了，容易坏轴，另一个就是价格比较高，cherry轴最低也要将近400元。那有其它一些键盘，水很深。不论是鼠标还是键盘，都是使用USB接口，老旧的有PS/2接口。</p>
-<h3 id="电源"><a href="#电源" class="headerlink" title="电源"></a>电源</h3><p>电脑电源连接家庭用电，转化输出给CPU、主板、显卡、硬盘等供电，电脑正常运行与高速运行，它的耗电是不一样的，所以好的电源应能提供最高电量，如果电脑在高速运行中电源不能提供充足的电能，那可能会无由头的停机且不好查找问题。在某些装机教程中，作者会建议读者不要购买某宝或电脑城里已经组好的整机，因为你看到的电脑配置，主要配件确实是对应的配件，可是对于大多数的我们来说，卖家更老道，他们可以使用二手CPU、显卡，虽然它们是正品，又或者次品点的内存条，而买家都只是会看一般的参数，常见的就是下个鲁大师软件查看配置，这根本无法了解到卖家作了什么，而且一台电脑，可动手的地方很多，虽然主要配件最多是次品，部分配件因为不起眼，真的就有可能会成为电脑的短板。其中之一就是电源，一般买家没有谁看电源，而电源品牌也很混杂，就算一般买家查看了这点，你也就是看个功率，好像很强的样子，可是，关注过材料吗？铭牌参数具体的意义吗？电脑的参考功率，其中有很多文章，它的实际意义是说，各种组合最高是350W或500W，但其中还有转化率的问题，还有就是，每一种组合也有它的最大功能，不论是组合的还是最终的功能，都不能超。因为电源给CPU、主板、显卡、硬盘供电，也差不多这样分成组，CPU组不能超过多少，显卡供电不能超过多少，主板不能超过多少，各组之合不能超过电脑额定功率*转化率。所以对于一个500W的电源确不一定比350W的电源更适合你的电脑。另一方面，材料问题，线问题，接口问题，因此在某宝或电脑城购买已配好的电脑，不好花点时间自己组得更放心。</p>
-<h2 id="引申链接"><a href="#引申链接" class="headerlink" title="引申链接"></a>引申链接</h2><p><a href="http://linux.vbird.org/linux_basic/0130designlinux.php#hardware" target="_blank" rel="external">&lt;鸟哥的linux私房菜&gt;中关于硬件的形象化描述</a><br><a href="http://linux.vbird.org/linux_basic/0510osloader.php#startup" target="_blank" rel="external">&lt;鸟哥的linux私房菜&gt;之开机流程</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本方主要讲下常用电脑中的硬件与相关功能，旨在了帮助小白了解计算机硬件。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
-    
-      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
-    
-    
-      <category term="电脑小白" scheme="http://LySnake.github.io/tags/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>电脑小白系列之电脑日常管理</title>
-    <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E7%94%B5%E8%84%91%E6%97%A5%E5%B8%B8%E7%AE%A1%E7%90%86.html"/>
-    <id>http://LySnake.github.io/archives/technology/电脑小白系列之电脑日常管理.html</id>
-    <published>2017-02-09T13:03:48.000Z</published>
-    <updated>2017-02-19T06:50:46.096Z</updated>
-    
-    <content type="html"><![CDATA[<p>在生活中经常会碰到电脑乱成一团，软件都是百度系，各种小广告软件，重复软件，一台电脑同时存在360、百度、腾讯、金山多家杀软，有这些特点的人大多是文科生为主，次之还有老一代人。对此，本文主要说些电脑文件管理、软件管理等常见的小白问题。<br><a id="more"></a></p>
-<h2 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h2><p>打开<code>我的电脑</code>，可以看到C盘D盘等。一般的桌面上的所有文件也是存储于C盘用户目录下。计算机对于文件管理，是以树型结构进行管理的，每个盘符可以看做一个树根，其下的每个文件夹都可以看做是子树或形象点说是树枝，对于经常查看文件管理器的人来说，这已经是老生常谈，但我要说的是针对常用软件安装目录与个人文件保存问题。</p>
-<blockquote>
-<p><code>C盘</code>是安装windows系统的系统盘，基本都是大多数软件的默认安装盘，一般常见的安装系统C盘空间大小是50G，只要C盘还留有足够空间，系统并不提示C盘空间不足，那都是没关系的。操作系统windows大多数软件、文件、配置都保存在C盘中，比如office软件，系统自带的工具软件。但是现在的网络环境，很多软件都安装在C盘，个人下载也是默认在C盘，长时间使用C盘的软件，也会给C盘带来缓存文件，这样就会给C盘带来很多文件，当然，只要C盘有空间，这都是没关系的，只是个人下载文件、桌面文件都在C盘，如果电脑出现问题，需要重装系统解决，那么C盘将会清空并重新写盘，日常下载的文件、桌面文件都会清空且永久找不回。</p>
-<p><code>其它盘</code>对widows来说，基本相同，除非是系统隐藏分区。安装windows系统，正常情况下都是只对C盘操作，其它盘文件都不作更改。因此，在日常管理上，个人重要文件尽量放在其它盘;其它软件，如视频软件、迅雷下载软件等，对其下载目录也最好是其它盘，且目录名可分辨。这样，自己下载的文件、个人编写的文件不会因为C盘的变动而被删除。</p>
-<p><code>个人管理方案：</code>即然C盘是系统使用，那只有某些主要的软件才安装在C盘(输入法、杀毒、微软官方软件等)，其它软件全都安装在D盘的<code>Program Files (x86)</code>目录下，且保证每个软件都有一个单独的文件夹，对于下载文件、个人文件，都可存放与E盘或F盘，另外给每个盘符起个别名。各盘符大小，视个人情况而定。另外，还要说一点，对于丢失会带来重要影响的个人文件，最好是使用云盘备份（工程上都会有备份盘，甚至是异地备份盘），因为硬盘是PC机里最容易坏的硬件，同样的，如果文件过于私密，最好使用点加密手段。</p>
-</blockquote>
-<h2 id="软件管理"><a href="#软件管理" class="headerlink" title="软件管理"></a>软件管理</h2><p>鉴于国内的软件环境，尤其是百度系列，我们会发现，对于不常使用电脑的老年人、只用电脑看韩剧的软妹了，电脑中会出现过多无用或重复的软件。这里就说下软件使用问题，并自荐下<a href="https://lysnake.github.io/archives/technology/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html">个人常用软件列表</a>。</p>
-<h3 id="杀毒软件"><a href="#杀毒软件" class="headerlink" title="杀毒软件"></a>杀毒软件</h3><p>其实吧，现在操作系统自身的防御能力已经很强了，不再经常看到电脑中毒了，虽然没有不存在BUG的软件(系统),但能找出BUG的人，都不是缺钱的主。现在如果说还有中毒的人，那真的是要找自己的原因，因为那都是自己进不该进的网站误下可执行的软件(病毒)。在windows下，对于小白来说，能遇见执行的病毒，都是exe为扩展名的可执行文件，所以如果上网下载的文件是exe文件，那么小白应该警惕，不要执行它，除非你知道会带来什么。但是，在生活中，小白都是金山、360、电脑管家、百度杀毒二个或多个重复杀毒功能的软件，大多情况下，其实他们并没有用，尤其是电脑管家和百度杀毒，反而会带来卡慢，百度杀毒更加是自身就是病毒。如果要安装，建议仅安装360或金山，自从win7开始，我就没怎么用杀毒软件了，但是金山和360杀毒其它管理功能还是很不错的，比如开机加速、强制删除文件等。</p>
-<h3 id="重复软件"><a href="#重复软件" class="headerlink" title="重复软件"></a>重复软件</h3><p>前面提到杀毒软件功能重复，在小白的电脑中，同时存在360浏览器、橙子浏览器、chrome、firefox,这里也同样是重复功能的软件，占用硬盘空间并且有可能占用内存，导致操作响应过慢，个人推荐chrome或firefox，最新版的chrome和firefox能更好的支持网页渲染，看到更多网页特效，也能有更好的加载速度，更有强大的插件功能。明显的，每种功能的软件，正常情况下只要一个就好。对于已知无用的软件，占用了硬盘空间，如果开机自启，还会影响开机速度和占用内存，造成电脑卡慢，这个时候应该使用windows自带的软件管理工具或360、金山杀毒的软件管理工具，对无用软件进行卸载清除。</p>
-<h3 id="软件黑名单"><a href="#软件黑名单" class="headerlink" title="软件黑名单"></a>软件黑名单</h3><p><strong>百度系</strong>是常见的软件黑名单，安装一个百度系软件，默认推荐安装其它软件，这就是为什么小白电脑里那么多不知用处的软件的原因，如果可以，尽量少用百度搜索，因为百度推荐、百度认证很有问题，并且搜索精准度并不高，在安装系统时使用的PE系统大白菜，百度认证认证的一个所谓的官网，居然是个高仿假网站，以此安装的系统，完全可能自带病毒、广告。16年的莆田系医院、血友病吧问题，有理由直接把百度直接拉入黑名单，目前已知百度好用的产品，也就只有百度云盘了。另外，如果你还是使用百度，建议你不要在网页上登录百度，因为你登录后，你在百度上搜索或其它百度网页操作的信息会被百度收集，然后进行所谓精准广告投放，而广告本身也存在很大的不可靠性，另外就是，你在网上所有的个人操作也是属于个人隐私，百度今天收集的信息，可能低价出售、安全原因泄漏等。不使用百度搜索了，大家可以使用bing搜索、google搜索，在<a href="https://lysnake.github.io/archives/technology/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html">个人常用软件列表</a>中提供了使用方式。</p>
-<p><strong>不常见、非官网下载</strong>的软件，也会有默认安装好几个其它软件或带来很多广告，也有可能是病毒的载体，如果不是很清楚执行的后果，最好是不要下载并执行。</p>
-<h2 id="电脑优化"><a href="#电脑优化" class="headerlink" title="电脑优化"></a>电脑优化</h2><p>个人电脑中，如果已经不存在多余的软件、软件安装不会使C盘出现空间警告、文件保存结构清晰，我们还可以开始进行其它电脑优化来进一步改善个人电脑环境。这个时候，我们就可以使用360杀毒或金山毒霸，进行开机启动项优化，选择自己开机一定会使用的功能软件，让其开机自启动，其它软件取消开机启动，这样能加快开机速度，减少开机后内存使用。同样也可以用360或金山扫盘、清除无用文件、查杀病毒、删除某些情况下无法删除的文件等。</p>
-<p>像<a href="https://lysnake.github.io/archives/technology/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html">个人常用软件列表</a>提到过的软件一样，安装自己常用的软件，配置自己最习惯的软件环境，比如chrome插件、翻墙、wox快速启动软件、everything快速搜索本地文件、开机自启动、开机自动联网等。</p>
-<h2 id="误区"><a href="#误区" class="headerlink" title="误区"></a>误区</h2><p><strong>硬盘碎片整理</strong>:网上很多人说硬盘读取过慢是因为分区使用久后，产生了很多文件碎片，导致硬盘寻道时间增长，这个说法是有道理的，但这个说法只适合机械硬盘，固态硬盘不适用。另外一点就是，碎片整理的概念已经很久了，而且硬盘读取速度一直都是计算机性能瓶颈，所以现在的硬盘和操作系统，在软件算法上会有相关优化，尽量减少碎片的产生，所以对于目前来说，是没有必要进行碎片整理的，而且这个操作过程中如果关机等特殊情况，是会影响操作系统或其它分区无法正常使用，如无必要，不要考虑碎片整理。另外，早上固态硬盘，可以得到更好的性能体验。</p>
-<p><strong>缓存清理</strong>：其实对于用户而言，缓存的存在本身是为了让软件有更好的体验的，比如看视频，对于已缓存的时段，是可以直接跳看的，而没有缓存的部分，选择后还要等待网络加载后才能观看，而其它软件的缓存其实基本都是一样的道理，都是为了不重复从网络上加载或重新生成而影响软件响应用户的操作用的。但存在另外一些软件文件，仅仅是软件生成出来备用的，正常情况下是使用不到的，这类文件相对很少但可以删除，比如软件的log文件，方便软件崩溃时，上送Log日志给官方维护修改使用。缓存文件相对分区大小来说，还是占用很少一部分，在不使分区空间不足的情况下，也不用考虑操作删除缓存。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在生活中经常会碰到电脑乱成一团，软件都是百度系，各种小广告软件，重复软件，一台电脑同时存在360、百度、腾讯、金山多家杀软，有这些特点的人大多是文科生为主，次之还有老一代人。对此，本文主要说些电脑文件管理、软件管理等常见的小白问题。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
-    
-      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
-    
-    
-      <category term="电脑小白" scheme="http://LySnake.github.io/tags/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD/"/>
-    
-  </entry>
-  
-  <entry>
     <title>常用软件推荐</title>
-    <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html"/>
-    <id>http://LySnake.github.io/archives/technology/电脑小白系列之常用软件推荐.html</id>
-    <published>2017-02-06T07:09:00.190Z</published>
-    <updated>2017-06-28T15:50:01.136Z</updated>
+    <link href="http://LySnake.github.io/archives/technology/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html"/>
+    <id>http://LySnake.github.io/archives/technology/常用软件推荐.html</id>
+    <published>2017-05-05T14:06:46.000Z</published>
+    <updated>2018-02-25T03:47:32.207Z</updated>
     
     <content type="html"><![CDATA[<p>分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。<br><a id="more"></a></p>
 <h2 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h2><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p><a href="https://www.zhihu.com/question/28013848" target="_blank" rel="external">如何高效地使用搜索引擎？</a>：来自zhihu的问答。</p>
 <p><a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif" target="_blank" rel="external">Proxy SwitchyOmega</a>:来自<a href="https://github.com/XX-net/XX-Net" target="_blank" rel="external">XX-Net</a>,插件单独使chrome使用XX-Net搭建梯子，也可以不使用插件，使PC全局智能上梯子。</p>
 <p><a href="https://chrome.google.com/webstore/detail/clickclean/ghgabhipcejejjmhhchfonmamedcbeod" target="_blank" rel="external">Click&amp;Clean</a>:管理工具，可管理chrome，也可以管理PC设备。</p>
+<p><a href="https://chrome.google.com/webstore/detail/json-handle/iahnhfdhidomcpggpaimmmahffihkfnj" target="_blank" rel="external">JSON-handle</a>:对JSON数据进行浏览、编辑。</p>
 <p><a href="https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj" target="_blank" rel="external">Save to Pocket</a>:pocket，可存网页到网上，支持iOS、安卓平台，支持zhihu等APP或网页分享到pocket APP。</p>
 <p><a href="https://chrome.google.com/webstore/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8A%A9%E6%89%8B%EF%BC%9Abilibilicom-%E7%BB%BC%E5%90%88%E8%BE%85%E5%8A%A9%E6%89%A9%E5%B1%95/kpbnombpnpcffllnianjibmpadjolanh" target="_blank" rel="external">嗶哩嗶哩助手</a>:B站，看直播可自动化领取瓜子等。</p>
 <p><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" target="_blank" rel="external">擴充功能uBlock Origin</a>:一款高效率的廣告攔截工具。</p>
@@ -1077,13 +1203,11 @@
 <p><a href="https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc" target="_blank" rel="external">Octotree</a>:在<a href="www.github.com">github</a>上，打开一个项目，能在左侧以windows资源管理器一样以树状图显示项目文件结构。</p>
 <p><a href="https://chrome.google.com/webstore/detail/web%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8Bfehelper/pkgccpejnmalmdinmhkkfafefagiiiad?hl=zh-CN" target="_blank" rel="external">WEB前端助手(FeHelper)</a>:前端会用到的小工具。</p>
 <p><a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="external">Tampermonkey</a>:很强大的插件，允许运行JS充当功能，相关JS文件可以去<a href="https://greasyfork.org/zh-CN" target="_blank" rel="external">Greasy Fork</a>下载，比如一些特殊网站的JS，免登录使用zhihu，购物党比价工具、下载youtube视频等。</p>
+<p><a href="https://chrome.google.com/webstore/detail/bootstrap-twitter-offline/gihkgljdimgfffabkemicpaeljmoobil?utm_source=chrome-ntp-icon" target="_blank" rel="external">Bootstrap</a>:Bootstrap离线库文档，但版本不够新。</p>
 <p><a href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=zh-CN" target="_blank" rel="external">Vimium</a>:游览网站像操作vim一样操作。</p>
 <p><a href="https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb" target="_blank" rel="external">google翻译</a>:翻译网页或选中字词或短语时翻译。</p>
 <p><a href="https://juejin.im/extension/?utm_source=extension&amp;utm_medium=zhihu&amp;utm_campaign=20595240" target="_blank" rel="external">掘金</a>：在新标签页展示内容，为设计师、程序员、产品经理每日发现优质内容。与<a href="https://chrome.google.com/webstore/detail/dream-afar-new-tab/henmfoppjjkcencpbjaigfahdjlgpegn" target="_blank" rel="external">遠方 New Tab</a>冲突。</p>
 <p><a href="https://chrome.google.com/webstore/detail/send-to-kindle-by-klipme/ipkfnchcgalnafehpglfbommidgmalan" target="_blank" rel="external">Send to Kindle</a>:一键发送网页文章到Kindle阅读器。</p>
-<p><a href="https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien" target="_blank" rel="external">Isometric Contributions</a>:让你在GitHub上的commit像盖楼一样的展示，很有趣，展示下Android大神Jake Wharton的commit情况。</p>
-<p><a href="https://github.com/anasnakawa/chrome-github-avatars" target="_blank" rel="external">Avatars for Github</a>:顾名思义，默认我们在GitHub主页动态只能看到id的，而安装了这个插件就可以看到GitHub头像了.</p>
-<p><a href="https://chrome.google.com/webstore/detail/%E7%9F%A5%E4%B9%8E%E5%A4%B4%E5%83%8F%E6%94%BE%E5%A4%A7%E5%99%A8/iodddkdbdgcmepjlfieigdigioepgibn?hl=zh-CN" target="_blank" rel="external">知乎头像放大器</a>:把用户头像放大，比直接打开链接还要大。</p>
 <p><a href="https://www.zhihu.com/question/23228162" target="_blank" rel="external">chrome有哪些好用的插件</a></p>
 <hr>
 <h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p><a href="https://www.zhihu.com/question/32129337" target="_blank" rel="external">如何优雅使用windows 10</a>:来自zhihu的问答。</p>
@@ -1116,7 +1240,6 @@
 <h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><h3 id="云梯"><a href="#云梯" class="headerlink" title="云梯"></a>云梯</h3><p><a href="https://github.com/XX-net/XX-Net" target="_blank" rel="external">XX-Net</a>：免费使用google的AppID,每个ID有1G，每个google帐号最多12个AppID，网络速度不错，youtube也能看视频，优点是每天早上可更新流量，且支持chrome、firefox。</p>
 <p><a href="https://github.com/getlantern/forum#%E8%93%9D%E7%81%AFlantern%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD" target="_blank" rel="external">蓝灯(Lantern)</a>:免费情况下每月800M，速度不错，优点搭建快速。</p>
 <p><a href="https://github.com/softwaredownload/openwrt-fanqiang" target="_blank" rel="external">openwrt</a>:实现路由器自动云梯，且因内置linux系统，可定制化功能，比如外接硬盘当网盘、自动下载BT等。但路由器成本不低，适合居家使用，未曾试用过。</p>
-<p><a href="https://uzer.me/" target="_blank" rel="external">UZER.ME</a>:云端软件，常见的如chrome、AI、PS等与办公想关。默认翻墙chrome可以进google、youtube。</p>
 <p><a href="https://wsgzao.github.io/post/fq/" target="_blank" rel="external">更多梯子</a>:这里罗列的方案，大都末使用过。</p>
 <h3 id="数据备份恢复"><a href="#数据备份恢复" class="headerlink" title="数据备份恢复"></a>数据备份恢复</h3><p>数据备份软件来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>,没有使用过。</p>
 <p><a href="http://www.onekeyrestore.cn/" target="_blank" rel="external">易数一键还原</a>:以DiskGenius为内核开发，安全易用靠谱,同时推荐ORM一键还原系统。</p>
@@ -1142,8 +1265,8 @@
     <title>Github Pages与Hexo框架博客的搭建</title>
     <link href="http://LySnake.github.io/archives/technology/Github%20Pages%E4%B8%8EHexo%E6%A1%86%E6%9E%B6%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA.html"/>
     <id>http://LySnake.github.io/archives/technology/Github Pages与Hexo框架博客的搭建.html</id>
-    <published>2017-01-22T18:45:57.418Z</published>
-    <updated>2017-02-02T05:10:19.747Z</updated>
+    <published>2017-02-25T09:46:46.000Z</published>
+    <updated>2018-02-25T03:43:00.451Z</updated>
     
     <content type="html"><![CDATA[<p>这篇博文的目的不是<a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>与<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo框架</a>框架搭建个人博客的教学，毕竟官网教学更详细更全面，而是记录本人搭建过程中了解、学习并汇总的一些东西，附带链接陈列出来，主要供第一次搭建的朋友参考学习。<br><a id="more"></a></p>
 <h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="git与github"><a href="#git与github" class="headerlink" title="git与github"></a>git与github</h3><p>git:查看廖雪峰的<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001373962845513aefd77a99f4145f0a2c7a7ca057e7570000" target="_blank" rel="external">git简介</a>。<br>git工具是Linus继linux开源操作系统之后又一影响世界的项目，因与linux的关系，所以本身是命令行模式，对大多数人来说是不够友好的，在实际使用中可以使用windows或iOS平台上的桌面软件，虽然这样并不能使用git的全部功能。<a href="https://www.github.com/" target="_blank" rel="external">Github</a>就是使用git的通信协议，得力于开源精神而创建的一个平台，并且linux项目也在<a href="https://www.github.com/" target="_blank" rel="external">Github</a>上托管，我们可以使用桌面软件<a href="https://www.sourcetreeapp.com/" target="_blank" rel="external">Source Tree</a>管理我们在<a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>上的博客项目。</p>
@@ -1212,6 +1335,167 @@
       <category term="Github Pages" scheme="http://LySnake.github.io/tags/github-pages/"/>
     
       <category term="Hexo" scheme="http://LySnake.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用软件推荐</title>
+    <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html"/>
+    <id>http://LySnake.github.io/archives/technology/电脑小白系列之常用软件推荐.html</id>
+    <published>2017-02-25T03:42:46.000Z</published>
+    <updated>2018-02-25T03:47:19.157Z</updated>
+    
+    <content type="html"><![CDATA[<p>分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。<br><a id="more"></a></p>
+<h2 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h2><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p><a href="https://www.zhihu.com/question/28013848" target="_blank" rel="external">如何高效地使用搜索引擎？</a>：来自zhihu的问答。</p>
+<p><a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif" target="_blank" rel="external">Proxy SwitchyOmega</a>:来自<a href="https://github.com/XX-net/XX-Net" target="_blank" rel="external">XX-Net</a>,插件单独使chrome使用XX-Net搭建梯子，也可以不使用插件，使PC全局智能上梯子。</p>
+<p><a href="https://chrome.google.com/webstore/detail/clickclean/ghgabhipcejejjmhhchfonmamedcbeod" target="_blank" rel="external">Click&amp;Clean</a>:管理工具，可管理chrome，也可以管理PC设备。</p>
+<p><a href="https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj" target="_blank" rel="external">Save to Pocket</a>:pocket，可存网页到网上，支持iOS、安卓平台，支持zhihu等APP或网页分享到pocket APP。</p>
+<p><a href="https://chrome.google.com/webstore/detail/%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%8A%A9%E6%89%8B%EF%BC%9Abilibilicom-%E7%BB%BC%E5%90%88%E8%BE%85%E5%8A%A9%E6%89%A9%E5%B1%95/kpbnombpnpcffllnianjibmpadjolanh" target="_blank" rel="external">嗶哩嗶哩助手</a>:B站，看直播可自动化领取瓜子等。</p>
+<p><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" target="_blank" rel="external">擴充功能uBlock Origin</a>:一款高效率的廣告攔截工具。</p>
+<p><a href="https://chrome.google.com/webstore/detail/dream-afar-new-tab/henmfoppjjkcencpbjaigfahdjlgpegn" target="_blank" rel="external">遠方 New Tab</a>:打开一个新标签页，背景图都是实时更新的美图，与<a href="https://juejin.im/extension/?utm_source=extension&amp;utm_medium=zhihu&amp;utm_campaign=20595240" target="_blank" rel="external">掘金</a>冲突。</p>
+<p><a href="https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc" target="_blank" rel="external">Octotree</a>:在<a href="www.github.com">github</a>上，打开一个项目，能在左侧以windows资源管理器一样以树状图显示项目文件结构。</p>
+<p><a href="https://chrome.google.com/webstore/detail/web%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8Bfehelper/pkgccpejnmalmdinmhkkfafefagiiiad?hl=zh-CN" target="_blank" rel="external">WEB前端助手(FeHelper)</a>:前端会用到的小工具。</p>
+<p><a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="external">Tampermonkey</a>:很强大的插件，允许运行JS充当功能，相关JS文件可以去<a href="https://greasyfork.org/zh-CN" target="_blank" rel="external">Greasy Fork</a>下载，比如一些特殊网站的JS，免登录使用zhihu，购物党比价工具、下载youtube视频等。</p>
+<p><a href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=zh-CN" target="_blank" rel="external">Vimium</a>:游览网站像操作vim一样操作。</p>
+<p><a href="https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb" target="_blank" rel="external">google翻译</a>:翻译网页或选中字词或短语时翻译。</p>
+<p><a href="https://juejin.im/extension/?utm_source=extension&amp;utm_medium=zhihu&amp;utm_campaign=20595240" target="_blank" rel="external">掘金</a>：在新标签页展示内容，为设计师、程序员、产品经理每日发现优质内容。与<a href="https://chrome.google.com/webstore/detail/dream-afar-new-tab/henmfoppjjkcencpbjaigfahdjlgpegn" target="_blank" rel="external">遠方 New Tab</a>冲突。</p>
+<p><a href="https://chrome.google.com/webstore/detail/send-to-kindle-by-klipme/ipkfnchcgalnafehpglfbommidgmalan" target="_blank" rel="external">Send to Kindle</a>:一键发送网页文章到Kindle阅读器。</p>
+<p><a href="https://chrome.google.com/webstore/detail/isometric-contributions/mjoedlfflcchnleknnceiplgaeoegien" target="_blank" rel="external">Isometric Contributions</a>:让你在GitHub上的commit像盖楼一样的展示，很有趣，展示下Android大神Jake Wharton的commit情况。</p>
+<p><a href="https://github.com/anasnakawa/chrome-github-avatars" target="_blank" rel="external">Avatars for Github</a>:顾名思义，默认我们在GitHub主页动态只能看到id的，而安装了这个插件就可以看到GitHub头像了.</p>
+<p><a href="https://chrome.google.com/webstore/detail/%E7%9F%A5%E4%B9%8E%E5%A4%B4%E5%83%8F%E6%94%BE%E5%A4%A7%E5%99%A8/iodddkdbdgcmepjlfieigdigioepgibn?hl=zh-CN" target="_blank" rel="external">知乎头像放大器</a>:把用户头像放大，比直接打开链接还要大。</p>
+<p><a href="https://www.zhihu.com/question/23228162" target="_blank" rel="external">chrome有哪些好用的插件</a></p>
+<hr>
+<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p><a href="https://www.zhihu.com/question/32129337" target="_blank" rel="external">如何优雅使用windows 10</a>:来自zhihu的问答。</p>
+<p><a href="https://atom.io/" target="_blank" rel="external">Atom</a>：Atom 是 Github 专门为程序员推出的一个跨平台文本编辑器。具有简洁和直观的图形用户界面，并有很多有趣的特点：支持CSS，HTML，JavaScript等网页编程语言。它支持宏，自动完成分屏功能，集成了文件管理器。</p>
+<p><a href="http://www.scootersoftware.com/download.php" target="_blank" rel="external">BCompare</a>：跨平台的文件比较工具。</p>
+<p><a href="http://download.pchome.net/system/treak/detail-4359.html" target="_blank" rel="external">EasyBCD</a>:修改PC上多个系统引导程序，选择默认系统引导。</p>
+<p><a href="https://www.voidtools.com/downloads/" target="_blank" rel="external">Everything</a>:windows下文件搜索工具，比系统默认的文件检索快得多且支持正则表达式，但不支持文件内容检索，windows自带的检索工具可以设置成检索文件内容。</p>
+<p><a href="http://pan.baidu.com/s/1eSJZ9cu" target="_blank" rel="external">SourceInsight</a>:多语言代码编辑工具，支持代码高亮，定义跳转，全局搜索，但对中文支持不太好。</p>
+<p><a href="http://pan.baidu.com/s/1hsHnIb6" target="_blank" rel="external">UltraISO</a>:打开ISO文件工具。</p>
+<p><a href="https://zh.dvdfab.cn/" target="_blank" rel="external">dvdfab</a>:好用的ISO文件工具。</p>
+<p><a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=2&amp;ch=&amp;tn=baiduhome_pg&amp;bar=&amp;wd=VMware+%E4%B8%8B%E8%BD%BD&amp;rsv_spt=1&amp;oq=fireworks+%E4%B8%8B%E8%BD%BD&amp;rsv_pq=fe1db2c5000198ef&amp;rsv_t=0101HNZP1hokgvnDfCG5xUelLKmDrgNQ31p4elzWh%2FMLyL2eWO6YmVnLIVHSDnA1sy9O&amp;rqlang=cn&amp;rsv_enter=0&amp;inputT=3987" target="_blank" rel="external">VMware</a>:虚拟机软件，在win下的该软件里再安装其它操作系统，但现在windows 10已经有linux子系统了，现在一般可以不用选择这个方案。</p>
+<p><a href="http://download.flvcd.com/" target="_blank" rel="external">硕鼠</a>:支持多个网站的在线视频下载。</p>
+<p><a href="http://music.163.com/" target="_blank" rel="external">网易云音乐</a>:美观、友好、歌曲推荐算法强。</p>
+<p><a href="http://foxmail.com.cn/" target="_blank" rel="external">FoxMail</a>:本地mail客户端。</p>
+<p><a href="https://github.com/Wox-launcher/Wox/releases" target="_blank" rel="external">Wox</a>:功能如Mac下的Alfred，使用alt+space可以启用该程序，可以快速检索本地文件、程序并启用，不再频繁操作鼠标和查找文件(检索使用了Everything)。并有大量插件、自定义一些操作，也有默认常用操作，如：g github即为google检索github。</p>
+<p><a href="http://www.listary.com/" target="_blank" rel="external">Listary</a>:如功能和Wox一样，但是匹配没有Wox好。来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
+<p><a href="https://www.sourcetreeapp.com/" target="_blank" rel="external">SourceTree</a>:git应用Gui程序，支持windows、iOS平台。</p>
+<p><a href="http://www.xitongcheng.com/jiaocheng/win10_article_27723.html" target="_blank" rel="external">Ubuntu on Windows</a>:在windows 10下安装ubuntu子系统，即可不用虚拟机，也能有linux环境，可用于开发。但目前该系统还有很多坑要填，而且下载也是要win搭个梯子。</p>
+<p><a href="http://www.vim.org/download.php" target="_blank" rel="external">Gvim</a>:win下的GUI VIM，如果不是一定要vim才能快速编辑或能熟练使用，还是不要在win下使用vim，相对不是那么友好。(比如常算之后多少个char，使用vim还是很快的)</p>
+<p><a href="http://cn.ejie.me/" target="_blank" rel="external">Clover</a>:让windows系统的文件管理器像chrome一样，支持多标签页功能，目前还有不少BUG，但对于常打开多个窗口查找文件来说，还是十分方便。</p>
+<p><a href="http://www.huyanbao.com" target="_blank" rel="external">护眼宝</a>：修改屏幕色彩，相传更护眼。有Android、iOS、MAC、windows版。</p>
+<p><a href="https://www.teamviewer.com/zhcn/" target="_blank" rel="external">TeamViewer</a>:远程控制，内网穿透，VPN共享，跨平台.对个人免费。目前没有使用过，来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
+<p><a href="https://anydesk.com/remote-desktop" target="_blank" rel="external">AnyDesk</a>:远程控制效果或许会超出你的想象，作为TeamViewer备用方案,来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
+<p><a href="http://sunlogin.oray.com/zh_CN/" target="_blank" rel="external">向日葵</a>:官网信息(远程手机操作PC开机，控制)，来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
+<p><a href="http://www.cockos.com/licecap/" target="_blank" rel="external">licecap</a>:Gif文件录制工具。</p>
+<p><em>Powertool</em>:系统清理工具。</p>
+<hr>
+<h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><p><a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">zsh</a>:更友好的shell(漂亮的themes，更多的输入匹配)。</p>
+<p><a href="https://github.com/DemonCloud/Aix-Vim" target="_blank" rel="external">vim</a>:linux下最常用的编辑器，代码高亮，跳转，IDE界面等，只是要配置成自己更适合的还要多去踩坑。</p>
+<hr>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><h3 id="云梯"><a href="#云梯" class="headerlink" title="云梯"></a>云梯</h3><p><a href="https://github.com/XX-net/XX-Net" target="_blank" rel="external">XX-Net</a>：免费使用google的AppID,每个ID有1G，每个google帐号最多12个AppID，网络速度不错，youtube也能看视频，优点是每天早上可更新流量，且支持chrome、firefox。</p>
+<p><a href="https://github.com/getlantern/forum#%E8%93%9D%E7%81%AFlantern%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD" target="_blank" rel="external">蓝灯(Lantern)</a>:免费情况下每月800M，速度不错，优点搭建快速。</p>
+<p><a href="https://github.com/softwaredownload/openwrt-fanqiang" target="_blank" rel="external">openwrt</a>:实现路由器自动云梯，且因内置linux系统，可定制化功能，比如外接硬盘当网盘、自动下载BT等。但路由器成本不低，适合居家使用，未曾试用过。</p>
+<p><a href="https://uzer.me/" target="_blank" rel="external">UZER.ME</a>:云端软件，常见的如chrome、AI、PS等与办公想关。默认翻墙chrome可以进google、youtube。</p>
+<p><a href="https://wsgzao.github.io/post/fq/" target="_blank" rel="external">更多梯子</a>:这里罗列的方案，大都末使用过。</p>
+<h3 id="数据备份恢复"><a href="#数据备份恢复" class="headerlink" title="数据备份恢复"></a>数据备份恢复</h3><p>数据备份软件来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>,没有使用过。</p>
+<p><a href="http://www.onekeyrestore.cn/" target="_blank" rel="external">易数一键还原</a>:以DiskGenius为内核开发，安全易用靠谱,同时推荐ORM一键还原系统。</p>
+<p><a href="http://www.diskgenius.cn/" target="_blank" rel="external">DiskGenius</a>:国内磁盘分区和数据恢复的佼佼者,Mod By MyCrack.</p>
+<p><a href="http://www.0daydown.com/?s=EaseUS+Data+Recovery" target="_blank" rel="external">EaseUS Data Recovery Wizard</a>:原先是国产易我数据恢复，现在依旧犀利啊</p>
+<h3 id="其它网友环境"><a href="#其它网友环境" class="headerlink" title="其它网友环境"></a>其它网友环境</h3><p><a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao推荐的软件</a>。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>电脑小白系列之电脑硬件了解</title>
+    <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E7%94%B5%E8%84%91%E7%A1%AC%E4%BB%B6%E4%BA%86%E8%A7%A3.html"/>
+    <id>http://LySnake.github.io/archives/technology/电脑小白系列之电脑硬件了解.html</id>
+    <published>2017-02-19T09:46:46.000Z</published>
+    <updated>2018-02-25T03:46:53.697Z</updated>
+    
+    <content type="html"><![CDATA[<p>本方主要讲下常用电脑中的硬件与相关功能，旨在了帮助小白了解计算机硬件。<br><a id="more"></a></p>
+<h2 id="冯·诺伊曼结构"><a href="#冯·诺伊曼结构" class="headerlink" title="冯·诺伊曼结构"></a>冯·诺伊曼结构</h2><p>如今的计算机，都是以1945年6月30日冯·诺伊曼提出的基本结构：计算机硬件由运算器、控制器、存储器、输入设备和输出设备五大部分组成。每个组成部分可能存在于一台计算机中不同硬件位置上。</p>
+<blockquote>
+<p><em>运算器、控制器（CPU）</em>：这二个基本部件，在工程实现上都存在于中央控制处理器CPU中，有任何操作请求，一定都会到CPU中请求处理。在实际用户操作中，所有用户操作，都会抽象成一系列的数学运算、逻辑运算，也都要交于CPU处理，所以CPU决定了计算机最高处理性能，在个人组装机中，优先选择的都是CPU，其次再选择其它硬件设备。</p>
+<p><em>存储器</em>：存储器类别很多，在小白的眼里，只要记得内存、硬盘（移动硬盘）、U盘、固态硬盘(SSD)这几样就好了。按主流硬件读取速度来说，内存&gt;固态&gt;U盘&gt;硬盘，特殊一点的是内存是一个断电就会丢失存储数据的一个临时存储设备，充当CPU与硬盘（机械硬盘和固态硬盘）之间的高速缓存。个人电脑中所有数据都要从内存中读取进CPU再进行处理，但对于计算机来说，不一定要有内存计算机才能运行。</p>
+<p><em>*输入设备</em>：输入设备常见的有键盘、鼠标、麦、触摸板、手写板，接收用户操作(转换成数据)给计算机进行处理。</p>
+<p><em>*输出设备</em>：输出设备常见的有显示器、耳机，输出计算机处理后的数据，提供给用户进行交互操作。</p>
+</blockquote>
+<h2 id="电脑中常见硬件"><a href="#电脑中常见硬件" class="headerlink" title="电脑中常见硬件"></a>电脑中常见硬件</h2><h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>在个人计算中，中高端CPU都是使用Intel公司产品，中低端CPU都是使用AMD公司产品，目前组装个人电脑都是以i5往上走，i3很少使用了，在15年上市了新的Skylake系列，支持读取性能更高的内存条、更省电。个人电脑更像是一个集权的国家，CPU代表着中央政府，所有处理都要交于CPU处理、分发执行。另外，当前CPU也负责显示方面的计算,也就是说CPU内还有一个GPU，就是我们常说的集显，但因为GPU常计算小数类型的值，CPU主要是整数类型和逻辑值，另外也因为显示渲染在个人PC中越来越重要，产热也高，所以GPU可以单独有一个硬件，那就是显卡。这种问题常见于笔记本中，在买笔记本时，常说独显更好，是因为独立显卡有自己的内存条，且高端显卡的内存已经是第五代的DDR5了，有独显后，显卡和CPU都有各自的存储，并且，独显有自己更强更专一的渲染，不会占用CPU使用内存导致内存不足，也不会占用CPU的计算而延迟用户操作的响应。</p>
+<h3 id="主板"><a href="#主板" class="headerlink" title="主板"></a>主板</h3><p>主板通常认为是载体就好了，类似于自行车的三角架一样，其它部件都要在其上搭载。通常CPU决定了计算机的计算性能，通过CPU引出的针角查看哪些主板能使用，另外，主板上也存在其它的芯片，用于辅助CPU进行控制用的，还自带声卡、网卡等，所以主板还负责网络接收与发送，数字信息转成音频信息等。不论是CPU、内存条、电源、显卡、硬盘、独立声卡、光驱等，都要与主板联接进行信息传输。电脑开关、USB接口、显示器接口、网线接口、耳机接口等都在主板上面。如果是台式电脑，所有的这些硬件接口都是规范化的，并且也是防呆设计(指接口设计避免用户插错，只有用蛮力才有可能插错)，不用担心插错问题。</p>
+<h3 id="独立-显卡"><a href="#独立-显卡" class="headerlink" title="(独立)显卡"></a>(独立)显卡</h3><p>显卡负责图像的渲染，显示器显示的内容都是从显卡中获得。显卡插在主板上，对外可接显示器的信号线，显卡有自己独立的内存，就是我们说的显存，好的显卡已经使用第五代DDR5的内存，对于晃卡而言，并不是显存越大越好，显存大但速度慢一样是渣显卡，这也是电脑城骗术之一。但电脑是可以不用显卡的，可以使用集成显卡，也就是使用CPU内的GPU，不过这个就看CPU的性能与用户自己的需求了，玩大型游戏还是要独立显卡，如lol、使命等，日常看视频、QQ游戏等，集成显卡就好。</p>
+<h3 id="内存条"><a href="#内存条" class="headerlink" title="内存条"></a>内存条</h3><p>前面提到过，内存是<code>一个断电就会丢失存储数据的一个临时存储设备，充当CPU与硬盘（机械硬盘和固态硬盘）之间的高速缓存</code>,目前老电脑都是4G内存，主流已经开始8G内存了，现如今手机都开始8G内存了。内存在计算机体系系统中，充当CPU与硬盘之间的高速缓存，对于计算机来说，内存越大越好，如果可以，操作系统会根据用户常用软件、文件等，尽可能把内存全部使用完。当前内存的速度在第三代内存DDR3的1600MHZ左右，新的Skylake系列支持第四代内存DDR4的2133MHZ。</p>
+<h3 id="硬盘"><a href="#硬盘" class="headerlink" title="硬盘"></a>硬盘</h3><p>目前市场的机械硬盘都是1T，500G的机械硬盘开始减少，另外，还有固态硬盘(SSD)，读写速度是机械硬盘的好几倍，常见的还只是128G和256G，它们都是一种相对永久的存储设备，所有文件、软件都保存在硬盘中。现在，CPU和内存的性能都在快速提升，而机械硬盘受限于机械结构，读写速度提升相对过慢，已成为计算机体系的一个瓶颈，目前苹果电脑都配有固态硬盘，开机流畅响应快速，如果你也想有这样的电脑体验，请安装固态硬盘，把windows操作系统安装在固态硬盘中，常用软件也安装在固态硬盘中，如果还有机械硬盘，把不常用文件使用机械硬盘存储。另外，读写快速的固态硬盘，也只是能更快速地把文件从固态硬盘上读写到内存中，以此来加快开机速度和响应速度，但并不能改变CPU的执行速度和内存的读写速度，但确实会有更好的用户体验。</p>
+<h3 id="显示器"><a href="#显示器" class="headerlink" title="显示器"></a>显示器</h3><p>显示器把显卡(集显或独显)处理过的显示数据通过旧的VGA接口或更高传输速率的HDMI接口传输到显示器进行显示，现在主流显示器有19寸、24寸甚至更大的，类型也很多样。如果细看电视机或显示器，是能看到很微小的点阵的，这个类似于图片或视频的1080 <em> 1920这种，表示有乘积个像素点，每个像素点使用RGB(红绿蓝)三色组成万千色，常见的每一色1个字节(8个bit即8位的2进制，如果一张图1080 </em> 1920 像素点，图片大小大概是1080 <em>  1920 </em> 3 / 1024 KB)，按色彩程度不同，共有256种，三色组合就有256 <em> 256 </em> 256种色彩，还有使用RGBA作为像素点数据的，只是多了一位A(透明度)。</p>
+<h3 id="键盘、鼠标"><a href="#键盘、鼠标" class="headerlink" title="键盘、鼠标"></a>键盘、鼠标</h3><p>鼠标没有什么说的，都是光电鼠标，也有一些人体工程学鼠标，如果是玩游戏，鼠标还是要大一些的好用些，精度掌控更高。但是相对键盘而言就有很多讲头了。笔记本电脑和常见的100元以下的键盘，都是薄膜键盘，价格便宜，但是手感差，基本上也没有什么人体工程学上的设计，高端点的键盘，基本上都是机械键盘，手感多样，更适合打字、游戏等偏向，而且也更耐用(据说专业打字的也可以用50年这样的年限)，另外，机械键盘具有很高的自定义化，可以自己组装些背光灯、换键冒、换轴等，所以如果是只坏了几个键，也是可以自己行购买配件维修的。根据按键轴的不同，键盘会有不同的按键反馈，比如对于常打字的来说，青轴机械键盘每一次按键，都会有二次触感反馈，而且所需力道少，另外就是还有一个声音反馈。但机械键盘也有缺点，就是碰水就坏，主要生产轴的公司也就那么几家，国内的轴厂都太次了，容易坏轴，另一个就是价格比较高，cherry轴最低也要将近400元。那有其它一些键盘，水很深。不论是鼠标还是键盘，都是使用USB接口，老旧的有PS/2接口。</p>
+<h3 id="电源"><a href="#电源" class="headerlink" title="电源"></a>电源</h3><p>电脑电源连接家庭用电，转化输出给CPU、主板、显卡、硬盘等供电，电脑正常运行与高速运行，它的耗电是不一样的，所以好的电源应能提供最高电量，如果电脑在高速运行中电源不能提供充足的电能，那可能会无由头的停机且不好查找问题。在某些装机教程中，作者会建议读者不要购买某宝或电脑城里已经组好的整机，因为你看到的电脑配置，主要配件确实是对应的配件，可是对于大多数的我们来说，卖家更老道，他们可以使用二手CPU、显卡，虽然它们是正品，又或者次品点的内存条，而买家都只是会看一般的参数，常见的就是下个鲁大师软件查看配置，这根本无法了解到卖家作了什么，而且一台电脑，可动手的地方很多，虽然主要配件最多是次品，部分配件因为不起眼，真的就有可能会成为电脑的短板。其中之一就是电源，一般买家没有谁看电源，而电源品牌也很混杂，就算一般买家查看了这点，你也就是看个功率，好像很强的样子，可是，关注过材料吗？铭牌参数具体的意义吗？电脑的参考功率，其中有很多文章，它的实际意义是说，各种组合最高是350W或500W，但其中还有转化率的问题，还有就是，每一种组合也有它的最大功能，不论是组合的还是最终的功能，都不能超。因为电源给CPU、主板、显卡、硬盘供电，也差不多这样分成组，CPU组不能超过多少，显卡供电不能超过多少，主板不能超过多少，各组之合不能超过电脑额定功率*转化率。所以对于一个500W的电源确不一定比350W的电源更适合你的电脑。另一方面，材料问题，线问题，接口问题，因此在某宝或电脑城购买已配好的电脑，不好花点时间自己组得更放心。</p>
+<h2 id="引申链接"><a href="#引申链接" class="headerlink" title="引申链接"></a>引申链接</h2><p><a href="http://linux.vbird.org/linux_basic/0130designlinux.php#hardware" target="_blank" rel="external">&lt;鸟哥的linux私房菜&gt;中关于硬件的形象化描述</a><br><a href="http://linux.vbird.org/linux_basic/0510osloader.php#startup" target="_blank" rel="external">&lt;鸟哥的linux私房菜&gt;之开机流程</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本方主要讲下常用电脑中的硬件与相关功能，旨在了帮助小白了解计算机硬件。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+      <category term="电脑小白" scheme="http://LySnake.github.io/tags/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>电脑小白系列之电脑日常管理</title>
+    <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E7%94%B5%E8%84%91%E6%97%A5%E5%B8%B8%E7%AE%A1%E7%90%86.html"/>
+    <id>http://LySnake.github.io/archives/technology/电脑小白系列之电脑日常管理.html</id>
+    <published>2017-02-09T13:03:48.000Z</published>
+    <updated>2018-02-25T03:47:00.032Z</updated>
+    
+    <content type="html"><![CDATA[<p>在生活中经常会碰到电脑乱成一团，软件都是百度系，各种小广告软件，重复软件，一台电脑同时存在360、百度、腾讯、金山多家杀软，有这些特点的人大多是文科生为主，次之还有老一代人。对此，本文主要说些电脑文件管理、软件管理等常见的小白问题。<br><a id="more"></a></p>
+<h2 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h2><p>打开<code>我的电脑</code>，可以看到C盘D盘等。一般的桌面上的所有文件也是存储于C盘用户目录下。计算机对于文件管理，是以树型结构进行管理的，每个盘符可以看做一个树根，其下的每个文件夹都可以看做是子树或形象点说是树枝，对于经常查看文件管理器的人来说，这已经是老生常谈，但我要说的是针对常用软件安装目录与个人文件保存问题。</p>
+<blockquote>
+<p><code>C盘</code>是安装windows系统的系统盘，基本都是大多数软件的默认安装盘，一般常见的安装系统C盘空间大小是50G，只要C盘还留有足够空间，系统并不提示C盘空间不足，那都是没关系的。操作系统windows大多数软件、文件、配置都保存在C盘中，比如office软件，系统自带的工具软件。但是现在的网络环境，很多软件都安装在C盘，个人下载也是默认在C盘，长时间使用C盘的软件，也会给C盘带来缓存文件，这样就会给C盘带来很多文件，当然，只要C盘有空间，这都是没关系的，只是个人下载文件、桌面文件都在C盘，如果电脑出现问题，需要重装系统解决，那么C盘将会清空并重新写盘，日常下载的文件、桌面文件都会清空且永久找不回。</p>
+<p><code>其它盘</code>对widows来说，基本相同，除非是系统隐藏分区。安装windows系统，正常情况下都是只对C盘操作，其它盘文件都不作更改。因此，在日常管理上，个人重要文件尽量放在其它盘;其它软件，如视频软件、迅雷下载软件等，对其下载目录也最好是其它盘，且目录名可分辨。这样，自己下载的文件、个人编写的文件不会因为C盘的变动而被删除。</p>
+<p><code>个人管理方案：</code>即然C盘是系统使用，那只有某些主要的软件才安装在C盘(输入法、杀毒、微软官方软件等)，其它软件全都安装在D盘的<code>Program Files (x86)</code>目录下，且保证每个软件都有一个单独的文件夹，对于下载文件、个人文件，都可存放与E盘或F盘，另外给每个盘符起个别名。各盘符大小，视个人情况而定。另外，还要说一点，对于丢失会带来重要影响的个人文件，最好是使用云盘备份（工程上都会有备份盘，甚至是异地备份盘），因为硬盘是PC机里最容易坏的硬件，同样的，如果文件过于私密，最好使用点加密手段。</p>
+</blockquote>
+<h2 id="软件管理"><a href="#软件管理" class="headerlink" title="软件管理"></a>软件管理</h2><p>鉴于国内的软件环境，尤其是百度系列，我们会发现，对于不常使用电脑的老年人、只用电脑看韩剧的软妹了，电脑中会出现过多无用或重复的软件。这里就说下软件使用问题，并自荐下<a href="https://lysnake.github.io/archives/technology/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html">个人常用软件列表</a>。</p>
+<h3 id="杀毒软件"><a href="#杀毒软件" class="headerlink" title="杀毒软件"></a>杀毒软件</h3><p>其实吧，现在操作系统自身的防御能力已经很强了，不再经常看到电脑中毒了，虽然没有不存在BUG的软件(系统),但能找出BUG的人，都不是缺钱的主。现在如果说还有中毒的人，那真的是要找自己的原因，因为那都是自己进不该进的网站误下可执行的软件(病毒)。在windows下，对于小白来说，能遇见执行的病毒，都是exe为扩展名的可执行文件，所以如果上网下载的文件是exe文件，那么小白应该警惕，不要执行它，除非你知道会带来什么。但是，在生活中，小白都是金山、360、电脑管家、百度杀毒二个或多个重复杀毒功能的软件，大多情况下，其实他们并没有用，尤其是电脑管家和百度杀毒，反而会带来卡慢，百度杀毒更加是自身就是病毒。如果要安装，建议仅安装360或金山，自从win7开始，我就没怎么用杀毒软件了，但是金山和360杀毒其它管理功能还是很不错的，比如开机加速、强制删除文件等。</p>
+<h3 id="重复软件"><a href="#重复软件" class="headerlink" title="重复软件"></a>重复软件</h3><p>前面提到杀毒软件功能重复，在小白的电脑中，同时存在360浏览器、橙子浏览器、chrome、firefox,这里也同样是重复功能的软件，占用硬盘空间并且有可能占用内存，导致操作响应过慢，个人推荐chrome或firefox，最新版的chrome和firefox能更好的支持网页渲染，看到更多网页特效，也能有更好的加载速度，更有强大的插件功能。明显的，每种功能的软件，正常情况下只要一个就好。对于已知无用的软件，占用了硬盘空间，如果开机自启，还会影响开机速度和占用内存，造成电脑卡慢，这个时候应该使用windows自带的软件管理工具或360、金山杀毒的软件管理工具，对无用软件进行卸载清除。</p>
+<h3 id="软件黑名单"><a href="#软件黑名单" class="headerlink" title="软件黑名单"></a>软件黑名单</h3><p><strong>百度系</strong>是常见的软件黑名单，安装一个百度系软件，默认推荐安装其它软件，这就是为什么小白电脑里那么多不知用处的软件的原因，如果可以，尽量少用百度搜索，因为百度推荐、百度认证很有问题，并且搜索精准度并不高，在安装系统时使用的PE系统大白菜，百度认证认证的一个所谓的官网，居然是个高仿假网站，以此安装的系统，完全可能自带病毒、广告。16年的莆田系医院、血友病吧问题，有理由直接把百度直接拉入黑名单，目前已知百度好用的产品，也就只有百度云盘了。另外，如果你还是使用百度，建议你不要在网页上登录百度，因为你登录后，你在百度上搜索或其它百度网页操作的信息会被百度收集，然后进行所谓精准广告投放，而广告本身也存在很大的不可靠性，另外就是，你在网上所有的个人操作也是属于个人隐私，百度今天收集的信息，可能低价出售、安全原因泄漏等。不使用百度搜索了，大家可以使用bing搜索、google搜索，在<a href="https://lysnake.github.io/archives/technology/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html">个人常用软件列表</a>中提供了使用方式。</p>
+<p><strong>不常见、非官网下载</strong>的软件，也会有默认安装好几个其它软件或带来很多广告，也有可能是病毒的载体，如果不是很清楚执行的后果，最好是不要下载并执行。</p>
+<h2 id="电脑优化"><a href="#电脑优化" class="headerlink" title="电脑优化"></a>电脑优化</h2><p>个人电脑中，如果已经不存在多余的软件、软件安装不会使C盘出现空间警告、文件保存结构清晰，我们还可以开始进行其它电脑优化来进一步改善个人电脑环境。这个时候，我们就可以使用360杀毒或金山毒霸，进行开机启动项优化，选择自己开机一定会使用的功能软件，让其开机自启动，其它软件取消开机启动，这样能加快开机速度，减少开机后内存使用。同样也可以用360或金山扫盘、清除无用文件、查杀病毒、删除某些情况下无法删除的文件等。</p>
+<p>像<a href="https://lysnake.github.io/archives/technology/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html">个人常用软件列表</a>提到过的软件一样，安装自己常用的软件，配置自己最习惯的软件环境，比如chrome插件、翻墙、wox快速启动软件、everything快速搜索本地文件、开机自启动、开机自动联网等。</p>
+<h2 id="误区"><a href="#误区" class="headerlink" title="误区"></a>误区</h2><p><strong>硬盘碎片整理</strong>:网上很多人说硬盘读取过慢是因为分区使用久后，产生了很多文件碎片，导致硬盘寻道时间增长，这个说法是有道理的，但这个说法只适合机械硬盘，固态硬盘不适用。另外一点就是，碎片整理的概念已经很久了，而且硬盘读取速度一直都是计算机性能瓶颈，所以现在的硬盘和操作系统，在软件算法上会有相关优化，尽量减少碎片的产生，所以对于目前来说，是没有必要进行碎片整理的，而且这个操作过程中如果关机等特殊情况，是会影响操作系统或其它分区无法正常使用，如无必要，不要考虑碎片整理。另外，早上固态硬盘，可以得到更好的性能体验。</p>
+<p><strong>缓存清理</strong>：其实对于用户而言，缓存的存在本身是为了让软件有更好的体验的，比如看视频，对于已缓存的时段，是可以直接跳看的，而没有缓存的部分，选择后还要等待网络加载后才能观看，而其它软件的缓存其实基本都是一样的道理，都是为了不重复从网络上加载或重新生成而影响软件响应用户的操作用的。但存在另外一些软件文件，仅仅是软件生成出来备用的，正常情况下是使用不到的，这类文件相对很少但可以删除，比如软件的log文件，方便软件崩溃时，上送Log日志给官方维护修改使用。缓存文件相对分区大小来说，还是占用很少一部分，在不使分区空间不足的情况下，也不用考虑操作删除缓存。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在生活中经常会碰到电脑乱成一团，软件都是百度系，各种小广告软件，重复软件，一台电脑同时存在360、百度、腾讯、金山多家杀软，有这些特点的人大多是文科生为主，次之还有老一代人。对此，本文主要说些电脑文件管理、软件管理等常见的小白问题。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+      <category term="电脑小白" scheme="http://LySnake.github.io/tags/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD/"/>
     
   </entry>
   
