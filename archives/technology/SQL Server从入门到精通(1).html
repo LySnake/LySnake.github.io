@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="LySnake" />
+
+
+
+<meta name="description" content="个人学习SQL笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="'SQL Server从入门到精通(1)'">
+<meta property="og:url" content="http://LySnake.github.io/archives/technology/SQL Server从入门到精通(1).html">
+<meta property="og:site_name" content="LySnake个人博客">
+<meta property="og:description" content="个人学习SQL笔记">
+<meta property="og:updated_time" content="2018-02-26T16:35:57.047Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="'SQL Server从入门到精通(1)'">
+<meta name="twitter:description" content="个人学习SQL笔记">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="LySnake个人博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="http://moxfive.coding.me/yelee/gitbook/images/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../../css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>&#39;SQL Server从入门到精通(1)&#39; | LySnake个人博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">LySnake</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="../../index.html">主页</a></li>
+                        
+                            <li><a href="../../archives/">所有文章</a></li>
+                        
+                            <li><a href="../../archives/collect/">收藏</a></li>
+                        
+                            <li><a href="../../tags/">标签云</a></li>
+                        
+                            <li><a href="../../archives/other/aboutme/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="../../lysnake1024@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://www.github.com/lysnake" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="http://atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/c/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/c-primer-plus/">C++ Primer Plus</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/github-pages/">Github Pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/sql/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="../../tags/电脑小白/">电脑小白</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://www.github.com">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://www.gitbook.com/explore">GitBook</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://leetcode.com">LeetCode</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://segmentfault.com">segmentfault</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://linux.vbird.org">鸟书</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.study-area.org/menu2.htm">study-area</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">但行好事，莫问前程</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">LySnake</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">LySnake</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="../../index.html">主页</a></li>
+                
+                    <li><a href="../../archives/">所有文章</a></li>
+                
+                    <li><a href="../../archives/collect/">收藏</a></li>
+                
+                    <li><a href="../../tags/">标签云</a></li>
+                
+                    <li><a href="../../archives/other/aboutme/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="../../lysnake1024@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://www.github.com/lysnake" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="http://atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-SQL Server从入门到精通(1)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="" class="article-date">
+      <time datetime="2018-02-26T15:24:05.000Z" itemprop="datePublished">2018-02-26</time>
+</a>
+
+ 
+    <a href="#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      &#39;SQL Server从入门到精通(1)&#39;
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="../../categories/archives/">archives</a><a class="article-category-link" href="../../categories/archives/technology/">technology</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/sql/">SQL</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="第一章-数据库基础"><a href="#第一章-数据库基础" class="headerlink" title="第一章 数据库基础"></a>第一章 数据库基础</h2><p>数据库系统(DataBase System, DBS)是由数据库及期管理软件组成的系统，人们常把与数据库有关的硬件和软件系统称为数据库系统。</p>
+<h4 id="1-1-1-数据库技术的发展"><a href="#1-1-1-数据库技术的发展" class="headerlink" title="1.1.1 数据库技术的发展"></a>1.1.1 数据库技术的发展</h4><p><strong>人工管理阶段</strong>、<strong>文件系统阶段</strong>、<strong>数据库系统阶段</strong>。</p>
+<h4 id="1-1-2-数据库系统的组成"><a href="#1-1-2-数据库系统的组成" class="headerlink" title="1.1.2 数据库系统的组成"></a>1.1.2 数据库系统的组成</h4><p>数据库系统是采用数据库技术的计算机系统，是由数据库(数据)、数据库管理系统(软件)、数据库管理员(人员)、硬件平台(硬件)和软件平台(软件)5部分构成的运行实体。其中，数据库管理员(DataBase Administrator, DBA)是对数据库进行规划、设计、维护和监视等的专业管理人员，在数据库系统中起着非常重要的作用。</p>
+<h3 id="1-2-数据库的体系结构"><a href="#1-2-数据库的体系结构" class="headerlink" title="1.2 数据库的体系结构"></a>1.2 数据库的体系结构</h3><p>数据库具有一个严谨的体系结构，这样可以有效地组织、管理数据，提高数据库的逻辑独立性和物理独立。数据库领域公认的标准结构是三级模式结构。</p>
+<h4 id="1-2-1-数据库的三级模式结构"><a href="#1-2-1-数据库的三级模式结构" class="headerlink" title="1.2.1 数据库的三级模式结构"></a>1.2.1 数据库的三级模式结构</h4><p>数据库系统的三级模式结是指模式、外模式、内模式。</p>
+<p><strong>模式</strong>：也称逻辑模式或概念模式，它是数据库中全体数据的逻辑结构和特征的描述，是所有用户的公共数据视图。一个数据库只有一个模式，模式处于三级结构的中间层。定义模式时不仅要定义数据的逻辑结构，而且要定义数据之间的联系，定义与数据有关的安全性、完整性要求。</p>
+<p><strong>外模式</strong>：也称为用户模式，它是数据库用(包括应用程序员和最终用户)能够看见和使用的局部数据的逻辑结构和特征的描述，是数据库用户的数据视图，是与某一应用有关的数据的逻辑表示。外模式是模式的子集。一个数据库可以有多个外模式。外模式是保证数据安全性的一个有力措施。</p>
+<p><strong>内模式</strong>：也称为存储模式，一个数据库只有一个内模式。它是数据物理结构和存储方式的描述，是数据在数据库内部的表示方式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">**外模式/模式映射**:对应于同一个模式可以有任意多个外模式。对于每一个外模式，数据库系统都有一个外模式/模式映射。当模式改变时，由数据库管理员对各个外模式/模式映射作相应的改，可以使用外模式保持不变。这样，依据数据外模式编写的应用程序就不用修改，保证了数据与程序的逻辑独立性。</div><div class="line"></div><div class="line">**模式/内模式映射**：数据库中只有一个模式和一个内模式，所以模式/内模式映射是唯一的，它定义了数据库的全局逻辑结构与存储结构之间的对应关系。当数据库的存储结构改变时，由数据库管理员对模式/内模式映射作相应的改变，可以使模式保持不变，应用程序相应地也不作变动。这样，保证了数据与程序的物理独立性。</div></pre></td></tr></table></figure>
+<h3 id="1-3-数据模型"><a href="#1-3-数据模型" class="headerlink" title="1.3 数据模型"></a>1.3 数据模型</h3><p>数据模型是一种对客观事物抽象化的表现形式。它对客观事物加以抽象，通过计算机来处理现实世界中的具体事物。它客观地反映了现实世界，易于理解，与人们对外部事物描述的认识相一致。</p>
+<h4 id="1-3-1-数据模型的概念"><a href="#1-3-1-数据模型的概念" class="headerlink" title="1.3.1 数据模型的概念"></a>1.3.1 数据模型的概念</h4><p>数据模型是数据库系统的核心与基础，是描述数据与数据之间的联系、数据的语义、数据一致性约束的概念性工具的集合。</p>
+<pre><code>数据模型通常是由数据结构、数据操作和完整性约束3部分组成的。
+
+1. 数据结构：是对系统静态特征的描述。描述对象包括数据的类型、内容、性质和数据之间的相互关系。
+2. 数据操作：是对系统动态特征的描述，是对数据库中各种对象实例的操作。
+3. 完整性约束：是完整性规则的集合。它定义了 给定数据模型中数据及其联系所具有的制约和储存规则。
+</code></pre><h4 id="1-3-2-常见的数据模型"><a href="#1-3-2-常见的数据模型" class="headerlink" title="1.3.2 常见的数据模型"></a>1.3.2 常见的数据模型</h4><p>常用的数据库数据模型主要有层次模型、网状模型和关系模型。</p>
+<p><strong>层次模型</strong>：用树形结构表示实体类型及实体联系的数据模型称为层次模型，它具有以下特点：</p>
+<ul>
+<li>每棵树有且仅有一个无双亲节点，称为根。</li>
+<li>打对除根外所有节点有且仅有一个双亲。</li>
+</ul>
+<p><strong>网状模型</strong>：用有向图结构表示实体类型及实体间联系的数据模型称为网状模型。用网状模型编写应用程序极其复杂，数据的独立性较差。</p>
+<p><strong>关系模型</strong>：以二维表来描述数据。在关系模型中，每个表有多个字段列和记录行，每个字段列有固定的属性(数字、字符、日期等)。关系模型数据结构简单、清晰、具有很高的数据独立性，因此是目前主流的数据库数据模型。</p>
+<p>关系模型的基本术语如下：</p>
+<ul>
+<li>关系：一个二维表就是一个关系。</li>
+<li>元组：就是二维表中的一行，即表中的记录。</li>
+<li>属性：就是二维表中的一列，用类型和值表示。</li>
+<li>域：每个属性聚会的变化范围，如性别的域为{男、女}</li>
+</ul>
+<p>关系模型中的数据约束如下：</p>
+<ul>
+<li>实体完整性约束：约束关系的主键属性值不能为空值。</li>
+<li>参照完整性约束：关系之间的基本约束。</li>
+<li>用户定义的完整性约束：它反映了具体应用中数据的语义要求。</li>
+</ul>
+<h4 id="1-3-3-关系数据库的规范化"><a href="#1-3-3-关系数据库的规范化" class="headerlink" title="1.3.3 关系数据库的规范化"></a>1.3.3 关系数据库的规范化</h4><p>关系数据库的规范化理论认为：关系数据库中的每一个关系都要满足一定的规范。根据满足规范的条件不同，可以分为5个等级：第一范式(1NF)、第二范式(2NF)······第五范式(5NF).其中，NF是Normal Form的缩写。一般情况下，只要把数据规范到第三范式(3NF)标准即可满足需要。</p>
+<ul>
+<li>第一范式(1NF)：在一个关系中，消除重复字段，且各字段都是最小的逻辑存储单位。</li>
+<li>第二范式(2NF)：若关系模型属于第一范式(NF)，则关系中每一个非主关键字段都完全依赖于主关键字段，不能只部分依赖于主关键字段的一部分。</li>
+<li>第三范式(3NF)：若关系模型属于第一范式(1NF)，且关系中所有非主关键字段都只依赖于主关键字段。第三范式(3NF)要求去除传递依赖。</li>
+</ul>
+<h4 id="1-3-4-关系数据库的设计原则"><a href="#1-3-4-关系数据库的设计原则" class="headerlink" title="1.3.4 关系数据库的设计原则"></a>1.3.4 关系数据库的设计原则</h4><p>数据库设计是指对于一个给定的应用环境，根据用户的需求，利用数据模型和应用程序模拟现实世界中该应用环境的数据结构和处理活动的过程。</p>
+<p>数据库设计原则如下：</p>
+<ol>
+<li>数据库内数据文件的数据组织应获得最大限度的共享、最小的冗余度，消除数据及数据依赖关系中的冗余部分，使依赖于同一个数据模型的数据达到有效的分享。</li>
+<li>保证输入、修改数据时数据的一致性与正确性。</li>
+<li>保证数据与使用数据的应用程序之间的高度独立性。</li>
+</ol>
+<h4 id="1-3-5-实体怀关系"><a href="#1-3-5-实体怀关系" class="headerlink" title="1.3.5 实体怀关系"></a>1.3.5 实体怀关系</h4><p>实体是指客观存在并可相互区别的事物。实体既可以是实际的事物，也可以是抽象的概念或关系。实体之间有3种关系。</p>
+<ul>
+<li>一对一关系：是指表A中的一条记录确实在表B中有且只有一条相匹配的记录。在一对一关系中，大部分相关信息都在一个表中。</li>
+<li>一对多关系：是指表A中的行要吧在表B中有许多匹配行，但是表B中的行只能在表A中有一个匹配行。</li>
+<li>多对多关系：是指关系中每个表的行在相关表中具有多个匹配行。在数据库中，多对多关系的建立是领先第3个表(称作连接表)实现的，连接表包含相关的两个表的主键列，然后从两个相关表的主键列分别创建与连接表中的匹配列的关系。</li>
+</ul>
+<h3 id="1-4-常见的关系数据库"><a href="#1-4-常见的关系数据库" class="headerlink" title="1.4 常见的关系数据库"></a>1.4 常见的关系数据库</h3><p>关系数据库， 是建立在关系数据库模型基础上的数据库，是通过集合代数等概念和方法来处理数据的数据库。</p>
+<h4 id="1-4-1-Access-数据库"><a href="#1-4-1-Access-数据库" class="headerlink" title="1.4.1 Access 数据库"></a>1.4.1 Access 数据库</h4><p>Microsoft Access 是当前流行的关系数据库管理系统之一，其核心是Microsoft Jet数据库引擎。通常情况下，安装Microsoft Office时选择“默认安装”，Access数据库即被安装到计算机上。</p>
+<p>Microsoft Access 是一个非常容易掌握的数据库管理系统，利用它可以创建、修改和维护数据库和数据库中的数据，并且可以利用向导来完成对数据库的一系列操作。Access能够满足小开支企业客户/服务器解决方案的要求，是一种功能较完备的系统，它几乎包含了数据库领域的所有技术和内容，对于初学者学习数据库知识非常有帮助。</p>
+<h4 id="1-4-2-SQL-Server-2000数据库"><a href="#1-4-2-SQL-Server-2000数据库" class="headerlink" title="1.4.2 SQL Server 2000数据库"></a>1.4.2 SQL Server 2000数据库</h4><p>SQL Server是由微软公司开发的一个大型的关系数据库系统，它为用户提供了一个安全、可靠、易管理和高端的客户/服务器数据库平台。</p>
+<p>SQL Server是种高性能的型数据管理系统，以Client/Server为设计结构、支持多个不同的开发平台、魂魄地企业级的应用程序，支持XML等，能够满足不同类型的数据库解决方案。SQL Server数据库大地扩展了系统性能、可靠性和易用性。</p>
+<h4 id="1-4-3-SQL-Server-2005数据库"><a href="#1-4-3-SQL-Server-2005数据库" class="headerlink" title="1.4.3 SQL Server 2005数据库"></a>1.4.3 SQL Server 2005数据库</h4><ol>
+<li>统一的开发环境：SQL Server 2005和Visual Studio 2005拥有一个统一的开发环境，使得集成于该环境的编程模型能够提供一个整体的解决方案，并使得程序开发语言、产品配置环境和数据操作这3种专业技能紧密地结合起来，给应用程序的可用性、性能、安全性和可伸缩性带来全面的提升。</li>
+<li>.NET框架集成：SQL Server 2005 的核心由.NET Framework 2.0构成，数据库的工具整合了 开发环境，有利于数据库的程序开发。</li>
+</ol>
+<h4 id="1-4-4-SQL-Server-2008-数据库"><a href="#1-4-4-SQL-Server-2008-数据库" class="headerlink" title="1.4.4 SQL Server 2008 数据库"></a>1.4.4 SQL Server 2008 数据库</h4><p>SQL Server数据库系列历经多次升级已经发展到SQL Server 2008,SQL Server 2008是SQL Server的最新版本，是迄今为止最强大和最全面的SQL ServerTHSG .GH DM CF SQL Server 2008 的企业版、标准版和工作组版进行简要说明。</p>
+<ul>
+<li>SQL Server 2008企业版是一个全面的数据管理和业务智能平台，为关键业务应用提供了企业级的可扩展性、数据仓库、安全、高级分析和报表支持，这一版本将为您提供更加坚固的服务器和支持大规模在线事务处理。</li>
+<li>SQL Server 2008标准版是一个完整的数据管理和业务智能平台，为部分级应用提供了最佳的易用性和可管理性。</li>
+<li>SQL Server 2008 工作组版是一个值得依赖的数据管理和报表平台，用以实现安全的发布、远程同步和对运行分支应用的管理能力，这一版本拥有核心的数据库特性，可以很容易地升级到标准版或企业版。</li>
+</ul>
+<h4 id="1-4-5-Oracle数据库"><a href="#1-4-5-Oracle数据库" class="headerlink" title="1.4.5 Oracle数据库"></a>1.4.5 Oracle数据库</h4><p>Oracle是美国ORACLE公司提供的以分布式数据库为核心的一组软件产品，Oracle是目前世界上使用最为广泛的关系数据库，它具有完整的数据管理功能，包括数据的大量性、数据保存的持久性、数据的共享性、数据的可靠性。</p>
+<p>Oracle在并行处理、实时性、数据处理速度方面都有较好的性能。一般情况下，大型企业选择Oracle作为后台数据库来处理海量的数据。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="">&#39;SQL Server从入门到精通(1)&#39;</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">LySnake</a></p>
+        <p><span>发布时间:</span>2018-02-26, 23:24:05</p>
+        <p><span>最后更新:</span>2018-02-27, 00:35:57</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="" title="&#39;SQL Server从入门到精通(1)&#39;">http://LySnake.github.io/archives/technology/SQL Server从入门到精通(1).html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/SQL Server从入门到精通(1).html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="C++ Primer Plus学习笔记(7).html">
+                    C++ Primer Plus学习笔记(7)
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一章-数据库基础"><span class="toc-number">1.</span> <span class="toc-text">第一章 数据库基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-数据库技术的发展"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.1.1 数据库技术的发展</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-数据库系统的组成"><span class="toc-number">1.0.2.</span> <span class="toc-text">1.1.2 数据库系统的组成</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-数据库的体系结构"><span class="toc-number">1.1.</span> <span class="toc-text">1.2 数据库的体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-数据库的三级模式结构"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.2.1 数据库的三级模式结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-数据模型"><span class="toc-number">1.2.</span> <span class="toc-text">1.3 数据模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-数据模型的概念"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.3.1 数据模型的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-常见的数据模型"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.3.2 常见的数据模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-3-关系数据库的规范化"><span class="toc-number">1.2.3.</span> <span class="toc-text">1.3.3 关系数据库的规范化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-4-关系数据库的设计原则"><span class="toc-number">1.2.4.</span> <span class="toc-text">1.3.4 关系数据库的设计原则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-5-实体怀关系"><span class="toc-number">1.2.5.</span> <span class="toc-text">1.3.5 实体怀关系</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-常见的关系数据库"><span class="toc-number">1.3.</span> <span class="toc-text">1.4 常见的关系数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-1-Access-数据库"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.4.1 Access 数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-2-SQL-Server-2000数据库"><span class="toc-number">1.3.2.</span> <span class="toc-text">1.4.2 SQL Server 2000数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-3-SQL-Server-2005数据库"><span class="toc-number">1.3.3.</span> <span class="toc-text">1.4.3 SQL Server 2005数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-4-SQL-Server-2008-数据库"><span class="toc-number">1.3.4.</span> <span class="toc-text">1.4.4 SQL Server 2008 数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-5-Oracle数据库"><span class="toc-number">1.3.5.</span> <span class="toc-text">1.4.5 Oracle数据库</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"true"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="archives/technology/SQL Server从入门到精通(1).html" data-title="&#39;SQL Server从入门到精通(1)&#39;" data-url="http://LySnake.github.io"></div>
+    <script>
+        var duoshuoQuery = {short_name:"lysnake"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + "//" + document.location.host + "/js/embed.js";
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+            // Add comment count
+            $(function(){
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=lysnake&threads=archives/technology/SQL Server从入门到精通(1).html&callback=?";
+                $.getJSON(jsonUrl, function(result){
+                    $.each(result.response, function(i, field){
+                        var value = field.comments;
+                        if (value > 0) {
+                            $(".count-comment").text(value);
+                            return;
+                        }
+                    })
+                })
+            })
+        
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="C++ Primer Plus学习笔记(7).html" title="下一篇: C++ Primer Plus学习笔记(7)">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="">'SQL Server从入门到精通(1)'</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(7).html">C++ Primer Plus学习笔记(7)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(6).html">C++ Primer Plus学习笔记(6)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(5).html">C++ Primer Plus学习笔记(5)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(4).html">C++ Primer Plus学习笔记(4)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(3).html">C++ Primer Plus学习笔记(3)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(2).html">C++ Primer Plus学习笔记(2)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(1).html">C++ Primer Plus学习笔记(1)</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑常见错误诊断.html">电脑小白系列之电脑常见错误诊断</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="Github Pages与Hexo框架博客的搭建.html">Github Pages与Hexo框架博客的搭建</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑硬件了解.html">电脑小白系列之电脑硬件了解</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑日常管理.html">电脑小白系列之电脑日常管理</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2018 LySnake
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 9;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

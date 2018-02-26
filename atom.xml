@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://LySnake.github.io/"/>
-  <updated>2018-02-25T03:43:18.677Z</updated>
+  <updated>2018-02-26T16:35:57.047Z</updated>
   <id>http://LySnake.github.io/</id>
   
   <author>
@@ -14,6 +14,103 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>&#39;SQL Server从入门到精通(1)&#39;</title>
+    <link href="http://LySnake.github.io/archives/technology/SQL%20Server%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A(1).html"/>
+    <id>http://LySnake.github.io/archives/technology/SQL Server从入门到精通(1).html</id>
+    <published>2018-02-26T15:24:05.000Z</published>
+    <updated>2018-02-26T16:35:57.047Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第一章-数据库基础"><a href="#第一章-数据库基础" class="headerlink" title="第一章 数据库基础"></a>第一章 数据库基础</h2><p>数据库系统(DataBase System, DBS)是由数据库及期管理软件组成的系统，人们常把与数据库有关的硬件和软件系统称为数据库系统。</p>
+<h4 id="1-1-1-数据库技术的发展"><a href="#1-1-1-数据库技术的发展" class="headerlink" title="1.1.1 数据库技术的发展"></a>1.1.1 数据库技术的发展</h4><p><strong>人工管理阶段</strong>、<strong>文件系统阶段</strong>、<strong>数据库系统阶段</strong>。</p>
+<h4 id="1-1-2-数据库系统的组成"><a href="#1-1-2-数据库系统的组成" class="headerlink" title="1.1.2 数据库系统的组成"></a>1.1.2 数据库系统的组成</h4><p>数据库系统是采用数据库技术的计算机系统，是由数据库(数据)、数据库管理系统(软件)、数据库管理员(人员)、硬件平台(硬件)和软件平台(软件)5部分构成的运行实体。其中，数据库管理员(DataBase Administrator, DBA)是对数据库进行规划、设计、维护和监视等的专业管理人员，在数据库系统中起着非常重要的作用。</p>
+<h3 id="1-2-数据库的体系结构"><a href="#1-2-数据库的体系结构" class="headerlink" title="1.2 数据库的体系结构"></a>1.2 数据库的体系结构</h3><p>数据库具有一个严谨的体系结构，这样可以有效地组织、管理数据，提高数据库的逻辑独立性和物理独立。数据库领域公认的标准结构是三级模式结构。</p>
+<h4 id="1-2-1-数据库的三级模式结构"><a href="#1-2-1-数据库的三级模式结构" class="headerlink" title="1.2.1 数据库的三级模式结构"></a>1.2.1 数据库的三级模式结构</h4><p>数据库系统的三级模式结是指模式、外模式、内模式。</p>
+<p><strong>模式</strong>：也称逻辑模式或概念模式，它是数据库中全体数据的逻辑结构和特征的描述，是所有用户的公共数据视图。一个数据库只有一个模式，模式处于三级结构的中间层。定义模式时不仅要定义数据的逻辑结构，而且要定义数据之间的联系，定义与数据有关的安全性、完整性要求。</p>
+<p><strong>外模式</strong>：也称为用户模式，它是数据库用(包括应用程序员和最终用户)能够看见和使用的局部数据的逻辑结构和特征的描述，是数据库用户的数据视图，是与某一应用有关的数据的逻辑表示。外模式是模式的子集。一个数据库可以有多个外模式。外模式是保证数据安全性的一个有力措施。</p>
+<p><strong>内模式</strong>：也称为存储模式，一个数据库只有一个内模式。它是数据物理结构和存储方式的描述，是数据在数据库内部的表示方式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">**外模式/模式映射**:对应于同一个模式可以有任意多个外模式。对于每一个外模式，数据库系统都有一个外模式/模式映射。当模式改变时，由数据库管理员对各个外模式/模式映射作相应的改，可以使用外模式保持不变。这样，依据数据外模式编写的应用程序就不用修改，保证了数据与程序的逻辑独立性。</div><div class="line"></div><div class="line">**模式/内模式映射**：数据库中只有一个模式和一个内模式，所以模式/内模式映射是唯一的，它定义了数据库的全局逻辑结构与存储结构之间的对应关系。当数据库的存储结构改变时，由数据库管理员对模式/内模式映射作相应的改变，可以使模式保持不变，应用程序相应地也不作变动。这样，保证了数据与程序的物理独立性。</div></pre></td></tr></table></figure>
+<h3 id="1-3-数据模型"><a href="#1-3-数据模型" class="headerlink" title="1.3 数据模型"></a>1.3 数据模型</h3><p>数据模型是一种对客观事物抽象化的表现形式。它对客观事物加以抽象，通过计算机来处理现实世界中的具体事物。它客观地反映了现实世界，易于理解，与人们对外部事物描述的认识相一致。</p>
+<h4 id="1-3-1-数据模型的概念"><a href="#1-3-1-数据模型的概念" class="headerlink" title="1.3.1 数据模型的概念"></a>1.3.1 数据模型的概念</h4><p>数据模型是数据库系统的核心与基础，是描述数据与数据之间的联系、数据的语义、数据一致性约束的概念性工具的集合。</p>
+<pre><code>数据模型通常是由数据结构、数据操作和完整性约束3部分组成的。
+
+1. 数据结构：是对系统静态特征的描述。描述对象包括数据的类型、内容、性质和数据之间的相互关系。
+2. 数据操作：是对系统动态特征的描述，是对数据库中各种对象实例的操作。
+3. 完整性约束：是完整性规则的集合。它定义了 给定数据模型中数据及其联系所具有的制约和储存规则。
+</code></pre><h4 id="1-3-2-常见的数据模型"><a href="#1-3-2-常见的数据模型" class="headerlink" title="1.3.2 常见的数据模型"></a>1.3.2 常见的数据模型</h4><p>常用的数据库数据模型主要有层次模型、网状模型和关系模型。</p>
+<p><strong>层次模型</strong>：用树形结构表示实体类型及实体联系的数据模型称为层次模型，它具有以下特点：</p>
+<ul>
+<li>每棵树有且仅有一个无双亲节点，称为根。</li>
+<li>打对除根外所有节点有且仅有一个双亲。</li>
+</ul>
+<p><strong>网状模型</strong>：用有向图结构表示实体类型及实体间联系的数据模型称为网状模型。用网状模型编写应用程序极其复杂，数据的独立性较差。</p>
+<p><strong>关系模型</strong>：以二维表来描述数据。在关系模型中，每个表有多个字段列和记录行，每个字段列有固定的属性(数字、字符、日期等)。关系模型数据结构简单、清晰、具有很高的数据独立性，因此是目前主流的数据库数据模型。</p>
+<p>关系模型的基本术语如下：</p>
+<ul>
+<li>关系：一个二维表就是一个关系。</li>
+<li>元组：就是二维表中的一行，即表中的记录。</li>
+<li>属性：就是二维表中的一列，用类型和值表示。</li>
+<li>域：每个属性聚会的变化范围，如性别的域为{男、女}</li>
+</ul>
+<p>关系模型中的数据约束如下：</p>
+<ul>
+<li>实体完整性约束：约束关系的主键属性值不能为空值。</li>
+<li>参照完整性约束：关系之间的基本约束。</li>
+<li>用户定义的完整性约束：它反映了具体应用中数据的语义要求。</li>
+</ul>
+<h4 id="1-3-3-关系数据库的规范化"><a href="#1-3-3-关系数据库的规范化" class="headerlink" title="1.3.3 关系数据库的规范化"></a>1.3.3 关系数据库的规范化</h4><p>关系数据库的规范化理论认为：关系数据库中的每一个关系都要满足一定的规范。根据满足规范的条件不同，可以分为5个等级：第一范式(1NF)、第二范式(2NF)······第五范式(5NF).其中，NF是Normal Form的缩写。一般情况下，只要把数据规范到第三范式(3NF)标准即可满足需要。</p>
+<ul>
+<li>第一范式(1NF)：在一个关系中，消除重复字段，且各字段都是最小的逻辑存储单位。</li>
+<li>第二范式(2NF)：若关系模型属于第一范式(NF)，则关系中每一个非主关键字段都完全依赖于主关键字段，不能只部分依赖于主关键字段的一部分。</li>
+<li>第三范式(3NF)：若关系模型属于第一范式(1NF)，且关系中所有非主关键字段都只依赖于主关键字段。第三范式(3NF)要求去除传递依赖。</li>
+</ul>
+<h4 id="1-3-4-关系数据库的设计原则"><a href="#1-3-4-关系数据库的设计原则" class="headerlink" title="1.3.4 关系数据库的设计原则"></a>1.3.4 关系数据库的设计原则</h4><p>数据库设计是指对于一个给定的应用环境，根据用户的需求，利用数据模型和应用程序模拟现实世界中该应用环境的数据结构和处理活动的过程。</p>
+<p>数据库设计原则如下：</p>
+<ol>
+<li>数据库内数据文件的数据组织应获得最大限度的共享、最小的冗余度，消除数据及数据依赖关系中的冗余部分，使依赖于同一个数据模型的数据达到有效的分享。</li>
+<li>保证输入、修改数据时数据的一致性与正确性。</li>
+<li>保证数据与使用数据的应用程序之间的高度独立性。</li>
+</ol>
+<h4 id="1-3-5-实体怀关系"><a href="#1-3-5-实体怀关系" class="headerlink" title="1.3.5 实体怀关系"></a>1.3.5 实体怀关系</h4><p>实体是指客观存在并可相互区别的事物。实体既可以是实际的事物，也可以是抽象的概念或关系。实体之间有3种关系。</p>
+<ul>
+<li>一对一关系：是指表A中的一条记录确实在表B中有且只有一条相匹配的记录。在一对一关系中，大部分相关信息都在一个表中。</li>
+<li>一对多关系：是指表A中的行要吧在表B中有许多匹配行，但是表B中的行只能在表A中有一个匹配行。</li>
+<li>多对多关系：是指关系中每个表的行在相关表中具有多个匹配行。在数据库中，多对多关系的建立是领先第3个表(称作连接表)实现的，连接表包含相关的两个表的主键列，然后从两个相关表的主键列分别创建与连接表中的匹配列的关系。</li>
+</ul>
+<h3 id="1-4-常见的关系数据库"><a href="#1-4-常见的关系数据库" class="headerlink" title="1.4 常见的关系数据库"></a>1.4 常见的关系数据库</h3><p>关系数据库， 是建立在关系数据库模型基础上的数据库，是通过集合代数等概念和方法来处理数据的数据库。</p>
+<h4 id="1-4-1-Access-数据库"><a href="#1-4-1-Access-数据库" class="headerlink" title="1.4.1 Access 数据库"></a>1.4.1 Access 数据库</h4><p>Microsoft Access 是当前流行的关系数据库管理系统之一，其核心是Microsoft Jet数据库引擎。通常情况下，安装Microsoft Office时选择“默认安装”，Access数据库即被安装到计算机上。</p>
+<p>Microsoft Access 是一个非常容易掌握的数据库管理系统，利用它可以创建、修改和维护数据库和数据库中的数据，并且可以利用向导来完成对数据库的一系列操作。Access能够满足小开支企业客户/服务器解决方案的要求，是一种功能较完备的系统，它几乎包含了数据库领域的所有技术和内容，对于初学者学习数据库知识非常有帮助。</p>
+<h4 id="1-4-2-SQL-Server-2000数据库"><a href="#1-4-2-SQL-Server-2000数据库" class="headerlink" title="1.4.2 SQL Server 2000数据库"></a>1.4.2 SQL Server 2000数据库</h4><p>SQL Server是由微软公司开发的一个大型的关系数据库系统，它为用户提供了一个安全、可靠、易管理和高端的客户/服务器数据库平台。</p>
+<p>SQL Server是种高性能的型数据管理系统，以Client/Server为设计结构、支持多个不同的开发平台、魂魄地企业级的应用程序，支持XML等，能够满足不同类型的数据库解决方案。SQL Server数据库大地扩展了系统性能、可靠性和易用性。</p>
+<h4 id="1-4-3-SQL-Server-2005数据库"><a href="#1-4-3-SQL-Server-2005数据库" class="headerlink" title="1.4.3 SQL Server 2005数据库"></a>1.4.3 SQL Server 2005数据库</h4><ol>
+<li>统一的开发环境：SQL Server 2005和Visual Studio 2005拥有一个统一的开发环境，使得集成于该环境的编程模型能够提供一个整体的解决方案，并使得程序开发语言、产品配置环境和数据操作这3种专业技能紧密地结合起来，给应用程序的可用性、性能、安全性和可伸缩性带来全面的提升。</li>
+<li>.NET框架集成：SQL Server 2005 的核心由.NET Framework 2.0构成，数据库的工具整合了 开发环境，有利于数据库的程序开发。</li>
+</ol>
+<h4 id="1-4-4-SQL-Server-2008-数据库"><a href="#1-4-4-SQL-Server-2008-数据库" class="headerlink" title="1.4.4 SQL Server 2008 数据库"></a>1.4.4 SQL Server 2008 数据库</h4><p>SQL Server数据库系列历经多次升级已经发展到SQL Server 2008,SQL Server 2008是SQL Server的最新版本，是迄今为止最强大和最全面的SQL ServerTHSG .GH DM CF SQL Server 2008 的企业版、标准版和工作组版进行简要说明。</p>
+<ul>
+<li>SQL Server 2008企业版是一个全面的数据管理和业务智能平台，为关键业务应用提供了企业级的可扩展性、数据仓库、安全、高级分析和报表支持，这一版本将为您提供更加坚固的服务器和支持大规模在线事务处理。</li>
+<li>SQL Server 2008标准版是一个完整的数据管理和业务智能平台，为部分级应用提供了最佳的易用性和可管理性。</li>
+<li>SQL Server 2008 工作组版是一个值得依赖的数据管理和报表平台，用以实现安全的发布、远程同步和对运行分支应用的管理能力，这一版本拥有核心的数据库特性，可以很容易地升级到标准版或企业版。</li>
+</ul>
+<h4 id="1-4-5-Oracle数据库"><a href="#1-4-5-Oracle数据库" class="headerlink" title="1.4.5 Oracle数据库"></a>1.4.5 Oracle数据库</h4><p>Oracle是美国ORACLE公司提供的以分布式数据库为核心的一组软件产品，Oracle是目前世界上使用最为广泛的关系数据库，它具有完整的数据管理功能，包括数据的大量性、数据保存的持久性、数据的共享性、数据的可靠性。</p>
+<p>Oracle在并行处理、实时性、数据处理速度方面都有较好的性能。一般情况下，大型企业选择Oracle作为后台数据库来处理海量的数据。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      个人学习SQL笔记
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+      <category term="SQL" scheme="http://LySnake.github.io/tags/sql/"/>
+    
+  </entry>
   
   <entry>
     <title>C++ Primer Plus学习笔记(7)</title>
@@ -598,7 +695,7 @@
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(3).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(3).html</id>
     <published>2017-06-11T09:15:03.000Z</published>
-    <updated>2018-02-25T03:48:02.699Z</updated>
+    <updated>2018-02-26T15:39:09.801Z</updated>
     
     <content type="html"><![CDATA[<h2 id="13-类继承"><a href="#13-类继承" class="headerlink" title="13. 类继承"></a>13. 类继承</h2><h3 id="13-1派生一个类"><a href="#13-1派生一个类" class="headerlink" title="13.1派生一个类"></a>13.1派生一个类</h3><p>从一个类派生出另一个类时，原始类称为基类，继承类称为派生类。使用公有派生，基类的公有成员将成为派生类的公有成员；基类的私有部分也将成为派生类的一部分，但只能通过基类的公有和保护方法访问。</p>
 <ul>
@@ -632,11 +729,11 @@
 <li>在派生类中重新定义基类的方法。</li>
 <li>使用虚方法(推荐作法)。</li>
 </ul>
-<p>如果方法是通过引用或指针而不是对象调用的，它将确定使用哪一种方法。如果没有使用关键字virtual，程序将根据引用类型或指针类型选择方法；如果使用了virtual，程序将根据引用或指针指向的对象类型来选择方法。</p>
+<p>对于虚方法，如果方法是通过引用或指针而不是对象调用的，它将确定使用哪一种方法。如果没有使用关键字virtual，程序将根据引用类型或指针类型选择方法；如果使用了virtual，程序将根据引用或指针指向的对象类型来选择方法。</p>
 <p>经常在基类中将派生类会重新定义的方法声明为虚方法。方法在基类中被声明为虚拟的后，它在派生类中将自动成为虚方法。不过，在派生类声明中使用关键字virtual来指出哪些函数是虚函数也不失为一个好办法。（如果要在派生类中重新定义基类的方法，通常应将基类方法声明为虚拟的。这样，程序将根据对象类型而不是引用或指针类型来选择方法版本。关键字virtual只用于类声明的方法原型中，而没有用于实现中。）</p>
 <p>派生类并不能直接访问基类的私有数据，而必须使用基类的公有方法才能访问这些数据。</p>
 <p>非构造函数不能使用成员初始化列表句法，但派生类方法可以调用公有的基类方法。在派生类方法中，标准的技术是使用作用域解析操作符来调用基类方法，如BaseClass::func()。(同样包含隐式参数this)</p>
-<p>使用delete释放由new分配的对象说明了为何基类应包含一个虚拟析构函数，虽然有时好像并不需要析构函数。如果析构函数不是虚拟的，则将只调用对应于指针类型的析构函数。如果析构函数是虚拟的，将调用相应的对象类型的析构函数。因此，如果指针指向的是派生类对象，将调用派生类的析构函数，然后自动调用基类的析构函数。因此，使用虚拟析构函数可以确保正确的析构函数序列被调用。</p>
+<p>使用delete释放由new分配的对象说明了为何基类应包含一个虚拟析构函数，虽然有时好像并不需要析构函数。如果析构函数不是虚拟的，则将只调用对应指针类型的析构函数。如果析构函数是虚拟的，将调用相应的对象类型的析构函数。因此，如果指针指向的是派生类对象，将调用派生类的析构函数，然后自动调用基类的析构函数。因此，使用虚拟析构函数可以确保正确的析构函数序列被调用。</p>
 <h3 id="13-4-2-静态联编和动态联编"><a href="#13-4-2-静态联编和动态联编" class="headerlink" title="13.4.2 静态联编和动态联编"></a>13.4.2 静态联编和动态联编</h3><p>将源代码中的函数调用解释为执行特定的函数代码块被称为函数名联编。在C语言中，这非常简单，因为每一个函数名都对应一个不同的函数。在C++中，由于函数重载的缘故，这项任务更复杂。编译器必须查看函数参数以及函数名才能确定使用哪个函数。然而，C/C++编译器可以在编译过程完成这种联编。在编译过程中进行联编被称为静态联编，又称为早期联编。不过，虚函数使这项工作变得更困难，使用哪一个函数是不能在编译时确定的，因为编译器不知道用户将选择哪种类型的对象。所以编译器必须生成能够在程序运行时选择正确的虚方法的代码，这被称为动态联编，又称为晚期联编，编译器对非虚方法使用静态联编，对虚方法使用动态联编。</p>
 <h3 id="13-4-3指针和引用类型兼容性"><a href="#13-4-3指针和引用类型兼容性" class="headerlink" title="13.4.3指针和引用类型兼容性"></a>13.4.3指针和引用类型兼容性</h3><p>在C++中，动态联编与指针和引用调用的方法相关，从某种程度上说，这是由继承控制的，公有继承建立is-a关系的一种方法是如何处理指向对象的指针和引用。通常，C++不允许将一种类型的地址赋给另一种类型的指针，也不允许一种类型的引用指向另一种类型，不过指向基类的引用或指针可以引用派生类对象，而不必进行显式类型转换。将派生类引用或指针转换为基类引用或指针被称为向上强制转换，这使公有继承不需要进行显式类型转换。该规则是is-a关系的一部分。将基类指针或引用转换为派生类指针或引用–称为向下强制转换。如果不使用显式类型转换，则向下强制转换是不允许的。原因是is-a关系通常是不可逆的。派生类可以新增数据成员，因此使用这些数据成员的类函数不能应用于基类。</p>
 <h4 id="动态联编和静态联编对比"><a href="#动态联编和静态联编对比" class="headerlink" title="动态联编和静态联编对比"></a>动态联编和静态联编对比</h4><p><strong>效率</strong>：为使程序能够在运行阶段进行决策，必须采取一些方法来跟踪基类指针或引用指向的对象类型，这增加了额外的处理开销。</p>
@@ -695,7 +792,7 @@
 <h3 id="13-7-继承和动态内存分配"><a href="#13-7-继承和动态内存分配" class="headerlink" title="13.7 继承和动态内存分配"></a>13.7 继承和动态内存分配</h3><p>当声明中的构造函数使用new操作符时，需要使用特殊方法：析构函数、复制构造函数和重载赋值操作符。</p>
 <p>当派生类构造函数不使用new操作符或静态成员变量时：</p>
 <ul>
-<li>如果没有定义析构函数，编译器将定义一个不执行任何操作的默认构造函数。实际上，派生类的默认构造函数总是要进行一些操作：执行自身的代码后调用基类析构函数。</li>
+<li>如果没有定义析构函数，编译器将定义一个不执行任何操作的默认析构函数。实际上，派生类的默认构造函数总是要进行一些操作：执行自身的代码后调用基类析构函数。</li>
 <li>成员复制将根据数据类型采用相应的复制方式，但复制类成员或继承的类组件时，则是使用该类的复制构造函数完成的。所以派生类的默认复制构造函数使用显示的基类复制构造函数来复制派生类对象的基类数据部分。</li>
 <li>类的默认赋值操作符将自动使用基类的赋值操作符来对基类组件进行赋值。</li>
 </ul>
@@ -713,7 +810,7 @@
 </li>
 </ul>
 <p>总之，当基类和派生类都采用动态内存分配时，派生类的析构函数、复制构造函数以及赋值操作符都必须使用相应的基类方法来处理基类的元素。这种要求是通过三种不同的方式来满足的。对于析构函数，这是自动完成的；对于构造函数，这是通过在初始化成员列表中调用基类的复制构造函数来完成的；如果不这样做将自动调用基类的默认构造函数。对于赋值操作符，这是通过使用作用域解析操作符显式地调用基类的赋值操作符来完成。</p>
-<p>因为友元不是成员函数，所以不能使用作用域解析操作符来指出要使用哪个函数。这个问题解决方法是使用强制类型转换，以便匹配原型时能够选择正确的函数。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">std</span>::ostream &amp; <span class="keyword">operator</span>&lt;&lt;(<span class="built_in">std</span>::ostream &amp;os, <span class="keyword">const</span> ClassName &amp; hs)</div><div class="line">&#123;</div><div class="line">    os&lt;&lt;(<span class="keyword">const</span> ClassName &amp;)hs;</div><div class="line">    <span class="comment">//todo;</span></div><div class="line">    <span class="keyword">return</span> hs;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>因为友元不是成员函数，所以不能使用作用域解析操作符来指出要使用哪个函数。这个问题解决方法是使用强制类型转换，以便匹配原型时能够选择正确的函数。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">std</span>::ostream &amp; <span class="keyword">operator</span>&lt;&lt;(<span class="built_in">std</span>::ostream &amp;os, <span class="keyword">const</span> ClassName &amp; hs)</div><div class="line">&#123;</div><div class="line">    os&lt;&lt;(<span class="keyword">const</span> BaseName &amp;)hs;</div><div class="line">	os&lt;&lt; hs.m_value;</div><div class="line">    <span class="comment">//todo;</span></div><div class="line">    <span class="keyword">return</span> hs;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="13-8-类设计回顾"><a href="#13-8-类设计回顾" class="headerlink" title="13.8 类设计回顾"></a>13.8 类设计回顾</h3><ul>
 <li>默认构造函数 </li>
 </ul>
@@ -728,7 +825,7 @@
 <li>函数按值返回对象。</li>
 <li>编译器生成临时对象。  //obj1 = obj2 + obj3 + obj4; </li>
 </ol>
-<p>如果程序没有使用（显式或隐式）复制构造函数，编译器将提供原型，但不提供函数定义；否则，程序将定义一个执行成员初始化的复制构造函数。也就是说，新对象的 每个成员都被初始化为原始对象相应的成员的值。</p>
+<p>如果程序没有使用（显式或隐式）复制构造函数，编译器将提供原型，但不提供函数定义；否则，程序将定义一个执行成员初始化的复制构造函数。也就是说，新对象的每个成员都被初始化为原始对象相应的成员的值。</p>
 <p>在某些情况下，成员初始化是不合适的。如：使用new初始化的成员指针通常要求执行深复制，或者类可能包含需要修改的静态变量。</p>
 <ul>
 <li>赋值操作符</li>
@@ -745,7 +842,7 @@
 <ul>
 <li>隐式转换和转换</li>
 </ul>
-<p><strong>隐式转换</strong>：使用一个参数就可以调用的构造函数定义从参数类型到类类型的转换。带一个参数的构造函数原型中使用explicit将禁止进行隐式转换，但仍允许显式转换。</p>
+<p><strong>隐式转换</strong>：使用一个参数就可以调用的构造函数定义了从参数类型到类类型的转换。带一个参数的构造函数原型中使用explicit将禁止进行隐式转换，但仍允许显式转换。</p>
 <p><strong>转换</strong>：转换函数可以是没有参数的类成员，也可以是返回类型被声明为目标类型的为成员函数。即使没有声明返回类型，函数也应返回所需的转换值。</p>
 <ul>
 <li>按值传递对象与传递引用</li>
@@ -761,24 +858,24 @@
 <p>可用const来确保方法不修改参数（修饰参数），确保方法不修改调用它的对象（修饰方法代码块）。确保引用或指针返回的值不能用于修改对象的数据，使之成为左值。</p>
 <p>如果函数将参数声明为指向const的引用或指针，则不能将该参数传递给另一个函数，除非后者也确保了参数不会被修改。</p>
 <h4 id="13-8-3-公有继承的考虑因素"><a href="#13-8-3-公有继承的考虑因素" class="headerlink" title="13.8.3 公有继承的考虑因素"></a>13.8.3 公有继承的考虑因素</h4><p><strong>is-a关系</strong>：在某些情况下，最好的方法可能是创建包含纯虚函数的抽象数据类，并从它派生出其它类。</p>
-<p><strong>为什么不能被继承</strong>：构造函数是不能被继承的，也就是说，创建派生类对象时，必须调用派生类的构造函数。不过，派生类构造函数通常使用成员初始化列表句法来调用基类构造函数，以创建派生对象的基类部分。如果派生类构造函数没有使用成员初始化列表句法显式调用基类构造函数，将使用基类的默认构造函数。在继承链中，每个类都要可以使用初始化列表将信息传递回相近的基类。析构函数也是不能继承的。不过，在释放对象时，程序将首先调用派生类的析构函数，然后调用基类的析构函数。如果基类有默认析构函数，编译器将为派生类生成默认析构函数。通常，对于基类，其析构函数应设置为虚拟的。</p>
-<p><strong>赋值操作符</strong>：派生类继承的方法的特征标与基类完全相同，但赋值操作符的特征标随类而异，这是因为它包含一个类型为其所属类的的参数。如果编译器发现程序将一个对象赋给同一个类的另一个对象，它将自动为这个类提供一个赋值操作符。这个操作符的默认或隐式版本将采用成员赋值，即将原对象的相应成员赋给目标对象的每个成员。不过，如果对象属于基类，编译器将使用基类同仁操作符来处理派生对象中基类部分的同仁。如果显式地为基类提供赋值操作符，将使用该操作符。与此相似，如果成员是另一个类的对象，则对于该成员，将使用基所属类的赋值操作符。如果类构造函数使用new来初始化指针，则需要提供一个显式赋值操作符。如果派生类使用了new，则必须提供显式赋值操作符。</p>
-<p>如果派生类包含了这样的构造函数，即对将基类对象转换为派生类对象进行了定义，则可以将基类对象赋给派生对象。如果派生类定义了用于将基类对象赋给派生对象的同仁操作符，则也可以这样做。如果上述二个条件都不满足，则不能这样做，除非使用显式强制类型转换。</p>
+<p><strong>为什么不能被继承</strong>：构造函数是不能被继承的，也就是说，创建派生类对象时，必须调用派生类的构造函数。不过，派生类构造函数通常使用成员初始化列表句法来调用基类构造函数，以创建派生对象的基类部分。如果派生类构造函数没有使用成员初始化列表句法显式调用基类构造函数，将使用基类的默认构造函数。在继承链中，每个类都要可以使用初始化列表将信息传递回相近的基类。析构函数也是不能继承的。不过，在释放对象时，程序将首先调用派生类的析构函数，然后调用基类的析构函数。如果基类有默认析构函数，编译器将为派生类调用默认析构函数。通常，对于基类，其析构函数应设置为虚拟的。</p>
+<p><strong>赋值操作符</strong>：派生类继承的方法的特征标与基类完全相同，但赋值操作符的特征标随类而异，这是因为它包含一个类型为其所属类的的参数。如果编译器发现程序将一个对象赋给同一个类的另一个对象，它将自动为这个类提供一个赋值操作符。这个操作符的默认或隐式版本将采用成员赋值，即将原对象的相应成员赋给目标对象的每个成员。不过，如果对象属于基类，编译器将使用基类赋值操作符来处理派生对象中基类部分的赋值。如果显式地为基类提供赋值操作符，将使用该操作符。与此相似，如果成员是另一个类的对象，则对于该成员，将使用其所属类的赋值操作符。如果类构造函数使用new来初始化指针，则需要提供一个显式赋值操作符。</p>
+<p>如果派生类包含了这样的构造函数，即对将基类对象转换为派生类对象进行了定义，则可以将基类对象赋给派生对象。如果派生类定义了用于将基类对象赋给派生对象的赋值操作符，则也可以这样做。如果上述二个条件都不满足，则不能这样做，除非使用显式强制类型转换。</p>
 <p><strong>私有成员与保护成员</strong>：对派生类而言，保护成员类似于公有成员；但对于外部而言，保护成员与私有成员类似。派生类可以直接访问基类的保护成员，但只能通过基类的成员函数来访问私有成员。因此，将基类成员设置为私有的可以提高安全性，而将它们设置为保护成员则可简化代码的编写工作，并提高访问速度。</p>
 <p><strong>虚方法</strong>：如果希望派生类能够重新定义方法，则应在基类中将方法定义为虚拟的，这样可以启用晚期联编；如果不希望重新定义方法，则不必将其声明为虚拟的，这样虽然无法禁止他人重新定义方法，但表达了这样的意思。</p>
 <p><strong>析构函数</strong>：基类的析构函数应当是虚拟的，这样，当通过指向对象的基类指针或引用来删除派生对象时，程序将首先调用派生类的析构函数，然后调用基类的析构函数， 而不仅仅是调用基类的析构函数。</p>
 <p><strong>友元函数</strong>：通过强制类型转换将派生类型引用或指针转换为基类引用或指针，然后使用转换后的指针或引用来调用基类的友元函数。</p>
 <p><strong>有关使用基类方法的说明</strong>：</p>
 <ul>
-<li>派生类元旦自使用继承而来的基类方法，如果派生类没有重新定义该方法。</li>
+<li>派生类默认使用继承而来的基类方法，如果派生类没有重新定义该方法。</li>
 <li>派生类的析构函数自动调用基类的析构函数。</li>
 <li>派生类的构造函数自动调用基类的默认构造函数，如果没有在成员初始化列表中指定其他构造函数。</li>
 <li>派生类构造函数显式地调用成员初以化列表中指定的基类构造函数。</li>
-<li>派生类方法可以使用作用域解析操作符来调用仅有的和受保护的基类方法。</li>
+<li>派生类方法可以使用作用域解析操作符来调用公有的和受保护的基类方法。</li>
 <li>派生类的友元函数可以通过强制类型转换，将派生类引用或指针转换为基类引用或指针，然后使用该引用或指针来调用基类的友元函数。</li>
 </ul>
 <p><strong>new和delete是对象的静态成员函数</strong></p>
-<p>派生类继承基类的数据成员和大部分方法，但不继承类开的构造函数、析构函数和同仁操作符。派生类可以直接访问基类的公有成员和保护成员，并能够通过基类的仅有方法和保护方法访问基类的私有成员。可以在派生类中新增数据成员和方法，还可以将派生类用作基类，来做进一步的开发。每个派生类都必须有自己的构造函数。程序创建派生类对象时，将首先调用基类的构造函数，然后调用派生类的构造函数；程序删除对象时，将首先调用派生类的析构函数，再调用基类的析构函数。</p>
+<p>派生类继承基类的数据成员和大部分方法，但不继承类的构造函数、析构函数和赋值操作符。派生类可以直接访问基类的公有成员和保护成员，并能够通过基类的公有方法和保护方法访问基类的私有成员。可以在派生类中新增数据成员和方法，还可以将派生类用作基类，来做进一步的开发。每个派生类都必须有自己的构造函数。程序创建派生类对象时，将首先调用基类的构造函数，然后调用派生类的构造函数；程序删除对象时，将首先调用派生类的析构函数，再调用基类的析构函数。</p>
 <p>ABC：只定义接口，而不涉及实现，ABC必须至少包含一个纯虚方法，可以在声明中的分号前面加上=0来声明纯虚方法。不一定非得定义纯虚方法。对于包含纯虚成员的类，不能使用它来创建对象。纯虚方法用于定义派生类的通用接口。</p>
 ]]></content>
     
@@ -1092,53 +1189,6 @@
   
   <entry>
     <title>电脑小白之操作系统安装</title>
-    <link href="http://LySnake.github.io/archives/technology/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85.html"/>
-    <id>http://LySnake.github.io/archives/technology/操作系统安装.html</id>
-    <published>2017-05-05T17:34:38.000Z</published>
-    <updated>2018-02-25T03:47:35.784Z</updated>
-    
-    <content type="html"><![CDATA[<p>主要介绍windows系统安装，以此让小白放心安装其它系统，比如手机Android、iOS，以及PC上的linux系统。<br><a id="more"></a></p>
-<p>###操作系统的本质###<br>其实，说白了，操作系统也是一个软件，作为一个软件，你可以放心地在机器(PC、手机等)上卸载与安装，只是因为操作系统本身要管理计算机资源(软件、硬件)，其它软件或用户都要借助操作系统才能操作机器，所以操作系统的”卸载与安装”比其它软件更麻烦些，如果失败，机器会无法正常运行，也有可能因为操作失误，造成数据丢失，但这一切都不会影响电脑本身硬件，所以安装系统失败可以再交安装，因此在安装系统中最重要的就是小心误操作引起的数据丢失。另外，在手机上传说有自己安装系统，因为影响引导系统的软件从而导致无法再安装系统从而成为“砖块机”，不过这种情况目前也只是听过。</p>
-<p>###PC安装windows方式###</p>
-<p>####U盘PE系统安装####<br>这种方式安装windows系统，有个优点就是失败了，你还可以借助U盘PE系统进入PC，可以从PC的硬盘中再得到其它文件(包括安装使用的系统文件)，可以再次安装，对新手来说安装起来放心些。所以在这种U盘PE安装方式中，你可以多下载几个系统文件(支持<em>.ios或</em>.ghost),避免因某一系统文件安装失败而导致PC无法开机且难以更换另一系统文件。制件U盘PE系统，有很多软件，比较常见的有<a href="http://www.laomaotao.org/" target="_blank" rel="external">老毛桃</a>和【大白菜】(大白菜还是算了吧，网上有个一样内容的盗版网站，太难分辨了，假网站的系统文件如果自带电脑病毒，杀软也可能无力。这假网站还是百度加V的，所以百度有多差呢？)</p>
-<p><a href="http://www.laomaotao.org/jiaocheng/92/upqdzz.html" target="_blank" rel="external">老毛桃制作U盘PE系统</a></p>
-<p><a href="http://www.laomaotao.org/jiaocheng/92/upzwin7.html" target="_blank" rel="external">老毛桃安装windows 7系统</a></p>
-<p>####U盘iso文件安装####<br>微软官方都是以光盘出售windows操作系统的，ghost文件都是网友自己二次制作或都说是备份系统文件，所以网上还有光盘copy下来的iso文件可供使用，但是这种文件默认是写在光盘上的，所以U盘iso安装其实就是把iso文件写入U盘中，以U盘冒充光盘，让计算机以读光盘的方式读U盘，从而操作官方的安装方式，最常见的系统文件都是iso文件，所以这种方式支持安装windows和linux等，只是写入U盘时对ULtraISO操作选择不同的引导选项。这种方式写入U盘，会导致U盘成为一个只有iso且不能再存文件的U盘，除非格式化(格式化如果失败，只能使用更强的格式化方式，比如linux下的dd命令)。</p>
-<p><a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="external">UltraISO</a></p>
-<p><a href="http://blog.csdn.net/baigoocn/article/details/47406473" target="_blank" rel="external">UltraISO制作U盘iso安装系统</a></p>
-<p>####硬盘本地安装####<br>下载的iso文件(使用<a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="external">UltraISO</a>或<a href="https://daemon-tools.softonic.com.br/" target="_blank" rel="external">DAEMON Tools Lite</a>装载或解压，但别使用rar或7z，可能会有错误导致安装失败)或*.rar类文件，装载或解压后，在一级子目录下会有setup.exe类似的可执行软件，运行后会进入安装界面。这种方式简单，不要使用U盘，只要系统文件就好，但其实安装windows系统有时会因为系统文件缺失某些驱动，而导致安装失败，而此此时有可能处于安装到一半，导致原来的系统已破坏而不能开机。所以这种方式，推荐是在有安装经验的情况下再使用。</p>
-<p>###系统安装注意事项###<br>综上，安装操作系统不会影响电脑硬件，正常情况只是导致破坏原有的操作和系统导致不能正常开机，你可以重新安装系统以恢复计算机。目前只是听过手机有操作失误导致破坏引导软件，引起不能再交安装系统而成为“砖机”，但这种情况还是很少出现。那，在安装系统的时候，最怕出现的是什么呢？</p>
-<ul>
-<li>对系统分区不了解，原本安装windows系统，只要安装在原来的C分区中，但在安装系统时，当时的C分区已经不显示C分区了，误操作安装系统到另一分区，导致把一分区格式化装了操作系统。</li>
-<li>ghost有一种版本，似乎是针对电脑城全新安装系统用的，安装系统默认会对硬盘重新分区，导致硬盘数据全部丢失。</li>
-<li>安装系统，默认会把安装系统的分区格式化，所以这个分区的用户数据要分备份，在安装windows中，C盘就是我们要安装的分区，要先备份C盘中的个人文件，比如常见的桌面上的文件、以及默认下载的文件目录等。</li>
-</ul>
-<p><strong>所以，安装系统最重要的就是要备份好自己的文件，数据无价</strong></p>
-<p>###针对小白的虚拟机安装系统练习###<br>使用<a href="http://www.vmware.com/cn.html" target="_blank" rel="external">VMware</a>或<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="external">VirtualBox</a>虚拟软件，在windows系统上，进行安装虚拟系统，可以试着了解下安装系统会有什么操作、大概过程是什么，这种方式安装对现有系统很安装，要安装的虚拟系统与现在使用中的系统是完全分离的，不会影响现有分区与数据，仅会写入一个比较大的文件，但这个方式对于很老的电脑来说，可能会很卡。</p>
-<p><a href="http://blog.xuite.net/yh96301/blog/30283132-VirtualBox+%E5%AE%89%E8%A3%9D+Windows+7+%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1" target="_blank" rel="external">VirtualBox安装win7教程</a></p>
-<p>###计算机多系统安装###<br>了解下<a href="http://cn.linux.vbird.org/linux_basic/0130designlinux_2.php#partition_mbr" target="_blank" rel="external">多系统引导</a>，可以实现在一个实体机中，同时安装windows、iOS、linux系多个系统，可以每次开机选择自己要进入的系统，实现windows日常使用，linux、iOS办公，当然，这个也可以装虚拟机。原理简单的说就是开机启动后，主板BOIS会读硬盘固定位置数据（引导程序代码），BOIS把CPU控制执行权交给引导程序，引导程序再从硬盘分区上找到安装了系统的的分区再把CPU控制权给操作系统，因此可以有多个分区分别装有不同的系统，让这引导程序引导进行选择运行哪个系统。</p>
-<p>###<br><a href="http://msdn.itellyou.cn/" target="_blank" rel="external">正版windows系统文件下载</a></p>
-<p><a href="http://cn.linux.vbird.org/linux_basic/0130designlinux_2.php#partition_table" target="_blank" rel="external">硬盘分区与引导程序</a></p>
-<p><a href="http://neosmart.net/EasyRE/" target="_blank" rel="external">EasyBCD修复引导程序</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;主要介绍windows系统安装，以此让小白放心安装其它系统，比如手机Android、iOS，以及PC上的linux系统。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
-    
-      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
-    
-    
-      <category term="电脑小白" scheme="http://LySnake.github.io/tags/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>电脑小白之操作系统安装</title>
     <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85.html"/>
     <id>http://LySnake.github.io/archives/technology/电脑小白系列之操作系统安装.html</id>
     <published>2017-05-05T17:34:38.000Z</published>
@@ -1185,11 +1235,58 @@
   </entry>
   
   <entry>
+    <title>电脑小白之操作系统安装</title>
+    <link href="http://LySnake.github.io/archives/technology/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85.html"/>
+    <id>http://LySnake.github.io/archives/technology/操作系统安装.html</id>
+    <published>2017-05-05T17:34:38.000Z</published>
+    <updated>2018-02-25T03:47:35.784Z</updated>
+    
+    <content type="html"><![CDATA[<p>主要介绍windows系统安装，以此让小白放心安装其它系统，比如手机Android、iOS，以及PC上的linux系统。<br><a id="more"></a></p>
+<p>###操作系统的本质###<br>其实，说白了，操作系统也是一个软件，作为一个软件，你可以放心地在机器(PC、手机等)上卸载与安装，只是因为操作系统本身要管理计算机资源(软件、硬件)，其它软件或用户都要借助操作系统才能操作机器，所以操作系统的”卸载与安装”比其它软件更麻烦些，如果失败，机器会无法正常运行，也有可能因为操作失误，造成数据丢失，但这一切都不会影响电脑本身硬件，所以安装系统失败可以再交安装，因此在安装系统中最重要的就是小心误操作引起的数据丢失。另外，在手机上传说有自己安装系统，因为影响引导系统的软件从而导致无法再安装系统从而成为“砖块机”，不过这种情况目前也只是听过。</p>
+<p>###PC安装windows方式###</p>
+<p>####U盘PE系统安装####<br>这种方式安装windows系统，有个优点就是失败了，你还可以借助U盘PE系统进入PC，可以从PC的硬盘中再得到其它文件(包括安装使用的系统文件)，可以再次安装，对新手来说安装起来放心些。所以在这种U盘PE安装方式中，你可以多下载几个系统文件(支持<em>.ios或</em>.ghost),避免因某一系统文件安装失败而导致PC无法开机且难以更换另一系统文件。制件U盘PE系统，有很多软件，比较常见的有<a href="http://www.laomaotao.org/" target="_blank" rel="external">老毛桃</a>和【大白菜】(大白菜还是算了吧，网上有个一样内容的盗版网站，太难分辨了，假网站的系统文件如果自带电脑病毒，杀软也可能无力。这假网站还是百度加V的，所以百度有多差呢？)</p>
+<p><a href="http://www.laomaotao.org/jiaocheng/92/upqdzz.html" target="_blank" rel="external">老毛桃制作U盘PE系统</a></p>
+<p><a href="http://www.laomaotao.org/jiaocheng/92/upzwin7.html" target="_blank" rel="external">老毛桃安装windows 7系统</a></p>
+<p>####U盘iso文件安装####<br>微软官方都是以光盘出售windows操作系统的，ghost文件都是网友自己二次制作或都说是备份系统文件，所以网上还有光盘copy下来的iso文件可供使用，但是这种文件默认是写在光盘上的，所以U盘iso安装其实就是把iso文件写入U盘中，以U盘冒充光盘，让计算机以读光盘的方式读U盘，从而操作官方的安装方式，最常见的系统文件都是iso文件，所以这种方式支持安装windows和linux等，只是写入U盘时对ULtraISO操作选择不同的引导选项。这种方式写入U盘，会导致U盘成为一个只有iso且不能再存文件的U盘，除非格式化(格式化如果失败，只能使用更强的格式化方式，比如linux下的dd命令)。</p>
+<p><a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="external">UltraISO</a></p>
+<p><a href="http://blog.csdn.net/baigoocn/article/details/47406473" target="_blank" rel="external">UltraISO制作U盘iso安装系统</a></p>
+<p>####硬盘本地安装####<br>下载的iso文件(使用<a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="external">UltraISO</a>或<a href="https://daemon-tools.softonic.com.br/" target="_blank" rel="external">DAEMON Tools Lite</a>装载或解压，但别使用rar或7z，可能会有错误导致安装失败)或*.rar类文件，装载或解压后，在一级子目录下会有setup.exe类似的可执行软件，运行后会进入安装界面。这种方式简单，不要使用U盘，只要系统文件就好，但其实安装windows系统有时会因为系统文件缺失某些驱动，而导致安装失败，而此此时有可能处于安装到一半，导致原来的系统已破坏而不能开机。所以这种方式，推荐是在有安装经验的情况下再使用。</p>
+<p>###系统安装注意事项###<br>综上，安装操作系统不会影响电脑硬件，正常情况只是导致破坏原有的操作和系统导致不能正常开机，你可以重新安装系统以恢复计算机。目前只是听过手机有操作失误导致破坏引导软件，引起不能再交安装系统而成为“砖机”，但这种情况还是很少出现。那，在安装系统的时候，最怕出现的是什么呢？</p>
+<ul>
+<li>对系统分区不了解，原本安装windows系统，只要安装在原来的C分区中，但在安装系统时，当时的C分区已经不显示C分区了，误操作安装系统到另一分区，导致把一分区格式化装了操作系统。</li>
+<li>ghost有一种版本，似乎是针对电脑城全新安装系统用的，安装系统默认会对硬盘重新分区，导致硬盘数据全部丢失。</li>
+<li>安装系统，默认会把安装系统的分区格式化，所以这个分区的用户数据要分备份，在安装windows中，C盘就是我们要安装的分区，要先备份C盘中的个人文件，比如常见的桌面上的文件、以及默认下载的文件目录等。</li>
+</ul>
+<p><strong>所以，安装系统最重要的就是要备份好自己的文件，数据无价</strong></p>
+<p>###针对小白的虚拟机安装系统练习###<br>使用<a href="http://www.vmware.com/cn.html" target="_blank" rel="external">VMware</a>或<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="external">VirtualBox</a>虚拟软件，在windows系统上，进行安装虚拟系统，可以试着了解下安装系统会有什么操作、大概过程是什么，这种方式安装对现有系统很安装，要安装的虚拟系统与现在使用中的系统是完全分离的，不会影响现有分区与数据，仅会写入一个比较大的文件，但这个方式对于很老的电脑来说，可能会很卡。</p>
+<p><a href="http://blog.xuite.net/yh96301/blog/30283132-VirtualBox+%E5%AE%89%E8%A3%9D+Windows+7+%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1" target="_blank" rel="external">VirtualBox安装win7教程</a></p>
+<p>###计算机多系统安装###<br>了解下<a href="http://cn.linux.vbird.org/linux_basic/0130designlinux_2.php#partition_mbr" target="_blank" rel="external">多系统引导</a>，可以实现在一个实体机中，同时安装windows、iOS、linux系多个系统，可以每次开机选择自己要进入的系统，实现windows日常使用，linux、iOS办公，当然，这个也可以装虚拟机。原理简单的说就是开机启动后，主板BOIS会读硬盘固定位置数据（引导程序代码），BOIS把CPU控制执行权交给引导程序，引导程序再从硬盘分区上找到安装了系统的的分区再把CPU控制权给操作系统，因此可以有多个分区分别装有不同的系统，让这引导程序引导进行选择运行哪个系统。</p>
+<p>###<br><a href="http://msdn.itellyou.cn/" target="_blank" rel="external">正版windows系统文件下载</a></p>
+<p><a href="http://cn.linux.vbird.org/linux_basic/0130designlinux_2.php#partition_table" target="_blank" rel="external">硬盘分区与引导程序</a></p>
+<p><a href="http://neosmart.net/EasyRE/" target="_blank" rel="external">EasyBCD修复引导程序</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;主要介绍windows系统安装，以此让小白放心安装其它系统，比如手机Android、iOS，以及PC上的linux系统。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+      <category term="电脑小白" scheme="http://LySnake.github.io/tags/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>常用软件推荐</title>
     <link href="http://LySnake.github.io/archives/technology/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html"/>
     <id>http://LySnake.github.io/archives/technology/常用软件推荐.html</id>
     <published>2017-05-05T14:06:46.000Z</published>
-    <updated>2018-02-25T03:47:32.207Z</updated>
+    <updated>2018-02-26T15:08:50.377Z</updated>
     
     <content type="html"><![CDATA[<p>分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。<br><a id="more"></a></p>
 <h2 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h2><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p><a href="https://www.zhihu.com/question/28013848" target="_blank" rel="external">如何高效地使用搜索引擎？</a>：来自zhihu的问答。</p>
@@ -1210,7 +1307,8 @@
 <p><a href="https://chrome.google.com/webstore/detail/send-to-kindle-by-klipme/ipkfnchcgalnafehpglfbommidgmalan" target="_blank" rel="external">Send to Kindle</a>:一键发送网页文章到Kindle阅读器。</p>
 <p><a href="https://www.zhihu.com/question/23228162" target="_blank" rel="external">chrome有哪些好用的插件</a></p>
 <hr>
-<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p><a href="https://www.zhihu.com/question/32129337" target="_blank" rel="external">如何优雅使用windows 10</a>:来自zhihu的问答。</p>
+<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p>[检测性能软件]CPU-Z + GPU-Z + AIDA64，dmark、国际象棋</p>
+<p><a href="https://www.zhihu.com/question/32129337" target="_blank" rel="external">如何优雅使用windows 10</a>:来自zhihu的问答。</p>
 <p><a href="https://atom.io/" target="_blank" rel="external">Atom</a>：Atom 是 Github 专门为程序员推出的一个跨平台文本编辑器。具有简洁和直观的图形用户界面，并有很多有趣的特点：支持CSS，HTML，JavaScript等网页编程语言。它支持宏，自动完成分屏功能，集成了文件管理器。</p>
 <p><a href="http://www.scootersoftware.com/download.php" target="_blank" rel="external">BCompare</a>：跨平台的文件比较工具。</p>
 <p><a href="http://download.pchome.net/system/treak/detail-4359.html" target="_blank" rel="external">EasyBCD</a>:修改PC上多个系统引导程序，选择默认系统引导。</p>
@@ -1232,6 +1330,7 @@
 <p><a href="https://anydesk.com/remote-desktop" target="_blank" rel="external">AnyDesk</a>:远程控制效果或许会超出你的想象，作为TeamViewer备用方案,来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
 <p><a href="http://sunlogin.oray.com/zh_CN/" target="_blank" rel="external">向日葵</a>:官网信息(远程手机操作PC开机，控制)，来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
 <p><a href="http://www.cockos.com/licecap/" target="_blank" rel="external">licecap</a>:Gif文件录制工具。</p>
+<p><a href="https://www.huorong.cn/" target="_blank" rel="external">火绒</a>:杀毒软件。</p>
 <p><em>Powertool</em>:系统清理工具。</p>
 <hr>
 <h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><p><a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">zsh</a>:更友好的shell(漂亮的themes，更多的输入匹配)。</p>
