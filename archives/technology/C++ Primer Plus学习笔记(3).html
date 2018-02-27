@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(3).html">
 <meta property="og:site_name" content="LySnake个人博客">
 <meta property="og:description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
-<meta property="og:updated_time" content="2018-02-26T15:39:09.801Z">
+<meta property="og:updated_time" content="2018-02-27T11:26:11.965Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ Primer Plus学习笔记(3)">
 <meta name="twitter:description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
@@ -369,7 +369,7 @@
 <h3 id="13-4-3指针和引用类型兼容性"><a href="#13-4-3指针和引用类型兼容性" class="headerlink" title="13.4.3指针和引用类型兼容性"></a>13.4.3指针和引用类型兼容性</h3><p>在C++中，动态联编与指针和引用调用的方法相关，从某种程度上说，这是由继承控制的，公有继承建立is-a关系的一种方法是如何处理指向对象的指针和引用。通常，C++不允许将一种类型的地址赋给另一种类型的指针，也不允许一种类型的引用指向另一种类型，不过指向基类的引用或指针可以引用派生类对象，而不必进行显式类型转换。将派生类引用或指针转换为基类引用或指针被称为向上强制转换，这使公有继承不需要进行显式类型转换。该规则是is-a关系的一部分。将基类指针或引用转换为派生类指针或引用–称为向下强制转换。如果不使用显式类型转换，则向下强制转换是不允许的。原因是is-a关系通常是不可逆的。派生类可以新增数据成员，因此使用这些数据成员的类函数不能应用于基类。</p>
 <h4 id="动态联编和静态联编对比"><a href="#动态联编和静态联编对比" class="headerlink" title="动态联编和静态联编对比"></a>动态联编和静态联编对比</h4><p><strong>效率</strong>：为使程序能够在运行阶段进行决策，必须采取一些方法来跟踪基类指针或引用指向的对象类型，这增加了额外的处理开销。</p>
 <p><strong>概念模型</strong>：在设计类时，可能包含一些不在派生类重新定义的成员函数。对于这些函数不设置为虚函数有二方面的好处：首先效率更高，基次指出不要重新定义该函数。这表明，仅将那些预期将被重新定义的方法声明为虚拟的。</p>
-<p><strong>虚函数的工作原理</strong>：C++规定了虚函数的行为，但将实现方法留给了编译器作者。通常，编译器处理虚函数的方法是，给每个对象添加一个隐藏成员。隐藏成员中保存了一个指向函数地址数组的指针。这种数组称为虚函数表(virtual function table,vtbl)。虚函数表中存储了为类对象进行声明的虚函数的地址。例如，基类对象包含了一个指针，该指针指向基类中所有虚函数的地址表。派生类对象将包含一个指向独立地址表的指针。如果派生类提供了虚函数的新定义，该虚函数表将保存新函数的地址；如果派生类没有重新定义虚函数，该vtbl将保存函数原始版本的地址。如果派生类定义了新的虚函数，则该函数的地址也将被添加到vtbl中，注意，无论类中包含的虚函数是1个还是10个，都只需要在对象中添加1个地址成员，只是表的大小不同而已。（虚函数表记录的函数并不记录参数特征标（非重载而是重写））</p>
+<p><strong>虚函数的工作原理</strong>：C++规定了虚函数的行为，但将实现方法留给了编译器作者。通常，编译器处理虚函数的方法是，给每个对象添加一个隐藏成员。隐藏成员中保存了一个指向函数地址数组的指针。这种数组称为虚函数表(virtual function table,vtbl)。虚函数表中存储了为类对象进行声明的虚函数的地址。例如，基类对象包含了一个指针，该指针指向基类中所有虚函数的地址表。派生类对象将包含一个指向独立地址表的指针。如果派生类提供了虚函数的新定义，该虚函数表将保存新函数的地址；如果派生类没有重新定义虚函数，该vtbl将保存函数原始版本的地址。如果派生类定义了新的虚函数，则该函数的地址也将被添加到vtbl中，注意，无论类中包含的虚函数是1个还是10个，都只需要在对象中添加1个地址成员，只是表的大小不同而已。(虚函数表记录着该类的虚函数地址数组，在编译期根据指针或引用调用方法时判断是地址数组中哪个成员。基类的虚函数表对应与方法与派生类前虚函数表部分一一对应。)</p>
 <p>使用虚函数时，在内存和执行速度方面有一定的成本，包括：</p>
 <ul>
 <li>每个对象都将增大，增大量为存储地址的空间。</li>
@@ -519,7 +519,7 @@
         <p><span>本文标题:</span><a href="">C++ Primer Plus学习笔记(3)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LySnake</a></p>
         <p><span>发布时间:</span>2017-06-11, 17:15:03</p>
-        <p><span>最后更新:</span>2018-02-26, 23:39:09</p>
+        <p><span>最后更新:</span>2018-02-27, 19:26:11</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="" title="C++ Primer Plus学习笔记(3)">http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(3).html</a>
             <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(3).html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -668,7 +668,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="SQL Server从入门到精通(1).html">'SQL Server从入门到精通(1)'</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(7).html">C++ Primer Plus学习笔记(7)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(6).html">C++ Primer Plus学习笔记(6)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(5).html">C++ Primer Plus学习笔记(5)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(4).html">C++ Primer Plus学习笔记(4)</a></li><li class="post-list-item"><a class="post-list-link" href="">C++ Primer Plus学习笔记(3)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(2).html">C++ Primer Plus学习笔记(2)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(1).html">C++ Primer Plus学习笔记(1)</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑常见错误诊断.html">电脑小白系列之电脑常见错误诊断</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="Github Pages与Hexo框架博客的搭建.html">Github Pages与Hexo框架博客的搭建</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑硬件了解.html">电脑小白系列之电脑硬件了解</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑日常管理.html">电脑小白系列之电脑日常管理</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="SQL Server从入门到精通(1).html">SQL Server从入门到精通(1)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(7).html">C++ Primer Plus学习笔记(7)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(6).html">C++ Primer Plus学习笔记(6)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(5).html">C++ Primer Plus学习笔记(5)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(4).html">C++ Primer Plus学习笔记(4)</a></li><li class="post-list-item"><a class="post-list-link" href="">C++ Primer Plus学习笔记(3)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(2).html">C++ Primer Plus学习笔记(2)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(1).html">C++ Primer Plus学习笔记(1)</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑常见错误诊断.html">电脑小白系列之电脑常见错误诊断</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="Github Pages与Hexo框架博客的搭建.html">Github Pages与Hexo框架博客的搭建</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑硬件了解.html">电脑小白系列之电脑硬件了解</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑日常管理.html">电脑小白系列之电脑日常管理</a></li></ul>
 
 
 
