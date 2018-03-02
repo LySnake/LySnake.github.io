@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(7).html">
 <meta property="og:site_name" content="LySnake个人博客">
 <meta property="og:description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
-<meta property="og:updated_time" content="2018-02-25T03:43:18.677Z">
+<meta property="og:updated_time" content="2018-03-02T14:24:53.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ Primer Plus学习笔记(7)">
 <meta name="twitter:description" content="个人根据已有的C基础，学习《C++ Primer Plus》的学习笔记">
@@ -332,7 +332,7 @@
 <p>通常，通过使用缓冲区可以更高效地处理输入和输出。缓冲区是用作中介的内存块，它是将信息从设备传输到程序或从程序传输给设备的临时存储工具。通常，像磁盘驱动器这样的设备，以512字节(或更多)的块为单位来传输信息，而程序通常每次只能处理一个字节的信息。缓冲区帮助匹配这二种不同的信息传输速率。</p>
 <p>键盘输入每次提供一个字符，因此在这种情况下，程序无须缓冲区来帮助匹配不同的数据传输速率。不过，对键盘输入进行缓冲可以让用户在将输入传输给程序之前返回并更正。C++程序通常在用户按下回车键时刷新输入缓冲区。</p>
 <p>使用ostream对象(如cout)来处理输出。创建这样的对象将打开一个流，自动创建缓冲区，并将其与流关联起来，同时使得能够使用类成员函数。</p>
-<p>I/O类被重新编写。为成为国际语言，C++必须能够处理需要要16位的国际字符集或更宽的字符类型。因此，该语言在传统的8位char（或”窄”)类型的基础上添加了wchar_t(或“宽”)字符类型。每种类型都需要有自己的I/O工具。</p>
+<p>I/O类被重新编写。为成为国际语言，C++必须能够处理需要16位的国际字符集或更宽的字符类型。因此，该语言在传统的8位char（或”窄”)类型的基础上添加了wchar_t(或“宽”)字符类型。每种类型都需要有自己的I/O工具。</p>
 <p>C++的iostream类库管理了很多细节。例如，在程序中包含iostream文件将自动创建8个流对象(4个用于窄字符流，4个用于宽字符流)：</p>
 <ul>
 <li>cin对象对应于标准输入流。在默认情况下，这个流被关联到标准输入设备（通常为键盘）。wcin对象与此类似，但处理的是wchar_t类型。</li>
@@ -349,14 +349,14 @@
 <p>ostream类是从ios类派生而来的，而后者是从ios_base类派生而来的。ios_base类存储了描述格式状态的信息。例如，一个类成员中某些位决定了使用计数系统，而另一个成员则决定了字段宽度。通过使用控制符，可以控制显示整数时使用的计数系统。通过使用ios_base的成员函数，可以控制字段宽度和小数倍数。由于ios_base类是ostream的间接基类，因此可以将其方法用于ostream对象(或子代)，如cout。</p>
 <p>三个最常用的控制符分别是setprecision()、setfill()和setw(),它们分别用来设置精度、填充字符和字段宽度。与前面讨论的控制符不同的是，这三个控制符带参数。setprecison()控制符接受一个指定精度的整数参数；setfill()控制符接受一个指定填充字符的char参数；setw()控制符接受一个指定字段宽度的整数参数。 由于它们都是控制符，因此可以用cout语句连接起来。</p>
 <h3 id="17-3-使用cin进行输入"><a href="#17-3-使用cin进行输入" class="headerlink" title="17.3 使用cin进行输入"></a>17.3 使用cin进行输入</h3><p>不同版本的读取操作符查看输入流的方法是相同的。它们跳过空白(空格、 换行符和制表符)，直到遇到非空白字符。即使对于单字符模式(参数类型为char、unsigned char和signed char)，情况也是如此，但对于C语言的字符输入函数，情况并非如此。在单字符模式下，&gt;&gt;操作符将读取该字符，将它放置到指定的位置。在其他模式下，&gt;&gt;操作符将读取一个指定类型的数据。也就是说，它读取从非空白字符开始到与目标类型不匹配的第一个字符之间的全部内容。</p>
-<p><strong>流状态</strong>(被定义为iostate类型，而iostate是一种bitmask类型)，由3个ios_base元素组成：eofbit、badbit和failbit，其中每个元素都是一位，可以是1（设置）或0（清除）。当cin操作到达文件未必时，它将设置eofbit；当cin操作未能读取到预期的字符时(像前一个例子那样)，它将设置failbit。I/O失败(如试图读取不可访问的文件或试图写入写保护的磁盘)，也可能将failbit设置为1。在一些无法诊断的失败破坏流时，badbit元素将被设置(实现没有必要就哪些情况下设置failbit，哪些情况下设置badbit达成一致)。当全部3个状态位都设置为0时，说明一切顺利。</p>
+<p><strong>流状态</strong>(被定义为iostate类型，而iostate是一种bitmask类型)，由3个ios_base元素组成：eofbit、badbit和failbit，其中每个元素都是一位，可以是1（设置）或0（清除）。当cin操作到达文件末尾时，它将设置eofbit；当cin操作未能读取到预期的字符时(像前一个例子那样)，它将设置failbit。I/O失败(如试图读取不可访问的文件或试图写入写保护的磁盘)，也可能将failbit设置为1。在一些无法诊断的失败破坏流时，badbit元素将被设置(实现没有必要就哪些情况下设置failbit，哪些情况下设置badbit达成一致)。当全部3个状态位都设置为0时，说明一切顺利。</p>
 <h3 id="17-4-文件输入与输出"><a href="#17-4-文件输入与输出" class="headerlink" title="17.4 文件输入与输出"></a>17.4 文件输入与输出</h3><p>C++在头文件fstream(以前为fstream.h)中定义了多个新类，其中包括用于文件输入的ifstream类和用于文件输出的ofstream类。C++还定义了一个fstream类，用于同步文件I/O。这些类都是从头文件iostream中的类派生而来的。</p>
 <p>使用文件I/O：</p>
 <p><strong>写文件</strong></p>
 <ol>
 <li>创建一个ofstream对象来管理输出流。首先应包含头文件fstream。</li>
 <li>将该对象与特定的文件关联起来。</li>
-<li>以使用cout的文件使用该对象，惟一的区别是：输出将进入文件，而不屏幕。</li>
+<li>以使用cout的文件使用该对象，惟一的区别是：输出将进入文件，而不是屏幕。</li>
 </ol>
 <p>对于大多数(但不是全部)实现来说，包含该文件便自动包括iostream文件，因此不必显示包含iostram。然后声明一个ofstream对象<strong>ofstream fout;</strong>。接下来必须将这个对象与特定的文件想关联。为此可以使用open()方法<strong>fout.open(“jar.txt”);</strong>，可以使用另一个构造函数将这二步合并成一条语句<strong>ofstream fout(“jar.txt”);</strong>。以这种方式打开文件来进行输出时， 如果没有这样的文件，将创建一个新文件；如果有这样的文件，则打开文件将清空文件，输出将进入到一个空文件中。以默认模式打开文件进行输出将自动把文件的长度截短为0，这相当于删除已有内容。</p>
 <p><strong>读文件</strong></p>
@@ -365,7 +365,10 @@
 <li>将该对象与特定的文件关联起来。</li>
 <li>以使用cin的方式使用该对象。</li>
 </ol>
-<p>当输入和输出流对象过期时，到文件的连接将自动关闭。另外，也可以使用close()方法来显示地关闭到文件的连接<figure class="highlight plain"><figcaption><span>```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">可以同时打开的文件数取决于操作系统，但通常为20个左右。</div><div class="line"></div><div class="line">**文件模式**：描述的是文件将被如何使用：读、写、追加等。将流与文件关联时(无论是使用文件名初始化文件流对象，还是使用open()方法)，都可以提供指定文件模式的第二个参数：</div><div class="line"></div><div class="line">```C++</div><div class="line">ifstream fin(&quot;banjo&quot;,mode1);   //constructor with mode argument </div><div class="line">ofstream fout();</div><div class="line">fout.open(&quot;harp&quot;,mode2);       //open() with mode arguments</div></pre></td></tr></table></figure></p>
+<p>当输入和输出流对象过期时，到文件的连接将自动关闭。另外，也可以使用close()方法来显示地关闭到文件的连接<strong>fout.close();</strong></p>
+<p>可以同时打开的文件数取决于操作系统，但通常为20个左右。</p>
+<p><strong>文件模式</strong>：描述的是文件将被如何使用：读、写、追加等。将流与文件关联时(无论是使用文件名初始化文件流对象，还是使用open()方法)，都可以提供指定文件模式的第二个参数：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function">ifstream <span class="title">fin</span><span class="params">(<span class="string">"banjo"</span>,mode1)</span></span>;   <span class="comment">//constructor with mode argument </span></div><div class="line"><span class="function">ofstream <span class="title">fout</span><span class="params">()</span></span>;</div><div class="line">fout.open(<span class="string">"harp"</span>,mode2);       <span class="comment">//open() with mode arguments</span></div></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -397,7 +400,7 @@
 </tbody>
 </table>
 <p>二进制格式指的是存储值的计算机内部表示。也就是说，计算机不是存储字符，而是存储这个值的64位double表示。对于字符来说，二进制表示与文件表示是一样的，即字符的ASCII码的二进制表示。对于数字来说，二进制的表示与文件表示有很大差别。</p>
-<p>文本格式便于读取，可以使用编辑器或字处理器来读取和编辑文本文件，可以很方便地将文本文件从一个计算机系统传输到另一个计算机系统。二进制格式对于数字来说比较精确，因为它存储的是值的内部表示，因此不会有转换误或舍入误差，以二进缺点格式保存数据的速度更快，因为不需要转换，并可以大块地存储数据。二进制格式通常占用的空间较小，这取决于数据的特征。不过，如果另一个系统使用另一种内部表示，则可能无法将数据传输给该系统。同一系统上不同的编译器也可能使用不同的内部结构布局表示。在这种情况下，则必须编写一个将一种数据转换成另一种的程序。</p>
+<p>文本格式便于读取，可以使用编辑器或字处理器来读取和编辑文本文件，可以很方便地将文本文件从一个计算机系统传输到另一个计算机系统。二进制格式对于数字来说比较精确，因为它存储的是值的内部表示，因此不会有转换误或舍入误差，以二进格式保存数据的速度更快，因为不需要转换，并可以大块地存储数据。二进制格式通常占用的空间较小，这取决于数据的特征。不过，如果另一个系统使用另一种内部表示，则可能无法将数据传输给该系统。同一系统上不同的编译器也可能使用不同的内部结构布局表示。在这种情况下，则必须编写一个将一种数据转换成另一种的程序。</p>
 <p>对于二进制数据，文本格式会引起问题，因此double值中间的字节可能与换行符的ASCII码有相同的模式。另外，在文件尾的检测方式也有区别。因此以二进制格式保存数据时，应使用二进制文件模式(UNIX系统只有一种文件模式，因此对于它来说，二进制模式和文本模式是一样的)</p>
 <p><strong>随机存取</strong></p>
 <p>随机存取指的是直接移动（不是依次移动）到文件的任何位置。随机存取常被用于数据库文件，程序维护一个独立的索引文件，该文件指出数据在主数据文件中的位置。这样，程序便可以直接跳到这个位置，读取（还可能修改）其中的数据。如果文件由长度相同的记录组成，这种方法实现起来最简单。每条记录表示一组相关的数据。</p>
@@ -406,7 +409,7 @@
 <p>sstream头文件定义了一个从ostream类派生而来的ostringstream类（还有一个基于wostream的wostringstream类，这个类用于宽字符集）。如果创建了一个ostringstream对象，则可以将信息写入其中，它将存储这些信息。可以将可用于cout的方法用于ostringstream对象。</p>
 <p>istringstream类允许使用istream方法族读取istringstream对象中的数据，istringstream对象可以使用string对象进行初始化。</p>
 <p>在用法案例分析中，开发小组列出了常用的方法或预期最终的系统将用于场景；找出元素、操作和职责，以确定可能要使用的类和类特性。CRC卡片是一种分析场景的简单方法。开发小组为每个类创建索引卡片，卡片上列出了类名、类责任（如表示的数据和执行的操作）以及类的合作者（如必须与之交互的其它类）。然后小组使用CRC卡片提供的接口便可以进入场景。</p>
-<p>在这方面，最新的工具是统一建模语言（Unified Modeling Language,UML），它不是一种编程语言，而是一种用于表示编程项目的分析和设计的语言，是由Grady Booch、Jim Rumbaugh和Ivar Jacobson开发的，他们分别更早的3种建语言OMT、OOSE的主要开发人员。</p>
+<p>在这方面，最新的工具是统一建模语言（Unified Modeling Language,UML），它不是一种编程语言，而是一种用于表示编程项目的分析和设计的语言，是由Grady Booch、Jim Rumbaugh和Ivar Jacobson开发的，他们分别更早的3种建模语言OMT、OOSE的主要开发人员。</p>
 <p>缓冲区是内存中的临时存储区域，是程序与文件或其它I/O设备之间的桥梁。信息在缓冲区和文件之间传输时，将使用设备（如磁盘驱动器）处理效率最高的尺寸以大块数据的方式进行传输。信息在缓冲区和程序之间传输时，是逐字节传输的，这种方式对于程序中的处理操作更为方便。</p>
 <p>iostream和fstream文件构成了I/O类库，该类库定义了大量用于管理流的类。包含了iostream文件的C++程序将自动打开8个流，并使用8个对象管理它们。cin对象管理标准输入流，后者默认与标准输入设备（通常为键盘）相连；cout对象管理标准输出流，后者默认与标准输出设备（通常为显示器）相连；cerr和clog对象管理与标准错误设备（通常为显示器）相连的未被缓冲的流和被缓冲的流。</p>
 
@@ -420,7 +423,7 @@
         <p><span>本文标题:</span><a href="">C++ Primer Plus学习笔记(7)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LySnake</a></p>
         <p><span>发布时间:</span>2017-07-22, 10:13:12</p>
-        <p><span>最后更新:</span>2018-02-25, 11:43:18</p>
+        <p><span>最后更新:</span>2018-03-02, 22:24:53</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="" title="C++ Primer Plus学习笔记(7)">http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(7).html</a>
             <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(7).html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
