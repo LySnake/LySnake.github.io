@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://LySnake.github.io/"/>
-  <updated>2018-02-27T11:28:00.957Z</updated>
+  <updated>2018-04-01T05:33:14.603Z</updated>
   <id>http://LySnake.github.io/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Lua学习</title>
+    <link href="http://LySnake.github.io/archives/technology/Lua%E5%AD%A6%E4%B9%A0.html"/>
+    <id>http://LySnake.github.io/archives/technology/Lua学习.html</id>
+    <published>2018-04-01T02:13:12.000Z</published>
+    <updated>2018-04-01T05:33:14.603Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="词法约定"><a href="#词法约定" class="headerlink" title="词法约定"></a>词法约定</h2><ul>
+<li>Lua 是一个大小写敏感的语言。一般约定，以下划线开头连接一串大写字母的名字（比如 _VERSION）被保留用于 Lua 内部全局变量。</li>
+<li><strong>字符串</strong>既可以用一对单引号引起，也可以是双引号，里面还可以包含类似 C 的转义符： ‘\a’ （响铃）， ‘\b’ （退格）， ‘\f’ （表单）， ‘\n’ （换行）， ‘\r’ （回车）， ‘\t’ （横向制表）， ‘\v’ （纵向制表）， ‘\‘ （反斜杠）， ‘\”‘ （双引号）， 以及 ‘\’’ （单引号)。 而且，如果在一个反斜杠后跟了一个真正的换行符，其结果就是在字符串中产生一个换行符。 我们还可以用反斜杠加数字的形式 \ddd 来描述一个字符。这里， ddd 是一串最多三位的十进制数字。（注意，如果需要在这种描述方法后接一个是数字的字符， 那么反斜杠后必须写满三个数字。）Lua 中的字符串可以包含任何 8 位的值。包括用 ‘\0’ 表示的零。</li>
+<li>字符串还可以用一种长括号括起来的xv cbz方式定义。一个长字符串可以由任何一级的正的长括号开始，而由第一个碰到的同级反的长括号结束。 整个词法分析过程将不受分行限制，不处理任何转意符，并且忽略掉任何不同级别的长括号。 这种方式描述的字符串可以包含任何东西，当然特定级别的反长括号除外。</li>
+<li>我们把两个正的方括号间插入 n 个等号定义为第 n 级正长括号。 就是说，0 级正的长括号写作 [[ ， 一级正的长括号写作 [=[ ，如此等等。 反的长扩展也作类似定义； 举个例子，4 级反的长括号写作 ]====] 。</li>
+<li>数字常量可以分两部分写，十进制底数部分和十进制的指数部分。指数部分是可选的。 Lua 也支持十六进制整数常量，只需要在前面加上前缀 0x 。</li>
+<li>注释可以在除字符串内的任何地方是以两横 (–) 开始。 如果跟在两横后面的不是一个长括号，这就是一个短注释，它的作用范围直到行末； 否则就是一个长注释，其作用范围直到遇到反的长括号。 长注释通常被用来临时屏蔽代码块。</li>
+</ul>
+<p>2.2 - 值与类型 vxczbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzb</p>
+<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><p>|:—-:|:—-:|:—-:|:—-:|:—-:|:—-:|<br>|and|break|do|else|elseif| |<br>|end|faalse|for|function|if| |<br>|in|local|nil|not|or| |<br>|repeat|return|then|true|until|while|</p>
+<p>其它Token(符记):</p>
+<p>|:—-:|:—-:|:—-:|:—-:|:—-:|:—-:|:—-:|<br>|+|-|*|/|%|^|#|<br>|==|~=|&lt;=|&gt;=|&lt;|&gt;|=|<br>|(|)|{|}|[|]||<br>|;|:|,|.|..|…||</p>
+]]></content>
+    
+    <summary type="html">
+    
+      个人根据已有的C/C++和Javascript，记录学习Lua，学习[云风的Lua5.1参考手册](https://www.codingnow.com/2000/download/lua_manual.html)
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+      <category term="Lua" scheme="http://LySnake.github.io/tags/lua/"/>
+    
+  </entry>
   
   <entry>
     <title>SQL Server从入门到精通(1)</title>
@@ -1295,7 +1331,7 @@
     <link href="http://LySnake.github.io/archiveslinux/technology/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html"/>
     <id>http://LySnake.github.io/archiveslinux/technology/常用软件推荐.html</id>
     <published>2017-05-05T14:06:46.000Z</published>
-    <updated>2018-03-04T06:01:25.628Z</updated>
+    <updated>2018-03-06T16:31:45.400Z</updated>
     
     <content type="html"><![CDATA[<p>分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。<br><a id="more"></a></p>
 <h2 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h2><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p><a href="https://www.zhihu.com/question/28013848" target="_blank" rel="external">如何高效地使用搜索引擎？</a>：来自zhihu的问答。</p>
@@ -1340,6 +1376,7 @@
 <p><a href="http://sunlogin.oray.com/zh_CN/" target="_blank" rel="external">向日葵</a>:官网信息(远程手机操作PC开机，控制)，来自<a href="https://wsgzao.github.io/post/windows/" target="_blank" rel="external">wsgzao的博客</a>。</p>
 <p><a href="http://www.cockos.com/licecap/" target="_blank" rel="external">licecap</a>:Gif文件录制工具。</p>
 <p><a href="https://www.huorong.cn/" target="_blank" rel="external">火绒</a>:杀毒软件。</p>
+<p><a href="http://blog.csdn.net/johnsonblog/article/details/8165861" target="_blank" rel="external">umdh</a>：windows平台C++程序查内存泄漏，<a href="http://blog.csdn.net/flyingleo1981/article/details/78127625" target="_blank" rel="external">教程</a>.</p>
 <p><em>Powertool</em>:系统清理工具。</p>
 <hr>
 <h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><p><a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">zsh</a>:更友好的shell(漂亮的themes，更多的输入匹配)。</p>
