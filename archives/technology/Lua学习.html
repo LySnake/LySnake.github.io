@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="个人根据已有的C/C++和Javascript，记录学习Lua，学习[云风的Lua5.1参考手册](https://www.codingnow.com/2000/download/lua_manual.html)">
+<meta name="description" content="个人根据已有的C/C++和Javascript，记录学习Lua.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lua学习">
 <meta property="og:url" content="http://LySnake.github.io/archives/technology/Lua学习.html">
 <meta property="og:site_name" content="LySnake个人博客">
-<meta property="og:description" content="个人根据已有的C/C++和Javascript，记录学习Lua，学习[云风的Lua5.1参考手册](https://www.codingnow.com/2000/download/lua_manual.html)">
-<meta property="og:updated_time" content="2018-04-01T05:33:14.603Z">
+<meta property="og:description" content="个人根据已有的C/C++和Javascript，记录学习Lua.">
+<meta property="og:updated_time" content="2018-04-02T14:38:14.272Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lua学习">
-<meta name="twitter:description" content="个人根据已有的C/C++和Javascript，记录学习Lua，学习[云风的Lua5.1参考手册](https://www.codingnow.com/2000/download/lua_manual.html)">
+<meta name="twitter:description" content="个人根据已有的C/C++和Javascript，记录学习Lua.">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -329,17 +329,80 @@
       
           
         <h2 id="词法约定"><a href="#词法约定" class="headerlink" title="词法约定"></a>词法约定</h2><ul>
+<li>学习<a href="https://www.codingnow.com/2000/download/lua_manual.html" target="_blank" rel="external">云风的Lua5.1参考手册</a></li>
 <li>Lua 是一个大小写敏感的语言。一般约定，以下划线开头连接一串大写字母的名字（比如 _VERSION）被保留用于 Lua 内部全局变量。</li>
 <li><strong>字符串</strong>既可以用一对单引号引起，也可以是双引号，里面还可以包含类似 C 的转义符： ‘\a’ （响铃）， ‘\b’ （退格）， ‘\f’ （表单）， ‘\n’ （换行）， ‘\r’ （回车）， ‘\t’ （横向制表）， ‘\v’ （纵向制表）， ‘\‘ （反斜杠）， ‘\”‘ （双引号）， 以及 ‘\’’ （单引号)。 而且，如果在一个反斜杠后跟了一个真正的换行符，其结果就是在字符串中产生一个换行符。 我们还可以用反斜杠加数字的形式 \ddd 来描述一个字符。这里， ddd 是一串最多三位的十进制数字。（注意，如果需要在这种描述方法后接一个是数字的字符， 那么反斜杠后必须写满三个数字。）Lua 中的字符串可以包含任何 8 位的值。包括用 ‘\0’ 表示的零。</li>
-<li>字符串还可以用一种长括号括起来的xv cbz方式定义。一个长字符串可以由任何一级的正的长括号开始，而由第一个碰到的同级反的长括号结束。 整个词法分析过程将不受分行限制，不处理任何转意符，并且忽略掉任何不同级别的长括号。 这种方式描述的字符串可以包含任何东西，当然特定级别的反长括号除外。</li>
+<li>字符串还可以用一种长括号括起来的方式定义。一个长字符串可以由任何一级的正的长括号开始，而由第一个碰到的同级反的长括号结束。 整个词法分析过程将不受分行限制，不处理任何转意符，并且忽略掉任何不同级别的长括号。 这种方式描述的字符串可以包含任何东西，当然特定级别的反长括号除外。</li>
 <li>我们把两个正的方括号间插入 n 个等号定义为第 n 级正长括号。 就是说，0 级正的长括号写作 [[ ， 一级正的长括号写作 [=[ ，如此等等。 反的长扩展也作类似定义； 举个例子，4 级反的长括号写作 ]====] 。</li>
 <li>数字常量可以分两部分写，十进制底数部分和十进制的指数部分。指数部分是可选的。 Lua 也支持十六进制整数常量，只需要在前面加上前缀 0x 。</li>
 <li>注释可以在除字符串内的任何地方是以两横 (–) 开始。 如果跟在两横后面的不是一个长括号，这就是一个短注释，它的作用范围直到行末； 否则就是一个长注释，其作用范围直到遇到反的长括号。 长注释通常被用来临时屏蔽代码块。</li>
 </ul>
-<p>2.2 - 值与类型 vxczbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzbzb</p>
+<p>2.2 - 值与类型</p>
 <h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><p>|:—-:|:—-:|:—-:|:—-:|:—-:|:—-:|<br>|and|break|do|else|elseif| |<br>|end|faalse|for|function|if| |<br>|in|local|nil|not|or| |<br>|repeat|return|then|true|until|while|</p>
 <p>其它Token(符记):</p>
 <p>|:—-:|:—-:|:—-:|:—-:|:—-:|:—-:|:—-:|<br>|+|-|*|/|%|^|#|<br>|==|~=|&lt;=|&gt;=|&lt;|&gt;|=|<br>|(|)|{|}|[|]||<br>|;|:|,|.|..|…||</p>
+<ul>
+<li><p>Lua 中有八种基本类型： nil, boolean, number, string, function, userdata, thread, and table. Nil 类型只有一种值 nil ，它的主要用途用于标表识和别的任何值的差异； 通常，当需要描述一个无意义的值时会用到它。 Boolean 类型只有两种值：false 和 true。 nil 和 false 都能导致条件为假；而另外所有的值都被当作真。 Number 表示实数（双精度浮点数）。 （编译一个其它内部数字类型的 Lua 解释器是件很容易的事；比如把内部数字类型改作 单精度浮点数或长整型。参见文件 luaconf.h 。） String 表示一串字符的数组。 Lua 是 8-bit clean 的： 字符串可以包含任何 8 位字符， 包括零结束符 (‘\0’) .</p>
+</li>
+<li><p>userdata 类型用来将任意 C 数据保存在 Lua 变量中。 这个类型相当于一块原生的内存，除了赋值和相同性判断，Lua 没有为之预定义任何操作。 然而，通过使用 metatable （元表） ，程序员可以为 userdata 自定义一组操作 （参见 §2.8）。 userdata 不能在 Lua 中创建出来，也不能在 Lua 中修改。这样的操作只能通过 C API。 这一点保证了宿主程序完全掌管其中的数据。</p>
+</li>
+<li><p>thread 类型用来区别独立的执行线程，它被用来实现 coroutine （协同例程）（参见 §2.11）。 不要把 Lua 线程跟操作系统的线程搞混。 Lua 可以在所有的系统上提供对 coroutine 的支持，即使系统并不支持线程。</p>
+</li>
+<li><p>table 类型实现了一个关联数组。也就是说， 数组可以用任何东西（除了nil）做索引，而不限于数字。 table 可以以不同类型的值构成；它可以包含所有的类型的值（除 nil 外）。 table 是 lua 中唯一的一种数据结构；它可以用来描述原始的数组、符号表、集合、 记录、图、树、等等。 用于表述记录时，lua 使用域名作为索引。 语言本身采用一种语法糖，支持以 a.name 的形式表示 a[“name”]。</p>
+</li>
+<li><p>table， function ，thread ，和 (full) userdata 这些类型的值是所谓的对象： 变量本身并不会真正的存放它们的值，而只是放了一个对对象的引用。 赋值，参数传递，函数返回，都是对这些对象的引用进行操作； 这些操作不会做暗地里做任何性质的拷贝。</p>
+</li>
+</ul>
+<h3 id="2-3-变量"><a href="#2-3-变量" class="headerlink" title="2.3 变量"></a>2.3 变量</h3><ul>
+<li>Lua 中有三类变量：全局变量，局部变量，还有 table 的域。任何变量都被假定为全局变量，除非显式的以 local 修饰定义， 局部变量有其作用范围： 局部变量可以被定义在它作用范围中的函数自由使用。</li>
+</ul>
+<hr>
+<h4 id="Lua基础知识"><a href="#Lua基础知识" class="headerlink" title="Lua基础知识"></a>Lua基础知识</h4><ul>
+<li>Lua的多条语句之间并不要求任何分隔符，如C语言的分号(;)，其中换行符也同样不能起到语句分隔的作用。因此下面的写法均是合法的。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = 1; b = 2;    //使用类C方式分隔，合法</div><div class="line">a = 1  b = 2     //使用Lua方式无分隔，合法</div></pre></td></tr></table></figure>
+<ul>
+<li>通过dofile()方法引用其他Lua文件中的函数(模块化?),但实际上dofile只是一个辅助函数，loadfile才是真正的核心函数,loadfile只是从指定的文件中加载Lua代码块，然后编译这段代码块，如果有编译错误，就返回nil，同时给出错误信息，但是在编译成功后并不真正的执行这段代码块。</li>
+<li><strong>变量命名</strong>和大多数其它语言一样，在声明变量时，变量名可以由任意字母、数字和下划线构成，但是不能以数字开头。在Lua中还有一个特殊的规则，即以下划线(_)开头，后面紧随多个大写字母(_VERSION)，这些变量一般被Lua保留并用于特殊用途。</li>
+<li>注释,单行注释与多行注释。单行注释使用–开头，多行注释使用–[[ 注释体–]]。</li>
+<li><strong>全局变量</strong>:在Lua中全局变量不需要声明，直接赋值即可。如果直接访问未初始化的全局变量，Lua也不会报错，直接返回nil。</li>
+<li>执行Lua脚本时的参数：lua luaScript.lua a b c ，则:lua解释器会将所有命令行参数创建一个名为arg的table。其中脚本名(lua-script.lua)位于table索引的0位置上。它的第一个参数(a)则位于索引1，其它的参数以此类推。</li>
+<li>Lua命令使用：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">格式: **lua [options] [lua-script [arguments] ]**</div><div class="line">命令行选项:</div><div class="line">  -e: 可以直接执行命令行中Lua代码，如：lua -e &quot;print(\&quot;Hello World\&quot;)&quot;</div><div class="line">  -l: 加载该选项后的Lua库文件，如：lua -l mylib -e &quot;x = 10&quot;，该命令在执行之前先将mylib中的Lua代码加载到内存中，在后面的命令中就可以直接使用该文件中定义的Lua函数了。</div><div class="line">  -i: 在执行完指定的Lua程序文件之后，并不退出解释器程序，而是直接进入该程序的交互模式。</div></pre></td></tr></table></figure>
+<ul>
+<li>8种基本类型：nil、boolean、number、string、userdata、function、thread和table：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">* nil: 是一种类型，它只有一个值nil，它的主要功能是由于区别其他任何值。Lua将nil用于表示一种“无效值”的情况。</div><div class="line">* boolean: false和true。**在Lua中只有当值是false和nil时才视为“假”，其它值均视为真，如数字零和空字符串，这一点和C语言是不同的**。</div><div class="line">* number:Lua中的number用于表示实数。Lua中没有专门的类型表示整数。 </div><div class="line">* string： Lua中的字符串通常表示“一个字符序列”。字符串类型的变量是不可变的，因此不能像C语言中那样直接修改字符串的某一个字符，而是在修改的同时创建了新的字符串。Lua支持和C语言类似的字符转义序列，可以通过[[ all strings ]]的方式来禁用[[ ]]中转义字符。最后需要介绍的是&quot;#&quot;标识符，该标识符在字符串变量的前面将返回其后字符串的长度。</div><div class="line">* table:将Lua中table类型视为“关联数组”，如C++标准库中的map，差别是Lua中table的键(key)可以为任意类型(nil除外)，而map中的键只能为模参类型。数组是table中一种，数组a中索引值为1--999的元素的值均为nil。而Lua则将nil作为界定数据结尾的标志。当一个数组含有“空隙”时，即中间含有nil值，长度操作符#会认为这些nil元素就是结尾标志。当然这肯定不是我们想要的结果。因此对于这些含有“空隙”的数组，我们可以通过函数table.maxn()返回table的最大正数索引值。</div><div class="line">* function: 函数可以存储在变量中，可以通过参数传递其它函数，还可以作为其它函数的返回值。</div><div class="line">* userdata(自定义类型):由于userdata类型可以将任意C语言数据存储到Lua变量中。在Lua中，这种类型没有太多预定义的操作，只能进行赋值和相等性测试。userdata用于表示一种由应用程序或C语言库所创建的新类型。</div></pre></td></tr></table></figure>
+<h4 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h4><ul>
+<li>对于取余%操作符，a % b == a - floor(a / b) * b，由此可以推演出x % 1的结果为x的小数部分，而x - x % 1的结果则为x的整数部分。类似的，x - x % 0.01则是x精确到小数点后两位的结果。</li>
+<li>==操作符用于相等性测试，~=操作符用于不等性测试，这两个操作符可以应用于任意两个值。如果两个值的类型不同，Lua就认为他们不等。nil值与其自己身相等。对于table、userdata和函数，是通过引用进行比较的，即当它们引用的是同一对象时才相等。字符串的比较，Lua是按照字符次序比较的。</li>
+<li>逻辑操作符有：and、or和not。支持短路原则，根据短路原则，<figure class="highlight plain"><figcaption><span>= x or v ```,它等价于: ``` if not x then x = v end ``` , ``` max = (x > y) and x or y```等价于C语言中的``` max = (x > y) ? x : y ```。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">* 关系操作符返回的结果是true或false,但是逻辑操作符返回的结果是原操作数。Lua中，仅false与nil当作假，其它包括0都为真。</div><div class="line">* 字符串链接: print(&quot;str1&quot; .. &quot;str2&quot;) =&gt; str1str2,print(0 .. 1) =&gt; &quot;01&quot;，操作符..用于字符串链接，也可以把number对象转换成string对象。</div><div class="line">* table构造：``` tableValue = &#123; [1] = 1, [2] = 2&#125;; =&gt; tableValue[1] == 1, tabelValue[2] == 2;```。</div><div class="line"></div><div class="line">#### 语句 ####</div><div class="line">* Lua支持**多重赋值**，如``` a, b = 10, 2 * x ```,Lua在赋值之前需要先计算等号右边的表达式，在每一个表达式都得到结果之后再进行赋值。如果等号右侧的表达式数量少于左侧变量的数量，Lua会将左侧多出的变量的值置为nil，如果相反，Lua将忽略右侧多出的表达式。</div><div class="line">* Lua定义局部变量时使用local关键字表示该变量为局部变量,与C/C++相同的块作用域。</div><div class="line">* break关键字与C中完全相同，但是没有continue关键字。</div><div class="line">* 特殊结构:</div></pre></td></tr></table></figure></li>
+</ul>
+<p>repeat<br>        line = io.read()<br>until line ~= “” –直到until的条件为真时结束。</p>
+<p>for var = begin, end, step do –如果没有step变量，begin的缺省步长为1。for循环开始处的三个变量begin、end和step，如果它们使表达式的返回值，那么该表达式将仅执行一次。再有就是不要在for的循环体内修改变量var的值，否则会导致不可预知的结果。<br>  local i = i + 1<br>end</p>
+<p>for i, v in ipairs(a) do  –ipairs是Lua自带的系统函数，返回遍历数组的迭代器。<br>  print(v)<br>end</p>
+<p>for k in pairs(t) do      –打印table t中的所有key。<br>  print(k)<br>end<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### 函数 ####</div><div class="line"></div><div class="line">* 在Lua中函数的调用方式和C语言基本相同，唯一的差别是，如果函数只有一个参数，并且该参数的类型为字符串常量或table的构造器，那么圆括号可以省略，如```print &quot;Hello World&quot;和f &#123;x = 20, y = 20&#125;```。</div><div class="line">* Lua为面对对象式的调用也提供了一种特殊的语法--冒号操作符。表达式o.foo(o,x)的另一种写法是o:foo(x)。冒号操作符使调用o.foo时将o隐含的作为函数的第一个参数。</div><div class="line">* 支持**多重返回值**： ``` local a, b = func(); --return 1, 2 ```，此时，相当于``` a, b = 1, 2 ```。Lua会调整一个函数的返回值数量以适应不同的调用情况。若将函数调用作为一条单独语句时，Lua会丢弃函数的所有返回值。若将函数作为表达式的一部分来调用时，Lua只保留函数的第一个返回值。只有当一个函数调用是一系列表达式中的最后一个元素时(``` x,y,z = 10,foo2() --foo2返回二个值 ```)，才能获得所有返回值。</div><div class="line">* **unpack函数**：该函数将接收数组作为参数，并从下标1开始返回该数组的所有元素。</div><div class="line">* **变长参数**:在含有变长参数的函数中个，同样可以带有固定参数，但是固定参数一定要在变长参数之前声明。由于变长参数中可能包含nil值，因此再使用类似获取table元素数量(#)的方式获取变参的数量就会出现问题。如果要想始终获得正确的参数数量，可以使用Lua提供的select函数。</div><div class="line">``` </div><div class="line">    function add(a, b, ...)</div><div class="line">        local s = 0</div><div class="line">        for i, v in ipairs&#123;...&#125; do</div><div class="line">            s = s + v</div><div class="line">        end</div><div class="line">        return s</div><div class="line">    end</div><div class="line">    print(add(3,4,5,6,7))</div><div class="line">    --输出结果为：25</div></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>具名实参</strong>：Lua的传参规则和C语言相同，并不真正支持具名实参。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function rename(arg)</div><div class="line">    local old = arg.old</div><div class="line">    local new = arg.new</div><div class="line">    ...</div><div class="line">end</div></pre></td></tr></table></figure>
+<ul>
+<li>closure(闭合函数)：闭包，与Js相同。</li>
+<li>尾调用:在Lua中，只有<code>return &lt;func&gt;(&lt;args&gt;)</code>形式才是标准的尾调用，至于参数中(args)是否包含表达式，由于表达式的执行是在函数调用之前完成的，因此不会影响该函数成为尾调用函数。</li>
+</ul>
+<h4 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h4><ul>
+<li><p>Lua中提供了dofile函数，它是一种内置的操作，用于运行Lua代码块。但实际上dofile只是一个辅助函数，loadfile才是真正的核心函数。相比于dofile，loadfile只是从指定的文件中加载Lua代码块，然后编译这段代码块，如果有编译错误，就返回nil，同时给出错误信息，但是在编译成功后并不真正的执行这段代码块。</p>
+</li>
+<li><p><strong>loadstring</strong>:Lua中还提供了另外一种动态执行Lua代码的方式，即loadstring函数。顾名思义，相比于loadfile，loadstring的代码源来自于其参数中的字符串。loadstring确实是一个功能强大的函数，但是由此而换来的性能开销也是我们不得不考虑的事情。该函数总是在全局环境中编译它的字符串，因此它将无法访问局部变量，而是只能访问全局变量。</p>
+</li>
+<li><p>Lua将所有独立的程序块视为一个匿名函数的函数体，并且该匿名函数还具有可变长实参，因此在调用loadstring时，可以为其传递参数。</p>
+</li>
+<li><strong>package.loadlib</strong>：该函数有两个字符串参数，分别是动态库的全文件名和该库包含的函数名称，<code>local f = package.loadlib(strFilePath, strFunc)</code>。</li>
+<li><strong>error()</strong>:一旦有错误发生，Lua就应该结束当前程序块并返回到应用程序，在Lua中我们可以通过error()函数获取错误消息。可以使用内置的assert函数辅助完成<code>funcRet = assert( func(), strErrMsg)</code>.</li>
+<li><strong>pcall</strong>:Lua提供了错误处理函数pcall，该函数的第一个参数为需要“保护执行”的函数，如果该函数执行失败，pcall将返回false及错误信息，否则返回true和函数调用的返回值。</li>
+<li><strong>xpcall</strong>:该函数除了接受一个需要被调用的函数之外，还接受第二个参数，即错误处理函数。当发生错误时，Lua会在调用栈展开前调用错误处理函数。这样，我们就可以在这个函数中使用debug库的debug.traceback函数，它会根据调用栈来构建一个扩展的错误消息。</li>
+</ul>
 
       
     </div>
@@ -351,7 +414,7 @@
         <p><span>本文标题:</span><a href="">Lua学习</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LySnake</a></p>
         <p><span>发布时间:</span>2018-04-01, 10:13:12</p>
-        <p><span>最后更新:</span>2018-04-01, 13:33:14</p>
+        <p><span>最后更新:</span>2018-04-02, 22:38:14</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="" title="Lua学习">http://LySnake.github.io/archives/technology/Lua学习.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/Lua学习.html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -381,7 +444,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#词法约定"><span class="toc-number">1.</span> <span class="toc-text">词法约定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关键字"><span class="toc-number">1.1.</span> <span class="toc-text">关键字</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#词法约定"><span class="toc-number">1.</span> <span class="toc-text">词法约定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关键字"><span class="toc-number">1.1.</span> <span class="toc-text">关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-变量"><span class="toc-number">1.2.</span> <span class="toc-text">2.3 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Lua基础知识"><span class="toc-number">1.2.1.</span> <span class="toc-text">Lua基础知识</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#表达式"><span class="toc-number">1.2.2.</span> <span class="toc-text">表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编译"><span class="toc-number">1.2.3.</span> <span class="toc-text">编译</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
