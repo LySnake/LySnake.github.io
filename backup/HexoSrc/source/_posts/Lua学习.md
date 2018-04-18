@@ -23,7 +23,7 @@ description: 个人根据已有的C/C++和Javascript，记录学习Lua.
 
 ## 关键字 ##
 
-|标识|标识|标识|标识|标识|标识|
+|标识符|标识符|标识符|标识符|标识符|标识符|
 |:----:|:----:|:----:|:----:|:----:|:----:|
 |and|break|do|else|elseif|~~无~~|
 |end|faalse|for|function|if|~~无~~|
@@ -32,7 +32,7 @@ description: 个人根据已有的C/C++和Javascript，记录学习Lua.
 
 其它Token(符记):
 
-|标识|标识|标识|标识|标识|标识|标识|
+|操作符|操作符|操作符|操作符|操作符|操作符|操作符|
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 |+|-|*|/|%|^|#|
 |==|~=|<=|>=|<|>|=|
@@ -158,16 +158,42 @@ end
 ### 编译 ###
 
 * Lua中提供了dofile函数，它是一种内置的操作，用于运行Lua代码块。但实际上dofile只是一个辅助函数，loadfile才是真正的核心函数。相比于dofile，loadfile只是从指定的文件中加载Lua代码块，然后编译这段代码块，如果有编译错误，就返回nil，同时给出错误信息，但是在编译成功后并不真正的执行这段代码块。
-* **loadstring**:Lua中还提供了另外一种动态执行Lua代码的方式，即loadstring函数。顾名思义，相比于loadfile，loadstring的代码源来自于其参数中的字符串。loadstring确实是一个功能强大的函数，但是由此而换来的性能开销也是我们不得不考虑的事情。该函数总是在全局环境中编译它的字符串，因此它将无法访问局部变量，而是只能访问全局变量。
+* **loadstring()**:Lua中还提供了另外一种动态执行Lua代码的方式，即loadstring函数。顾名思义，相比于loadfile，loadstring的代码源来自于其参数中的字符串。loadstring确实是一个功能强大的函数，但是由此而换来的性能开销也是我们不得不考虑的事情。该函数总是在全局环境中编译它的字符串，因此它将无法访问局部变量，而是只能访问全局变量。
 * Lua将所有独立的程序块视为一个匿名函数的函数体，并且该匿名函数还具有可变长实参，因此在调用loadstring时，可以为其传递参数。
-* **package.loadlib**：该函数有两个字符串参数，分别是动态库的全文件名和该库包含的函数名称，` local f = package.loadlib(strFilePath, strFunc) `。
+* **package.loadlib()**：该函数有两个字符串参数，分别是动态库的全文件名和该库包含的函数名称，` local f = package.loadlib(strFilePath, strFunc) `。
 * **error()**:一旦有错误发生，Lua就应该结束当前程序块并返回到应用程序，在Lua中我们可以通过error()函数获取错误消息。可以使用内置的assert函数辅助完成` funcRet = assert( func(), strErrMsg) `.
-* **pcall**:Lua提供了错误处理函数pcall，该函数的第一个参数为需要“保护执行”的函数，如果该函数执行失败，pcall将返回false及错误信息，否则返回true和函数调用的返回值。
-* **xpcall**:该函数除了接受一个需要被调用的函数之外，还接受第二个参数，即错误处理函数。当发生错误时，Lua会在调用栈展开前调用错误处理函数。这样，我们就可以在这个函数中使用debug库的debug.traceback函数，它会根据调用栈来构建一个扩展的错误消息。
-* 
+* **pcall()**:Lua提供了错误处理函数pcall，该函数的第一个参数为需要“保护执行”的函数，如果该函数执行失败，pcall将返回false及错误信息，否则返回true和函数调用的返回值。
+* **xpcall()**:该函数除了接受一个需要被调用的函数之外，还接受第二个参数，即错误处理函数。当发生错误时，Lua会在调用栈展开前调用错误处理函数。这样，我们就可以在这个函数中使用debug库的debug.traceback函数，它会根据调用栈来构建一个扩展的错误消息。
+
+#### 元表 ####
+
+* **Lua的元表相当于C++中的typeinfo对象，但也相当于是把C++的操作符重载方法写在了元表中**
+* **元表**：Lua中每个值都有一个元表。table和userdata可以有各自独立的元表，而其它数据类型的值则共享其类型所属的单一元表。缺省情况下，table在创建时没有元表。
+
+>getmetatable(t)：    //获取t的元表
+>setmetatable(t,t1)   //为对象设置元表为t1
+>
+>算术类元方法:\_\_add(加法)和\_\_mul(乘法)外，还有\_\_sub(减法)、\_\_div(除法)、\_\_unm(相反数)、\_\_mod(取模)和\_\_pow(乘幂)。
+>关系类的元方法:分别为\_\_eq(等于)、\_\_lt(小于)和\_\_le(小于等于)，至于另外3个关系操作符，Lua没有提供相关的元方法，可以通过前面3个关系运算符的取反获得。
+>库定义的元方法：Lua还提供了一些针对框架的元方法，如print函数总是调用tostring来格式化其输出。如果当前对象存在\_\_tostring元方法时，tostring将用该元方法的返回值作为自己的返回值。函数setmetatable和getmetatable也会用到元表中的一个字段(\_\_metatable)，用于保护元表。一旦设置了\_\_metatable字段，getmetatable就会返回这个字段的值，而setmetatable将引发一个错误。
+>table访问的元方法:有两种可以改变的table行为：查询table及修改table中不存在的字段。
+
+
+>\_\_index元方法:首先检查table表中是否存在key的字段，如果有则返回，否则检查是否有__index的元方法，没有返回nil,有则查找元方法。如果是__index一个函数，则以table和不存在的key作为参数方位该函数，如果__index是一个table时，就以相同的方式来访问这个table（即传入key访问元方法的table，如果存在则放回值，反之返回nil）。
+
+>\_\_newindex元方法:当对一个table中不存在的索引赋值时，解释器就会查找\_\_newindex元方法。如果有就调用它，而不是直接赋值。如果这个元方法指向一个table，Lua将对此table赋值，而不是对原有的table赋值。
+>根据\_\_index与\_\_newindex可扩展以下几点功能:
+>具有默认值的table:缺省情况下，table的字段默认值为nil。但是我们可以通过元表修改这个默认值l。使用\_\_index设置函数返回默认值。
+>跟踪table的访问:\_\_index和\_\_newindex都是在table中没有所需访问的index时才发挥作用的。因此，为了监控某个table的访问状况，我们可以为其提供一个空table作为代理，之后再将\_\_index和\_\_newindex元方法重定向到原来的table上。
+>只读的table:通过代理的概念，可以很容易的实现只读table。只需跟踪所有对table的更新操作，并引发一个错误即可。
 
 
 
+## 学习相关链接 ##
+
+* [云风的Lua5.1参考手册](https://www.codingnow.com/2000/download/lua_manual.html).
+* [5.2学习手册](http://www.photoneray.com/Lua52doc_cn/).
+* [CSDN博客](https://blog.csdn.net/qq_35718410/article/details/52767518).
 
 
 
