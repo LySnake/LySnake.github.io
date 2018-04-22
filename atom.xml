@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://LySnake.github.io/"/>
-  <updated>2018-04-08T14:05:54.994Z</updated>
+  <updated>2018-04-22T14:29:05.605Z</updated>
   <id>http://LySnake.github.io/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TCP包的思考</title>
+    <link href="http://LySnake.github.io/archives/technology/TCP%E5%8C%85%E7%9A%84%E6%80%9D%E8%80%83.html"/>
+    <id>http://LySnake.github.io/archives/technology/TCP包的思考.html</id>
+    <published>2018-04-18T14:13:12.000Z</published>
+    <updated>2018-04-22T14:29:05.605Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h3><p><strong>继二天学了Lua后，开始查看Lua项目源码，此时丢给我一个Bug，通过边查看代码边学习，发现这个Bug存在一种可能，就是”S端与C端以TCP长链接通信，当S端连续send二个数据包AB给C端，C端应用层如果是先接收并处理BA，则会产生这个Bug。”，会产生这个疑问的原因是，我们知道IP包可以出现丢包、包错误、路径不一致等原因，导致到达时间的不确定，而此项目中的每个TCP包，都是很小的一个包，一个TCP数据可以不分包直接丢给IP包传送。所以我认为这二个TCP包可能会有接收上的先后关系。而以前查看的网络书籍，并没有注意到这点，更多的是说当一个大的TCP包，通过IP包传输时，因为TCP包很大，所以会发成很多小包通过IP包传输，接收端的TCP层再根据TCP小包的序号重新排列数据，达到数据不混乱的目的。而此时是二个TCP包，每个包也都很小，而这个Bug也确实存在一定的随机性，本地复现基本不可能，而生产环境目前并无法获得更多信息。而查看代码逻辑目前仅能查看到这个点。</strong></p>
+<h3 id="SEQ与ACK"><a href="#SEQ与ACK" class="headerlink" title="SEQ与ACK"></a>SEQ与ACK</h3><p><a href="https://blog.csdn.net/haitun312366/article/details/9060253" target="_blank" rel="external">TCP的SEQ和ACK的生成</a>。存在我的疑问的原因就是，我认为SEQ是每次系统调用write都会产生新的，而实际上因为好几年没有这么细的接触过网络问题了，这点已经忘记了，而实际上，一个TCP连接建立，就会完成SEQ与ACK的初始化，并在连接过程中一直使用更新。所以对于长连接无论send几次，与TCP大包分小包传输一样，通过SEQ与ACK实现有序化，因此接收端的应用层一定会按序接收到发送端应用层发送的有序数据。</p>
+<h3 id="PUSH"><a href="#PUSH" class="headerlink" title="PUSH"></a>PUSH</h3><p><strong>PUSH</strong>：<code>PUSH是TCP报头中的一个标志位，发送方在发送数据的时候可以设置这个标志位。该标志通知接收方将接收到的数据全部提交给接收进程。这里所说的数据包括与此PUSH包一起传输的数据以及之前就为该进程传输过来的数据</code>。这段话在网络与<tcp ip="" 卷一="">里都有，在我这个TCP长链接，并且每次发送的TCP包都很小的情况下，而且当每个TCP数据包都带PUSH标识时，当S发送TCP包AB，接收端如果先接收到B，再接收到A，虽然都有PUSH标识，但因为B的SEQ检查的情况表明在B前面还有一段数据，此时不能通过B的PUSH标识就把数据交给应用层，因为无法得知仅B就是一个完整的应用层数据了。而我接触的都是游戏相关，所以每个send的TCP包数据都带PUSH标识。</tcp></p>
+<h4 id="引用下相关资源并整理"><a href="#引用下相关资源并整理" class="headerlink" title="引用下相关资源并整理"></a>引用下相关资源并整理</h4><p><a href="https://blog.csdn.net/edison0716/article/details/5134101" target="_blank" rel="external">TCP PUSH参考资料1</a>与<a href="http://www.vants.org/?post=102" target="_blank" rel="external">TCP PUSH参考资料2</a>。</p>
+<p><strong>内核处理</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">所谓的send buffer,意即发送缓冲区，你看的是bsd的源代码，我这边就以Linux的源代码回答你了，反正原理是相通的。在代表网络层socket的结构体struct sock中有几个关于发送缓冲区的成员数据，其中sk_wmem_queue即为发送缓冲队列，是一个由结构体struct sk_buff组成的队列，一个结构体struct sk_buff承载一个tcp数据报，对于应用程序发送的大应用数据，比如一个write写8K字节的数据，由于TCP协议有MSS(最大报文段长度)的限制，假设MSS为1024字节，则这8K会被拆分成8个1024随载数据的TCP数据报，排列在缓冲队列中，然后一次全部发出，最后一个数据报带上PSH标志，告诉对端，把收到的数据赶紧传给应用层，因为这已经是一个完整的应用数据了。</div><div class="line"></div><div class="line">同样，你8个write，每个写1024数据，协议栈就理解为这是8个完整的应用数据，所以每个都需要带上PSH，告诉对端，这都是完整的应用数据，需要尽快传给应用层。</div><div class="line">而这跟滑动窗口大小无关。</div><div class="line"></div><div class="line">end buffer即发送缓冲区的意思，进程通过Write系统调用，将数据报写入发送缓冲区中，而缓冲区中数据报的发送工作交给TCP内核协议栈执行。内核发送缓冲区数据报的时候，所发送数据报的大小受MSS、通告窗口大小影响，这里MSS〉=1024，而且通告窗口大小为4096，也大于1024，所以执行一次write即为一次写操作将1024大小数据报写入发送缓冲区，然后调用内核中的发送函数直接将这1024大小数据报发送出去，由于该发送操作会使发送缓冲区变空，即发送发送缓冲区里所有数据，即empties the sender buffer，所以要给该数据报加上PUSH标志。</div></pre></td></tr></table></figure>
+<h5 id="TCP的交互式数据流"><a href="#TCP的交互式数据流" class="headerlink" title="TCP的交互式数据流"></a>TCP的交互式数据流</h5><p><strong>经受时延的确认技术</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TCP的交互式数据流通常使用“经过时延的确认”技术。通常Server在接收到从Client发送过来的数据时，并不马上发送ACK，而是等一小段时间，看看本机是否有数据要反馈给Client，如果有，就将数据包含在此ACK包中，以前发送给Client。一般情况下这个时延为200ms。需要注意的时这个 200ms的定时器时相对于内核的时钟滴答的，也就是jeffs的。加入一个数据分组到达后，此定时器已经pass了100ms，那么再过100ms ACK才会被发送，如果在这100ms内有数据要反馈，则在100ms后ACK会和数据一起发送。</div></pre></td></tr></table></figure>
+<p><strong>Nagle算法分析</strong>:主要用于TCP的交互式数据流，每一个TCP数据包都能完整的给IP包，对于实时的游戏数据则会关闭Nagle算法来提高数据的实时性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Nagle算法主要用来预防小分组的产生。在广域网上，大量TCP小分组极有可能造成网络的拥塞。</div><div class="line"></div><div class="line">Nagle时针对每一个TCP连接的。它要求一个TCP连接上最多只能有一个未被确认的小分组。在改分组的确认到达之前不能发送其他小分组。TCP会搜集这些小的分组，然后在之前小分组的确认到达后将刚才搜集的小分组合并发送出去。</div><div class="line"></div><div class="line">有时候我们必须要关闭Nagle算法，特别是在一些对时延要求较高的交互式操作环境中，所有的小分组必须尽快发送出去。</div><div class="line"></div><div class="line">我们可以通过编程取消Nagle算法，利用TCP_NODELAY选项来关闭Nagle算法。</div></pre></td></tr></table></figure>
+<h5 id="TCP成块数据流"><a href="#TCP成块数据流" class="headerlink" title="TCP成块数据流"></a>TCP成块数据流</h5><p><strong>PUSH</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">PUSH是TCP报头中的一个标志位，发送方在发送数据的时候可以设置这个标志位。该标志通知接收方将接收到的数据全部提交给接收进程。这里所说的数据包括与此PUSH包一起传输的数据以及之前就为该进程传输过来的数据。</div><div class="line"></div><div class="line">当Server端收到这些数据后，它需要立刻将这些数据提交给应用层进程，而不再等待是否还有额外的数据到达。</div><div class="line"></div><div class="line">那么应该合适设置PUSH标志呢？实际上现在的TCP协议栈基本上都可以自行处理这个问题，而不是交给应用层处理。如果待发送的数据会清空发送缓存，那么栈就会自动为此包设置PUSH标志，源于BSD的栈一般都会这么做，而且，BSD TCP STACK也从来不会将收到的数据推迟提交给应用程序，因此，在BSD TCP STACK中，PUSH位是被忽略的，因为根本就没有用。</div><div class="line"></div><div class="line">PUSH位就是用来通告接收方立即将收到的报文连同TCP接收缓存里的数据递交应用进程处理。一般会出现在发送方封装最后一个应用字段的TCP报文中，针对TCP交互式应用，则只要封装有应用字段的TCP报文，均会将PUSH位置一，当然，应用程序的开发者，可以根据需要，在某个应用功能模块或某个应用操作时，将所有封装应用字段的TCP报文PUSH位置一，以提高交互双方的处理效率，这在理论上应该也是可行的。</div></pre></td></tr></table></figure>
+<h2 id="后感"><a href="#后感" class="headerlink" title="后感"></a>后感</h2><p>当初学习计算机网络的时候，是借了计算机专业同学的《计算机网络原理》阅读一遍，另外也是看了《鸟书第二部》网络部分，以此建立的网络基础，但其实通过这次事件来看，对于网络来说，仅知道个大概，但对于如何实现的细节问题并不清楚，比如说本次的SEQ是针对一个TCP链接的而不是一个TCP包，SEQ与ACK之间的生成与更新方式，以及其它标识位、网络相关的算法及相关场景等。这些信息在《TCP/IP详解 卷一》里都有相关的描述。如果能对于本书与实际操作起来，应该会好很多。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      关于TCP包长链接，连接send二个包达到接收端会不会乱包
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+      <category term="TCP" scheme="http://LySnake.github.io/tags/tcp/"/>
+    
+      <category term="网络" scheme="http://LySnake.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>Lua学习</title>
@@ -1412,53 +1451,6 @@
   
   <entry>
     <title>电脑小白之操作系统安装</title>
-    <link href="http://LySnake.github.io/archives/technology/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85.html"/>
-    <id>http://LySnake.github.io/archives/technology/操作系统安装.html</id>
-    <published>2017-05-05T17:34:38.000Z</published>
-    <updated>2018-02-25T03:47:35.784Z</updated>
-    
-    <content type="html"><![CDATA[<p>主要介绍windows系统安装，以此让小白放心安装其它系统，比如手机Android、iOS，以及PC上的linux系统。<br><a id="more"></a></p>
-<p>###操作系统的本质###<br>其实，说白了，操作系统也是一个软件，作为一个软件，你可以放心地在机器(PC、手机等)上卸载与安装，只是因为操作系统本身要管理计算机资源(软件、硬件)，其它软件或用户都要借助操作系统才能操作机器，所以操作系统的”卸载与安装”比其它软件更麻烦些，如果失败，机器会无法正常运行，也有可能因为操作失误，造成数据丢失，但这一切都不会影响电脑本身硬件，所以安装系统失败可以再交安装，因此在安装系统中最重要的就是小心误操作引起的数据丢失。另外，在手机上传说有自己安装系统，因为影响引导系统的软件从而导致无法再安装系统从而成为“砖块机”，不过这种情况目前也只是听过。</p>
-<p>###PC安装windows方式###</p>
-<p>####U盘PE系统安装####<br>这种方式安装windows系统，有个优点就是失败了，你还可以借助U盘PE系统进入PC，可以从PC的硬盘中再得到其它文件(包括安装使用的系统文件)，可以再次安装，对新手来说安装起来放心些。所以在这种U盘PE安装方式中，你可以多下载几个系统文件(支持<em>.ios或</em>.ghost),避免因某一系统文件安装失败而导致PC无法开机且难以更换另一系统文件。制件U盘PE系统，有很多软件，比较常见的有<a href="http://www.laomaotao.org/" target="_blank" rel="external">老毛桃</a>和【大白菜】(大白菜还是算了吧，网上有个一样内容的盗版网站，太难分辨了，假网站的系统文件如果自带电脑病毒，杀软也可能无力。这假网站还是百度加V的，所以百度有多差呢？)</p>
-<p><a href="http://www.laomaotao.org/jiaocheng/92/upqdzz.html" target="_blank" rel="external">老毛桃制作U盘PE系统</a></p>
-<p><a href="http://www.laomaotao.org/jiaocheng/92/upzwin7.html" target="_blank" rel="external">老毛桃安装windows 7系统</a></p>
-<p>####U盘iso文件安装####<br>微软官方都是以光盘出售windows操作系统的，ghost文件都是网友自己二次制作或都说是备份系统文件，所以网上还有光盘copy下来的iso文件可供使用，但是这种文件默认是写在光盘上的，所以U盘iso安装其实就是把iso文件写入U盘中，以U盘冒充光盘，让计算机以读光盘的方式读U盘，从而操作官方的安装方式，最常见的系统文件都是iso文件，所以这种方式支持安装windows和linux等，只是写入U盘时对ULtraISO操作选择不同的引导选项。这种方式写入U盘，会导致U盘成为一个只有iso且不能再存文件的U盘，除非格式化(格式化如果失败，只能使用更强的格式化方式，比如linux下的dd命令)。</p>
-<p><a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="external">UltraISO</a></p>
-<p><a href="http://blog.csdn.net/baigoocn/article/details/47406473" target="_blank" rel="external">UltraISO制作U盘iso安装系统</a></p>
-<p>####硬盘本地安装####<br>下载的iso文件(使用<a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="external">UltraISO</a>或<a href="https://daemon-tools.softonic.com.br/" target="_blank" rel="external">DAEMON Tools Lite</a>装载或解压，但别使用rar或7z，可能会有错误导致安装失败)或*.rar类文件，装载或解压后，在一级子目录下会有setup.exe类似的可执行软件，运行后会进入安装界面。这种方式简单，不要使用U盘，只要系统文件就好，但其实安装windows系统有时会因为系统文件缺失某些驱动，而导致安装失败，而此此时有可能处于安装到一半，导致原来的系统已破坏而不能开机。所以这种方式，推荐是在有安装经验的情况下再使用。</p>
-<p>###系统安装注意事项###<br>综上，安装操作系统不会影响电脑硬件，正常情况只是导致破坏原有的操作和系统导致不能正常开机，你可以重新安装系统以恢复计算机。目前只是听过手机有操作失误导致破坏引导软件，引起不能再交安装系统而成为“砖机”，但这种情况还是很少出现。那，在安装系统的时候，最怕出现的是什么呢？</p>
-<ul>
-<li>对系统分区不了解，原本安装windows系统，只要安装在原来的C分区中，但在安装系统时，当时的C分区已经不显示C分区了，误操作安装系统到另一分区，导致把一分区格式化装了操作系统。</li>
-<li>ghost有一种版本，似乎是针对电脑城全新安装系统用的，安装系统默认会对硬盘重新分区，导致硬盘数据全部丢失。</li>
-<li>安装系统，默认会把安装系统的分区格式化，所以这个分区的用户数据要分备份，在安装windows中，C盘就是我们要安装的分区，要先备份C盘中的个人文件，比如常见的桌面上的文件、以及默认下载的文件目录等。</li>
-</ul>
-<p><strong>所以，安装系统最重要的就是要备份好自己的文件，数据无价</strong></p>
-<p>###针对小白的虚拟机安装系统练习###<br>使用<a href="http://www.vmware.com/cn.html" target="_blank" rel="external">VMware</a>或<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="external">VirtualBox</a>虚拟软件，在windows系统上，进行安装虚拟系统，可以试着了解下安装系统会有什么操作、大概过程是什么，这种方式安装对现有系统很安装，要安装的虚拟系统与现在使用中的系统是完全分离的，不会影响现有分区与数据，仅会写入一个比较大的文件，但这个方式对于很老的电脑来说，可能会很卡。</p>
-<p><a href="http://blog.xuite.net/yh96301/blog/30283132-VirtualBox+%E5%AE%89%E8%A3%9D+Windows+7+%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1" target="_blank" rel="external">VirtualBox安装win7教程</a></p>
-<p>###计算机多系统安装###<br>了解下<a href="http://cn.linux.vbird.org/linux_basic/0130designlinux_2.php#partition_mbr" target="_blank" rel="external">多系统引导</a>，可以实现在一个实体机中，同时安装windows、iOS、linux系多个系统，可以每次开机选择自己要进入的系统，实现windows日常使用，linux、iOS办公，当然，这个也可以装虚拟机。原理简单的说就是开机启动后，主板BOIS会读硬盘固定位置数据（引导程序代码），BOIS把CPU控制执行权交给引导程序，引导程序再从硬盘分区上找到安装了系统的的分区再把CPU控制权给操作系统，因此可以有多个分区分别装有不同的系统，让这引导程序引导进行选择运行哪个系统。</p>
-<p>###<br><a href="http://msdn.itellyou.cn/" target="_blank" rel="external">正版windows系统文件下载</a></p>
-<p><a href="http://cn.linux.vbird.org/linux_basic/0130designlinux_2.php#partition_table" target="_blank" rel="external">硬盘分区与引导程序</a></p>
-<p><a href="http://neosmart.net/EasyRE/" target="_blank" rel="external">EasyBCD修复引导程序</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;主要介绍windows系统安装，以此让小白放心安装其它系统，比如手机Android、iOS，以及PC上的linux系统。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
-    
-      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
-    
-    
-      <category term="电脑小白" scheme="http://LySnake.github.io/tags/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>电脑小白之操作系统安装</title>
     <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85.html"/>
     <id>http://LySnake.github.io/archives/technology/电脑小白系列之操作系统安装.html</id>
     <published>2017-05-05T17:34:38.000Z</published>
@@ -1505,11 +1497,58 @@
   </entry>
   
   <entry>
+    <title>电脑小白之操作系统安装</title>
+    <link href="http://LySnake.github.io/archives/technology/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85.html"/>
+    <id>http://LySnake.github.io/archives/technology/操作系统安装.html</id>
+    <published>2017-05-05T17:34:38.000Z</published>
+    <updated>2018-02-25T03:47:35.784Z</updated>
+    
+    <content type="html"><![CDATA[<p>主要介绍windows系统安装，以此让小白放心安装其它系统，比如手机Android、iOS，以及PC上的linux系统。<br><a id="more"></a></p>
+<p>###操作系统的本质###<br>其实，说白了，操作系统也是一个软件，作为一个软件，你可以放心地在机器(PC、手机等)上卸载与安装，只是因为操作系统本身要管理计算机资源(软件、硬件)，其它软件或用户都要借助操作系统才能操作机器，所以操作系统的”卸载与安装”比其它软件更麻烦些，如果失败，机器会无法正常运行，也有可能因为操作失误，造成数据丢失，但这一切都不会影响电脑本身硬件，所以安装系统失败可以再交安装，因此在安装系统中最重要的就是小心误操作引起的数据丢失。另外，在手机上传说有自己安装系统，因为影响引导系统的软件从而导致无法再安装系统从而成为“砖块机”，不过这种情况目前也只是听过。</p>
+<p>###PC安装windows方式###</p>
+<p>####U盘PE系统安装####<br>这种方式安装windows系统，有个优点就是失败了，你还可以借助U盘PE系统进入PC，可以从PC的硬盘中再得到其它文件(包括安装使用的系统文件)，可以再次安装，对新手来说安装起来放心些。所以在这种U盘PE安装方式中，你可以多下载几个系统文件(支持<em>.ios或</em>.ghost),避免因某一系统文件安装失败而导致PC无法开机且难以更换另一系统文件。制件U盘PE系统，有很多软件，比较常见的有<a href="http://www.laomaotao.org/" target="_blank" rel="external">老毛桃</a>和【大白菜】(大白菜还是算了吧，网上有个一样内容的盗版网站，太难分辨了，假网站的系统文件如果自带电脑病毒，杀软也可能无力。这假网站还是百度加V的，所以百度有多差呢？)</p>
+<p><a href="http://www.laomaotao.org/jiaocheng/92/upqdzz.html" target="_blank" rel="external">老毛桃制作U盘PE系统</a></p>
+<p><a href="http://www.laomaotao.org/jiaocheng/92/upzwin7.html" target="_blank" rel="external">老毛桃安装windows 7系统</a></p>
+<p>####U盘iso文件安装####<br>微软官方都是以光盘出售windows操作系统的，ghost文件都是网友自己二次制作或都说是备份系统文件，所以网上还有光盘copy下来的iso文件可供使用，但是这种文件默认是写在光盘上的，所以U盘iso安装其实就是把iso文件写入U盘中，以U盘冒充光盘，让计算机以读光盘的方式读U盘，从而操作官方的安装方式，最常见的系统文件都是iso文件，所以这种方式支持安装windows和linux等，只是写入U盘时对ULtraISO操作选择不同的引导选项。这种方式写入U盘，会导致U盘成为一个只有iso且不能再存文件的U盘，除非格式化(格式化如果失败，只能使用更强的格式化方式，比如linux下的dd命令)。</p>
+<p><a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="external">UltraISO</a></p>
+<p><a href="http://blog.csdn.net/baigoocn/article/details/47406473" target="_blank" rel="external">UltraISO制作U盘iso安装系统</a></p>
+<p>####硬盘本地安装####<br>下载的iso文件(使用<a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="external">UltraISO</a>或<a href="https://daemon-tools.softonic.com.br/" target="_blank" rel="external">DAEMON Tools Lite</a>装载或解压，但别使用rar或7z，可能会有错误导致安装失败)或*.rar类文件，装载或解压后，在一级子目录下会有setup.exe类似的可执行软件，运行后会进入安装界面。这种方式简单，不要使用U盘，只要系统文件就好，但其实安装windows系统有时会因为系统文件缺失某些驱动，而导致安装失败，而此此时有可能处于安装到一半，导致原来的系统已破坏而不能开机。所以这种方式，推荐是在有安装经验的情况下再使用。</p>
+<p>###系统安装注意事项###<br>综上，安装操作系统不会影响电脑硬件，正常情况只是导致破坏原有的操作和系统导致不能正常开机，你可以重新安装系统以恢复计算机。目前只是听过手机有操作失误导致破坏引导软件，引起不能再交安装系统而成为“砖机”，但这种情况还是很少出现。那，在安装系统的时候，最怕出现的是什么呢？</p>
+<ul>
+<li>对系统分区不了解，原本安装windows系统，只要安装在原来的C分区中，但在安装系统时，当时的C分区已经不显示C分区了，误操作安装系统到另一分区，导致把一分区格式化装了操作系统。</li>
+<li>ghost有一种版本，似乎是针对电脑城全新安装系统用的，安装系统默认会对硬盘重新分区，导致硬盘数据全部丢失。</li>
+<li>安装系统，默认会把安装系统的分区格式化，所以这个分区的用户数据要分备份，在安装windows中，C盘就是我们要安装的分区，要先备份C盘中的个人文件，比如常见的桌面上的文件、以及默认下载的文件目录等。</li>
+</ul>
+<p><strong>所以，安装系统最重要的就是要备份好自己的文件，数据无价</strong></p>
+<p>###针对小白的虚拟机安装系统练习###<br>使用<a href="http://www.vmware.com/cn.html" target="_blank" rel="external">VMware</a>或<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="external">VirtualBox</a>虚拟软件，在windows系统上，进行安装虚拟系统，可以试着了解下安装系统会有什么操作、大概过程是什么，这种方式安装对现有系统很安装，要安装的虚拟系统与现在使用中的系统是完全分离的，不会影响现有分区与数据，仅会写入一个比较大的文件，但这个方式对于很老的电脑来说，可能会很卡。</p>
+<p><a href="http://blog.xuite.net/yh96301/blog/30283132-VirtualBox+%E5%AE%89%E8%A3%9D+Windows+7+%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1" target="_blank" rel="external">VirtualBox安装win7教程</a></p>
+<p>###计算机多系统安装###<br>了解下<a href="http://cn.linux.vbird.org/linux_basic/0130designlinux_2.php#partition_mbr" target="_blank" rel="external">多系统引导</a>，可以实现在一个实体机中，同时安装windows、iOS、linux系多个系统，可以每次开机选择自己要进入的系统，实现windows日常使用，linux、iOS办公，当然，这个也可以装虚拟机。原理简单的说就是开机启动后，主板BOIS会读硬盘固定位置数据（引导程序代码），BOIS把CPU控制执行权交给引导程序，引导程序再从硬盘分区上找到安装了系统的的分区再把CPU控制权给操作系统，因此可以有多个分区分别装有不同的系统，让这引导程序引导进行选择运行哪个系统。</p>
+<p>###<br><a href="http://msdn.itellyou.cn/" target="_blank" rel="external">正版windows系统文件下载</a></p>
+<p><a href="http://cn.linux.vbird.org/linux_basic/0130designlinux_2.php#partition_table" target="_blank" rel="external">硬盘分区与引导程序</a></p>
+<p><a href="http://neosmart.net/EasyRE/" target="_blank" rel="external">EasyBCD修复引导程序</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;主要介绍windows系统安装，以此让小白放心安装其它系统，比如手机Android、iOS，以及PC上的linux系统。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+      <category term="电脑小白" scheme="http://LySnake.github.io/tags/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>常用软件推荐</title>
     <link href="http://LySnake.github.io/archiveslinux/technology/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html"/>
     <id>http://LySnake.github.io/archiveslinux/technology/常用软件推荐.html</id>
     <published>2017-05-05T14:06:46.000Z</published>
-    <updated>2018-04-07T13:44:07.258Z</updated>
+    <updated>2018-04-20T16:15:20.163Z</updated>
     
     <content type="html"><![CDATA[<p>分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。<br><a id="more"></a></p>
 <h2 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h2><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p><a href="https://www.zhihu.com/question/28013848" target="_blank" rel="external">如何高效地使用搜索引擎？</a>：来自zhihu的问答。</p>
@@ -1530,7 +1569,8 @@
 <p><a href="https://chrome.google.com/webstore/detail/send-to-kindle-by-klipme/ipkfnchcgalnafehpglfbommidgmalan" target="_blank" rel="external">Send to Kindle</a>:一键发送网页文章到Kindle阅读器。</p>
 <p><a href="https://www.zhihu.com/question/23228162" target="_blank" rel="external">chrome有哪些好用的插件</a></p>
 <hr>
-<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p><a href="http://www.ghisler.com/download.htm" target="_blank" rel="external">Total Commander</a>:功能强大的全能文件管理器。</p>
+<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p><a href="https://msdn.itellyou.cn/" target="_blank" rel="external">最强IDE Visual Studio</a>:最强IDE，开发、调试功能强大，另外，对于某些语言的代码高亮，可以去<a href="https://studiostyl.es" target="_blank" rel="external">studiostyl</a>下载配置。如果无法下载，查看网页源码手动跳转到下载链接。另外，C++代码选择<strong>Visual Assist</strong>插件来增强跳转、搜索等功能。</p>
+<p><a href="http://www.ghisler.com/download.htm" target="_blank" rel="external">Total Commander</a>:功能强大的全能文件管理器。</p>
 <p>[检测性能软件]CPU-Z + GPU-Z + AIDA64，dmark、国际象棋</p>
 <p><a href="https://www.zhihu.com/question/32129337" target="_blank" rel="external">如何优雅使用windows 10</a>:来自zhihu的问答。</p>
 <p><a href="https://atom.io/" target="_blank" rel="external">Atom</a>：Atom 是 Github 专门为程序员推出的一个跨平台文本编辑器。具有简洁和直观的图形用户界面，并有很多有趣的特点：支持CSS，HTML，JavaScript等网页编程语言。它支持宏，自动完成分屏功能，集成了文件管理器。</p>
