@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://LySnake.github.io/"/>
-  <updated>2018-07-01T08:40:53.458Z</updated>
+  <updated>2018-07-07T14:42:56.283Z</updated>
   <id>http://LySnake.github.io/</id>
   
   <author>
@@ -20,26 +20,25 @@
     <link href="http://LySnake.github.io/archives/technology/Cocos%E9%80%82%E9%85%8D.html"/>
     <id>http://LySnake.github.io/archives/technology/Cocos适配.html</id>
     <published>2018-07-01T08:13:12.000Z</published>
-    <updated>2018-07-01T08:40:53.458Z</updated>
+    <updated>2018-07-07T14:42:56.283Z</updated>
     
     <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>工作中使用的是cocos2dx-lua 3.4版本，cocos studio 3.10, 设计分辨率使用的是16:9的分辨率。本文主讲我在进行适配时，对网络上提供的文档的理解与一些处理。具体的理论请参考网上其它技术文档。</p>
 <h3 id="问题、处理"><a href="#问题、处理" class="headerlink" title="问题、处理"></a>问题、处理</h3><h4 id="适配模式选择"><a href="#适配模式选择" class="headerlink" title="适配模式选择"></a>适配模式选择</h4><p>常见手机分辨率:1920 * 1080 ~= 1.78 </p>
 <p>iPone X 分辨率 2436 * 1125 ~= 2.165</p>
 <p>iPad 分辨率 2048 * 1536 ~= 1.333</p>
-<p>cocos提供5个模式，分别是:</p>
+<p>cocos提供5个模式，分别是(DW、DH分别是设计分辨率的长、高，FW、FH分别为物理分辨率的长、高，在cocos渲染界面的时候，是按设计分辨率按一定放大比例显示到屏幕上):</p>
 <blockquote>
-<p>(1)<strong>ResolutionPolicy::EXACT_FIT    </strong>:拉伸变形，使铺满屏幕。<br>(2)<strong>ResolutionPolicy::NO_BORDER    </strong>:按比例放缩，全屏展示不留黑边。（长宽中小的铺满屏幕，大的超出屏幕）<br>(3)<strong>ResolutionPolicy::SHOW_ALL     </strong>:按比例放缩，全部展示不裁剪。长宽中大的铺满屏幕，小的留有黑边）<br>(4)<strong>ResolutionPolicy::FIXED_WIDTH  </strong>:按比例放缩，宽度铺满屏幕。<br>(5)<strong>ResolutionPolicy::FIXED_HEIGHT </strong>:按比例放缩，高度铺满屏幕。</p>
+<p>(1)<strong>ResolutionPolicy::EXACT_FIT    </strong>:长放大系数=FW/DW,高放大系数=FH/DH,可能会因长高的放大系数不一样而导致扭曲形变，但长高会刚好全屏显示。<br>(2)<strong>ResolutionPolicy::NO_BORDER    </strong>:长放大系数=FW/DW,高放大系数=FH/DH,然后选择放大系数小的值作为长和高的放大系数，因此一边刚好完整显示，另一边可能超出屏幕。放大系数一样，不会扭曲变形，但可能存在元素无法在屏幕中显示。<br>(3)<strong>ResolutionPolicy::SHOW_ALL     </strong>:长放大系数=FW/DW,高放大系数=FH/DH,然后选择放大系数大的值作为长和高的放大系数，因此一边刚好完整显示，另一边可能显示大小比屏幕小而产生黑边。放大系数一样，不会扭曲变形，但可能存在黑边。<br>(4)<strong>ResolutionPolicy::FIXED_WIDTH  </strong>:长和高都以FH/DH作为放大系数，W方向上的设计分辨率DW会修改为FW<em>(DH/FH)，因此放大显示到屏幕上时，不会有黑边和超出界面的元素(如果存在，可以调节元素在studio编辑界面的位置信息达显示)。<br>(5)<strong>ResolutionPolicy::FIXED_HEIGHT </strong>:长和高都以FW/DW作为放大系数，W方向上的设计分辨率DW会修改为FW</em>(DW/FW)，因此放大显示到屏幕上时，不会有黑边和超出界面的元素(如果存在，可以调节元素在studio编辑界面的位置信息达显示)。</p>
 </blockquote>
 <p>EXACT_FIT拉伸形变，会使某些Sprite扭曲，比如苗条美少女变成了胖大妈，所以这个方案只有在开发初期或其它适配不能满足的时候使用。</p>
 <p>SHOW_ALL: 会显示黑边，不论是iPone X还是iPad </p>
 <p>NO_BORDER:与SHOW_ALL相反，不留黑边。</p>
-<p>FIXED_WIDTH、FIXED_HEIGHT:这才是我们现在推荐的适配方案,是NO_BORDER的优化模式，在查看文档学习的过程中，部分文档提到区别:<code>NO_BORDER与FIXED_WIDTH、FIXED_HEIGHT都是不留黑边，但是NO_BORDER不会修正设计分辨率，FIXED_WIDTH、FIXED_HEIGHT会对设计分辨率进行修正。</code>至于这修正这词的理解与实践下面再谈。</p>
+<p>FIXED_WIDTH、FIXED_HEIGHT:这才是我们现在推荐的适配方案,是NO_BORDER的优化模式，在查看文档学习的过程中，部分文档提到区别:<code>NO_BORDER与FIXED_WIDTH、FIXED_HEIGHT都是不留黑边，但是NO_BORDER不会修正设计分辨率，FIXED_WIDTH、FIXED_HEIGHT会对设计分辨率进行修正。</code></p>
 <p>所以，参考以上，NO_BORDER与FIXED_WIDTH、FIXED_HEIGHT其实都会使长或高正好放大适配，另一边会超出，不会像SHOW_ALL一样产生黑边，也不会像EXACT_FIT一样扭曲形变。而FIXED_WIDTH、FIXED_HEIGHT是NO_BORDER优化版本，也是官方推荐选择的(cocos creator中的场景文件*.fire也是自带使用FIXED_WIDTH、FIXED_HEIGHT适配方案)。</p>
 <h4 id="使用与调试"><a href="#使用与调试" class="headerlink" title="使用与调试"></a>使用与调试</h4><ol>
 <li>理解修正设计分辨率</li>
 </ol>
-<p>在cocos studio中，对生成的layer资源文件中，对Node布局时，我们可以选择px固定的方式布局，也可以选择相对父节点大小的百分比x、y布局，在这里我们主要就是用到了百分比布局，而我们的百分比是相对父节点的，对于cocos studio中的一个界面资源csd，root节点的大小就是我们选择的设计分辨率，因此其一级子节点是相对于root节点百分比适配布局，因此FIXED_WIDTH、FIXED_HEIGHT就是提到这一点，当你使用FIXED_WIDTH、FIXED_HEIGHT模式进行适配时，会修正生成的资源布局文件的设计分辨率，使一级子节点可以相对于修正后的设计分辨率百分比布局。</p>
-<p>至于它如何修正的，请查看下面的<strong>参考链接</strong>。</p>
+<p>在cocos studio中，对生成的layer资源文件中，对Node布局时，我们可以选择px固定的方式布局，也可以选择相对父节点大小的百分比x、y布局，在这里我们主要就是用到了百分比布局，而我们的百分比是相对父节点的，对于cocos studio中的一个界面资源csd，root节点的大小就是我们选择的设计分辨率，因此其一级子节点是相对于root节点百分比适配布局，因此FIXED_WIDTH、FIXED_HEIGHT就是提到这一点，当你使用FIXED_WIDTH、FIXED_HEIGHT模式进行适配时，会修正生成的资源布局文件的设计分辨率，使一级子节点可以相对于修正后的设计分辨率百分比布局。另外，在代码中操作Node的position时，这个值的大小是针对于设计分辨率而言而非屏幕上物理像素点。</p>
 <ol>
 <li>如何调试修改cocos studio中的界面</li>
 </ol>

@@ -24,13 +24,13 @@ iPone X 分辨率 2436 * 1125 ~= 2.165
 
 iPad 分辨率 2048 * 1536 ~= 1.333
 
-cocos提供5个模式，分别是:
+cocos提供5个模式，分别是(DW、DH分别是设计分辨率的长、高，FW、FH分别为物理分辨率的长、高，在cocos渲染界面的时候，是按设计分辨率按一定放大比例显示到屏幕上):
 
->(1)**ResolutionPolicy::EXACT_FIT    **:拉伸变形，使铺满屏幕。
->(2)**ResolutionPolicy::NO_BORDER    **:按比例放缩，全屏展示不留黑边。（长宽中小的铺满屏幕，大的超出屏幕）
->(3)**ResolutionPolicy::SHOW_ALL     **:按比例放缩，全部展示不裁剪。长宽中大的铺满屏幕，小的留有黑边）
->(4)**ResolutionPolicy::FIXED_WIDTH  **:按比例放缩，宽度铺满屏幕。
->(5)**ResolutionPolicy::FIXED_HEIGHT **:按比例放缩，高度铺满屏幕。
+>(1)**ResolutionPolicy::EXACT_FIT    **:长放大系数=FW/DW,高放大系数=FH/DH,可能会因长高的放大系数不一样而导致扭曲形变，但长高会刚好全屏显示。
+>(2)**ResolutionPolicy::NO_BORDER    **:长放大系数=FW/DW,高放大系数=FH/DH,然后选择放大系数小的值作为长和高的放大系数，因此一边刚好完整显示，另一边可能超出屏幕。放大系数一样，不会扭曲变形，但可能存在元素无法在屏幕中显示。
+>(3)**ResolutionPolicy::SHOW_ALL     **:长放大系数=FW/DW,高放大系数=FH/DH,然后选择放大系数大的值作为长和高的放大系数，因此一边刚好完整显示，另一边可能显示大小比屏幕小而产生黑边。放大系数一样，不会扭曲变形，但可能存在黑边。
+>(4)**ResolutionPolicy::FIXED_WIDTH  **:长和高都以FH/DH作为放大系数，W方向上的设计分辨率DW会修改为FW*(DH/FH)，因此放大显示到屏幕上时，不会有黑边和超出界面的元素(如果存在，可以调节元素在studio编辑界面的位置信息达显示)。
+>(5)**ResolutionPolicy::FIXED_HEIGHT **:长和高都以FW/DW作为放大系数，W方向上的设计分辨率DW会修改为FW*(DW/FW)，因此放大显示到屏幕上时，不会有黑边和超出界面的元素(如果存在，可以调节元素在studio编辑界面的位置信息达显示)。
 
 EXACT_FIT拉伸形变，会使某些Sprite扭曲，比如苗条美少女变成了胖大妈，所以这个方案只有在开发初期或其它适配不能满足的时候使用。
 
@@ -38,7 +38,7 @@ SHOW_ALL: 会显示黑边，不论是iPone X还是iPad
 
 NO_BORDER:与SHOW_ALL相反，不留黑边。
 
-FIXED_WIDTH、FIXED_HEIGHT:这才是我们现在推荐的适配方案,是NO_BORDER的优化模式，在查看文档学习的过程中，部分文档提到区别:```NO_BORDER与FIXED_WIDTH、FIXED_HEIGHT都是不留黑边，但是NO_BORDER不会修正设计分辨率，FIXED_WIDTH、FIXED_HEIGHT会对设计分辨率进行修正。```至于这修正这词的理解与实践下面再谈。
+FIXED_WIDTH、FIXED_HEIGHT:这才是我们现在推荐的适配方案,是NO_BORDER的优化模式，在查看文档学习的过程中，部分文档提到区别:```NO_BORDER与FIXED_WIDTH、FIXED_HEIGHT都是不留黑边，但是NO_BORDER不会修正设计分辨率，FIXED_WIDTH、FIXED_HEIGHT会对设计分辨率进行修正。```
 
 所以，参考以上，NO_BORDER与FIXED_WIDTH、FIXED_HEIGHT其实都会使长或高正好放大适配，另一边会超出，不会像SHOW_ALL一样产生黑边，也不会像EXACT_FIT一样扭曲形变。而FIXED_WIDTH、FIXED_HEIGHT是NO_BORDER优化版本，也是官方推荐选择的(cocos creator中的场景文件*.fire也是自带使用FIXED_WIDTH、FIXED_HEIGHT适配方案)。
 
@@ -46,9 +46,8 @@ FIXED_WIDTH、FIXED_HEIGHT:这才是我们现在推荐的适配方案,是NO_BORD
 
 1. 理解修正设计分辨率
 
-在cocos studio中，对生成的layer资源文件中，对Node布局时，我们可以选择px固定的方式布局，也可以选择相对父节点大小的百分比x、y布局，在这里我们主要就是用到了百分比布局，而我们的百分比是相对父节点的，对于cocos studio中的一个界面资源csd，root节点的大小就是我们选择的设计分辨率，因此其一级子节点是相对于root节点百分比适配布局，因此FIXED_WIDTH、FIXED_HEIGHT就是提到这一点，当你使用FIXED_WIDTH、FIXED_HEIGHT模式进行适配时，会修正生成的资源布局文件的设计分辨率，使一级子节点可以相对于修正后的设计分辨率百分比布局。
+在cocos studio中，对生成的layer资源文件中，对Node布局时，我们可以选择px固定的方式布局，也可以选择相对父节点大小的百分比x、y布局，在这里我们主要就是用到了百分比布局，而我们的百分比是相对父节点的，对于cocos studio中的一个界面资源csd，root节点的大小就是我们选择的设计分辨率，因此其一级子节点是相对于root节点百分比适配布局，因此FIXED_WIDTH、FIXED_HEIGHT就是提到这一点，当你使用FIXED_WIDTH、FIXED_HEIGHT模式进行适配时，会修正生成的资源布局文件的设计分辨率，使一级子节点可以相对于修正后的设计分辨率百分比布局。另外，在代码中操作Node的position时，这个值的大小是针对于设计分辨率而言而非屏幕上物理像素点。
 
-至于它如何修正的，请查看下面的**参考链接**。
 
 2. 如何调试修改cocos studio中的界面
 
