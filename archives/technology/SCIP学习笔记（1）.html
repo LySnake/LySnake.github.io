@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="工作中对Cocos麻将类型的游戏，作iPad与iPhone X适配">
+<meta name="description" content="个人学习SICP的记录笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cocos适配">
-<meta property="og:url" content="http://LySnake.github.io/archives/technology/Cocos适配.html">
+<meta property="og:title" content="SCIP学习笔记（1）">
+<meta property="og:url" content="http://LySnake.github.io/archives/technology/SCIP学习笔记（1）.html">
 <meta property="og:site_name" content="LySnake个人博客">
-<meta property="og:description" content="工作中对Cocos麻将类型的游戏，作iPad与iPhone X适配">
-<meta property="og:updated_time" content="2018-07-07T14:42:56.283Z">
+<meta property="og:description" content="个人学习SICP的记录笔记">
+<meta property="og:updated_time" content="2018-07-21T16:18:01.715Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cocos适配">
-<meta name="twitter:description" content="工作中对Cocos麻将类型的游戏，作iPad与iPhone X适配">
+<meta name="twitter:title" content="SCIP学习笔记（1）">
+<meta name="twitter:description" content="个人学习SICP的记录笔记">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Cocos适配 | LySnake个人博客</title>
+<title>SCIP学习笔记（1） | LySnake个人博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -275,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Cocos适配" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-SCIP学习笔记（1）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="" class="article-date">
-      <time datetime="2018-07-01T08:13:12.000Z" itemprop="datePublished">2018-07-01</time>
+      <time datetime="2018-07-21T08:13:12.000Z" itemprop="datePublished">2018-07-21</time>
 </a>
 
  
@@ -303,7 +303,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Cocos适配
+      SCIP学习笔记（1）
     </h1>
   
 
@@ -328,39 +328,37 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>工作中使用的是cocos2dx-lua 3.4版本，cocos studio 3.10, 设计分辨率使用的是16:9的分辨率。本文主讲我在进行适配时，对网络上提供的文档的理解与一些处理。具体的理论请参考网上其它技术文档。</p>
-<h3 id="问题、处理"><a href="#问题、处理" class="headerlink" title="问题、处理"></a>问题、处理</h3><h4 id="适配模式选择"><a href="#适配模式选择" class="headerlink" title="适配模式选择"></a>适配模式选择</h4><p>常见手机分辨率:1920 * 1080 ~= 1.78 </p>
-<p>iPone X 分辨率 2436 * 1125 ~= 2.165</p>
-<p>iPad 分辨率 2048 * 1536 ~= 1.333</p>
-<p>cocos提供5个模式，分别是(DW、DH分别是设计分辨率的长、高，FW、FH分别为物理分辨率的长、高，在cocos渲染界面的时候，是按设计分辨率按一定放大比例显示到屏幕上):</p>
-<blockquote>
-<p>(1)<strong>ResolutionPolicy::EXACT_FIT    </strong>:长放大系数=FW/DW,高放大系数=FH/DH,可能会因长高的放大系数不一样而导致扭曲形变，但长高会刚好全屏显示。<br>(2)<strong>ResolutionPolicy::NO_BORDER    </strong>:长放大系数=FW/DW,高放大系数=FH/DH,然后选择放大系数小的值作为长和高的放大系数，因此一边刚好完整显示，另一边可能超出屏幕。放大系数一样，不会扭曲变形，但可能存在元素无法在屏幕中显示。<br>(3)<strong>ResolutionPolicy::SHOW_ALL     </strong>:长放大系数=FW/DW,高放大系数=FH/DH,然后选择放大系数大的值作为长和高的放大系数，因此一边刚好完整显示，另一边可能显示大小比屏幕小而产生黑边。放大系数一样，不会扭曲变形，但可能存在黑边。<br>(4)<strong>ResolutionPolicy::FIXED_WIDTH  </strong>:长和高都以FH/DH作为放大系数，W方向上的设计分辨率DW会修改为FW<em>(DH/FH)，因此放大显示到屏幕上时，不会有黑边和超出界面的元素(如果存在，可以调节元素在studio编辑界面的位置信息达显示)。<br>(5)<strong>ResolutionPolicy::FIXED_HEIGHT </strong>:长和高都以FW/DW作为放大系数，W方向上的设计分辨率DW会修改为FW</em>(DW/FW)，因此放大显示到屏幕上时，不会有黑边和超出界面的元素(如果存在，可以调节元素在studio编辑界面的位置信息达显示)。</p>
-</blockquote>
-<p>EXACT_FIT拉伸形变，会使某些Sprite扭曲，比如苗条美少女变成了胖大妈，所以这个方案只有在开发初期或其它适配不能满足的时候使用。</p>
-<p>SHOW_ALL: 会显示黑边，不论是iPone X还是iPad </p>
-<p>NO_BORDER:与SHOW_ALL相反，不留黑边。</p>
-<p>FIXED_WIDTH、FIXED_HEIGHT:这才是我们现在推荐的适配方案,是NO_BORDER的优化模式，在查看文档学习的过程中，部分文档提到区别:<code>NO_BORDER与FIXED_WIDTH、FIXED_HEIGHT都是不留黑边，但是NO_BORDER不会修正设计分辨率，FIXED_WIDTH、FIXED_HEIGHT会对设计分辨率进行修正。</code></p>
-<p>所以，参考以上，NO_BORDER与FIXED_WIDTH、FIXED_HEIGHT其实都会使长或高正好放大适配，另一边会超出，不会像SHOW_ALL一样产生黑边，也不会像EXACT_FIT一样扭曲形变。而FIXED_WIDTH、FIXED_HEIGHT是NO_BORDER优化版本，也是官方推荐选择的(cocos creator中的场景文件*.fire也是自带使用FIXED_WIDTH、FIXED_HEIGHT适配方案)。</p>
-<h4 id="使用与调试"><a href="#使用与调试" class="headerlink" title="使用与调试"></a>使用与调试</h4><ol>
-<li>理解修正设计分辨率</li>
-</ol>
-<p>在cocos studio中，对生成的layer资源文件中，对Node布局时，我们可以选择px固定的方式布局，也可以选择相对父节点大小的百分比x、y布局，在这里我们主要就是用到了百分比布局，而我们的百分比是相对父节点的，对于cocos studio中的一个界面资源csd，root节点的大小就是我们选择的设计分辨率，因此其一级子节点是相对于root节点百分比适配布局，因此FIXED_WIDTH、FIXED_HEIGHT就是提到这一点，当你使用FIXED_WIDTH、FIXED_HEIGHT模式进行适配时，会修正生成的资源布局文件的设计分辨率，使一级子节点可以相对于修正后的设计分辨率百分比布局。另外，在代码中操作Node的position时，这个值的大小是针对于设计分辨率而言而非屏幕上物理像素点。</p>
-<ol>
-<li>如何调试修改cocos studio中的界面</li>
-</ol>
-<p>如1所述，既然FIXED_WIDTH、FIXED_HEIGHT是会修正设计分辨率，所以我们直接在cocos studio中修改成修正后的设计分辨率查看百分比适配是否会有适配问题不就好嘛？调试的时候也确实是这样子，大多情况都能正常直接修改，但碰到了几个问题：</p>
-<blockquote>
-<ol>
-<li>Sprite组件下的图片不能百分比拉伸，只能使用image组件带九宫格功能才能支持百分比的width、height适配。</li>
-<li>实际应用跑的时候，可能会发现有些是能百分比的，有些还是修正前的设计分辨率百分比显示，这要主动调用cocos引擎提供的Layout方法，使之重新启用cocos studio中的百分比适配。我在开发中是发现是公司框架调用方式中，使用封装好的loadcsb之后会主动调用Layout方法，但是如果是自己定怕loadcsb后没有主动调用，会显示出来的并没有修正设计分辨率及其百分比布局。</li>
-<li>cocos studio上编辑出来的，大多数是layer，手机上实时显示时，可能是几个layer层叠的结果，所以在不同分辨率下，可能是会出现layer上Node互有遮挡，所以还是要另外调整。</li>
-<li>手机类型太多了，在iPhone X上，显示屏是圆角的，另外，显示屏还带刘海，而且一般还要支持旋转屏，所以有节点是左右靠边显示的，此时就要考虑屏幕类型问题带来的遮挡问题，另外，iPhone X手机在APP中，在下部显示还有一个白色的操作横杆，影响此处Sprite的操作。</li>
-<li>在应用初始化启动中，显示了一个骨骼动画，骨骼动画在调试时发现无法直接使用setScale,但是可以通过适配模式的更改(EXACT_FIT)而达到适配。</li>
-</ol>
-</blockquote>
-<p>正是因为上面的问题，所以还是出现了要通过添加少量代码去调整Node显示的位置。因为运行初始化界面的骨骼动画，所以在APP运行期间会有好几次适配模式的更改。</p>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://blog.csdn.net/shenzi/article/details/53539089" target="_blank" rel="external">可参考的适配文档</a></p>
-<p><a href="https://blog.csdn.net/liu943367080/article/details/78665885" target="_blank" rel="external">可参考的适配文档</a></p>
+        <h2 id="序和前言"><a href="#序和前言" class="headerlink" title="序和前言"></a>序和前言</h2><p>有关这些程序具体是关于什么的、服务于哪类应用等等的情况常常并不重要，重要的是它们的性能如何，在用于构造更大的程序时能否与其它程序平滑。程序员们必须同时追求具体部分的完美和汇合的适宜性。</p>
+<p>人的大脑、计算机程序的集合以及计算机本身。每一个计算机程序都是现实中的或者精神中的某个过程的一个模型，通过人的头脑孵化出来。这些过程出现在人们的经验或者思维之中，数量上数不胜数，详情琐碎繁杂，任何时候人们都只能部分地理解它们。</p>
+<p>计算机程序设计领域之令人兴奋的源就在于它所引直怕连绵不绝的发现，在我们的头脑之中，在由程序所表达的计算机制之中，以及在由此所导致的认识爆炸之中。</p>
+<p>因为大的程序是从小东西成长起来的，开发出一个标准化的程序结构的塸库，并保证其中的每种结构的正确性–我们称它们为惯用法，再学会如何利用一些已经证明很有价值的组织技术，奖这些结构组合成更大的结构，这些都是到头重要的。本书中奖详尽地讨论这些技术。理解这些技术，对于参与这种被称为程序设计的具有创造性的事业是最最本质的。特别值得提出的是，发现并掌握强有力的组织技术，奖提升我们构造大型的重要程序的能力。</p>
+<p>计算机永远都不够大也不够快。硬件技术的每一次突破都带来了更大规模的程序设计事业，新的组织原理，以及更加丰富的抽象模型。每个读者都应该反复地问自己“支哪里才是头儿，到哪里才是头儿？”</p>
+<p>执行的时间和对数据存储的需求。程序员应该追求好的算法和惯用法。即使某些程序难以精确地描述，程序员也有责任去估计它们的性能，并要继续高潮去改进之。</p>
+<p>在任何非常大的程序设计工作中，一条有用的组织原则就是通过发明新语言，去控制和隔离作业模块之间的信息流动。</p>
+<p>一个计算机语言并不仅仅是让计算机去执行操作的一种方式，更重要的，它是一种表述有关方法学的思想的新颖的形式化媒介。因此，程序必须写得能够供人们阅读，偶尔地去供计算机执行。其次，我们相信，在这一层次的课程里，最基本的材料并不是特定的程序设计语言的语法，不是有效的计算某种功能的巧妙算法，也不是算法的数学分析或者计算的本质基础，而是一些能够用于控制大开支软件系统的智力复杂性技术。</p>
+<p>Lisp语言扔重要优点：它们只有不多几种构造复合表达式的方式，几乎没有语法结构。所有的形式化性质都可以在一个小时里讲完，就像下象棋的规则似的。另一优势在于，与我们所知的任何其它语言相比，它可以支持（但并不是强制性的）更多的能用于以模块化的方式分解程序的大规模策略。</p>
+<h2 id="第一章-构造过程抽象"><a href="#第一章-构造过程抽象" class="headerlink" title="第一章 构造过程抽象"></a>第一章 构造过程抽象</h2><p>奖若干简单的认识组合为一个复合的认识，由此产生出各种复杂的认识。将二个认识放在一起对照，不管它们如何简单或者复杂，在这样的做时并不奖它们合而为一。由此得到有关它们的相互关系的认识。将有关认识与那些在初建中和它们同在的所有基它认识隔离开，这就是抽象，所有具有普遍性的认识都是这样得到的。</p>
+<p>Lisp是20世纪50年代后期发明的一种记法形式，是为了能对某种特定形式的逻辑表达式（称为递归方程）的使用做推理，递归方程可以作为计算的模型。一个Lisp解释器就像是一台机器，它能实现用Lisp语言描述的计算过程。第一个Lisp解释器是McCarthy在MIT电子研究实验室的人工智能组和MIT计算中心里他的同事和学生的帮助下实现的。Lisp的名字来自表处理（LISt Processing），其设计是为了提供符号计算的能力，以便能用于解决一些程序设计问题，例如代数表达式的符号微分和积分。它包含了适用于这类目的的一些新数据对旬，称为原子和表，这是它与那一时代的所有其它语言之间最明显的不同之处。</p>
+<p>Lisp并不是一个刻意设计努力的结果，它以一种试验性的非正式的方式不断深化，以满足用户的需要和实际的各种考虑。Lisp的这种非官方深化持续了许多年，Lisp用户社团具有掏制定这一语言的“官方”定义企图的传统。本书使用的是Scheme方言。</p>
+<p>虽然Lisp还没有完全战胜有关它特别低效的诋毁，但它现在已被用于许多性能并不是最重要考虑因素的应用领域。例如，Lisp已经成为操作系统外壳语言的一种选择，作为编辑器和计算机辅助设计系统的扩充语言等等。</p>
+<p>计算过程的Lisp描述（称为过程）本身又可以作为Lisp的数据来表示和操作。Lisp可以将过程作为数据进行处理的灵活性，使它成为探索这些技术的最方便的现存语言之一。能将过程表示为数据的能力，也使用Lisp成为编写那些必须将其它程序当作数据去操作的程序的最佳语言，如支持计算机语言的解释器和编译器。除了这些考虑之外，用Lisp编程本身也是极其有趣的。</p>
+<h3 id="1-1-程序设计的基本元素"><a href="#1-1-程序设计的基本元素" class="headerlink" title="1.1 程序设计的基本元素"></a>1.1 程序设计的基本元素</h3><p><strong>组合式</strong>：如<code>(+ 3 2)</code>就是用一对括号括起一些表达式，形成一个表，用于表示一个过程应用。在表里最左的元素称为运算符，其他元素都称为<strong>运算对象</strong>。要得到这种组合式的值，采用的方式就是将由去处符所刻画的过程应用于有关的<strong>实际参数</strong>，而所谓实际参数也就是那些运算的对象的值。</p>
+<p>将运算符放在所有去处对象左边，这种形式称为前缀表示。前缀表示与掌击数学表示差别很大，而前缀表示也有一些优点，其中之一就是它完全适用于可能带有任意的过程。另一个优点是它可以直接扩充，允许出现组合式嵌套的情况。</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(<span class="name"><span class="builtin-name">+</span></span> (<span class="name"><span class="builtin-name">*</span></span> <span class="number">3</span></div><div class="line">      (<span class="name"><span class="builtin-name">+</span></span> (<span class="name"><span class="builtin-name">*</span></span> <span class="number">2</span> <span class="number">4</span>)</div><div class="line">         (<span class="name"><span class="builtin-name">+</span></span> <span class="number">3</span> <span class="number">5</span>)))</div><div class="line">   (<span class="name"><span class="builtin-name">+</span></span> (<span class="name"><span class="builtin-name">-</span></span> <span class="number">10</span> <span class="number">7</span>)</div><div class="line">      <span class="number">6</span>))</div></pre></td></tr></table></figure>
+<p>上面就是遵循一种称为美观打印的格式规则。按照这种规则，在写一个很长的组合式时，我们令其中的各个运算对象垂直对齐。这样排列的结果能很好地显示出表达式的结构。</p>
+<p>在Scheme里，给事物命名通过<strong>define(定义)</strong>的方式完成，如<code>(define size 2)</code>定义变更，<code>(define (func) (+ 3 2 3))</code>定义函数。define是我们所用的语言里最简单的方法，它允许我们用一个简单的名字去引用一个组合运算的结果。一般而言，计算得到的对象完全可以具有非常复杂的结构，如果每次需要使用它们时，都必须记住并重复地写出它们的细节，那将是极端不方便的事情。</p>
+<p>一般而言，我们应该把递归看做一种处理层次性结构的（像树这样的对象）极强有力的技术。事实上，“值向上穿行”形式的求值形式是一类更一般的计算过程的一个例子，这种计算过程称为树形积累。</p>
+<p><strong>过程定义</strong>：是一种威力更加强大的抽象技术，通过它可以为复合操作提供名字，而后就可以将这样的操作作为一个单元使用了，如<code>(define (square x ) (* x x ))</code>。</p>
+<p><strong>正则序求值</strong>：当函数的实参是一个组合式时，把组合式带入到函数体能所有形参位置作为替换，类型C的宏替换一样。可能会浪费运算次数，但也可以成为特别有价值的工具。第3章和第4章。</p>
+<p><strong>应用序求值</strong>：当函数的实参是一个组合式时，把组合式的结果值赋给形参进行函数运算。其它语言基本都是使用这种方式进行入参的。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//测试是使用正则序求值还是应用序求值</div><div class="line">(define (p) (p))</div><div class="line">(define (test x y )</div><div class="line">   (if (= x 0)</div><div class="line">       0</div><div class="line">       y))</div></pre></td></tr></table></figure>
+<p><strong>cond表达式</strong>:类似switch语句，当条件表达式的求值方式如下：首先求值谓语<code>&lt;p1&gt;</code>，如果它的值是false，那么就去求值<code>&lt;p2&gt;</code>，如果<code>&lt;p2&gt;</code>的值是false就去求值<code>&lt;P3&gt;</code>.这一过程将继续做下去，直到发现了某个谓词的值为true或全为false直接处理else子名，此时解释器就返回相应子句中的序列表达式<code>&lt;e&gt;</code>的值，以这个值作为整个条件表达式的值。如果没有找到为真的<code>&lt;p&gt;</code>，cond的值就没有定义。</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(<span class="name"><span class="builtin-name">cond</span></span>  (<span class="name">&lt;p1&gt;</span> &lt;e1&gt;)      </div><div class="line">	   (<span class="name">&lt;p2&gt;</span> &lt;e2&gt;)</div><div class="line">		...</div><div class="line">	   (<span class="name">&lt;pn&gt;</span> &lt;en&gt;)</div><div class="line">       (<span class="name"><span class="builtin-name">else</span></span> &lt;e&gt;)）</div></pre></td></tr></table></figure>
+<p>我们用术语<strong>谓词</strong>指那些返回真或假的过程，也指那些能求出真或者假的值的表达式。</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(<span class="name"><span class="builtin-name">if</span></span> &lt;predicate&gt; &lt;consequent&gt; &lt;alternative&gt;)</div><div class="line">(<span class="name"><span class="builtin-name">define</span></span> (<span class="name"><span class="builtin-name">abs</span></span> x )</div><div class="line">    (<span class="name"><span class="builtin-name">if</span></span> (<span class="name"><span class="builtin-name">&lt;</span></span> x <span class="number">0</span>)</div><div class="line">        (<span class="name"><span class="builtin-name">-</span></span> x)</div><div class="line">        x))</div></pre></td></tr></table></figure>
+<p><strong>if表达式</strong>：解释器从求值其<code>&lt;predicate&gt;</code>部分开始，如果<code>&lt;predicate&gt;</code>为真，解释器就去求值<code>&lt;consequent&gt;</code>并返回其值，否则它就去求值<code>&lt;alternative&gt;</code>并返回其值。</p>
+<p><strong>逻辑表达式</strong>：</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="name"><span class="builtin-name">and</span></span> &lt;e1&gt; ... &lt;en&gt;)</div><div class="line">(<span class="name"><span class="builtin-name">or</span></span> &lt;e1&gt; ... &lt;en&gt;)</div><div class="line">(<span class="name"><span class="builtin-name">not</span></span> &lt;e&gt;)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -369,13 +367,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="">Cocos适配</a></p>
+        <p><span>本文标题:</span><a href="">SCIP学习笔记（1）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LySnake</a></p>
-        <p><span>发布时间:</span>2018-07-01, 16:13:12</p>
-        <p><span>最后更新:</span>2018-07-07, 22:42:56</p>
+        <p><span>发布时间:</span>2018-07-21, 16:13:12</p>
+        <p><span>最后更新:</span>2018-07-22, 00:18:01</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="" title="Cocos适配">http://LySnake.github.io/archives/technology/Cocos适配.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/Cocos适配.html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="" title="SCIP学习笔记（1）">http://LySnake.github.io/archives/technology/SCIP学习笔记（1）.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/SCIP学习笔记（1）.html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -387,16 +385,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="手游测试开发工具.html">
-                    手游测试开发工具
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="TCP包的思考.html">
-                    TCP包的思考
+                <a href="手游测试开发工具.html">
+                    手游测试开发工具
                 </a>
             </div>
         
@@ -408,7 +400,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题、处理"><span class="toc-number">2.</span> <span class="toc-text">问题、处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#适配模式选择"><span class="toc-number">2.1.</span> <span class="toc-text">适配模式选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用与调试"><span class="toc-number">2.2.</span> <span class="toc-text">使用与调试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考链接"><span class="toc-number">3.</span> <span class="toc-text">参考链接</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#序和前言"><span class="toc-number">1.</span> <span class="toc-text">序和前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一章-构造过程抽象"><span class="toc-number">2.</span> <span class="toc-text">第一章 构造过程抽象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-程序设计的基本元素"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 程序设计的基本元素</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -446,7 +438,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="archives/technology/Cocos适配.html" data-title="Cocos适配" data-url="http://LySnake.github.io"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="archives/technology/SCIP学习笔记（1）.html" data-title="SCIP学习笔记（1）" data-url="http://LySnake.github.io"></div>
     <script>
         var duoshuoQuery = {short_name:"lysnake"};
         var loadComment = function(){
@@ -459,7 +451,7 @@
         
             // Add comment count
             $(function(){
-                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=lysnake&threads=archives/technology/Cocos适配.html&callback=?";
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=lysnake&threads=archives/technology/SCIP学习笔记（1）.html&callback=?";
                 $.getJSON(jsonUrl, function(result){
                     $.each(result.response, function(i, field){
                         var value = field.comments;
@@ -507,21 +499,19 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="手游测试开发工具.html" title="上一篇: 手游测试开发工具">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="TCP包的思考.html" title="下一篇: TCP包的思考">
+            <a href="手游测试开发工具.html" title="下一篇: 手游测试开发工具">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="SCIP学习笔记（1）.html">SCIP学习笔记（1）</a></li><li class="post-list-item"><a class="post-list-link" href="手游测试开发工具.html">手游测试开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="">Cocos适配</a></li><li class="post-list-item"><a class="post-list-link" href="TCP包的思考.html">TCP包的思考</a></li><li class="post-list-item"><a class="post-list-link" href="Lua学习.html">Lua学习</a></li><li class="post-list-item"><a class="post-list-link" href="SQL Server从入门到精通(1).html">SQL Server从入门到精通(1)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(7).html">C++ Primer Plus学习笔记(7)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(6).html">C++ Primer Plus学习笔记(6)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(5).html">C++ Primer Plus学习笔记(5)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(4).html">C++ Primer Plus学习笔记(4)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(3).html">C++ Primer Plus学习笔记(3)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(2).html">C++ Primer Plus学习笔记(2)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(1).html">C++ Primer Plus学习笔记(1)</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑常见错误诊断.html">电脑小白系列之电脑常见错误诊断</a></li><li class="post-list-item"><a class="post-list-link" href="操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="../../archiveslinux/technology/常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="Github Pages与Hexo框架博客的搭建.html">Github Pages与Hexo框架博客的搭建</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑硬件了解.html">电脑小白系列之电脑硬件了解</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑日常管理.html">电脑小白系列之电脑日常管理</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="">SCIP学习笔记（1）</a></li><li class="post-list-item"><a class="post-list-link" href="手游测试开发工具.html">手游测试开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="Cocos适配.html">Cocos适配</a></li><li class="post-list-item"><a class="post-list-link" href="TCP包的思考.html">TCP包的思考</a></li><li class="post-list-item"><a class="post-list-link" href="Lua学习.html">Lua学习</a></li><li class="post-list-item"><a class="post-list-link" href="SQL Server从入门到精通(1).html">SQL Server从入门到精通(1)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(7).html">C++ Primer Plus学习笔记(7)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(6).html">C++ Primer Plus学习笔记(6)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(5).html">C++ Primer Plus学习笔记(5)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(4).html">C++ Primer Plus学习笔记(4)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(3).html">C++ Primer Plus学习笔记(3)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(2).html">C++ Primer Plus学习笔记(2)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(1).html">C++ Primer Plus学习笔记(1)</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑常见错误诊断.html">电脑小白系列之电脑常见错误诊断</a></li><li class="post-list-item"><a class="post-list-link" href="操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="../../archiveslinux/technology/常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="Github Pages与Hexo框架博客的搭建.html">Github Pages与Hexo框架博客的搭建</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑硬件了解.html">电脑小白系列之电脑硬件了解</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑日常管理.html">电脑小白系列之电脑日常管理</a></li></ul>
 
 
 
