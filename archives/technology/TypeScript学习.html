@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="关于TCP包长链接，连接send二个包达到接收端会不会乱包">
+<meta name="description" content="个人学习官网TypeScript教程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TCP包的思考">
-<meta property="og:url" content="http://LySnake.github.io/archives/technology/TCP包的思考.html">
+<meta property="og:title" content="TypeScript学习">
+<meta property="og:url" content="http://LySnake.github.io/archives/technology/TypeScript学习.html">
 <meta property="og:site_name" content="LySnake个人博客">
-<meta property="og:description" content="关于TCP包长链接，连接send二个包达到接收端会不会乱包">
-<meta property="og:updated_time" content="2018-04-22T14:29:05.605Z">
+<meta property="og:description" content="个人学习官网TypeScript教程">
+<meta property="og:updated_time" content="2018-10-08T14:31:42.957Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TCP包的思考">
-<meta name="twitter:description" content="关于TCP包长链接，连接send二个包达到接收端会不会乱包">
+<meta name="twitter:title" content="TypeScript学习">
+<meta name="twitter:description" content="个人学习官网TypeScript教程">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>TCP包的思考 | LySnake个人博客</title>
+<title>TypeScript学习 | LySnake个人博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -275,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-TCP包的思考" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-TypeScript学习" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="" class="article-date">
-      <time datetime="2018-04-18T14:13:12.000Z" itemprop="datePublished">2018-04-18</time>
+      <time datetime="2018-10-08T14:13:12.000Z" itemprop="datePublished">2018-10-08</time>
 </a>
 
  
@@ -303,7 +303,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      TCP包的思考
+      TypeScript学习
     </h1>
   
 
@@ -318,7 +318,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/tcp/">TCP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/网络/">网络</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/typescript/">TypeScript</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -328,20 +328,30 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h3><p><strong>继二天学了Lua后，开始查看Lua项目源码，此时丢给我一个Bug，通过边查看代码边学习，发现这个Bug存在一种可能，就是”S端与C端以TCP长链接通信，当S端连续send二个数据包AB给C端，C端应用层如果是先接收并处理BA，则会产生这个Bug。”，会产生这个疑问的原因是，我们知道IP包可以出现丢包、包错误、路径不一致等原因，导致到达时间的不确定，而此项目中的每个TCP包，都是很小的一个包，一个TCP数据可以不分包直接丢给IP包传送。所以我认为这二个TCP包可能会有接收上的先后关系。而以前查看的网络书籍，并没有注意到这点，更多的是说当一个大的TCP包，通过IP包传输时，因为TCP包很大，所以会发成很多小包通过IP包传输，接收端的TCP层再根据TCP小包的序号重新排列数据，达到数据不混乱的目的。而此时是二个TCP包，每个包也都很小，而这个Bug也确实存在一定的随机性，本地复现基本不可能，而生产环境目前并无法获得更多信息。而查看代码逻辑目前仅能查看到这个点。</strong></p>
-<h3 id="SEQ与ACK"><a href="#SEQ与ACK" class="headerlink" title="SEQ与ACK"></a>SEQ与ACK</h3><p><a href="https://blog.csdn.net/haitun312366/article/details/9060253" target="_blank" rel="external">TCP的SEQ和ACK的生成</a>。存在我的疑问的原因就是，我认为SEQ是每次系统调用write都会产生新的，而实际上因为好几年没有这么细的接触过网络问题了，这点已经忘记了，而实际上，一个TCP连接建立，就会完成SEQ与ACK的初始化，并在连接过程中一直使用更新。所以对于长连接无论send几次，与TCP大包分小包传输一样，通过SEQ与ACK实现有序化，因此接收端的应用层一定会按序接收到发送端应用层发送的有序数据。</p>
-<h3 id="PUSH"><a href="#PUSH" class="headerlink" title="PUSH"></a>PUSH</h3><p><strong>PUSH</strong>：<code>PUSH是TCP报头中的一个标志位，发送方在发送数据的时候可以设置这个标志位。该标志通知接收方将接收到的数据全部提交给接收进程。这里所说的数据包括与此PUSH包一起传输的数据以及之前就为该进程传输过来的数据</code>。这段话在网络与<tcp ip="" 卷一="">里都有，在我这个TCP长链接，并且每次发送的TCP包都很小的情况下，而且当每个TCP数据包都带PUSH标识时，当S发送TCP包AB，接收端如果先接收到B，再接收到A，虽然都有PUSH标识，但因为B的SEQ检查的情况表明在B前面还有一段数据，此时不能通过B的PUSH标识就把数据交给应用层，因为无法得知仅B就是一个完整的应用层数据了。而我接触的都是游戏相关，所以每个send的TCP包数据都带PUSH标识。</tcp></p>
-<h4 id="引用下相关资源并整理"><a href="#引用下相关资源并整理" class="headerlink" title="引用下相关资源并整理"></a>引用下相关资源并整理</h4><p><a href="https://blog.csdn.net/edison0716/article/details/5134101" target="_blank" rel="external">TCP PUSH参考资料1</a>与<a href="http://www.vants.org/?post=102" target="_blank" rel="external">TCP PUSH参考资料2</a>。</p>
-<p><strong>内核处理</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">所谓的send buffer,意即发送缓冲区，你看的是bsd的源代码，我这边就以Linux的源代码回答你了，反正原理是相通的。在代表网络层socket的结构体struct sock中有几个关于发送缓冲区的成员数据，其中sk_wmem_queue即为发送缓冲队列，是一个由结构体struct sk_buff组成的队列，一个结构体struct sk_buff承载一个tcp数据报，对于应用程序发送的大应用数据，比如一个write写8K字节的数据，由于TCP协议有MSS(最大报文段长度)的限制，假设MSS为1024字节，则这8K会被拆分成8个1024随载数据的TCP数据报，排列在缓冲队列中，然后一次全部发出，最后一个数据报带上PSH标志，告诉对端，把收到的数据赶紧传给应用层，因为这已经是一个完整的应用数据了。</div><div class="line"></div><div class="line">同样，你8个write，每个写1024数据，协议栈就理解为这是8个完整的应用数据，所以每个都需要带上PSH，告诉对端，这都是完整的应用数据，需要尽快传给应用层。</div><div class="line">而这跟滑动窗口大小无关。</div><div class="line"></div><div class="line">end buffer即发送缓冲区的意思，进程通过Write系统调用，将数据报写入发送缓冲区中，而缓冲区中数据报的发送工作交给TCP内核协议栈执行。内核发送缓冲区数据报的时候，所发送数据报的大小受MSS、通告窗口大小影响，这里MSS〉=1024，而且通告窗口大小为4096，也大于1024，所以执行一次write即为一次写操作将1024大小数据报写入发送缓冲区，然后调用内核中的发送函数直接将这1024大小数据报发送出去，由于该发送操作会使发送缓冲区变空，即发送发送缓冲区里所有数据，即empties the sender buffer，所以要给该数据报加上PUSH标志。</div></pre></td></tr></table></figure>
-<h5 id="TCP的交互式数据流"><a href="#TCP的交互式数据流" class="headerlink" title="TCP的交互式数据流"></a>TCP的交互式数据流</h5><p><strong>经受时延的确认技术</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TCP的交互式数据流通常使用“经过时延的确认”技术。通常Server在接收到从Client发送过来的数据时，并不马上发送ACK，而是等一小段时间，看看本机是否有数据要反馈给Client，如果有，就将数据包含在此ACK包中，以前发送给Client。一般情况下这个时延为200ms。需要注意的时这个 200ms的定时器时相对于内核的时钟滴答的，也就是jeffs的。加入一个数据分组到达后，此定时器已经pass了100ms，那么再过100ms ACK才会被发送，如果在这100ms内有数据要反馈，则在100ms后ACK会和数据一起发送。</div></pre></td></tr></table></figure>
-<p><strong>Nagle算法分析</strong>:主要用于TCP的交互式数据流，每一个TCP数据包都能完整的给IP包，对于实时的游戏数据则会关闭Nagle算法来提高数据的实时性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Nagle算法主要用来预防小分组的产生。在广域网上，大量TCP小分组极有可能造成网络的拥塞。</div><div class="line"></div><div class="line">Nagle时针对每一个TCP连接的。它要求一个TCP连接上最多只能有一个未被确认的小分组。在改分组的确认到达之前不能发送其他小分组。TCP会搜集这些小的分组，然后在之前小分组的确认到达后将刚才搜集的小分组合并发送出去。</div><div class="line"></div><div class="line">有时候我们必须要关闭Nagle算法，特别是在一些对时延要求较高的交互式操作环境中，所有的小分组必须尽快发送出去。</div><div class="line"></div><div class="line">我们可以通过编程取消Nagle算法，利用TCP_NODELAY选项来关闭Nagle算法。</div></pre></td></tr></table></figure>
-<h5 id="TCP成块数据流"><a href="#TCP成块数据流" class="headerlink" title="TCP成块数据流"></a>TCP成块数据流</h5><p><strong>PUSH</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">PUSH是TCP报头中的一个标志位，发送方在发送数据的时候可以设置这个标志位。该标志通知接收方将接收到的数据全部提交给接收进程。这里所说的数据包括与此PUSH包一起传输的数据以及之前就为该进程传输过来的数据。</div><div class="line"></div><div class="line">当Server端收到这些数据后，它需要立刻将这些数据提交给应用层进程，而不再等待是否还有额外的数据到达。</div><div class="line"></div><div class="line">那么应该合适设置PUSH标志呢？实际上现在的TCP协议栈基本上都可以自行处理这个问题，而不是交给应用层处理。如果待发送的数据会清空发送缓存，那么栈就会自动为此包设置PUSH标志，源于BSD的栈一般都会这么做，而且，BSD TCP STACK也从来不会将收到的数据推迟提交给应用程序，因此，在BSD TCP STACK中，PUSH位是被忽略的，因为根本就没有用。</div><div class="line"></div><div class="line">PUSH位就是用来通告接收方立即将收到的报文连同TCP接收缓存里的数据递交应用进程处理。一般会出现在发送方封装最后一个应用字段的TCP报文中，针对TCP交互式应用，则只要封装有应用字段的TCP报文，均会将PUSH位置一，当然，应用程序的开发者，可以根据需要，在某个应用功能模块或某个应用操作时，将所有封装应用字段的TCP报文PUSH位置一，以提高交互双方的处理效率，这在理论上应该也是可行的。</div></pre></td></tr></table></figure>
-<h2 id="后感"><a href="#后感" class="headerlink" title="后感"></a>后感</h2><p>当初学习计算机网络的时候，是借了计算机专业同学的《计算机网络原理》阅读一遍，另外也是看了《鸟书第二部》网络部分，以此建立的网络基础，但其实通过这次事件来看，对于网络来说，仅知道个大概，但对于如何实现的细节问题并不清楚，比如说本次的SEQ是针对一个TCP链接的而不是一个TCP包，SEQ与ACK之间的生成与更新方式，以及其它标识位、网络相关的算法及相关场景等。这些信息在《TCP/IP详解 卷一》里都有相关的描述。如果能对于本书与实际操作起来，应该会好很多。</p>
-
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>个人不太喜欢JS，语法方面有太多的特例又不太好解释，在作creator小游戏的过程中，JS在玩家客户机上出现的运行时错误，也不能有很好的错误反馈，仅有混淆后的那一句语句，没有函数栈，错误信息太少。另外就是JS这类弱类型语言，在写代码的过程中，没有很好的代码提示，而且也不能在编写代码时或编译期尽可能多的提供检查。另外，个人认为，对于一个项目的健壮性而言，在写的时候考虑的更多才能更健壮，TypeScript的语法可以让程序员在编写的时候考虑更多，在维护迭代的过程种通过代码本身就能知道更多信息，更利于维护。</p>
+<p><a href="https://www.tslang.cn/docs/handbook/basic-types.html" target="_blank" rel="external">TypeScript官方教程</a></p>
+<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p><strong>布尔值</strong>：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> isDone: <span class="built_in">boolean</span> = <span class="literal">false</span>;</div></pre></td></tr></table></figure>
+<p><strong>数字</strong>：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> decLiteral: <span class="built_in">number</span> = <span class="number">6</span>;</div><div class="line"><span class="keyword">let</span> hexLiteral: <span class="built_in">number</span> = <span class="number">0xf00d</span>;</div><div class="line"><span class="keyword">let</span> binaryLiteral: <span class="built_in">number</span> = <span class="number">0b1010</span>;</div><div class="line"><span class="keyword">let</span> octalLiteral: <span class="built_in">number</span> = <span class="number">0o744</span>;</div></pre></td></tr></table></figure>
+<p><strong>字符串</strong>：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> name: <span class="built_in">string</span> = <span class="string">"bob"</span>;</div><div class="line">name = <span class="string">"smith"</span>;</div><div class="line"></div><div class="line"><span class="comment">//模板字符串</span></div><div class="line"><span class="keyword">let</span> sentence: <span class="built_in">string</span> = <span class="string">"Hello, my name is "</span> + name + <span class="string">".\n\n"</span> +</div><div class="line">    <span class="string">"I'll be "</span> + (age + <span class="number">1</span>) + <span class="string">" years old next month."</span>;</div></pre></td></tr></table></figure>
+<p><strong>数组</strong>：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> list: <span class="built_in">number</span>[] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"></div><div class="line"><span class="comment">//数组泛型，Array&lt;元素类型&gt;</span></div><div class="line"><span class="keyword">let</span> list: <span class="built_in">Array</span>&lt;<span class="built_in">number</span>&gt; = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div></pre></td></tr></table></figure>
+<p><strong>元组 Tuple</strong>：元组类型允许表示一个已知元素数量和类型的数组，各元素的类型不必相同。 比如，你可以定义一对值分别为 string和number类型的元组。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Declare a tuple type</span></div><div class="line"><span class="keyword">let</span> x: [<span class="built_in">string</span>, <span class="built_in">number</span>];</div><div class="line"><span class="comment">// Initialize it</span></div><div class="line">x = [<span class="string">'hello'</span>, <span class="number">10</span>]; <span class="comment">// OK</span></div><div class="line"><span class="comment">// Initialize it incorrectly</span></div><div class="line">x = [<span class="number">10</span>, <span class="string">'hello'</span>]; <span class="comment">// Error</span></div></pre></td></tr></table></figure>
+<p><strong>枚举</strong>：enum类型是对JavaScript标准数据类型的一个补充。 </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> Color &#123;Red, Green, Blue&#125;</div><div class="line"><span class="keyword">let</span> c: Color = Color.Green;</div><div class="line"></div><div class="line"><span class="keyword">enum</span> Color &#123;Red = <span class="number">1</span>, Green, Blue&#125;</div><div class="line"><span class="keyword">let</span> c: Color = Color.Green;</div><div class="line"></div><div class="line"><span class="keyword">enum</span> Color &#123;Red = <span class="number">1</span>, Green = <span class="number">2</span>, Blue = <span class="number">4</span>&#125;</div><div class="line"><span class="keyword">let</span> c: Color = Color.Green;</div></pre></td></tr></table></figure>
+<p><strong>Any</strong>：有时候，我们会想要为那些在编程阶段还不清楚类型的变量指定一个类型。 这些值可能来自于动态的内容，比如来自用户输入或第三方代码库。 这种情况下，我们不希望类型检查器对这些值进行检查而是直接让它们通过编译阶段的检查。 </p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> notSure: <span class="built_in">any</span> = <span class="number">4</span>;</div><div class="line">notSure = <span class="string">"maybe a string instead"</span>;</div><div class="line">notSure = <span class="literal">false</span>; <span class="comment">// okay, definitely a boolean</span></div></pre></td></tr></table></figure>
+<p><strong>Void</strong>：void类型像是与any类型相反，它表示没有任何类型。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">warnUser</span>(<span class="params"></span>): <span class="title">void</span> </span>&#123;</div><div class="line">    alert(<span class="string">"This is my warning message"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>Null 和 Undefined</strong>：undefined和null两者各自有自己的类型分别叫做undefined和null。默认情况下null和undefined是所有类型的子类型。 就是说你可以把 null和undefined赋值给number类型的变量。当你指定了–strictNullChecks标记，null和undefined只能赋值给void和它们各自。 这能避免 很多常见的问题。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">warnUser</span>(<span class="params"></span>): <span class="title">void</span> </span>&#123;</div><div class="line">    alert(<span class="string">"This is my warning message"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>Never</strong>：never类型表示的是那些永不存在的值的类型。 例如， never类型是那些总是会抛出异常或根本就不会有返回值的函数表达式或箭头函数表达式的返回值类型； 变量也可能是 never类型，当它们被永不为真的类型保护所约束时。never类型是任何类型的子类型，也可以赋值给任何类型；然而，没有类型是never的子类型或可以赋值给never类型（除了never本身之外）。 即使 any也不可以赋值给never。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 返回never的函数必须存在无法达到的终点</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">error</span>(<span class="params">message: <span class="built_in">string</span></span>): <span class="title">never</span> </span>&#123;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(message);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 推断的返回值类型为never</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fail</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> error(<span class="string">"Something failed"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 返回never的函数必须存在无法达到的终点</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">infiniteLoop</span>(<span class="params"></span>): <span class="title">never</span> </span>&#123;</div><div class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>类型断言</strong>：类型断言好比其它语言里的类型转换，但是不进行特殊的数据检查和解构。 它没有运行时的影响，只是在编译阶段起作用。 TypeScript会假设你，程序员，已经进行了必须的检查。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> someValue: <span class="built_in">any</span> = <span class="string">"this is a string"</span>;</div><div class="line"><span class="keyword">let</span> strLength: <span class="built_in">number</span> = (&lt;<span class="built_in">string</span>&gt;someValue).length;</div><div class="line"></div><div class="line"><span class="comment">//当你在TypeScript里使用JSX时，只有 as语法断言是被允许的。</span></div><div class="line"><span class="keyword">let</span> someValue: <span class="built_in">any</span> = <span class="string">"this is a string"</span>;</div><div class="line"><span class="keyword">let</span> strLength: <span class="built_in">number</span> = (someValue as <span class="built_in">string</span>).length;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -349,13 +359,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="">TCP包的思考</a></p>
+        <p><span>本文标题:</span><a href="">TypeScript学习</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LySnake</a></p>
-        <p><span>发布时间:</span>2018-04-18, 22:13:12</p>
-        <p><span>最后更新:</span>2018-04-22, 22:29:05</p>
+        <p><span>发布时间:</span>2018-10-08, 22:13:12</p>
+        <p><span>最后更新:</span>2018-10-08, 22:31:42</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="" title="TCP包的思考">http://LySnake.github.io/archives/technology/TCP包的思考.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/TCP包的思考.html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="" title="TypeScript学习">http://LySnake.github.io/archives/technology/TypeScript学习.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/TypeScript学习.html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -367,16 +377,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="Cocos适配.html">
-                    Cocos适配
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="Lua学习.html">
-                    Lua学习
+                <a href="SCIP学习笔记（1）.html">
+                    SCIP学习笔记（1）
                 </a>
             </div>
         
@@ -388,7 +392,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题来源"><span class="toc-number">1.</span> <span class="toc-text">问题来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SEQ与ACK"><span class="toc-number">2.</span> <span class="toc-text">SEQ与ACK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PUSH"><span class="toc-number">3.</span> <span class="toc-text">PUSH</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#引用下相关资源并整理"><span class="toc-number">3.1.</span> <span class="toc-text">引用下相关资源并整理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#TCP的交互式数据流"><span class="toc-number">3.1.1.</span> <span class="toc-text">TCP的交互式数据流</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#TCP成块数据流"><span class="toc-number">3.1.2.</span> <span class="toc-text">TCP成块数据流</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后感"><span class="toc-number"></span> <span class="toc-text">后感</span></a>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类型"><span class="toc-number">2.</span> <span class="toc-text">类型</span></a></li></ol>
         
     </div>
     <style>
@@ -426,7 +430,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="archives/technology/TCP包的思考.html" data-title="TCP包的思考" data-url="http://LySnake.github.io"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="archives/technology/TypeScript学习.html" data-title="TypeScript学习" data-url="http://LySnake.github.io"></div>
     <script>
         var duoshuoQuery = {short_name:"lysnake"};
         var loadComment = function(){
@@ -439,7 +443,7 @@
         
             // Add comment count
             $(function(){
-                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=lysnake&threads=archives/technology/TCP包的思考.html&callback=?";
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=lysnake&threads=archives/technology/TypeScript学习.html&callback=?";
                 $.getJSON(jsonUrl, function(result){
                     $.each(result.response, function(i, field){
                         var value = field.comments;
@@ -487,21 +491,19 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="Cocos适配.html" title="上一篇: Cocos适配">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="Lua学习.html" title="下一篇: Lua学习">
+            <a href="SCIP学习笔记（1）.html" title="下一篇: SCIP学习笔记（1）">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="TypeScript学习.html">TypeScript学习</a></li><li class="post-list-item"><a class="post-list-link" href="SCIP学习笔记（1）.html">SCIP学习笔记（1）</a></li><li class="post-list-item"><a class="post-list-link" href="手游测试开发工具.html">手游测试开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="Cocos适配.html">Cocos适配</a></li><li class="post-list-item"><a class="post-list-link" href="">TCP包的思考</a></li><li class="post-list-item"><a class="post-list-link" href="Lua学习.html">Lua学习</a></li><li class="post-list-item"><a class="post-list-link" href="SQL Server从入门到精通(1).html">SQL Server从入门到精通(1)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(7).html">C++ Primer Plus学习笔记(7)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(6).html">C++ Primer Plus学习笔记(6)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(5).html">C++ Primer Plus学习笔记(5)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(4).html">C++ Primer Plus学习笔记(4)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(3).html">C++ Primer Plus学习笔记(3)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(2).html">C++ Primer Plus学习笔记(2)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(1).html">C++ Primer Plus学习笔记(1)</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑常见错误诊断.html">电脑小白系列之电脑常见错误诊断</a></li><li class="post-list-item"><a class="post-list-link" href="操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="../../archiveslinux/technology/常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="Github Pages与Hexo框架博客的搭建.html">Github Pages与Hexo框架博客的搭建</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑硬件了解.html">电脑小白系列之电脑硬件了解</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑日常管理.html">电脑小白系列之电脑日常管理</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="">TypeScript学习</a></li><li class="post-list-item"><a class="post-list-link" href="SCIP学习笔记（1）.html">SCIP学习笔记（1）</a></li><li class="post-list-item"><a class="post-list-link" href="手游测试开发工具.html">手游测试开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="Cocos适配.html">Cocos适配</a></li><li class="post-list-item"><a class="post-list-link" href="TCP包的思考.html">TCP包的思考</a></li><li class="post-list-item"><a class="post-list-link" href="Lua学习.html">Lua学习</a></li><li class="post-list-item"><a class="post-list-link" href="SQL Server从入门到精通(1).html">SQL Server从入门到精通(1)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(7).html">C++ Primer Plus学习笔记(7)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(6).html">C++ Primer Plus学习笔记(6)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(5).html">C++ Primer Plus学习笔记(5)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(4).html">C++ Primer Plus学习笔记(4)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(3).html">C++ Primer Plus学习笔记(3)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(2).html">C++ Primer Plus学习笔记(2)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(1).html">C++ Primer Plus学习笔记(1)</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑常见错误诊断.html">电脑小白系列之电脑常见错误诊断</a></li><li class="post-list-item"><a class="post-list-link" href="操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="../../archiveslinux/technology/常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="Github Pages与Hexo框架博客的搭建.html">Github Pages与Hexo框架博客的搭建</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑硬件了解.html">电脑小白系列之电脑硬件了解</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑日常管理.html">电脑小白系列之电脑日常管理</a></li></ul>
 
 
 
