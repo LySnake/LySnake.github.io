@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://LySnake.github.io/"/>
-  <updated>2018-10-08T14:31:42.957Z</updated>
+  <updated>2019-05-11T15:51:40.482Z</updated>
   <id>http://LySnake.github.io/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OpenGl学习笔记</title>
+    <link href="http://LySnake.github.io/archives/technology/OpenGl%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html"/>
+    <id>http://LySnake.github.io/archives/technology/OpenGl学习笔记.html</id>
+    <published>2019-05-01T08:13:12.000Z</published>
+    <updated>2019-05-11T15:51:40.482Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="OpenGL简介"><a href="#OpenGL简介" class="headerlink" title="OpenGL简介"></a>OpenGL简介</h3><p><strong>OpenGL</strong>：一般它被认为是一个API(Application Programming Interface, 应用程序编程接口)，包含了一系列可以操作图形、图像的函数。然而，OpenGL本身并不是一个API，它仅仅是一个由Khronos组织制定并维护的规范(Specification)。OpenGL规范严格规定了每个函数该如何执行，以及它们的输出值。OpenGL自身是一个巨大的状态机(State Machine)。</p>
+<p><strong>立即渲染模式（Immediate mode，也就是固定渲染管线）</strong>：这个模式下绘制图形很方便。OpenGL的大多数功能都被库隐藏起来，开发者很少能控制OpenGL如何进行计算的自由。而开发者迫切希望能有更多的灵活性。从OpenGL3.2开始，规范文档开始废弃立即渲染模式，并鼓励开发者在OpenGL的核心模式(Core-profile)下进行开发。</p>
+<p><strong>GLFW</strong>:一个专门针对OpenGL的C语言库，它提供了一些渲染物体所需的最低限度的接口。它允许用户创建OpenGL上下文，定义窗口参数以及处理用户输入.</p>
+<p><strong>GLAD</strong>:一个开源的库,因OpenGL驱动版本众多，它大多数函数的位置都无法在编译时确定下来，需要在运行时查询。所以任务就落在了开发者身上，开发者需要在运行时获取函数地址并将其保存在一个函数指针中供以后使用。取得地址的方法因平台而异。<strong>GLAD</strong>就是解决这个了问题。</p>
+<p><strong>视口(Viewport)</strong>:OpenGL渲染窗口的尺寸大小，即视口(Viewport).</p>
+<h3 id="图形渲染管线（Graphics-Pipeline"><a href="#图形渲染管线（Graphics-Pipeline" class="headerlink" title="图形渲染管线（Graphics Pipeline)"></a>图形渲染管线（Graphics Pipeline)</h3><p>大多译为管线，实际上指的是一堆原始图形数据途经一个输送管道，期间经过各种变化处理最终出现在屏幕的过程.图形渲染管线可以被划分为两个主要部分：第一部分把你的3D坐标转换为2D坐标，第二部分是把2D坐标转变为实际的有颜色的像素。这个教程里，我们会简单地讨论一下图形渲染管线，以及如何利用它创建一些漂亮的像素。(2D坐标和像素也是不同的，2D坐标精确表示一个点在2D空间中的位置，而2D像素是这个点的近似值，2D像素受到你的屏幕/窗口分辨率的限制。)图形渲染管线接受一组3D坐标，然后把它们转变为你屏幕上的有色2D像素输出。<strong>图形渲染管线可以被划分为几个阶段，每个阶段将会把前一个阶段的输出作为输入。所有这些阶段都是高度专门化的（它们都有一个特定的函数），并且很容易并行执行。正是由于它们具有并行执行的特性，当今大多数显卡都有成千上万的小处理核心，它们在GPU上为每一个（渲染管线）阶段运行各自的小程序，从而在图形渲染管线中快速处理你的数据。这些小程序叫做着色器(Shader)。(有些着色器允许开发者自己配置)</strong></p>
+<p><strong>顶点数据</strong>:是一系列顶点的集合。一个顶点(Vertex)是一个3D坐标的数据的集合。而顶点数据是用顶点属性(Vertex Attribute)表示的，它可以包含任何我们想用的数据.点数据是用顶点属性(Vertex Attribute)表示的，它可以包含任何我们想用的数据，但是简单起见，我们还是假定每个顶点只由一个3D位置(译注1)和一些颜色值组成的吧。顶点着色器(Vertex Shader)是几个可编程着色器中的一个。如果我们打算做渲染的话，现代OpenGL需要我们至少设置一个顶点和一个片段着色器。</p>
+<p><strong>图形渲染管线</strong>由顶点着色器(Vertex Shader)、图元装配(Primitive Assembly)、几何着色器(Geometry Shader)、光栅化阶段(Rasterization Stage)、片段着色器*组成。</p>
+<p><strong>顶点着色器(Vertex Shader)</strong>：是把3D坐标转为另一种3D坐标（后面会解释），同时顶点着色器允许我们对顶点属性进行一些基本处理。</p>
+<p><strong>图元装配(Primitive Assembly)</strong>:将顶点着色器输出的所有顶点作为输入（如果是GL_POINTS，那么就是一个顶点），并所有的点装配成指定图元的形状.</p>
+<p><strong>几何着色器(Geometry Shader)</strong>:把图元形式的一系列顶点的集合作为输入，它可以通过产生新顶点构造出新的（或是其它的）图元来生成其他形状。</p>
+<p><strong>光栅化阶段(Rasterization Stage)</strong>:把图元映射为最终屏幕上相应的像素，生成供片段着色器(Fragment Shader)使用的片段(Fragment)(OpenGL中的一个片段是OpenGL渲染一个像素所需的所有数据。)。在片段着色器运行之前会执行裁切(Clipping)。裁切会丢弃超出你的视图以外的所有像素，用来提升执行效率。</p>
+<p><strong>片段着色器</strong>:计算一个像素的最终颜色，这也是所有OpenGL高级效果产生的地方。通常，片段着色器包含3D场景的数据（比如光照、阴影、光的颜色等等），这些数据可以被用来计算最终像素的颜色。</p>
+<p><strong>Alpha测试和混合(Blending)阶段</strong>:检测片段的对应的深度（和模板(Stencil)）值（后面会讲），用它们来判断这个像素是其它物体的前面还是后面，决定是否应该丢弃。这个阶段也会检查alpha值（alpha值定义了一个物体的透明度）并对物体进行混合(Blend)。所以，即使在片段着色器中计算出来了一个像素输出的颜色，在渲染多个三角形的时候最后的像素颜色也可能完全不同。</p>
+<p>对于大多数场合，我们只需要配置顶点和片段着色器就行了。几何着色器是可选的，通常使用它默认的着色器就行了。在现代OpenGL中，我们必须定义至少一个顶点着色器和一个片段着色器（因为GPU中没有默认的顶点/片段着色器）。</p>
+<p>OpenGL着色器是用OpenGL着色器语言(OpenGL Shading Language, GLSL)写成的.GLSL看起来很像C语言。每个着色器都起始于一个版本声明。OpenGL 3.3以及和更高版本中，GLSL版本号和OpenGL的版本是匹配的（比如说GLSL 420版本对应于OpenGL 4.2）。我们同样明确表示我们会使用核心模式。</p>
+<h4 id="顶点输入"><a href="#顶点输入" class="headerlink" title="顶点输入"></a>顶点输入</h4><p><strong>标准化设备坐标(Normalized Device Coordinates, NDC)</strong>:一旦你的顶点坐标已经在顶点着色器中处理过，它们就应该是标准化设备坐标了，标准化设备坐标是一个x、y和z值在-1.0到1.0的一小段空间。任何落在范围外的坐标都会被丢弃/裁剪，不会显示在你的屏幕上。</p>
+<p><strong>顶点着色器</strong>会在GPU上创建内存用于储存我们的顶点数据，还要配置OpenGL如何解释这些内存，并且指定其如何发送给显卡。顶点着色器接着会处理我们在内存中指定数量的顶点。我们通过顶点缓冲对象(Vertex Buffer Objects, VBO)管理这个内存，它会在GPU内存（通常被称为显存）中储存大量顶点。使用这些缓冲对象的好处是我们可以一次性的发送一大批数据到显卡上，而不是每个顶点发送一次。从CPU把数据发送到显卡相对较慢，所以只要可能我们都要尝试尽量一次性发送尽可能多的数据。当数据发送至显卡的内存中后，顶点着色器几乎能立即访问顶点，这是个非常快的过程。</p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://learnopengl-cn.github.io/" target="_blank" rel="external">学习文档链接</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;OpenGL简介&quot;&gt;&lt;a href=&quot;#OpenGL简介&quot; class=&quot;headerlink&quot; title=&quot;OpenGL简介&quot;&gt;&lt;/a&gt;OpenGL简介&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;OpenGL&lt;/strong&gt;：一般它被认为是一个API(Applicati
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+      <category term="OpenGl" scheme="http://LySnake.github.io/tags/opengl/"/>
+    
+  </entry>
   
   <entry>
     <title>TypeScript学习</title>
@@ -1349,10 +1392,10 @@
     <link href="http://LySnake.github.io/archives/technology/C++%20Primer%20Plus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(2).html"/>
     <id>http://LySnake.github.io/archives/technology/C++ Primer Plus学习笔记(2).html</id>
     <published>2017-05-21T14:06:46.000Z</published>
-    <updated>2018-02-25T03:46:33.574Z</updated>
+    <updated>2020-05-18T16:10:55.109Z</updated>
     
     <content type="html"><![CDATA[<h2 id="11-使用类"><a href="#11-使用类" class="headerlink" title="11.使用类"></a>11.使用类</h2><h3 id="11-2-1-操作符重载"><a href="#11-2-1-操作符重载" class="headerlink" title="11.2.1 操作符重载"></a>11.2.1 操作符重载</h3><p><strong>操作符重载</strong>是一种形式的C++多态，操作符重载将重载的概念扩展到操作符上，允许赋予C++操作符多种含义。要重载操作符，需使用被称为操作符函数的特殊函数形式。操作符函数的格式如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ClassName total, coding, fixing;</div><div class="line"><span class="comment">//可以像使用成员方法一样使用操作符重载</span></div><div class="line">total = coding.<span class="keyword">operator</span>+(fixing);</div><div class="line"><span class="comment">//以可以使用操作符表示法：</span></div><div class="line">total = coding + fixing;</div><div class="line"></div><div class="line"><span class="comment">//注意，在操作符表示法中，操作符左侧的对象（这里为coding）是调用对象，操作符右边（这里是fixing)是作为参数被传递的对象。</span></div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ClassName total, coding, fixing;</div><div class="line"><span class="comment">//可以像使用成员方法一样使用操作符重载</span></div><div class="line">total = coding.<span class="keyword">operator</span>+(fixing);</div><div class="line"><span class="comment">//也可以使用操作符表示法：</span></div><div class="line">total = coding + fixing;</div><div class="line"></div><div class="line"><span class="comment">//注意，在操作符表示法中，操作符左侧的对象（这里为coding）是调用对象，操作符右边（这里是fixing)是作为参数被传递的对象。</span></div></pre></td></tr></table></figure>
 <p>operator +()重载+操作符，operator -()重载-操作符。op必须是有效的C++操作符，不能虚构一个新的符号。</p>
 <h3 id="11-2-2操作符重载的限制"><a href="#11-2-2操作符重载的限制" class="headerlink" title="11.2.2操作符重载的限制"></a>11.2.2操作符重载的限制</h3><ul>
 <li>重载后的操作符必须至少有一个操作数是用户定义，这将防止用户为标准类型重载操作符。因此不能将减法操作符重载为计算两个double值的和，而不是它们的差。</li>
@@ -1393,9 +1436,9 @@
 <p>创建友元函数的第一步是将其原型放在类声明中，并在原型声明前加上关键字friend：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">friend</span> TypeName <span class="keyword">operator</span>* (<span class="keyword">double</span> m, <span class="keyword">const</span> className &amp;T);</div></pre></td></tr></table></figure></p>
 <ul>
 <li>显然operator*()函数是在类声明中声明的，但它不是成员函数，因此不能使用成员操作符来调用。</li>
-<li>虽然operator*()函数不是成员函数，但它与函数的访问权限相同。</li>
+<li>虽然operator*()函数不是成员函数，但它与成员函数的访问权限相同。</li>
 </ul>
-<p>第二步是编写函数定义。因为它不是成员函数，所以不要使用className::限定符。加外不要在定义中使用关键字friend。简而言之，友元函数是非成员函数，其访问权限与成员函数相同。</p>
+<p>第二步是编写函数定义。因为它不是成员函数，所以不要使用className::限定符。外加不要在定义中使用关键字friend。简而言之，友元函数是非成员函数，其访问权限与成员函数相同。</p>
 <p>ostream类对该操作符进行了重载，将其转换为一个输出工具，前面讲过，cout是一个ostream对象，它是智能的。能够识别所有的C++基本类型。这是因为对于每种基本类型，ostream类声明中都包含了相应的重载的operator&lt;&lt;()定义。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//通过返回ostream的引用实现链式调用</span></div><div class="line">ostream &amp; <span class="keyword">operator</span>&lt;&lt;(ostream &amp;os, <span class="keyword">const</span> className &amp;t)</div><div class="line">&#123;</div><div class="line">	os&lt;&lt; t.intValue &lt;&lt; t.floatValue &lt;&lt; t.stringValue ;</div><div class="line">	<span class="keyword">return</span> os;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>非成员版本的重载操作符函数所需的形参数目与操作符使用的操作数数目相同，而成员版本所需的参数数目少一个，因为其中的一个操作数是被隐式地传递的调用对象(this)。</p>
@@ -1411,7 +1454,7 @@
 <li>将TypeName值传递给接受ClassName参数的函数时。   </li>
 <li>返回值被声明为ClassName类型的函数试图返回一个TypeName类型值时。</li>
 </ul>
-<p>函数原型提供的参数匹配过程，允许使用ClassName(TypeName)构造函数来转换其他数值类型。比如TypeName是float类型，当把int类型当做实参时，int先转换为float，再转换成TypeName给形参.</p>
+<p>函数原型提供的参数匹配过程，允许使用ClassName(TypeName)构造函数来转换其他数值类型。比如TypeName是float类型，当把int类型当做实参时，int先转换为float，再转换成ClassNameValue给形参.</p>
 <h3 id="11-6-2转换函数"><a href="#11-6-2转换函数" class="headerlink" title="11.6.2转换函数"></a>11.6.2转换函数</h3><p>构造函数只用于从某种类型到类类型的转换。要进行相反的转换必须使用特殊的C++操作符—转换函数。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//TypeName为int、float、double等</span></div><div class="line"><span class="function"><span class="keyword">operator</span> <span class="title">typeName</span><span class="params">()</span></span>;</div></pre></td></tr></table></figure>
 <ul>
@@ -1637,53 +1680,6 @@
   
   <entry>
     <title>电脑小白之操作系统安装</title>
-    <link href="http://LySnake.github.io/archives/technology/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85.html"/>
-    <id>http://LySnake.github.io/archives/technology/操作系统安装.html</id>
-    <published>2017-05-05T17:34:38.000Z</published>
-    <updated>2018-02-25T03:47:35.784Z</updated>
-    
-    <content type="html"><![CDATA[<p>主要介绍windows系统安装，以此让小白放心安装其它系统，比如手机Android、iOS，以及PC上的linux系统。<br><a id="more"></a></p>
-<p>###操作系统的本质###<br>其实，说白了，操作系统也是一个软件，作为一个软件，你可以放心地在机器(PC、手机等)上卸载与安装，只是因为操作系统本身要管理计算机资源(软件、硬件)，其它软件或用户都要借助操作系统才能操作机器，所以操作系统的”卸载与安装”比其它软件更麻烦些，如果失败，机器会无法正常运行，也有可能因为操作失误，造成数据丢失，但这一切都不会影响电脑本身硬件，所以安装系统失败可以再交安装，因此在安装系统中最重要的就是小心误操作引起的数据丢失。另外，在手机上传说有自己安装系统，因为影响引导系统的软件从而导致无法再安装系统从而成为“砖块机”，不过这种情况目前也只是听过。</p>
-<p>###PC安装windows方式###</p>
-<p>####U盘PE系统安装####<br>这种方式安装windows系统，有个优点就是失败了，你还可以借助U盘PE系统进入PC，可以从PC的硬盘中再得到其它文件(包括安装使用的系统文件)，可以再次安装，对新手来说安装起来放心些。所以在这种U盘PE安装方式中，你可以多下载几个系统文件(支持<em>.ios或</em>.ghost),避免因某一系统文件安装失败而导致PC无法开机且难以更换另一系统文件。制件U盘PE系统，有很多软件，比较常见的有<a href="http://www.laomaotao.org/" target="_blank" rel="external">老毛桃</a>和【大白菜】(大白菜还是算了吧，网上有个一样内容的盗版网站，太难分辨了，假网站的系统文件如果自带电脑病毒，杀软也可能无力。这假网站还是百度加V的，所以百度有多差呢？)</p>
-<p><a href="http://www.laomaotao.org/jiaocheng/92/upqdzz.html" target="_blank" rel="external">老毛桃制作U盘PE系统</a></p>
-<p><a href="http://www.laomaotao.org/jiaocheng/92/upzwin7.html" target="_blank" rel="external">老毛桃安装windows 7系统</a></p>
-<p>####U盘iso文件安装####<br>微软官方都是以光盘出售windows操作系统的，ghost文件都是网友自己二次制作或都说是备份系统文件，所以网上还有光盘copy下来的iso文件可供使用，但是这种文件默认是写在光盘上的，所以U盘iso安装其实就是把iso文件写入U盘中，以U盘冒充光盘，让计算机以读光盘的方式读U盘，从而操作官方的安装方式，最常见的系统文件都是iso文件，所以这种方式支持安装windows和linux等，只是写入U盘时对ULtraISO操作选择不同的引导选项。这种方式写入U盘，会导致U盘成为一个只有iso且不能再存文件的U盘，除非格式化(格式化如果失败，只能使用更强的格式化方式，比如linux下的dd命令)。</p>
-<p><a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="external">UltraISO</a></p>
-<p><a href="http://blog.csdn.net/baigoocn/article/details/47406473" target="_blank" rel="external">UltraISO制作U盘iso安装系统</a></p>
-<p>####硬盘本地安装####<br>下载的iso文件(使用<a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="external">UltraISO</a>或<a href="https://daemon-tools.softonic.com.br/" target="_blank" rel="external">DAEMON Tools Lite</a>装载或解压，但别使用rar或7z，可能会有错误导致安装失败)或*.rar类文件，装载或解压后，在一级子目录下会有setup.exe类似的可执行软件，运行后会进入安装界面。这种方式简单，不要使用U盘，只要系统文件就好，但其实安装windows系统有时会因为系统文件缺失某些驱动，而导致安装失败，而此此时有可能处于安装到一半，导致原来的系统已破坏而不能开机。所以这种方式，推荐是在有安装经验的情况下再使用。</p>
-<p>###系统安装注意事项###<br>综上，安装操作系统不会影响电脑硬件，正常情况只是导致破坏原有的操作和系统导致不能正常开机，你可以重新安装系统以恢复计算机。目前只是听过手机有操作失误导致破坏引导软件，引起不能再交安装系统而成为“砖机”，但这种情况还是很少出现。那，在安装系统的时候，最怕出现的是什么呢？</p>
-<ul>
-<li>对系统分区不了解，原本安装windows系统，只要安装在原来的C分区中，但在安装系统时，当时的C分区已经不显示C分区了，误操作安装系统到另一分区，导致把一分区格式化装了操作系统。</li>
-<li>ghost有一种版本，似乎是针对电脑城全新安装系统用的，安装系统默认会对硬盘重新分区，导致硬盘数据全部丢失。</li>
-<li>安装系统，默认会把安装系统的分区格式化，所以这个分区的用户数据要分备份，在安装windows中，C盘就是我们要安装的分区，要先备份C盘中的个人文件，比如常见的桌面上的文件、以及默认下载的文件目录等。</li>
-</ul>
-<p><strong>所以，安装系统最重要的就是要备份好自己的文件，数据无价</strong></p>
-<p>###针对小白的虚拟机安装系统练习###<br>使用<a href="http://www.vmware.com/cn.html" target="_blank" rel="external">VMware</a>或<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="external">VirtualBox</a>虚拟软件，在windows系统上，进行安装虚拟系统，可以试着了解下安装系统会有什么操作、大概过程是什么，这种方式安装对现有系统很安装，要安装的虚拟系统与现在使用中的系统是完全分离的，不会影响现有分区与数据，仅会写入一个比较大的文件，但这个方式对于很老的电脑来说，可能会很卡。</p>
-<p><a href="http://blog.xuite.net/yh96301/blog/30283132-VirtualBox+%E5%AE%89%E8%A3%9D+Windows+7+%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1" target="_blank" rel="external">VirtualBox安装win7教程</a></p>
-<p>###计算机多系统安装###<br>了解下<a href="http://cn.linux.vbird.org/linux_basic/0130designlinux_2.php#partition_mbr" target="_blank" rel="external">多系统引导</a>，可以实现在一个实体机中，同时安装windows、iOS、linux系多个系统，可以每次开机选择自己要进入的系统，实现windows日常使用，linux、iOS办公，当然，这个也可以装虚拟机。原理简单的说就是开机启动后，主板BOIS会读硬盘固定位置数据（引导程序代码），BOIS把CPU控制执行权交给引导程序，引导程序再从硬盘分区上找到安装了系统的的分区再把CPU控制权给操作系统，因此可以有多个分区分别装有不同的系统，让这引导程序引导进行选择运行哪个系统。</p>
-<p>###<br><a href="http://msdn.itellyou.cn/" target="_blank" rel="external">正版windows系统文件下载</a></p>
-<p><a href="http://cn.linux.vbird.org/linux_basic/0130designlinux_2.php#partition_table" target="_blank" rel="external">硬盘分区与引导程序</a></p>
-<p><a href="http://neosmart.net/EasyRE/" target="_blank" rel="external">EasyBCD修复引导程序</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;主要介绍windows系统安装，以此让小白放心安装其它系统，比如手机Android、iOS，以及PC上的linux系统。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
-    
-      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
-    
-    
-      <category term="电脑小白" scheme="http://LySnake.github.io/tags/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>电脑小白之操作系统安装</title>
     <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85.html"/>
     <id>http://LySnake.github.io/archives/technology/电脑小白系列之操作系统安装.html</id>
     <published>2017-05-05T17:34:38.000Z</published>
@@ -1730,11 +1726,58 @@
   </entry>
   
   <entry>
+    <title>电脑小白之操作系统安装</title>
+    <link href="http://LySnake.github.io/archives/technology/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85.html"/>
+    <id>http://LySnake.github.io/archives/technology/操作系统安装.html</id>
+    <published>2017-05-05T17:34:38.000Z</published>
+    <updated>2018-02-25T03:47:35.784Z</updated>
+    
+    <content type="html"><![CDATA[<p>主要介绍windows系统安装，以此让小白放心安装其它系统，比如手机Android、iOS，以及PC上的linux系统。<br><a id="more"></a></p>
+<p>###操作系统的本质###<br>其实，说白了，操作系统也是一个软件，作为一个软件，你可以放心地在机器(PC、手机等)上卸载与安装，只是因为操作系统本身要管理计算机资源(软件、硬件)，其它软件或用户都要借助操作系统才能操作机器，所以操作系统的”卸载与安装”比其它软件更麻烦些，如果失败，机器会无法正常运行，也有可能因为操作失误，造成数据丢失，但这一切都不会影响电脑本身硬件，所以安装系统失败可以再交安装，因此在安装系统中最重要的就是小心误操作引起的数据丢失。另外，在手机上传说有自己安装系统，因为影响引导系统的软件从而导致无法再安装系统从而成为“砖块机”，不过这种情况目前也只是听过。</p>
+<p>###PC安装windows方式###</p>
+<p>####U盘PE系统安装####<br>这种方式安装windows系统，有个优点就是失败了，你还可以借助U盘PE系统进入PC，可以从PC的硬盘中再得到其它文件(包括安装使用的系统文件)，可以再次安装，对新手来说安装起来放心些。所以在这种U盘PE安装方式中，你可以多下载几个系统文件(支持<em>.ios或</em>.ghost),避免因某一系统文件安装失败而导致PC无法开机且难以更换另一系统文件。制件U盘PE系统，有很多软件，比较常见的有<a href="http://www.laomaotao.org/" target="_blank" rel="external">老毛桃</a>和【大白菜】(大白菜还是算了吧，网上有个一样内容的盗版网站，太难分辨了，假网站的系统文件如果自带电脑病毒，杀软也可能无力。这假网站还是百度加V的，所以百度有多差呢？)</p>
+<p><a href="http://www.laomaotao.org/jiaocheng/92/upqdzz.html" target="_blank" rel="external">老毛桃制作U盘PE系统</a></p>
+<p><a href="http://www.laomaotao.org/jiaocheng/92/upzwin7.html" target="_blank" rel="external">老毛桃安装windows 7系统</a></p>
+<p>####U盘iso文件安装####<br>微软官方都是以光盘出售windows操作系统的，ghost文件都是网友自己二次制作或都说是备份系统文件，所以网上还有光盘copy下来的iso文件可供使用，但是这种文件默认是写在光盘上的，所以U盘iso安装其实就是把iso文件写入U盘中，以U盘冒充光盘，让计算机以读光盘的方式读U盘，从而操作官方的安装方式，最常见的系统文件都是iso文件，所以这种方式支持安装windows和linux等，只是写入U盘时对ULtraISO操作选择不同的引导选项。这种方式写入U盘，会导致U盘成为一个只有iso且不能再存文件的U盘，除非格式化(格式化如果失败，只能使用更强的格式化方式，比如linux下的dd命令)。</p>
+<p><a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="external">UltraISO</a></p>
+<p><a href="http://blog.csdn.net/baigoocn/article/details/47406473" target="_blank" rel="external">UltraISO制作U盘iso安装系统</a></p>
+<p>####硬盘本地安装####<br>下载的iso文件(使用<a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="external">UltraISO</a>或<a href="https://daemon-tools.softonic.com.br/" target="_blank" rel="external">DAEMON Tools Lite</a>装载或解压，但别使用rar或7z，可能会有错误导致安装失败)或*.rar类文件，装载或解压后，在一级子目录下会有setup.exe类似的可执行软件，运行后会进入安装界面。这种方式简单，不要使用U盘，只要系统文件就好，但其实安装windows系统有时会因为系统文件缺失某些驱动，而导致安装失败，而此此时有可能处于安装到一半，导致原来的系统已破坏而不能开机。所以这种方式，推荐是在有安装经验的情况下再使用。</p>
+<p>###系统安装注意事项###<br>综上，安装操作系统不会影响电脑硬件，正常情况只是导致破坏原有的操作和系统导致不能正常开机，你可以重新安装系统以恢复计算机。目前只是听过手机有操作失误导致破坏引导软件，引起不能再交安装系统而成为“砖机”，但这种情况还是很少出现。那，在安装系统的时候，最怕出现的是什么呢？</p>
+<ul>
+<li>对系统分区不了解，原本安装windows系统，只要安装在原来的C分区中，但在安装系统时，当时的C分区已经不显示C分区了，误操作安装系统到另一分区，导致把一分区格式化装了操作系统。</li>
+<li>ghost有一种版本，似乎是针对电脑城全新安装系统用的，安装系统默认会对硬盘重新分区，导致硬盘数据全部丢失。</li>
+<li>安装系统，默认会把安装系统的分区格式化，所以这个分区的用户数据要分备份，在安装windows中，C盘就是我们要安装的分区，要先备份C盘中的个人文件，比如常见的桌面上的文件、以及默认下载的文件目录等。</li>
+</ul>
+<p><strong>所以，安装系统最重要的就是要备份好自己的文件，数据无价</strong></p>
+<p>###针对小白的虚拟机安装系统练习###<br>使用<a href="http://www.vmware.com/cn.html" target="_blank" rel="external">VMware</a>或<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="external">VirtualBox</a>虚拟软件，在windows系统上，进行安装虚拟系统，可以试着了解下安装系统会有什么操作、大概过程是什么，这种方式安装对现有系统很安装，要安装的虚拟系统与现在使用中的系统是完全分离的，不会影响现有分区与数据，仅会写入一个比较大的文件，但这个方式对于很老的电脑来说，可能会很卡。</p>
+<p><a href="http://blog.xuite.net/yh96301/blog/30283132-VirtualBox+%E5%AE%89%E8%A3%9D+Windows+7+%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1" target="_blank" rel="external">VirtualBox安装win7教程</a></p>
+<p>###计算机多系统安装###<br>了解下<a href="http://cn.linux.vbird.org/linux_basic/0130designlinux_2.php#partition_mbr" target="_blank" rel="external">多系统引导</a>，可以实现在一个实体机中，同时安装windows、iOS、linux系多个系统，可以每次开机选择自己要进入的系统，实现windows日常使用，linux、iOS办公，当然，这个也可以装虚拟机。原理简单的说就是开机启动后，主板BOIS会读硬盘固定位置数据（引导程序代码），BOIS把CPU控制执行权交给引导程序，引导程序再从硬盘分区上找到安装了系统的的分区再把CPU控制权给操作系统，因此可以有多个分区分别装有不同的系统，让这引导程序引导进行选择运行哪个系统。</p>
+<p>###<br><a href="http://msdn.itellyou.cn/" target="_blank" rel="external">正版windows系统文件下载</a></p>
+<p><a href="http://cn.linux.vbird.org/linux_basic/0130designlinux_2.php#partition_table" target="_blank" rel="external">硬盘分区与引导程序</a></p>
+<p><a href="http://neosmart.net/EasyRE/" target="_blank" rel="external">EasyBCD修复引导程序</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;主要介绍windows系统安装，以此让小白放心安装其它系统，比如手机Android、iOS，以及PC上的linux系统。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
+    
+      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
+    
+    
+      <category term="电脑小白" scheme="http://LySnake.github.io/tags/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>常用软件推荐</title>
     <link href="http://LySnake.github.io/archiveslinux/technology/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90.html"/>
     <id>http://LySnake.github.io/archiveslinux/technology/常用软件推荐.html</id>
     <published>2017-05-05T14:06:46.000Z</published>
-    <updated>2018-11-01T14:13:16.545Z</updated>
+    <updated>2019-05-18T07:41:06.109Z</updated>
     
     <content type="html"><![CDATA[<p>分享与记录个人常用软件，包括widows、linux、chrome系,同样，如果您有更好的软件，还请在评论区分享出来。<br><a id="more"></a></p>
 <h2 id="常用软件配置"><a href="#常用软件配置" class="headerlink" title="常用软件配置"></a>常用软件配置</h2><h3 id="chrome插件"><a href="#chrome插件" class="headerlink" title="chrome插件"></a>chrome插件</h3><p><a href="https://www.zhihu.com/question/28013848" target="_blank" rel="external">如何高效地使用搜索引擎？</a>：来自zhihu的问答。</p>
@@ -1794,6 +1837,12 @@
 <p><a href="https://www.huorong.cn/" target="_blank" rel="external">火绒</a>:杀毒软件。</p>
 <p><a href="http://blog.csdn.net/johnsonblog/article/details/8165861" target="_blank" rel="external">umdh</a>：windows平台C++程序查内存泄漏，<a href="http://blog.csdn.net/flyingleo1981/article/details/78127625" target="_blank" rel="external">教程</a>.</p>
 <p><a href="https://rime.im/" target="_blank" rel="external">中州韵输入法引擎</a>：很干净的输入法，皮肤也很简约，像程序员常用的皮肤一样，只是没有看到五笔输入法。</p>
+<p><a href="https://www.rapidee.com/en/about" target="_blank" rel="external">系统环境变量修改器</a>:更简洁快捷的windows环境变量修改软件。</p>
+<p><a href="https://cmder.net/" target="_blank" rel="external">cmder</a>:windows更友善的cmd终端软件。</p>
+<p><a href="https://docs.microsoft.com/zh-cn/sysinternals/downloads/sysinternals-suite" target="_blank" rel="external">Procmon进程追踪</a>:进程追踪，对等Linux中的strace，可以看到每一个系统调用，包括输入参数，是否成功等。这个工具来自Sysinternals，微软的工具套装，很多有用的小工具，有兴趣可以下载下来玩一遍<a href="https://docs.microsoft.com/zh-cn/sysinternals/downloads/" target="_blank" rel="external">sysinternals</a>。</p>
+<p><a href="https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer" target="_blank" rel="external">process explore</a>:免费的增强型任务管理器.</p>
+<p><a href="https://pooi.moe/QuickLook/" target="_blank" rel="external">QuickLook</a>:选中文件空格就可以查看。可以查看文件夹信息，图片信息，html 信息，pdf 信息，word 信息，视频信息，压缩包信息。</p>
+<p><a href="https://winscp.net/eng/docs/lang:chs" target="_blank" rel="external">winscp</a>:Windows 环境下使用的 SSH 的开源图形化 SFTP 客户端。同时支持 SCP 协议。它的主要功能是在本地与远程计算机间安全地复制文件，并且可以直接编辑文件。</p>
 <p><em>Powertool</em>:系统清理工具。</p>
 <hr>
 <h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><p><a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">zsh</a>:更友好的shell(漂亮的themes，更多的输入匹配)。</p>
@@ -1900,47 +1949,6 @@
       <category term="Github Pages" scheme="http://LySnake.github.io/tags/github-pages/"/>
     
       <category term="Hexo" scheme="http://LySnake.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>电脑小白系列之电脑硬件了解</title>
-    <link href="http://LySnake.github.io/archives/technology/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD%E7%B3%BB%E5%88%97%E4%B9%8B%E7%94%B5%E8%84%91%E7%A1%AC%E4%BB%B6%E4%BA%86%E8%A7%A3.html"/>
-    <id>http://LySnake.github.io/archives/technology/电脑小白系列之电脑硬件了解.html</id>
-    <published>2017-02-19T09:46:46.000Z</published>
-    <updated>2018-02-25T03:46:53.697Z</updated>
-    
-    <content type="html"><![CDATA[<p>本方主要讲下常用电脑中的硬件与相关功能，旨在了帮助小白了解计算机硬件。<br><a id="more"></a></p>
-<h2 id="冯·诺伊曼结构"><a href="#冯·诺伊曼结构" class="headerlink" title="冯·诺伊曼结构"></a>冯·诺伊曼结构</h2><p>如今的计算机，都是以1945年6月30日冯·诺伊曼提出的基本结构：计算机硬件由运算器、控制器、存储器、输入设备和输出设备五大部分组成。每个组成部分可能存在于一台计算机中不同硬件位置上。</p>
-<blockquote>
-<p><em>运算器、控制器（CPU）</em>：这二个基本部件，在工程实现上都存在于中央控制处理器CPU中，有任何操作请求，一定都会到CPU中请求处理。在实际用户操作中，所有用户操作，都会抽象成一系列的数学运算、逻辑运算，也都要交于CPU处理，所以CPU决定了计算机最高处理性能，在个人组装机中，优先选择的都是CPU，其次再选择其它硬件设备。</p>
-<p><em>存储器</em>：存储器类别很多，在小白的眼里，只要记得内存、硬盘（移动硬盘）、U盘、固态硬盘(SSD)这几样就好了。按主流硬件读取速度来说，内存&gt;固态&gt;U盘&gt;硬盘，特殊一点的是内存是一个断电就会丢失存储数据的一个临时存储设备，充当CPU与硬盘（机械硬盘和固态硬盘）之间的高速缓存。个人电脑中所有数据都要从内存中读取进CPU再进行处理，但对于计算机来说，不一定要有内存计算机才能运行。</p>
-<p><em>*输入设备</em>：输入设备常见的有键盘、鼠标、麦、触摸板、手写板，接收用户操作(转换成数据)给计算机进行处理。</p>
-<p><em>*输出设备</em>：输出设备常见的有显示器、耳机，输出计算机处理后的数据，提供给用户进行交互操作。</p>
-</blockquote>
-<h2 id="电脑中常见硬件"><a href="#电脑中常见硬件" class="headerlink" title="电脑中常见硬件"></a>电脑中常见硬件</h2><h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>在个人计算中，中高端CPU都是使用Intel公司产品，中低端CPU都是使用AMD公司产品，目前组装个人电脑都是以i5往上走，i3很少使用了，在15年上市了新的Skylake系列，支持读取性能更高的内存条、更省电。个人电脑更像是一个集权的国家，CPU代表着中央政府，所有处理都要交于CPU处理、分发执行。另外，当前CPU也负责显示方面的计算,也就是说CPU内还有一个GPU，就是我们常说的集显，但因为GPU常计算小数类型的值，CPU主要是整数类型和逻辑值，另外也因为显示渲染在个人PC中越来越重要，产热也高，所以GPU可以单独有一个硬件，那就是显卡。这种问题常见于笔记本中，在买笔记本时，常说独显更好，是因为独立显卡有自己的内存条，且高端显卡的内存已经是第五代的DDR5了，有独显后，显卡和CPU都有各自的存储，并且，独显有自己更强更专一的渲染，不会占用CPU使用内存导致内存不足，也不会占用CPU的计算而延迟用户操作的响应。</p>
-<h3 id="主板"><a href="#主板" class="headerlink" title="主板"></a>主板</h3><p>主板通常认为是载体就好了，类似于自行车的三角架一样，其它部件都要在其上搭载。通常CPU决定了计算机的计算性能，通过CPU引出的针角查看哪些主板能使用，另外，主板上也存在其它的芯片，用于辅助CPU进行控制用的，还自带声卡、网卡等，所以主板还负责网络接收与发送，数字信息转成音频信息等。不论是CPU、内存条、电源、显卡、硬盘、独立声卡、光驱等，都要与主板联接进行信息传输。电脑开关、USB接口、显示器接口、网线接口、耳机接口等都在主板上面。如果是台式电脑，所有的这些硬件接口都是规范化的，并且也是防呆设计(指接口设计避免用户插错，只有用蛮力才有可能插错)，不用担心插错问题。</p>
-<h3 id="独立-显卡"><a href="#独立-显卡" class="headerlink" title="(独立)显卡"></a>(独立)显卡</h3><p>显卡负责图像的渲染，显示器显示的内容都是从显卡中获得。显卡插在主板上，对外可接显示器的信号线，显卡有自己独立的内存，就是我们说的显存，好的显卡已经使用第五代DDR5的内存，对于晃卡而言，并不是显存越大越好，显存大但速度慢一样是渣显卡，这也是电脑城骗术之一。但电脑是可以不用显卡的，可以使用集成显卡，也就是使用CPU内的GPU，不过这个就看CPU的性能与用户自己的需求了，玩大型游戏还是要独立显卡，如lol、使命等，日常看视频、QQ游戏等，集成显卡就好。</p>
-<h3 id="内存条"><a href="#内存条" class="headerlink" title="内存条"></a>内存条</h3><p>前面提到过，内存是<code>一个断电就会丢失存储数据的一个临时存储设备，充当CPU与硬盘（机械硬盘和固态硬盘）之间的高速缓存</code>,目前老电脑都是4G内存，主流已经开始8G内存了，现如今手机都开始8G内存了。内存在计算机体系系统中，充当CPU与硬盘之间的高速缓存，对于计算机来说，内存越大越好，如果可以，操作系统会根据用户常用软件、文件等，尽可能把内存全部使用完。当前内存的速度在第三代内存DDR3的1600MHZ左右，新的Skylake系列支持第四代内存DDR4的2133MHZ。</p>
-<h3 id="硬盘"><a href="#硬盘" class="headerlink" title="硬盘"></a>硬盘</h3><p>目前市场的机械硬盘都是1T，500G的机械硬盘开始减少，另外，还有固态硬盘(SSD)，读写速度是机械硬盘的好几倍，常见的还只是128G和256G，它们都是一种相对永久的存储设备，所有文件、软件都保存在硬盘中。现在，CPU和内存的性能都在快速提升，而机械硬盘受限于机械结构，读写速度提升相对过慢，已成为计算机体系的一个瓶颈，目前苹果电脑都配有固态硬盘，开机流畅响应快速，如果你也想有这样的电脑体验，请安装固态硬盘，把windows操作系统安装在固态硬盘中，常用软件也安装在固态硬盘中，如果还有机械硬盘，把不常用文件使用机械硬盘存储。另外，读写快速的固态硬盘，也只是能更快速地把文件从固态硬盘上读写到内存中，以此来加快开机速度和响应速度，但并不能改变CPU的执行速度和内存的读写速度，但确实会有更好的用户体验。</p>
-<h3 id="显示器"><a href="#显示器" class="headerlink" title="显示器"></a>显示器</h3><p>显示器把显卡(集显或独显)处理过的显示数据通过旧的VGA接口或更高传输速率的HDMI接口传输到显示器进行显示，现在主流显示器有19寸、24寸甚至更大的，类型也很多样。如果细看电视机或显示器，是能看到很微小的点阵的，这个类似于图片或视频的1080 <em> 1920这种，表示有乘积个像素点，每个像素点使用RGB(红绿蓝)三色组成万千色，常见的每一色1个字节(8个bit即8位的2进制，如果一张图1080 </em> 1920 像素点，图片大小大概是1080 <em>  1920 </em> 3 / 1024 KB)，按色彩程度不同，共有256种，三色组合就有256 <em> 256 </em> 256种色彩，还有使用RGBA作为像素点数据的，只是多了一位A(透明度)。</p>
-<h3 id="键盘、鼠标"><a href="#键盘、鼠标" class="headerlink" title="键盘、鼠标"></a>键盘、鼠标</h3><p>鼠标没有什么说的，都是光电鼠标，也有一些人体工程学鼠标，如果是玩游戏，鼠标还是要大一些的好用些，精度掌控更高。但是相对键盘而言就有很多讲头了。笔记本电脑和常见的100元以下的键盘，都是薄膜键盘，价格便宜，但是手感差，基本上也没有什么人体工程学上的设计，高端点的键盘，基本上都是机械键盘，手感多样，更适合打字、游戏等偏向，而且也更耐用(据说专业打字的也可以用50年这样的年限)，另外，机械键盘具有很高的自定义化，可以自己组装些背光灯、换键冒、换轴等，所以如果是只坏了几个键，也是可以自己行购买配件维修的。根据按键轴的不同，键盘会有不同的按键反馈，比如对于常打字的来说，青轴机械键盘每一次按键，都会有二次触感反馈，而且所需力道少，另外就是还有一个声音反馈。但机械键盘也有缺点，就是碰水就坏，主要生产轴的公司也就那么几家，国内的轴厂都太次了，容易坏轴，另一个就是价格比较高，cherry轴最低也要将近400元。那有其它一些键盘，水很深。不论是鼠标还是键盘，都是使用USB接口，老旧的有PS/2接口。</p>
-<h3 id="电源"><a href="#电源" class="headerlink" title="电源"></a>电源</h3><p>电脑电源连接家庭用电，转化输出给CPU、主板、显卡、硬盘等供电，电脑正常运行与高速运行，它的耗电是不一样的，所以好的电源应能提供最高电量，如果电脑在高速运行中电源不能提供充足的电能，那可能会无由头的停机且不好查找问题。在某些装机教程中，作者会建议读者不要购买某宝或电脑城里已经组好的整机，因为你看到的电脑配置，主要配件确实是对应的配件，可是对于大多数的我们来说，卖家更老道，他们可以使用二手CPU、显卡，虽然它们是正品，又或者次品点的内存条，而买家都只是会看一般的参数，常见的就是下个鲁大师软件查看配置，这根本无法了解到卖家作了什么，而且一台电脑，可动手的地方很多，虽然主要配件最多是次品，部分配件因为不起眼，真的就有可能会成为电脑的短板。其中之一就是电源，一般买家没有谁看电源，而电源品牌也很混杂，就算一般买家查看了这点，你也就是看个功率，好像很强的样子，可是，关注过材料吗？铭牌参数具体的意义吗？电脑的参考功率，其中有很多文章，它的实际意义是说，各种组合最高是350W或500W，但其中还有转化率的问题，还有就是，每一种组合也有它的最大功能，不论是组合的还是最终的功能，都不能超。因为电源给CPU、主板、显卡、硬盘供电，也差不多这样分成组，CPU组不能超过多少，显卡供电不能超过多少，主板不能超过多少，各组之合不能超过电脑额定功率*转化率。所以对于一个500W的电源确不一定比350W的电源更适合你的电脑。另一方面，材料问题，线问题，接口问题，因此在某宝或电脑城购买已配好的电脑，不好花点时间自己组得更放心。</p>
-<h2 id="引申链接"><a href="#引申链接" class="headerlink" title="引申链接"></a>引申链接</h2><p><a href="http://linux.vbird.org/linux_basic/0130designlinux.php#hardware" target="_blank" rel="external">&lt;鸟哥的linux私房菜&gt;中关于硬件的形象化描述</a><br><a href="http://linux.vbird.org/linux_basic/0510osloader.php#startup" target="_blank" rel="external">&lt;鸟哥的linux私房菜&gt;之开机流程</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本方主要讲下常用电脑中的硬件与相关功能，旨在了帮助小白了解计算机硬件。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="archives" scheme="http://LySnake.github.io/categories/archives/"/>
-    
-      <category term="technology" scheme="http://LySnake.github.io/categories/archives/technology/"/>
-    
-    
-      <category term="电脑小白" scheme="http://LySnake.github.io/tags/%E7%94%B5%E8%84%91%E5%B0%8F%E7%99%BD/"/>
     
   </entry>
   

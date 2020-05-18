@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="先挖下坑">
+<meta name="description" content="OpenGL简介OpenGL：一般它被认为是一个API(Application Programming Interface, 应用程序编程接口)，包含了一系列可以操作图形、图像的函数。然而，OpenGL本身并不是一个API，它仅仅是一个由Khronos组织制定并维护的规范(Specification)。OpenGL规范严格规定了每个函数该如何执行，以及它们的输出值。OpenGL自身是一个巨大的状态">
 <meta property="og:type" content="article">
-<meta property="og:title" content="电脑小白系列之电脑常见错误诊断">
-<meta property="og:url" content="http://LySnake.github.io/archives/technology/电脑小白系列之电脑常见错误诊断.html">
+<meta property="og:title" content="OpenGl学习笔记">
+<meta property="og:url" content="http://LySnake.github.io/archives/technology/OpenGl学习笔记.html">
 <meta property="og:site_name" content="LySnake个人博客">
-<meta property="og:description" content="先挖下坑">
-<meta property="og:updated_time" content="2018-02-25T03:47:10.807Z">
+<meta property="og:description" content="OpenGL简介OpenGL：一般它被认为是一个API(Application Programming Interface, 应用程序编程接口)，包含了一系列可以操作图形、图像的函数。然而，OpenGL本身并不是一个API，它仅仅是一个由Khronos组织制定并维护的规范(Specification)。OpenGL规范严格规定了每个函数该如何执行，以及它们的输出值。OpenGL自身是一个巨大的状态">
+<meta property="og:updated_time" content="2019-05-11T15:51:40.482Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="电脑小白系列之电脑常见错误诊断">
-<meta name="twitter:description" content="先挖下坑">
+<meta name="twitter:title" content="OpenGl学习笔记">
+<meta name="twitter:description" content="OpenGL简介OpenGL：一般它被认为是一个API(Application Programming Interface, 应用程序编程接口)，包含了一系列可以操作图形、图像的函数。然而，OpenGL本身并不是一个API，它仅仅是一个由Khronos组织制定并维护的规范(Specification)。OpenGL规范严格规定了每个函数该如何执行，以及它们的输出值。OpenGL自身是一个巨大的状态">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>电脑小白系列之电脑常见错误诊断 | LySnake个人博客</title>
+<title>OpenGl学习笔记 | LySnake个人博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -275,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-电脑小白系列之电脑常见错误诊断" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-OpenGl学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="" class="article-date">
-      <time datetime="2017-05-21T10:45:03.000Z" itemprop="datePublished">2017-05-21</time>
+      <time datetime="2019-05-01T08:13:12.000Z" itemprop="datePublished">2019-05-01</time>
 </a>
 
  
@@ -303,7 +303,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      电脑小白系列之电脑常见错误诊断
+      OpenGl学习笔记
     </h1>
   
 
@@ -317,6 +317,10 @@
 
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/opengl/">OpenGl</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -324,7 +328,26 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h3 id="OpenGL简介"><a href="#OpenGL简介" class="headerlink" title="OpenGL简介"></a>OpenGL简介</h3><p><strong>OpenGL</strong>：一般它被认为是一个API(Application Programming Interface, 应用程序编程接口)，包含了一系列可以操作图形、图像的函数。然而，OpenGL本身并不是一个API，它仅仅是一个由Khronos组织制定并维护的规范(Specification)。OpenGL规范严格规定了每个函数该如何执行，以及它们的输出值。OpenGL自身是一个巨大的状态机(State Machine)。</p>
+<p><strong>立即渲染模式（Immediate mode，也就是固定渲染管线）</strong>：这个模式下绘制图形很方便。OpenGL的大多数功能都被库隐藏起来，开发者很少能控制OpenGL如何进行计算的自由。而开发者迫切希望能有更多的灵活性。从OpenGL3.2开始，规范文档开始废弃立即渲染模式，并鼓励开发者在OpenGL的核心模式(Core-profile)下进行开发。</p>
+<p><strong>GLFW</strong>:一个专门针对OpenGL的C语言库，它提供了一些渲染物体所需的最低限度的接口。它允许用户创建OpenGL上下文，定义窗口参数以及处理用户输入.</p>
+<p><strong>GLAD</strong>:一个开源的库,因OpenGL驱动版本众多，它大多数函数的位置都无法在编译时确定下来，需要在运行时查询。所以任务就落在了开发者身上，开发者需要在运行时获取函数地址并将其保存在一个函数指针中供以后使用。取得地址的方法因平台而异。<strong>GLAD</strong>就是解决这个了问题。</p>
+<p><strong>视口(Viewport)</strong>:OpenGL渲染窗口的尺寸大小，即视口(Viewport).</p>
+<h3 id="图形渲染管线（Graphics-Pipeline"><a href="#图形渲染管线（Graphics-Pipeline" class="headerlink" title="图形渲染管线（Graphics Pipeline)"></a>图形渲染管线（Graphics Pipeline)</h3><p>大多译为管线，实际上指的是一堆原始图形数据途经一个输送管道，期间经过各种变化处理最终出现在屏幕的过程.图形渲染管线可以被划分为两个主要部分：第一部分把你的3D坐标转换为2D坐标，第二部分是把2D坐标转变为实际的有颜色的像素。这个教程里，我们会简单地讨论一下图形渲染管线，以及如何利用它创建一些漂亮的像素。(2D坐标和像素也是不同的，2D坐标精确表示一个点在2D空间中的位置，而2D像素是这个点的近似值，2D像素受到你的屏幕/窗口分辨率的限制。)图形渲染管线接受一组3D坐标，然后把它们转变为你屏幕上的有色2D像素输出。<strong>图形渲染管线可以被划分为几个阶段，每个阶段将会把前一个阶段的输出作为输入。所有这些阶段都是高度专门化的（它们都有一个特定的函数），并且很容易并行执行。正是由于它们具有并行执行的特性，当今大多数显卡都有成千上万的小处理核心，它们在GPU上为每一个（渲染管线）阶段运行各自的小程序，从而在图形渲染管线中快速处理你的数据。这些小程序叫做着色器(Shader)。(有些着色器允许开发者自己配置)</strong></p>
+<p><strong>顶点数据</strong>:是一系列顶点的集合。一个顶点(Vertex)是一个3D坐标的数据的集合。而顶点数据是用顶点属性(Vertex Attribute)表示的，它可以包含任何我们想用的数据.点数据是用顶点属性(Vertex Attribute)表示的，它可以包含任何我们想用的数据，但是简单起见，我们还是假定每个顶点只由一个3D位置(译注1)和一些颜色值组成的吧。顶点着色器(Vertex Shader)是几个可编程着色器中的一个。如果我们打算做渲染的话，现代OpenGL需要我们至少设置一个顶点和一个片段着色器。</p>
+<p><strong>图形渲染管线</strong>由顶点着色器(Vertex Shader)、图元装配(Primitive Assembly)、几何着色器(Geometry Shader)、光栅化阶段(Rasterization Stage)、片段着色器*组成。</p>
+<p><strong>顶点着色器(Vertex Shader)</strong>：是把3D坐标转为另一种3D坐标（后面会解释），同时顶点着色器允许我们对顶点属性进行一些基本处理。</p>
+<p><strong>图元装配(Primitive Assembly)</strong>:将顶点着色器输出的所有顶点作为输入（如果是GL_POINTS，那么就是一个顶点），并所有的点装配成指定图元的形状.</p>
+<p><strong>几何着色器(Geometry Shader)</strong>:把图元形式的一系列顶点的集合作为输入，它可以通过产生新顶点构造出新的（或是其它的）图元来生成其他形状。</p>
+<p><strong>光栅化阶段(Rasterization Stage)</strong>:把图元映射为最终屏幕上相应的像素，生成供片段着色器(Fragment Shader)使用的片段(Fragment)(OpenGL中的一个片段是OpenGL渲染一个像素所需的所有数据。)。在片段着色器运行之前会执行裁切(Clipping)。裁切会丢弃超出你的视图以外的所有像素，用来提升执行效率。</p>
+<p><strong>片段着色器</strong>:计算一个像素的最终颜色，这也是所有OpenGL高级效果产生的地方。通常，片段着色器包含3D场景的数据（比如光照、阴影、光的颜色等等），这些数据可以被用来计算最终像素的颜色。</p>
+<p><strong>Alpha测试和混合(Blending)阶段</strong>:检测片段的对应的深度（和模板(Stencil)）值（后面会讲），用它们来判断这个像素是其它物体的前面还是后面，决定是否应该丢弃。这个阶段也会检查alpha值（alpha值定义了一个物体的透明度）并对物体进行混合(Blend)。所以，即使在片段着色器中计算出来了一个像素输出的颜色，在渲染多个三角形的时候最后的像素颜色也可能完全不同。</p>
+<p>对于大多数场合，我们只需要配置顶点和片段着色器就行了。几何着色器是可选的，通常使用它默认的着色器就行了。在现代OpenGL中，我们必须定义至少一个顶点着色器和一个片段着色器（因为GPU中没有默认的顶点/片段着色器）。</p>
+<p>OpenGL着色器是用OpenGL着色器语言(OpenGL Shading Language, GLSL)写成的.GLSL看起来很像C语言。每个着色器都起始于一个版本声明。OpenGL 3.3以及和更高版本中，GLSL版本号和OpenGL的版本是匹配的（比如说GLSL 420版本对应于OpenGL 4.2）。我们同样明确表示我们会使用核心模式。</p>
+<h4 id="顶点输入"><a href="#顶点输入" class="headerlink" title="顶点输入"></a>顶点输入</h4><p><strong>标准化设备坐标(Normalized Device Coordinates, NDC)</strong>:一旦你的顶点坐标已经在顶点着色器中处理过，它们就应该是标准化设备坐标了，标准化设备坐标是一个x、y和z值在-1.0到1.0的一小段空间。任何落在范围外的坐标都会被丢弃/裁剪，不会显示在你的屏幕上。</p>
+<p><strong>顶点着色器</strong>会在GPU上创建内存用于储存我们的顶点数据，还要配置OpenGL如何解释这些内存，并且指定其如何发送给显卡。顶点着色器接着会处理我们在内存中指定数量的顶点。我们通过顶点缓冲对象(Vertex Buffer Objects, VBO)管理这个内存，它会在GPU内存（通常被称为显存）中储存大量顶点。使用这些缓冲对象的好处是我们可以一次性的发送一大批数据到显卡上，而不是每个顶点发送一次。从CPU把数据发送到显卡相对较慢，所以只要可能我们都要尝试尽量一次性发送尽可能多的数据。当数据发送至显卡的内存中后，顶点着色器几乎能立即访问顶点，这是个非常快的过程。</p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://learnopengl-cn.github.io/" target="_blank" rel="external">学习文档链接</a></p>
+
       
     </div>
     
@@ -332,13 +355,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="">电脑小白系列之电脑常见错误诊断</a></p>
+        <p><span>本文标题:</span><a href="">OpenGl学习笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LySnake</a></p>
-        <p><span>发布时间:</span>2017-05-21, 18:45:03</p>
-        <p><span>最后更新:</span>2018-02-25, 11:47:10</p>
+        <p><span>发布时间:</span>2019-05-01, 16:13:12</p>
+        <p><span>最后更新:</span>2019-05-11, 23:51:40</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="" title="电脑小白系列之电脑常见错误诊断">http://LySnake.github.io/archives/technology/电脑小白系列之电脑常见错误诊断.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/电脑小白系列之电脑常见错误诊断.html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="" title="OpenGl学习笔记">http://LySnake.github.io/archives/technology/OpenGl学习笔记.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://LySnake.github.io/archives/technology/OpenGl学习笔记.html　　作者: LySnake" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -350,16 +373,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="C++ Primer Plus学习笔记(1).html">
-                    C++ Primer Plus学习笔记(1)
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="电脑小白系列之操作系统安装.html">
-                    电脑小白之操作系统安装
+                <a href="TypeScript学习.html">
+                    TypeScript学习
                 </a>
             </div>
         
@@ -371,7 +388,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenGL简介"><span class="toc-number">1.</span> <span class="toc-text">OpenGL简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图形渲染管线（Graphics-Pipeline"><span class="toc-number">2.</span> <span class="toc-text">图形渲染管线（Graphics Pipeline)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#顶点输入"><span class="toc-number">2.1.</span> <span class="toc-text">顶点输入</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考链接"><span class="toc-number">3.</span> <span class="toc-text">参考链接</span></a></li></ol>
         
     </div>
     <style>
@@ -409,7 +426,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="archives/technology/电脑小白系列之电脑常见错误诊断.html" data-title="电脑小白系列之电脑常见错误诊断" data-url="http://LySnake.github.io"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="archives/technology/OpenGl学习笔记.html" data-title="OpenGl学习笔记" data-url="http://LySnake.github.io"></div>
     <script>
         var duoshuoQuery = {short_name:"lysnake"};
         var loadComment = function(){
@@ -422,7 +439,7 @@
         
             // Add comment count
             $(function(){
-                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=lysnake&threads=archives/technology/电脑小白系列之电脑常见错误诊断.html&callback=?";
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=lysnake&threads=archives/technology/OpenGl学习笔记.html&callback=?";
                 $.getJSON(jsonUrl, function(result){
                     $.each(result.response, function(i, field){
                         var value = field.comments;
@@ -470,21 +487,19 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="C++ Primer Plus学习笔记(1).html" title="上一篇: C++ Primer Plus学习笔记(1)">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="电脑小白系列之操作系统安装.html" title="下一篇: 电脑小白之操作系统安装">
+            <a href="TypeScript学习.html" title="下一篇: TypeScript学习">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="OpenGl学习笔记.html">OpenGl学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="TypeScript学习.html">TypeScript学习</a></li><li class="post-list-item"><a class="post-list-link" href="SCIP学习笔记（1）.html">SCIP学习笔记（1）</a></li><li class="post-list-item"><a class="post-list-link" href="手游测试开发工具.html">手游测试开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="Cocos适配.html">Cocos适配</a></li><li class="post-list-item"><a class="post-list-link" href="TCP包的思考.html">TCP包的思考</a></li><li class="post-list-item"><a class="post-list-link" href="Lua学习.html">Lua学习</a></li><li class="post-list-item"><a class="post-list-link" href="SQL Server从入门到精通(1).html">SQL Server从入门到精通(1)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(7).html">C++ Primer Plus学习笔记(7)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(6).html">C++ Primer Plus学习笔记(6)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(5).html">C++ Primer Plus学习笔记(5)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(4).html">C++ Primer Plus学习笔记(4)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(3).html">C++ Primer Plus学习笔记(3)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(2).html">C++ Primer Plus学习笔记(2)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(1).html">C++ Primer Plus学习笔记(1)</a></li><li class="post-list-item"><a class="post-list-link" href="">电脑小白系列之电脑常见错误诊断</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="../../archiveslinux/technology/常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="Github Pages与Hexo框架博客的搭建.html">Github Pages与Hexo框架博客的搭建</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑硬件了解.html">电脑小白系列之电脑硬件了解</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑日常管理.html">电脑小白系列之电脑日常管理</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="">OpenGl学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="TypeScript学习.html">TypeScript学习</a></li><li class="post-list-item"><a class="post-list-link" href="SCIP学习笔记（1）.html">SCIP学习笔记（1）</a></li><li class="post-list-item"><a class="post-list-link" href="手游测试开发工具.html">手游测试开发工具</a></li><li class="post-list-item"><a class="post-list-link" href="Cocos适配.html">Cocos适配</a></li><li class="post-list-item"><a class="post-list-link" href="TCP包的思考.html">TCP包的思考</a></li><li class="post-list-item"><a class="post-list-link" href="Lua学习.html">Lua学习</a></li><li class="post-list-item"><a class="post-list-link" href="SQL Server从入门到精通(1).html">SQL Server从入门到精通(1)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(7).html">C++ Primer Plus学习笔记(7)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(6).html">C++ Primer Plus学习笔记(6)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(5).html">C++ Primer Plus学习笔记(5)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(4).html">C++ Primer Plus学习笔记(4)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(3).html">C++ Primer Plus学习笔记(3)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(2).html">C++ Primer Plus学习笔记(2)</a></li><li class="post-list-item"><a class="post-list-link" href="C++ Primer Plus学习笔记(1).html">C++ Primer Plus学习笔记(1)</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑常见错误诊断.html">电脑小白系列之电脑常见错误诊断</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="操作系统安装.html">电脑小白之操作系统安装</a></li><li class="post-list-item"><a class="post-list-link" href="../../archiveslinux/technology/常用软件推荐.html">常用软件推荐</a></li><li class="post-list-item"><a class="post-list-link" href="Github Pages与Hexo框架博客的搭建.html">Github Pages与Hexo框架博客的搭建</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑硬件了解.html">电脑小白系列之电脑硬件了解</a></li><li class="post-list-item"><a class="post-list-link" href="电脑小白系列之电脑日常管理.html">电脑小白系列之电脑日常管理</a></li></ul>
 
 
 
